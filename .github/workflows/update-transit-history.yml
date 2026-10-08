@@ -1,0 +1,37 @@
+name: Update public transport history
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "25 7 1 * *"
+  push:
+    paths:
+      - "scripts/fetch_transit_history.py"
+      - ".github/workflows/update-transit-history.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build historical GTFS series
+        run: python scripts/fetch_transit_history.py
+      - name: Commit history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/transit_history.json docs/data/transit_history.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update historical Lulea public transport data"
+            git pull --rebase origin main
+            git push
+          fi
