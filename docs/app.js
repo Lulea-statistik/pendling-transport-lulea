@@ -1,4 +1,5 @@
 const FOCUS=new Set(["Luleå","Boden","Piteå","Älvsbyn","Kalix"]);
+const NEUTRAL_MATRIX=new Set(["Arjeplog"]);
 let rows=[];
 
 const $=id=>document.getElementById(id);
@@ -47,7 +48,11 @@ function render(){
   const shown=scope==="focus"?names.filter(n=>FOCUS.has(n)):names;
   const map=new Map(data.map(r=>[r.residence+"|"+r.workplace,Number(r.employed)]));
   const values=[];
-  for(const a of shown)for(const b of shown){const v=map.get(a+"|"+b);if(Number.isFinite(v))values.push(v)}
+  for(const a of shown)for(const b of shown){
+    if(NEUTRAL_MATRIX.has(a)||NEUTRAL_MATRIX.has(b))continue;
+    const v=map.get(a+"|"+b);
+    if(Number.isFinite(v))values.push(v);
+  }
   const max=Math.max(1,...values);
 
   const table=document.createElement("table");table.className="matrix";
@@ -66,9 +71,12 @@ function render(){
       const td=document.createElement("td");
       const v=map.get(res+"|"+work);
       td.textContent=Number.isFinite(v)?fmt.format(v):"–";
-      td.style.background=cellColor(v,max);td.style.color=textColor(v,max);
+      const neutral=NEUTRAL_MATRIX.has(res)||NEUTRAL_MATRIX.has(work);
+      td.style.background=neutral?"#e5e7eb":cellColor(v,max);
+      td.style.color=neutral?"#475569":textColor(v,max);
+      if(neutral)td.classList.add("neutral-cell");
       if(res===work)td.classList.add("diagonal");
-      if(FOCUS.has(res)||FOCUS.has(work))td.classList.add("focus-edge");
+      if(!neutral&&(FOCUS.has(res)||FOCUS.has(work)))td.classList.add("focus-edge");
       td.dataset.tip=res+" → "+work+": "+(Number.isFinite(v)?fmt.format(v):"saknas");
       rr.appendChild(td);
     });
