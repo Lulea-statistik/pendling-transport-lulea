@@ -434,10 +434,33 @@
     </section>
 
     <section class="panel">
-      <h2>Historiska kollektivtrafikdata</h2>
+      <div class="section-head">
+        <div>
+          <h2>Historiskt kollektivtrafikutbud</h2>
+          <p>Årliga jämförelsepunkter från GTFS Sverige 2-arkivet, filtrerade till LLT och Länstrafiken Norrbotten inom Luleå kommun.</p>
+        </div>
+        <a href="https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/" target="_blank" rel="noopener">GTFS Sverige 2-arkiv</a>
+      </div>
+      <div id="transitHistoryStatus" class="data-status">Laddar historisk GTFS…</div>
+      <div class="controls history-controls">
+        <label>Mått
+          <select id="transitHistoryMetric">
+            <option value="weekday_trips" selected>Vardagsturer</option>
+            <option value="routes">Busslinjer</option>
+            <option value="stops">Hållplatser</option>
+          </select>
+        </label>
+      </div>
+      <div id="transitHistoryChart" class="nvdb-trend"></div>
+      <div id="transitHistoryTable" class="data-table-wrap"></div>
+      <p class="source-note">Metod: första tillgängliga höst-snapshot per år används som jämförelsepunkt. Det ger en stabil årlig ögonblicksbild men ska inte tolkas som årsmedel. GTFS Sverige 2-arkivet går tillbaka till 2012.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Historiska data – vad som faktiskt finns</h2>
       <div class="available-grid">
-        <article><h3>GTFS Sverige 2</h3><p>Trafiklab publicerar historiska statiska GTFS-versioner från 2012 och framåt. Det gör det möjligt att analysera hur linjer, hållplatser och planerat utbud förändrats över tid.</p></article>
-        <article><h3>KoDa</h3><p>KoDa innehåller historisk GTFS och GTFS-Realtime. För Länstrafiken Norrbotten och LLT saknas dock för närvarande realtidsstöd i Trafiklabs regionala tillgänglighetstabell, så det går inte att räkna med en komplett historik över förseningar och störningsmeddelanden därifrån.</p></article>
+        <article><h3>Planerat utbud</h3><p>GTFS Sverige 2 innehåller historiska tidtabeller tillbaka till 2012. Därifrån kan vi följa förändringar i busslinjer, hållplatser och planerade turer.</p></article>
+        <article><h3>Realtid och störningar</h3><p>KoDa innehåller historisk GTFS och GTFS-Realtime där operatörer levererat realtidsdata. För vår rapport bygger vi dessutom ett eget dagligt arkiv av Länstrafiken Norrbottens publika trafikinformationssida från och med oktober 2026.</p></article>
       </div>
     </section>
 
