@@ -1,0 +1,36 @@
+name: Update Trafikanalys data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "37 5 * * 1"
+  push:
+    paths:
+      - "scripts/fetch_trafa_data.py"
+      - ".github/workflows/update-trafa-data.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl
+      - name: Fetch Trafikanalys municipal data
+        run: python scripts/fetch_trafa_data.py
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/trafa.json docs/data/trafa.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update Trafikanalys municipal data"
+            git push
+          fi
