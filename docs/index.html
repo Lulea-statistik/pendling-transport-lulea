@@ -417,6 +417,31 @@
     </section>
 
     <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Trafikstörningar – aktuell status och historik</h2>
+          <p>Länstrafiken Norrbottens trafikinformationssida arkiveras dagligen från och med nu.</p>
+        </div>
+        <a href="https://lanstrafikennorrbotten.se/trafikinformation" target="_blank" rel="noopener">Aktuell trafikinformation</a>
+      </div>
+      <div class="cards source-cards">
+        <article><span>Aktiva störningar</span><strong id="trafficActiveCount">–</strong><small>aktuella + planerade</small></article>
+        <article><span>Arkiverade händelser</span><strong id="trafficHistoryCount">–</strong><small>unika störningar sedan start</small></article>
+        <article><span>Senast kontrollerad</span><strong id="trafficUpdated">–</strong><small>daglig kontroll</small></article>
+      </div>
+      <div id="trafficDisruptionList" class="disruption-list"></div>
+      <p class="source-note">Den publika trafikinformationssidan visar aktuella och planerade störningar, men någon komplett äldre störningshistorik publiceras inte där. Därför bygger repot en egen historik genom daglig arkivering. För planerat kollektivtrafikutbud finns däremot GTFS Sverige 2-arkiv tillbaka till 2012.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Historiska kollektivtrafikdata</h2>
+      <div class="available-grid">
+        <article><h3>GTFS Sverige 2</h3><p>Trafiklab publicerar historiska statiska GTFS-versioner från 2012 och framåt. Det gör det möjligt att analysera hur linjer, hållplatser och planerat utbud förändrats över tid.</p></article>
+        <article><h3>KoDa</h3><p>KoDa innehåller historisk GTFS och GTFS-Realtime. För Länstrafiken Norrbotten och LLT saknas dock för närvarande realtidsstöd i Trafiklabs regionala tillgänglighetstabell, så det går inte att räkna med en komplett historik över förseningar och störningsmeddelanden därifrån.</p></article>
+      </div>
+    </section>
+
+    <section class="panel">
       <h2>Analysmöjligheter</h2>
       <div class="available-grid">
         <article><h3>Hållplatstäthet</h3><p>Antal hållplatser och antal linjer per hållplats, med möjlighet att senare bryta ner till NYKO/DeSO.</p></article>
