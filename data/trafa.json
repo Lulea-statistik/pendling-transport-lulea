@@ -1,0 +1,2696 @@
+{
+  "vehicles": {
+    "source": "https://www.trafa.se/globalassets/statistik/vagtrafik/fordon/2026/fordon-i-lan-och-kommuner-2025.xlsx",
+    "year": 2025,
+    "sheets": [
+      {
+        "title": "Tabell 1",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10",
+          "Kolumn 11",
+          "Kolumn 12",
+          "Kolumn 13",
+          "Kolumn 14",
+          "Kolumn 15",
+          "Kolumn 16",
+          "Kolumn 17",
+          "Kolumn 18",
+          "Kolumn 19"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 3899,
+              "Kolumn 4": 20,
+              "Kolumn 6": 1142,
+              "Kolumn 7": 140,
+              "Kolumn 8": 1282,
+              "Kolumn 9": 12,
+              "Kolumn 10": 9,
+              "Kolumn 11": 2,
+              "Kolumn 12": 137,
+              "Kolumn 13": 48,
+              "Kolumn 14": 801,
+              "Kolumn 15": 2680,
+              "Kolumn 16": 359,
+              "Kolumn 17": 56,
+              "Kolumn 18": 2870,
+              "Kolumn 19": 502
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 3": 1719,
+              "Kolumn 4": 5,
+              "Kolumn 6": 435,
+              "Kolumn 7": 100,
+              "Kolumn 8": 535,
+              "Kolumn 9": 3,
+              "Kolumn 10": 2,
+              "Kolumn 12": 68,
+              "Kolumn 13": 16,
+              "Kolumn 14": 411,
+              "Kolumn 15": 1839,
+              "Kolumn 16": 179,
+              "Kolumn 17": 29,
+              "Kolumn 18": 1393,
+              "Kolumn 19": 142
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 2841,
+              "Kolumn 4": 21,
+              "Kolumn 6": 766,
+              "Kolumn 7": 71,
+              "Kolumn 8": 837,
+              "Kolumn 9": 4,
+              "Kolumn 10": 6,
+              "Kolumn 12": 89,
+              "Kolumn 13": 26,
+              "Kolumn 14": 521,
+              "Kolumn 15": 2136,
+              "Kolumn 16": 262,
+              "Kolumn 17": 49,
+              "Kolumn 18": 2131,
+              "Kolumn 19": 172
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 2120,
+              "Kolumn 4": 8,
+              "Kolumn 6": 517,
+              "Kolumn 7": 68,
+              "Kolumn 8": 585,
+              "Kolumn 9": 4,
+              "Kolumn 10": 8,
+              "Kolumn 11": 1,
+              "Kolumn 12": 84,
+              "Kolumn 13": 23,
+              "Kolumn 14": 427,
+              "Kolumn 15": 785,
+              "Kolumn 16": 138,
+              "Kolumn 17": 17,
+              "Kolumn 18": 1051,
+              "Kolumn 19": 100
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 9713,
+              "Kolumn 4": 44,
+              "Kolumn 6": 1565,
+              "Kolumn 7": 167,
+              "Kolumn 8": 1732,
+              "Kolumn 9": 15,
+              "Kolumn 10": 10,
+              "Kolumn 11": 6,
+              "Kolumn 12": 541,
+              "Kolumn 13": 140,
+              "Kolumn 14": 1316,
+              "Kolumn 15": 3311,
+              "Kolumn 16": 454,
+              "Kolumn 17": 96,
+              "Kolumn 18": 4302,
+              "Kolumn 19": 473
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 2581,
+              "Kolumn 4": 15,
+              "Kolumn 6": 508,
+              "Kolumn 7": 100,
+              "Kolumn 8": 608,
+              "Kolumn 9": 11,
+              "Kolumn 10": 5,
+              "Kolumn 11": 12,
+              "Kolumn 12": 93,
+              "Kolumn 13": 15,
+              "Kolumn 14": 586,
+              "Kolumn 15": 831,
+              "Kolumn 16": 182,
+              "Kolumn 17": 17,
+              "Kolumn 18": 1258,
+              "Kolumn 19": 104
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 3708,
+              "Kolumn 4": 4,
+              "Kolumn 6": 975,
+              "Kolumn 7": 211,
+              "Kolumn 8": 1186,
+              "Kolumn 9": 16,
+              "Kolumn 10": 6,
+              "Kolumn 11": 14,
+              "Kolumn 12": 131,
+              "Kolumn 13": 53,
+              "Kolumn 14": 844,
+              "Kolumn 15": 1645,
+              "Kolumn 16": 431,
+              "Kolumn 17": 31,
+              "Kolumn 18": 2086,
+              "Kolumn 19": 183
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 10952,
+              "Kolumn 4": 68,
+              "Kolumn 6": 2246,
+              "Kolumn 7": 196,
+              "Kolumn 8": 2442,
+              "Kolumn 9": 11,
+              "Kolumn 10": 19,
+              "Kolumn 11": 42,
+              "Kolumn 12": 473,
+              "Kolumn 13": 90,
+              "Kolumn 14": 1244,
+              "Kolumn 15": 5124,
+              "Kolumn 16": 945,
+              "Kolumn 17": 75,
+              "Kolumn 18": 5847,
+              "Kolumn 19": 669
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 5048,
+              "Kolumn 4": 22,
+              "Kolumn 6": 889,
+              "Kolumn 7": 182,
+              "Kolumn 8": 1071,
+              "Kolumn 9": 20,
+              "Kolumn 10": 17,
+              "Kolumn 11": 95,
+              "Kolumn 12": 219,
+              "Kolumn 13": 82,
+              "Kolumn 14": 754,
+              "Kolumn 15": 1993,
+              "Kolumn 16": 419,
+              "Kolumn 17": 57,
+              "Kolumn 18": 3053,
+              "Kolumn 19": 616
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 41902,
+              "Kolumn 4": 177,
+              "Kolumn 6": 5441,
+              "Kolumn 7": 655,
+              "Kolumn 8": 6096,
+              "Kolumn 9": 72,
+              "Kolumn 10": 50,
+              "Kolumn 11": 124,
+              "Kolumn 12": 2019,
+              "Kolumn 13": 656,
+              "Kolumn 14": 3099,
+              "Kolumn 15": 9896,
+              "Kolumn 16": 1286,
+              "Kolumn 17": 243,
+              "Kolumn 18": 14700,
+              "Kolumn 19": 1654
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 25541,
+              "Kolumn 4": 126,
+              "Kolumn 6": 3155,
+              "Kolumn 7": 556,
+              "Kolumn 8": 3711,
+              "Kolumn 9": 46,
+              "Kolumn 10": 39,
+              "Kolumn 11": 36,
+              "Kolumn 12": 1571,
+              "Kolumn 13": 743,
+              "Kolumn 14": 2948,
+              "Kolumn 15": 7763,
+              "Kolumn 16": 932,
+              "Kolumn 17": 171,
+              "Kolumn 18": 12529,
+              "Kolumn 19": 2027
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 16857,
+              "Kolumn 4": 72,
+              "Kolumn 6": 2345,
+              "Kolumn 7": 369,
+              "Kolumn 8": 2714,
+              "Kolumn 9": 25,
+              "Kolumn 10": 17,
+              "Kolumn 11": 19,
+              "Kolumn 12": 909,
+              "Kolumn 13": 327,
+              "Kolumn 14": 1718,
+              "Kolumn 15": 5159,
+              "Kolumn 16": 733,
+              "Kolumn 17": 112,
+              "Kolumn 18": 7566,
+              "Kolumn 19": 1057
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 5269,
+              "Kolumn 4": 30,
+              "Kolumn 6": 784,
+              "Kolumn 7": 169,
+              "Kolumn 8": 953,
+              "Kolumn 9": 25,
+              "Kolumn 10": 14,
+              "Kolumn 11": 13,
+              "Kolumn 12": 237,
+              "Kolumn 13": 52,
+              "Kolumn 14": 628,
+              "Kolumn 15": 1163,
+              "Kolumn 16": 146,
+              "Kolumn 17": 35,
+              "Kolumn 18": 1695,
+              "Kolumn 19": 193
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 13806,
+              "Kolumn 4": 80,
+              "Kolumn 6": 2929,
+              "Kolumn 7": 383,
+              "Kolumn 8": 3312,
+              "Kolumn 9": 20,
+              "Kolumn 10": 28,
+              "Kolumn 11": 33,
+              "Kolumn 12": 463,
+              "Kolumn 13": 109,
+              "Kolumn 14": 1505,
+              "Kolumn 15": 7693,
+              "Kolumn 16": 1075,
+              "Kolumn 17": 113,
+              "Kolumn 18": 7621,
+              "Kolumn 19": 801
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 2",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10",
+          "Kolumn 11",
+          "Kolumn 12",
+          "Kolumn 13",
+          "Kolumn 14",
+          "Kolumn 15",
+          "Kolumn 16",
+          "Kolumn 17",
+          "Kolumn 18",
+          "Kolumn 19"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 1897,
+              "Kolumn 4": 85,
+              "Kolumn 6": 381,
+              "Kolumn 7": 116,
+              "Kolumn 8": 497,
+              "Kolumn 9": 6,
+              "Kolumn 10": 31,
+              "Kolumn 11": 6,
+              "Kolumn 12": 235,
+              "Kolumn 13": 189,
+              "Kolumn 14": 385,
+              "Kolumn 15": 1869,
+              "Kolumn 16": 145,
+              "Kolumn 17": 155,
+              "Kolumn 18": 1032,
+              "Kolumn 19": 355
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 3": 941,
+              "Kolumn 4": 54,
+              "Kolumn 6": 209,
+              "Kolumn 7": 129,
+              "Kolumn 8": 338,
+              "Kolumn 9": 1,
+              "Kolumn 10": 14,
+              "Kolumn 11": 6,
+              "Kolumn 12": 123,
+              "Kolumn 13": 89,
+              "Kolumn 14": 229,
+              "Kolumn 15": 1304,
+              "Kolumn 16": 100,
+              "Kolumn 17": 81,
+              "Kolumn 18": 583,
+              "Kolumn 19": 149
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 1575,
+              "Kolumn 4": 75,
+              "Kolumn 6": 323,
+              "Kolumn 7": 93,
+              "Kolumn 8": 416,
+              "Kolumn 9": 1,
+              "Kolumn 10": 30,
+              "Kolumn 12": 201,
+              "Kolumn 13": 113,
+              "Kolumn 14": 250,
+              "Kolumn 15": 1801,
+              "Kolumn 16": 206,
+              "Kolumn 17": 123,
+              "Kolumn 18": 784,
+              "Kolumn 19": 199
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 1475,
+              "Kolumn 4": 30,
+              "Kolumn 6": 348,
+              "Kolumn 7": 105,
+              "Kolumn 8": 453,
+              "Kolumn 9": 14,
+              "Kolumn 10": 17,
+              "Kolumn 11": 6,
+              "Kolumn 12": 180,
+              "Kolumn 13": 119,
+              "Kolumn 14": 332,
+              "Kolumn 15": 922,
+              "Kolumn 16": 104,
+              "Kolumn 17": 72,
+              "Kolumn 18": 526,
+              "Kolumn 19": 126
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 4757,
+              "Kolumn 4": 198,
+              "Kolumn 6": 835,
+              "Kolumn 7": 275,
+              "Kolumn 8": 1110,
+              "Kolumn 9": 13,
+              "Kolumn 10": 75,
+              "Kolumn 11": 22,
+              "Kolumn 12": 631,
+              "Kolumn 13": 550,
+              "Kolumn 14": 581,
+              "Kolumn 15": 2552,
+              "Kolumn 16": 218,
+              "Kolumn 17": 199,
+              "Kolumn 18": 1660,
+              "Kolumn 19": 442
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 1406,
+              "Kolumn 4": 61,
+              "Kolumn 6": 356,
+              "Kolumn 7": 122,
+              "Kolumn 8": 478,
+              "Kolumn 9": 16,
+              "Kolumn 10": 33,
+              "Kolumn 11": 4,
+              "Kolumn 12": 120,
+              "Kolumn 13": 154,
+              "Kolumn 14": 293,
+              "Kolumn 15": 842,
+              "Kolumn 16": 103,
+              "Kolumn 17": 55,
+              "Kolumn 18": 575,
+              "Kolumn 19": 132
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 2733,
+              "Kolumn 4": 76,
+              "Kolumn 6": 776,
+              "Kolumn 7": 181,
+              "Kolumn 8": 957,
+              "Kolumn 9": 18,
+              "Kolumn 10": 37,
+              "Kolumn 11": 13,
+              "Kolumn 12": 321,
+              "Kolumn 13": 183,
+              "Kolumn 14": 549,
+              "Kolumn 15": 1810,
+              "Kolumn 16": 270,
+              "Kolumn 17": 112,
+              "Kolumn 18": 1054,
+              "Kolumn 19": 264
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 4398,
+              "Kolumn 4": 259,
+              "Kolumn 6": 981,
+              "Kolumn 7": 282,
+              "Kolumn 8": 1263,
+              "Kolumn 9": 8,
+              "Kolumn 10": 84,
+              "Kolumn 11": 37,
+              "Kolumn 12": 806,
+              "Kolumn 13": 639,
+              "Kolumn 14": 665,
+              "Kolumn 15": 4466,
+              "Kolumn 16": 490,
+              "Kolumn 17": 291,
+              "Kolumn 18": 2104,
+              "Kolumn 19": 731
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 2656,
+              "Kolumn 4": 121,
+              "Kolumn 6": 574,
+              "Kolumn 7": 179,
+              "Kolumn 8": 753,
+              "Kolumn 9": 9,
+              "Kolumn 10": 37,
+              "Kolumn 11": 18,
+              "Kolumn 12": 362,
+              "Kolumn 13": 306,
+              "Kolumn 14": 374,
+              "Kolumn 15": 1598,
+              "Kolumn 16": 137,
+              "Kolumn 17": 115,
+              "Kolumn 18": 1040,
+              "Kolumn 19": 380
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 12181,
+              "Kolumn 4": 730,
+              "Kolumn 6": 2243,
+              "Kolumn 7": 575,
+              "Kolumn 8": 2818,
+              "Kolumn 9": 31,
+              "Kolumn 10": 196,
+              "Kolumn 11": 21,
+              "Kolumn 12": 2049,
+              "Kolumn 13": 1828,
+              "Kolumn 14": 1581,
+              "Kolumn 15": 6826,
+              "Kolumn 16": 621,
+              "Kolumn 17": 542,
+              "Kolumn 18": 3982,
+              "Kolumn 19": 1087
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 7573,
+              "Kolumn 4": 747,
+              "Kolumn 6": 1255,
+              "Kolumn 7": 331,
+              "Kolumn 8": 1586,
+              "Kolumn 9": 13,
+              "Kolumn 10": 163,
+              "Kolumn 11": 15,
+              "Kolumn 12": 1513,
+              "Kolumn 13": 2060,
+              "Kolumn 14": 1121,
+              "Kolumn 15": 4706,
+              "Kolumn 16": 366,
+              "Kolumn 17": 309,
+              "Kolumn 18": 2925,
+              "Kolumn 19": 994
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 6389,
+              "Kolumn 4": 455,
+              "Kolumn 6": 1102,
+              "Kolumn 7": 377,
+              "Kolumn 8": 1479,
+              "Kolumn 9": 16,
+              "Kolumn 10": 118,
+              "Kolumn 11": 18,
+              "Kolumn 12": 999,
+              "Kolumn 13": 937,
+              "Kolumn 14": 803,
+              "Kolumn 15": 3608,
+              "Kolumn 16": 280,
+              "Kolumn 17": 288,
+              "Kolumn 18": 2277,
+              "Kolumn 19": 745
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 3573,
+              "Kolumn 4": 116,
+              "Kolumn 6": 591,
+              "Kolumn 7": 189,
+              "Kolumn 8": 780,
+              "Kolumn 9": 27,
+              "Kolumn 10": 55,
+              "Kolumn 11": 9,
+              "Kolumn 12": 339,
+              "Kolumn 13": 300,
+              "Kolumn 14": 396,
+              "Kolumn 15": 1284,
+              "Kolumn 16": 108,
+              "Kolumn 17": 99,
+              "Kolumn 18": 836,
+              "Kolumn 19": 308
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 4518,
+              "Kolumn 4": 288,
+              "Kolumn 6": 1137,
+              "Kolumn 7": 337,
+              "Kolumn 8": 1474,
+              "Kolumn 9": 15,
+              "Kolumn 10": 98,
+              "Kolumn 11": 10,
+              "Kolumn 12": 679,
+              "Kolumn 13": 457,
+              "Kolumn 14": 680,
+              "Kolumn 15": 4888,
+              "Kolumn 16": 703,
+              "Kolumn 17": 332,
+              "Kolumn 18": 2373,
+              "Kolumn 19": 828
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 3 Personbil",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10",
+          "Kolumn 11",
+          "Kolumn 12",
+          "Kolumn 13",
+          "Kolumn 14"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 3899,
+              "Kolumn 5": 1001,
+              "Kolumn 6": 1722,
+              "Kolumn 7": 1176,
+              "Kolumn 9": 777,
+              "Kolumn 11": 7,
+              "Kolumn 12": 61,
+              "Kolumn 13": 646,
+              "Kolumn 14": 451
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 3": 1719,
+              "Kolumn 5": 463,
+              "Kolumn 6": 683,
+              "Kolumn 7": 573,
+              "Kolumn 9": 442,
+              "Kolumn 11": 4,
+              "Kolumn 12": 39,
+              "Kolumn 13": 670,
+              "Kolumn 14": 447
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 2841,
+              "Kolumn 5": 744,
+              "Kolumn 6": 1186,
+              "Kolumn 7": 911,
+              "Kolumn 9": 717,
+              "Kolumn 11": 9,
+              "Kolumn 12": 140,
+              "Kolumn 13": 606,
+              "Kolumn 14": 411
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 2120,
+              "Kolumn 5": 543,
+              "Kolumn 6": 943,
+              "Kolumn 7": 634,
+              "Kolumn 9": 528,
+              "Kolumn 12": 70,
+              "Kolumn 13": 664,
+              "Kolumn 14": 466
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 9713,
+              "Kolumn 5": 2734,
+              "Kolumn 6": 4593,
+              "Kolumn 7": 2386,
+              "Kolumn 9": 1604,
+              "Kolumn 11": 23,
+              "Kolumn 12": 729,
+              "Kolumn 13": 636,
+              "Kolumn 14": 480
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 2581,
+              "Kolumn 5": 638,
+              "Kolumn 6": 1122,
+              "Kolumn 7": 821,
+              "Kolumn 9": 693,
+              "Kolumn 11": 4,
+              "Kolumn 12": 79,
+              "Kolumn 13": 643,
+              "Kolumn 14": 439
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 3708,
+              "Kolumn 5": 874,
+              "Kolumn 6": 1571,
+              "Kolumn 7": 1263,
+              "Kolumn 9": 1041,
+              "Kolumn 11": 21,
+              "Kolumn 12": 118,
+              "Kolumn 13": 649,
+              "Kolumn 14": 428
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 10952,
+              "Kolumn 5": 3271,
+              "Kolumn 6": 5669,
+              "Kolumn 7": 2012,
+              "Kolumn 9": 1367,
+              "Kolumn 11": 14,
+              "Kolumn 12": 417,
+              "Kolumn 13": 639,
+              "Kolumn 14": 521
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 5048,
+              "Kolumn 5": 1344,
+              "Kolumn 6": 2465,
+              "Kolumn 7": 1239,
+              "Kolumn 9": 937,
+              "Kolumn 11": 107,
+              "Kolumn 12": 128,
+              "Kolumn 13": 646,
+              "Kolumn 14": 487
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 41902,
+              "Kolumn 5": 11738,
+              "Kolumn 6": 21996,
+              "Kolumn 7": 8168,
+              "Kolumn 9": 4369,
+              "Kolumn 11": 102,
+              "Kolumn 12": 2500,
+              "Kolumn 13": 522,
+              "Kolumn 14": 420
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 25541,
+              "Kolumn 5": 7463,
+              "Kolumn 6": 13445,
+              "Kolumn 7": 4633,
+              "Kolumn 9": 3299,
+              "Kolumn 11": 55,
+              "Kolumn 12": 1040,
+              "Kolumn 13": 605,
+              "Kolumn 14": 495
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 16857,
+              "Kolumn 5": 4745,
+              "Kolumn 6": 8790,
+              "Kolumn 7": 3322,
+              "Kolumn 9": 1996,
+              "Kolumn 11": 42,
+              "Kolumn 12": 693,
+              "Kolumn 13": 590,
+              "Kolumn 14": 474
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 5269,
+              "Kolumn 5": 1609,
+              "Kolumn 6": 2756,
+              "Kolumn 7": 904,
+              "Kolumn 9": 635,
+              "Kolumn 11": 6,
+              "Kolumn 12": 180,
+              "Kolumn 13": 582,
+              "Kolumn 14": 482
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 13806,
+              "Kolumn 5": 3808,
+              "Kolumn 6": 7191,
+              "Kolumn 7": 2807,
+              "Kolumn 9": 1657,
+              "Kolumn 11": 53,
+              "Kolumn 12": 710,
+              "Kolumn 13": 616,
+              "Kolumn 14": 491
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 4 Personbil",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10",
+          "Kolumn 11"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 1388,
+              "Kolumn 4": 2234,
+              "Kolumn 5": 73,
+              "Kolumn 6": 32,
+              "Kolumn 7": 89,
+              "Kolumn 8": 82,
+              "Kolumn 9": 1,
+              "Kolumn 11": 3899
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 3": 687,
+              "Kolumn 4": 908,
+              "Kolumn 5": 20,
+              "Kolumn 6": 22,
+              "Kolumn 7": 35,
+              "Kolumn 8": 45,
+              "Kolumn 9": 2,
+              "Kolumn 11": 1719
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 1234,
+              "Kolumn 4": 1356,
+              "Kolumn 5": 74,
+              "Kolumn 6": 38,
+              "Kolumn 7": 62,
+              "Kolumn 8": 75,
+              "Kolumn 9": 1,
+              "Kolumn 10": 1,
+              "Kolumn 11": 2841
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 950,
+              "Kolumn 4": 1004,
+              "Kolumn 5": 36,
+              "Kolumn 6": 35,
+              "Kolumn 7": 39,
+              "Kolumn 8": 55,
+              "Kolumn 9": 1,
+              "Kolumn 11": 2120
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 4067,
+              "Kolumn 4": 4340,
+              "Kolumn 5": 329,
+              "Kolumn 6": 345,
+              "Kolumn 7": 369,
+              "Kolumn 8": 256,
+              "Kolumn 9": 7,
+              "Kolumn 11": 9713
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 1019,
+              "Kolumn 4": 1304,
+              "Kolumn 5": 62,
+              "Kolumn 6": 81,
+              "Kolumn 7": 77,
+              "Kolumn 8": 37,
+              "Kolumn 9": 1,
+              "Kolumn 11": 2581
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 1630,
+              "Kolumn 4": 1807,
+              "Kolumn 5": 42,
+              "Kolumn 6": 45,
+              "Kolumn 7": 102,
+              "Kolumn 8": 80,
+              "Kolumn 9": 2,
+              "Kolumn 11": 3708
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 4774,
+              "Kolumn 4": 4964,
+              "Kolumn 5": 297,
+              "Kolumn 6": 227,
+              "Kolumn 7": 392,
+              "Kolumn 8": 291,
+              "Kolumn 9": 7,
+              "Kolumn 11": 10952
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 2158,
+              "Kolumn 4": 2353,
+              "Kolumn 5": 148,
+              "Kolumn 6": 122,
+              "Kolumn 7": 142,
+              "Kolumn 8": 113,
+              "Kolumn 9": 11,
+              "Kolumn 10": 1,
+              "Kolumn 11": 5048
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 17363,
+              "Kolumn 4": 16425,
+              "Kolumn 5": 2581,
+              "Kolumn 6": 1714,
+              "Kolumn 7": 2439,
+              "Kolumn 8": 1198,
+              "Kolumn 9": 179,
+              "Kolumn 10": 3,
+              "Kolumn 11": 41902
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 10370,
+              "Kolumn 4": 10786,
+              "Kolumn 5": 1405,
+              "Kolumn 6": 1241,
+              "Kolumn 7": 1002,
+              "Kolumn 8": 715,
+              "Kolumn 9": 21,
+              "Kolumn 10": 1,
+              "Kolumn 11": 25541
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 7015,
+              "Kolumn 4": 7265,
+              "Kolumn 5": 631,
+              "Kolumn 6": 661,
+              "Kolumn 7": 606,
+              "Kolumn 8": 463,
+              "Kolumn 9": 216,
+              "Kolumn 11": 16857
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 2465,
+              "Kolumn 4": 2281,
+              "Kolumn 5": 97,
+              "Kolumn 6": 163,
+              "Kolumn 7": 123,
+              "Kolumn 8": 133,
+              "Kolumn 9": 6,
+              "Kolumn 10": 1,
+              "Kolumn 11": 5269
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 6210,
+              "Kolumn 4": 6057,
+              "Kolumn 5": 250,
+              "Kolumn 6": 395,
+              "Kolumn 7": 544,
+              "Kolumn 8": 341,
+              "Kolumn 9": 9,
+              "Kolumn 11": 13806
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 5 Personbil",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10",
+          "Kolumn 11"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 6,
+              "Kolumn 4": 13,
+              "Kolumn 5": 23,
+              "Kolumn 7": 17,
+              "Kolumn 10": 1,
+              "Kolumn 11": 60
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 3": 5,
+              "Kolumn 4": 5,
+              "Kolumn 7": 3,
+              "Kolumn 11": 13
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 6,
+              "Kolumn 4": 10,
+              "Kolumn 5": 7,
+              "Kolumn 6": 2,
+              "Kolumn 7": 10,
+              "Kolumn 10": 1,
+              "Kolumn 11": 36
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 11,
+              "Kolumn 4": 9,
+              "Kolumn 5": 3,
+              "Kolumn 6": 2,
+              "Kolumn 7": 9,
+              "Kolumn 8": 1,
+              "Kolumn 11": 35
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 47,
+              "Kolumn 4": 36,
+              "Kolumn 5": 40,
+              "Kolumn 6": 50,
+              "Kolumn 7": 101,
+              "Kolumn 11": 274
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 6,
+              "Kolumn 4": 7,
+              "Kolumn 5": 9,
+              "Kolumn 6": 5,
+              "Kolumn 7": 5,
+              "Kolumn 11": 32
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 17,
+              "Kolumn 4": 23,
+              "Kolumn 5": 4,
+              "Kolumn 6": 1,
+              "Kolumn 7": 38,
+              "Kolumn 11": 83
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 85,
+              "Kolumn 4": 35,
+              "Kolumn 5": 48,
+              "Kolumn 6": 16,
+              "Kolumn 7": 76,
+              "Kolumn 11": 260
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 8,
+              "Kolumn 4": 9,
+              "Kolumn 5": 19,
+              "Kolumn 6": 1,
+              "Kolumn 7": 15,
+              "Kolumn 8": 1,
+              "Kolumn 11": 53
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 336,
+              "Kolumn 4": 173,
+              "Kolumn 5": 422,
+              "Kolumn 6": 165,
+              "Kolumn 7": 439,
+              "Kolumn 8": 8,
+              "Kolumn 11": 1543
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 35,
+              "Kolumn 4": 51,
+              "Kolumn 5": 197,
+              "Kolumn 6": 119,
+              "Kolumn 7": 106,
+              "Kolumn 8": 3,
+              "Kolumn 11": 511
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 43,
+              "Kolumn 4": 63,
+              "Kolumn 5": 60,
+              "Kolumn 6": 95,
+              "Kolumn 7": 89,
+              "Kolumn 8": 10,
+              "Kolumn 9": 1,
+              "Kolumn 11": 361
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 15,
+              "Kolumn 4": 19,
+              "Kolumn 5": 8,
+              "Kolumn 6": 15,
+              "Kolumn 7": 13,
+              "Kolumn 11": 70
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 55,
+              "Kolumn 4": 80,
+              "Kolumn 5": 40,
+              "Kolumn 6": 35,
+              "Kolumn 7": 126,
+              "Kolumn 8": 3,
+              "Kolumn 11": 339
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 6 Lätt lastbil",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10",
+          "Kolumn 11"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 64,
+              "Kolumn 4": 1034,
+              "Kolumn 5": 33,
+              "Kolumn 8": 11,
+              "Kolumn 11": 1142
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 3": 42,
+              "Kolumn 4": 380,
+              "Kolumn 5": 5,
+              "Kolumn 8": 5,
+              "Kolumn 9": 3,
+              "Kolumn 11": 435
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 41,
+              "Kolumn 4": 699,
+              "Kolumn 5": 12,
+              "Kolumn 7": 1,
+              "Kolumn 8": 12,
+              "Kolumn 9": 1,
+              "Kolumn 11": 766
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 25,
+              "Kolumn 4": 484,
+              "Kolumn 5": 2,
+              "Kolumn 7": 1,
+              "Kolumn 8": 5,
+              "Kolumn 11": 517
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 91,
+              "Kolumn 4": 1435,
+              "Kolumn 5": 22,
+              "Kolumn 7": 5,
+              "Kolumn 8": 12,
+              "Kolumn 11": 1565
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 23,
+              "Kolumn 4": 481,
+              "Kolumn 5": 3,
+              "Kolumn 8": 1,
+              "Kolumn 11": 508
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 47,
+              "Kolumn 4": 912,
+              "Kolumn 5": 4,
+              "Kolumn 8": 12,
+              "Kolumn 11": 975
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 115,
+              "Kolumn 4": 2045,
+              "Kolumn 5": 43,
+              "Kolumn 6": 4,
+              "Kolumn 7": 1,
+              "Kolumn 8": 36,
+              "Kolumn 9": 2,
+              "Kolumn 11": 2246
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 65,
+              "Kolumn 4": 802,
+              "Kolumn 5": 8,
+              "Kolumn 7": 1,
+              "Kolumn 8": 13,
+              "Kolumn 11": 889
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 333,
+              "Kolumn 4": 4717,
+              "Kolumn 5": 275,
+              "Kolumn 6": 1,
+              "Kolumn 7": 15,
+              "Kolumn 8": 65,
+              "Kolumn 9": 35,
+              "Kolumn 11": 5441
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 233,
+              "Kolumn 4": 2696,
+              "Kolumn 5": 135,
+              "Kolumn 7": 6,
+              "Kolumn 8": 80,
+              "Kolumn 9": 5,
+              "Kolumn 11": 3155
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 140,
+              "Kolumn 4": 2074,
+              "Kolumn 5": 48,
+              "Kolumn 7": 1,
+              "Kolumn 8": 26,
+              "Kolumn 9": 56,
+              "Kolumn 11": 2345
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 50,
+              "Kolumn 4": 721,
+              "Kolumn 5": 2,
+              "Kolumn 8": 11,
+              "Kolumn 11": 784
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 173,
+              "Kolumn 4": 2643,
+              "Kolumn 5": 38,
+              "Kolumn 7": 6,
+              "Kolumn 8": 68,
+              "Kolumn 9": 1,
+              "Kolumn 11": 2929
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 7 Tung lastbil",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10",
+          "Kolumn 11"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 4": 140,
+              "Kolumn 11": 140
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 4": 100,
+              "Kolumn 11": 100
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 4": 71,
+              "Kolumn 11": 71
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 4": 68,
+              "Kolumn 11": 68
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 2,
+              "Kolumn 4": 165,
+              "Kolumn 11": 167
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 99,
+              "Kolumn 11": 100
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 4": 205,
+              "Kolumn 5": 2,
+              "Kolumn 8": 2,
+              "Kolumn 9": 2,
+              "Kolumn 11": 211
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 2,
+              "Kolumn 4": 193,
+              "Kolumn 5": 1,
+              "Kolumn 11": 196
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 3,
+              "Kolumn 4": 179,
+              "Kolumn 11": 182
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 7,
+              "Kolumn 4": 630,
+              "Kolumn 5": 2,
+              "Kolumn 8": 12,
+              "Kolumn 9": 4,
+              "Kolumn 11": 655
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 5,
+              "Kolumn 4": 546,
+              "Kolumn 5": 5,
+              "Kolumn 11": 556
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 363,
+              "Kolumn 8": 4,
+              "Kolumn 9": 1,
+              "Kolumn 11": 369
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 4": 168,
+              "Kolumn 9": 1,
+              "Kolumn 11": 169
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 2,
+              "Kolumn 4": 379,
+              "Kolumn 5": 2,
+              "Kolumn 11": 383
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 8 Buss",
+        "columns": [
+          "Västerbottens län",
+          "Umeå · Lycksele · Skellefteå",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9",
+          "Kolumn 10"
+        ],
+        "rows": [
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 4": 2,
+              "Kolumn 10": 2
+            }
+          },
+          {
+            "municipality": "Arjeplog",
+            "values": {}
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {}
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 4": 1,
+              "Kolumn 10": 1
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 4": 6,
+              "Kolumn 10": 6
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 4": 12,
+              "Kolumn 10": 12
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 4": 14,
+              "Kolumn 10": 14
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 4": 42,
+              "Kolumn 10": 42
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 4": 95,
+              "Kolumn 10": 95
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 4": 96,
+              "Kolumn 5": 4,
+              "Kolumn 8": 24,
+              "Kolumn 10": 124
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 4": 21,
+              "Kolumn 8": 15,
+              "Kolumn 10": 36
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 4": 19,
+              "Kolumn 10": 19
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 4": 13,
+              "Kolumn 10": 13
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 32,
+              "Kolumn 10": 33
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "injuries": {
+    "source": "https://prod.trafa.se/globalassets/statistik/vagtrafik/vagtrafikskador/2025/vagtrafikskador-2025.xlsx",
+    "year": 2025,
+    "sheets": []
+  },
+  "service": {
+    "source": "https://www.trafa.se/globalassets/statistik/kollektivtrafik/fardtjanst/2025/fardtjanst-och-riksfardtjanst-2025.xlsx",
+    "year": 2025,
+    "sheets": [
+      {
+        "title": "Tabell 2b",
+        "columns": [
+          "Kolumn 1",
+          "VÄNNÄS · ÅSELE · Länet totalt County total",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "Kolumn 6",
+          "Kolumn 7",
+          "Kolumn 8",
+          "Kolumn 9"
+        ],
+        "rows": [
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 1": "Norrbotten",
+              "Kolumn 3": 2,
+              "Kolumn 4": 4,
+              "Kolumn 5": 34,
+              "Kolumn 6": 49,
+              "Kolumn 7": 36,
+              "Kolumn 8": 53,
+              "Kolumn 9": 89
+            }
+          },
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 15,
+              "Kolumn 4": 17,
+              "Kolumn 5": 54,
+              "Kolumn 6": 94,
+              "Kolumn 7": 69,
+              "Kolumn 8": 111,
+              "Kolumn 9": 180
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 105,
+              "Kolumn 4": 120,
+              "Kolumn 5": 351,
+              "Kolumn 6": 601,
+              "Kolumn 7": 456,
+              "Kolumn 8": 721,
+              "Kolumn 9": 1177
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 41,
+              "Kolumn 4": 52,
+              "Kolumn 5": 158,
+              "Kolumn 6": 268,
+              "Kolumn 7": 199,
+              "Kolumn 8": 320,
+              "Kolumn 9": 519
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 39,
+              "Kolumn 4": 35,
+              "Kolumn 5": 134,
+              "Kolumn 6": 223,
+              "Kolumn 7": 173,
+              "Kolumn 8": 258,
+              "Kolumn 9": 431
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 11,
+              "Kolumn 4": 15,
+              "Kolumn 5": 51,
+              "Kolumn 6": 97,
+              "Kolumn 7": 62,
+              "Kolumn 8": 112,
+              "Kolumn 9": 174
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 53,
+              "Kolumn 4": 54,
+              "Kolumn 5": 243,
+              "Kolumn 6": 483,
+              "Kolumn 7": 296,
+              "Kolumn 8": 537,
+              "Kolumn 9": 833
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 75,
+              "Kolumn 4": 67,
+              "Kolumn 5": 240,
+              "Kolumn 6": 431,
+              "Kolumn 7": 315,
+              "Kolumn 8": 498,
+              "Kolumn 9": 813
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 342,
+              "Kolumn 4": 361,
+              "Kolumn 5": 945,
+              "Kolumn 6": 1905,
+              "Kolumn 7": 1287,
+              "Kolumn 8": 2266,
+              "Kolumn 9": 3553
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 14,
+              "Kolumn 4": 12,
+              "Kolumn 5": 86,
+              "Kolumn 6": 119,
+              "Kolumn 7": 100,
+              "Kolumn 8": 131,
+              "Kolumn 9": 231
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 152,
+              "Kolumn 4": 132,
+              "Kolumn 5": 419,
+              "Kolumn 6": 894,
+              "Kolumn 7": 571,
+              "Kolumn 8": 1026,
+              "Kolumn 9": 1597
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 26,
+              "Kolumn 4": 20,
+              "Kolumn 5": 91,
+              "Kolumn 6": 167,
+              "Kolumn 7": 117,
+              "Kolumn 8": 187,
+              "Kolumn 9": 304
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 14,
+              "Kolumn 4": 18,
+              "Kolumn 5": 61,
+              "Kolumn 6": 121,
+              "Kolumn 7": 75,
+              "Kolumn 8": 139,
+              "Kolumn 9": 214
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 13,
+              "Kolumn 4": 9,
+              "Kolumn 5": 50,
+              "Kolumn 6": 111,
+              "Kolumn 7": 63,
+              "Kolumn 8": 120,
+              "Kolumn 9": 183
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 3b",
+        "columns": [
+          "Kolumn 1",
+          "VÄNNÄS · ÅSELE · Länet totalt County total",
+          "Kolumn 3",
+          "6.98 · 3.11 · 7.53",
+          "10.13 · 5.84 · 8.67",
+          "68.97 · 67.42 · 88.22",
+          "113.95 · 71.09 · 128.84",
+          "19.64 · 23.43 · 24.07",
+          "34.06 · 27.39 · 36.62",
+          "26.7 · 25.31 · 30.24"
+        ],
+        "rows": [
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 1": "Norrbotten",
+              "Kolumn 3": 89,
+              "6.98 · 3.11 · 7.53": 2.11,
+              "10.13 · 5.84 · 8.67": 4.84,
+              "68.97 · 67.42 · 88.22": 82.73,
+              "113.95 · 71.09 · 128.84": 121.14,
+              "19.64 · 23.43 · 24.07": 26.53,
+              "34.06 · 27.39 · 36.62": 43.04,
+              "26.7 · 25.31 · 30.24": 34.38
+            }
+          },
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 180,
+              "6.98 · 3.11 · 7.53": 6.53,
+              "10.13 · 5.84 · 8.67": 8.41,
+              "68.97 · 67.42 · 88.22": 63.16,
+              "113.95 · 71.09 · 128.84": 106.27,
+              "19.64 · 23.43 · 24.07": 21.88,
+              "34.06 · 27.39 · 36.62": 38.2,
+              "26.7 · 25.31 · 30.24": 29.71
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 1177,
+              "6.98 · 3.11 · 7.53": 9.42,
+              "10.13 · 5.84 · 8.67": 12.18,
+              "68.97 · 67.42 · 88.22": 100.98,
+              "113.95 · 71.09 · 128.84": 154.94,
+              "19.64 · 23.43 · 24.07": 31.19,
+              "34.06 · 27.39 · 36.62": 52.51,
+              "26.7 · 25.31 · 30.24": 41.52
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 519,
+              "6.98 · 3.11 · 7.53": 6.11,
+              "10.13 · 5.84 · 8.67": 8.7,
+              "68.97 · 67.42 · 88.22": 71.49,
+              "113.95 · 71.09 · 128.84": 117.96,
+              "19.64 · 23.43 · 24.07": 22.31,
+              "34.06 · 27.39 · 36.62": 38.78,
+              "26.7 · 25.31 · 30.24": 30.22
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 431,
+              "6.98 · 3.11 · 7.53": 12,
+              "10.13 · 5.84 · 8.67": 12.21,
+              "68.97 · 67.42 · 88.22": 92.13,
+              "113.95 · 71.09 · 128.84": 145.99,
+              "19.64 · 23.43 · 24.07": 36.78,
+              "34.06 · 27.39 · 36.62": 58.72,
+              "26.7 · 25.31 · 30.24": 47.38
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 174,
+              "6.98 · 3.11 · 7.53": 6.52,
+              "10.13 · 5.84 · 8.67": 9.67,
+              "68.97 · 67.42 · 88.22": 68.87,
+              "113.95 · 71.09 · 128.84": 136.72,
+              "19.64 · 23.43 · 24.07": 25.54,
+              "34.06 · 27.39 · 36.62": 49.54,
+              "26.7 · 25.31 · 30.24": 37.11
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 833,
+              "6.98 · 3.11 · 7.53": 9.38,
+              "10.13 · 5.84 · 8.67": 10.72,
+              "68.97 · 67.42 · 88.22": 108.14,
+              "113.95 · 71.09 · 128.84": 201.71,
+              "19.64 · 23.43 · 24.07": 37.47,
+              "34.06 · 27.39 · 36.62": 72.26,
+              "26.7 · 25.31 · 30.24": 54.33
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 813,
+              "6.98 · 3.11 · 7.53": 7.92,
+              "10.13 · 5.84 · 8.67": 8.3,
+              "68.97 · 67.42 · 88.22": 101.07,
+              "113.95 · 71.09 · 128.84": 173.9,
+              "19.64 · 23.43 · 24.07": 26.58,
+              "34.06 · 27.39 · 36.62": 47.19,
+              "26.7 · 25.31 · 30.24": 36.29
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 3553,
+              "6.98 · 3.11 · 7.53": 10.4,
+              "10.13 · 5.84 · 8.67": 12.1,
+              "68.97 · 67.42 · 88.22": 118.38,
+              "113.95 · 71.09 · 128.84": 205.25,
+              "19.64 · 23.43 · 24.07": 31.49,
+              "34.06 · 27.39 · 36.62": 57.94,
+              "26.7 · 25.31 · 30.24": 44.42
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 231,
+              "6.98 · 3.11 · 7.53": 7.06,
+              "10.13 · 5.84 · 8.67": 7.04,
+              "68.97 · 67.42 · 88.22": 77.55,
+              "113.95 · 71.09 · 128.84": 121.93,
+              "19.64 · 23.43 · 24.07": 32.35,
+              "34.06 · 27.39 · 36.62": 48.87,
+              "26.7 · 25.31 · 30.24": 40.02
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 1597,
+              "6.98 · 3.11 · 7.53": 9.28,
+              "10.13 · 5.84 · 8.67": 8.55,
+              "68.97 · 67.42 · 88.22": 85.1,
+              "113.95 · 71.09 · 128.84": 159.67,
+              "19.64 · 23.43 · 24.07": 26.81,
+              "34.06 · 27.39 · 36.62": 48.79,
+              "26.7 · 25.31 · 30.24": 37.73
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 304,
+              "6.98 · 3.11 · 7.53": 8.69,
+              "10.13 · 5.84 · 8.67": 7.48,
+              "68.97 · 67.42 · 88.22": 87.58,
+              "113.95 · 71.09 · 128.84": 151.06,
+              "19.64 · 23.43 · 24.07": 29.03,
+              "34.06 · 27.39 · 36.62": 49.47,
+              "26.7 · 25.31 · 30.24": 38.92
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 214,
+              "6.98 · 3.11 · 7.53": 12.72,
+              "10.13 · 5.84 · 8.67": 19.02,
+              "68.97 · 67.42 · 88.22": 105.54,
+              "113.95 · 71.09 · 128.84": 219.8,
+              "19.64 · 23.43 · 24.07": 44.67,
+              "34.06 · 27.39 · 36.62": 92.85,
+              "26.7 · 25.31 · 30.24": 67.38
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 183,
+              "6.98 · 3.11 · 7.53": 10.06,
+              "10.13 · 5.84 · 8.67": 7.63,
+              "68.97 · 67.42 · 88.22": 62.23,
+              "113.95 · 71.09 · 128.84": 147.7,
+              "19.64 · 23.43 · 24.07": 30.06,
+              "34.06 · 27.39 · 36.62": 62.14,
+              "26.7 · 25.31 · 30.24": 45.45
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 4",
+        "columns": [
+          "Kolumn 1",
+          "VÄNNÄS · ÅSELE · Länet totalt County total",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "35.98 · 14.97 · 50.34",
+          "17.44 · 27.66 · 39.49",
+          "24.4 · 21.5 · 43.88",
+          "65.22 · 63.64 · 65.65",
+          "56.86 · 85.71 · 68.37",
+          "87.74 · 80.27 · 67.27"
+        ],
+        "rows": [
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 1": "Norrbotten",
+              "Kolumn 3": 613,
+              "Kolumn 4": 909,
+              "Kolumn 5": 1522,
+              "35.98 · 14.97 · 50.34": 17.03,
+              "17.44 · 27.66 · 39.49": 17.15,
+              "24.4 · 21.5 · 43.88": 17.1,
+              "65.22 · 63.64 · 65.65": 38.89,
+              "56.86 · 85.71 · 68.37": 58.49,
+              "87.74 · 80.27 · 67.27": 50.56
+            }
+          },
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 696,
+              "Kolumn 4": 1123,
+              "Kolumn 5": 1819,
+              "35.98 · 14.97 · 50.34": 10.09,
+              "17.44 · 27.66 · 39.49": 10.12,
+              "24.4 · 21.5 · 43.88": 10.11,
+              "65.22 · 63.64 · 65.65": 46.38,
+              "56.86 · 85.71 · 68.37": 40.54,
+              "87.74 · 80.27 · 67.27": 42.78
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 13595,
+              "Kolumn 4": 22461,
+              "Kolumn 5": 36056,
+              "35.98 · 14.97 · 50.34": 29.81,
+              "17.44 · 27.66 · 39.49": 31.15,
+              "24.4 · 21.5 · 43.88": 30.63,
+              "65.22 · 63.64 · 65.65": 73.68,
+              "56.86 · 85.71 · 68.37": 74.2,
+              "87.74 · 80.27 · 67.27": 74
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 2891,
+              "Kolumn 4": 4525,
+              "Kolumn 5": 7416,
+              "35.98 · 14.97 · 50.34": 14.53,
+              "17.44 · 27.66 · 39.49": 14.14,
+              "24.4 · 21.5 · 43.88": 14.29,
+              "65.22 · 63.64 · 65.65": 49.75,
+              "56.86 · 85.71 · 68.37": 58.75,
+              "87.74 · 80.27 · 67.27": 55.3
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 2920,
+              "Kolumn 4": 5645,
+              "Kolumn 5": 8565,
+              "35.98 · 14.97 · 50.34": 16.88,
+              "17.44 · 27.66 · 39.49": 21.88,
+              "24.4 · 21.5 · 43.88": 19.87,
+              "65.22 · 63.64 · 65.65": 45.66,
+              "56.86 · 85.71 · 68.37": 57.75,
+              "87.74 · 80.27 · 67.27": 52.9
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 428,
+              "Kolumn 4": 1494,
+              "Kolumn 5": 1922,
+              "35.98 · 14.97 · 50.34": 6.9,
+              "17.44 · 27.66 · 39.49": 13.34,
+              "24.4 · 21.5 · 43.88": 11.05,
+              "65.22 · 63.64 · 65.65": 56.45,
+              "56.86 · 85.71 · 68.37": 62.5,
+              "87.74 · 80.27 · 67.27": 60.34
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 5948,
+              "Kolumn 4": 11018,
+              "Kolumn 5": 16966,
+              "35.98 · 14.97 · 50.34": 20.09,
+              "17.44 · 27.66 · 39.49": 20.52,
+              "24.4 · 21.5 · 43.88": 20.37,
+              "65.22 · 63.64 · 65.65": 66.89,
+              "56.86 · 85.71 · 68.37": 67.23,
+              "87.74 · 80.27 · 67.27": 67.11
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 12612,
+              "Kolumn 4": 19865,
+              "Kolumn 5": 32477,
+              "35.98 · 14.97 · 50.34": 40.04,
+              "17.44 · 27.66 · 39.49": 39.89,
+              "24.4 · 21.5 · 43.88": 39.95,
+              "65.22 · 63.64 · 65.65": 72.38,
+              "56.86 · 85.71 · 68.37": 70.28,
+              "87.74 · 80.27 · 67.27": 71.09
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 37165,
+              "Kolumn 4": 54437,
+              "Kolumn 5": 91602,
+              "35.98 · 14.97 · 50.34": 28.88,
+              "17.44 · 27.66 · 39.49": 24.02,
+              "24.4 · 21.5 · 43.88": 25.78,
+              "65.22 · 63.64 · 65.65": 74.05,
+              "56.86 · 85.71 · 68.37": 72.42,
+              "87.74 · 80.27 · 67.27": 73.01
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 3418,
+              "Kolumn 4": 1354,
+              "Kolumn 5": 4772,
+              "35.98 · 14.97 · 50.34": 34.18,
+              "17.44 · 27.66 · 39.49": 10.34,
+              "24.4 · 21.5 · 43.88": 20.66,
+              "65.22 · 63.64 · 65.65": 60,
+              "56.86 · 85.71 · 68.37": 51.15,
+              "87.74 · 80.27 · 67.27": 54.98
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 26585,
+              "Kolumn 4": 27899,
+              "Kolumn 5": 54484,
+              "35.98 · 14.97 · 50.34": 46.56,
+              "17.44 · 27.66 · 39.49": 27.19,
+              "24.4 · 21.5 · 43.88": 34.12,
+              "65.22 · 63.64 · 65.65": 84.76,
+              "56.86 · 85.71 · 68.37": 69.69,
+              "87.74 · 80.27 · 67.27": 75.08
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 2856,
+              "Kolumn 4": 2449,
+              "Kolumn 5": 5305,
+              "35.98 · 14.97 · 50.34": 24.41,
+              "17.44 · 27.66 · 39.49": 13.1,
+              "24.4 · 21.5 · 43.88": 17.45,
+              "65.22 · 63.64 · 65.65": 68.38,
+              "56.86 · 85.71 · 68.37": 57.75,
+              "87.74 · 80.27 · 67.27": 61.84
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 1605,
+              "Kolumn 4": 1177,
+              "Kolumn 5": 2782,
+              "35.98 · 14.97 · 50.34": 21.4,
+              "17.44 · 27.66 · 39.49": 8.47,
+              "24.4 · 21.5 · 43.88": 13,
+              "65.22 · 63.64 · 65.65": 53.33,
+              "56.86 · 85.71 · 68.37": 56.83,
+              "87.74 · 80.27 · 67.27": 55.61
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 1025,
+              "Kolumn 4": 1605,
+              "Kolumn 5": 2630,
+              "35.98 · 14.97 · 50.34": 16.27,
+              "17.44 · 27.66 · 39.49": 13.38,
+              "24.4 · 21.5 · 43.88": 14.37,
+              "65.22 · 63.64 · 65.65": 53.97,
+              "56.86 · 85.71 · 68.37": 52.5,
+              "87.74 · 80.27 · 67.27": 53.01
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 7b",
+        "columns": [
+          "Kolumn 1",
+          "VÄNNÄS · ÅSELE · Länet totalt County total",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5"
+        ],
+        "rows": [
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 1": "Norrbotten",
+              "Kolumn 3": 1,
+              "Kolumn 4": 4,
+              "Kolumn 5": 5
+            }
+          },
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 4,
+              "Kolumn 4": 6,
+              "Kolumn 5": 10
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 4,
+              "Kolumn 4": 7,
+              "Kolumn 5": 11
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 2,
+              "Kolumn 5": 3
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 3,
+              "Kolumn 5": 4
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 4,
+              "Kolumn 4": 2,
+              "Kolumn 5": 6
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 5,
+              "Kolumn 4": 4,
+              "Kolumn 5": 9
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 3,
+              "Kolumn 4": 3,
+              "Kolumn 5": 6
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 18,
+              "Kolumn 4": 35,
+              "Kolumn 5": 53
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 2,
+              "Kolumn 4": 2,
+              "Kolumn 5": 4
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 9,
+              "Kolumn 4": 19,
+              "Kolumn 5": 28
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 2,
+              "Kolumn 5": 3
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 5": 1
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 1,
+              "Kolumn 5": 2
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 8b",
+        "columns": [
+          "Kolumn 1",
+          "VÄNNÄS · ÅSELE · Länet totalt County total",
+          "3.2 · 0.71 · 1.18",
+          "6.23 · 6.26 · 1.7",
+          "4.69 · 3.35 · 1.44"
+        ],
+        "rows": [
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 1": "Norrbotten",
+              "3.2 · 0.71 · 1.18": 0.74,
+              "6.23 · 6.26 · 1.7": 3.25,
+              "4.69 · 3.35 · 1.44": 1.93
+            }
+          },
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "3.2 · 0.71 · 1.18": 1.27,
+              "6.23 · 6.26 · 1.7": 2.07,
+              "4.69 · 3.35 · 1.44": 1.65
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.27,
+              "6.23 · 6.26 · 1.7": 0.51,
+              "4.69 · 3.35 · 1.44": 0.39
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.11,
+              "6.23 · 6.26 · 1.7": 0.24,
+              "4.69 · 3.35 · 1.44": 0.17
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.21,
+              "6.23 · 6.26 · 1.7": 0.68,
+              "4.69 · 3.35 · 1.44": 0.44
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "3.2 · 0.71 · 1.18": 1.65,
+              "6.23 · 6.26 · 1.7": 0.88,
+              "4.69 · 3.35 · 1.44": 1.28
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.63,
+              "6.23 · 6.26 · 1.7": 0.54,
+              "4.69 · 3.35 · 1.44": 0.59
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.25,
+              "6.23 · 6.26 · 1.7": 0.28,
+              "4.69 · 3.35 · 1.44": 0.27
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.44,
+              "6.23 · 6.26 · 1.7": 0.89,
+              "4.69 · 3.35 · 1.44": 0.66
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.65,
+              "6.23 · 6.26 · 1.7": 0.75,
+              "4.69 · 3.35 · 1.44": 0.69
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.42,
+              "6.23 · 6.26 · 1.7": 0.9,
+              "4.69 · 3.35 · 1.44": 0.66
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.25,
+              "6.23 · 6.26 · 1.7": 0.53,
+              "4.69 · 3.35 · 1.44": 0.38
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.6,
+              "4.69 · 3.35 · 1.44": 0.31
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "3.2 · 0.71 · 1.18": 0.48,
+              "6.23 · 6.26 · 1.7": 0.52,
+              "4.69 · 3.35 · 1.44": 0.5
+            }
+          }
+        ]
+      },
+      {
+        "title": "Tabell 9",
+        "columns": [
+          "Kolumn 1",
+          "VÄNNÄS · ÅSELE · Länet totalt County total",
+          "Kolumn 3",
+          "Kolumn 4",
+          "Kolumn 5",
+          "6.45 · 16.87 · 6.3",
+          "10.89 · 4.75 · 5.52",
+          "12.98 · 4.44 · 5.85"
+        ],
+        "rows": [
+          {
+            "municipality": "Arjeplog",
+            "values": {
+              "Kolumn 1": "Norrbotten",
+              "Kolumn 3": 2,
+              "Kolumn 4": 10,
+              "Kolumn 5": 12,
+              "6.45 · 16.87 · 6.3": 2,
+              "10.89 · 4.75 · 5.52": 2.5,
+              "12.98 · 4.44 · 5.85": 2.4
+            }
+          },
+          {
+            "municipality": "Arvidsjaur",
+            "values": {
+              "Kolumn 3": 7,
+              "Kolumn 4": 20,
+              "Kolumn 5": 27,
+              "6.45 · 16.87 · 6.3": 1.75,
+              "10.89 · 4.75 · 5.52": 3.33,
+              "12.98 · 4.44 · 5.85": 2.7
+            }
+          },
+          {
+            "municipality": "Boden",
+            "values": {
+              "Kolumn 3": 10,
+              "Kolumn 4": 22,
+              "Kolumn 5": 32,
+              "6.45 · 16.87 · 6.3": 2.5,
+              "10.89 · 4.75 · 5.52": 3.14,
+              "12.98 · 4.44 · 5.85": 2.91
+            }
+          },
+          {
+            "municipality": "Gällivare",
+            "values": {
+              "Kolumn 3": 2,
+              "Kolumn 4": 5,
+              "Kolumn 5": 7,
+              "6.45 · 16.87 · 6.3": 2,
+              "10.89 · 4.75 · 5.52": 2.5,
+              "12.98 · 4.44 · 5.85": 2.33
+            }
+          },
+          {
+            "municipality": "Haparanda",
+            "values": {
+              "Kolumn 3": 2,
+              "Kolumn 4": 6,
+              "Kolumn 5": 8,
+              "6.45 · 16.87 · 6.3": 2,
+              "10.89 · 4.75 · 5.52": 2,
+              "12.98 · 4.44 · 5.85": 2
+            }
+          },
+          {
+            "municipality": "Jokkmokk",
+            "values": {
+              "Kolumn 3": 12,
+              "Kolumn 4": 4,
+              "Kolumn 5": 16,
+              "6.45 · 16.87 · 6.3": 3,
+              "10.89 · 4.75 · 5.52": 2,
+              "12.98 · 4.44 · 5.85": 2.67
+            }
+          },
+          {
+            "municipality": "Kalix",
+            "values": {
+              "Kolumn 3": 15,
+              "Kolumn 4": 6,
+              "Kolumn 5": 21,
+              "6.45 · 16.87 · 6.3": 3,
+              "10.89 · 4.75 · 5.52": 1.5,
+              "12.98 · 4.44 · 5.85": 2.33
+            }
+          },
+          {
+            "municipality": "Kiruna",
+            "values": {
+              "Kolumn 3": 15,
+              "Kolumn 4": 5,
+              "Kolumn 5": 20,
+              "6.45 · 16.87 · 6.3": 5,
+              "10.89 · 4.75 · 5.52": 1.67,
+              "12.98 · 4.44 · 5.85": 3.33
+            }
+          },
+          {
+            "municipality": "Luleå",
+            "values": {
+              "Kolumn 3": 41,
+              "Kolumn 4": 118,
+              "Kolumn 5": 159,
+              "6.45 · 16.87 · 6.3": 2.28,
+              "10.89 · 4.75 · 5.52": 3.37,
+              "12.98 · 4.44 · 5.85": 3
+            }
+          },
+          {
+            "municipality": "Pajala",
+            "values": {
+              "Kolumn 3": 4,
+              "Kolumn 4": 2,
+              "Kolumn 5": 6,
+              "6.45 · 16.87 · 6.3": 2,
+              "10.89 · 4.75 · 5.52": 1,
+              "12.98 · 4.44 · 5.85": 1.5
+            }
+          },
+          {
+            "municipality": "Piteå",
+            "values": {
+              "Kolumn 3": 20,
+              "Kolumn 4": 55,
+              "Kolumn 5": 75,
+              "6.45 · 16.87 · 6.3": 2.22,
+              "10.89 · 4.75 · 5.52": 2.89,
+              "12.98 · 4.44 · 5.85": 2.68
+            }
+          },
+          {
+            "municipality": "Älvsbyn",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 4": 11,
+              "Kolumn 5": 12,
+              "6.45 · 16.87 · 6.3": 1,
+              "10.89 · 4.75 · 5.52": 5.5,
+              "12.98 · 4.44 · 5.85": 4
+            }
+          },
+          {
+            "municipality": "Överkalix",
+            "values": {
+              "Kolumn 3": 1,
+              "Kolumn 5": 1,
+              "6.45 · 16.87 · 6.3": 1,
+              "12.98 · 4.44 · 5.85": 1
+            }
+          },
+          {
+            "municipality": "Övertorneå",
+            "values": {
+              "Kolumn 3": 4,
+              "Kolumn 4": 3,
+              "Kolumn 5": 7,
+              "6.45 · 16.87 · 6.3": 4,
+              "10.89 · 4.75 · 5.52": 3,
+              "12.98 · 4.44 · 5.85": 3.5
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
