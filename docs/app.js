@@ -380,6 +380,8 @@ function renderNvdb(){
     article.append(span,strong);grid.appendChild(article);
   });
 
+  renderNvdbHolderShares(row,section);
+
   const municipalRows=data.rows.filter(r=>r.municipality===municipality).sort((a,b)=>a.year-b.year);
   const series=[
     {label:"Enskild",values:municipalRows.map(r=>({year:r.year,value:nvdbKm(section,r.private)}))},
@@ -417,3 +419,149 @@ async function loadNvdbData(){
   }
 }
 loadNvdbData();
+
+
+function renderNvdbHolderShares(row,section){
+  const root=$("nvdbHolderShares");
+  if(!root)return;
+  root.innerHTML="";
+  const vals=[
+    ["Enskild",row?nvdbKm(section,row.private):null],
+    ["Kommunal",row?nvdbKm(section,row.municipal):null],
+    ["Statlig",row?nvdbKm(section,row.state):null]
+  ];
+  const total=vals.reduce((s,[,v])=>s+(Number.isFinite(v)?v:0),0);
+  vals.forEach(([label,value])=>{
+    const pct=total>0&&Number.isFinite(value)?value/total*100:0;
+    const item=document.createElement("div");item.className="share-row";
+    item.innerHTML='<div class="share-label"><span>'+label+'</span><strong>'+nvdbFmt.format(pct)+' %</strong></div>'+
+      '<div class="share-track"><i style="width:'+Math.max(0,Math.min(100,pct))+'%"></i></div>'+
+      '<small>'+nvdbValueText(value)+'</small>';
+    root.appendChild(item);
+  });
+}
+
+const MUNICIPALITY_CODES={
+  "Arvidsjaur":"2505","Arjeplog":"2506","Jokkmokk":"2510","Överkalix":"2513",
+  "Kalix":"2514","Övertorneå":"2518","Pajala":"2521","Gällivare":"2523",
+  "Älvsbyn":"2560","Luleå":"2580","Piteå":"2581","Boden":"2582",
+  "Haparanda":"2583","Kiruna":"2584"
+};
+
+let INJURY_DATA=null;
+const injuryFmt0=new Intl.NumberFormat("sv-SE",{maximumFractionDigits:0});
+const injuryFmt2=new Intl.NumberFormat("sv-SE",{maximumFractionDigits:2});
+
+function injuryValue(v,digits=0){
+  if(v==null||!Number.isFinite(Number(v)))return "–";
+  return (digits===2?injuryFmt2:injuryFmt0).format(Number(v));
+}
+
+function injuryLineSvg(rows){
+  const width=900,height=320,p={l:58,r:22,t:24,b:46};
+  const values=rows.map(r=>Number(r.antolyckdsl)).filter(Number.isFinite);
+  const max=Math.max(1,...values);
+  const years=rows.map(r=>Number(r.ar));
+  const minYear=Math.min(...years),maxYear=Math.max(...years);
+  const x=year=>p.l+((year-minYear)/Math.max(1,maxYear-minYear))*(width-p.l-p.r);
+  const y=value=>height-p.b-(value/max)*(height-p.t-p.b);
+  const grid=[0,.25,.5,.75,1].map(fr=>{
+    const yy=height-p.b-fr*(height-p.t-p.b);
+    return '<line x1="'+p.l+'" x2="'+(width-p.r)+'" y1="'+yy+'" y2="'+yy+'" class="nvdb-gridline"/>'+
+      '<text x="'+(p.l-10)+'" y="'+(yy+4)+'" text-anchor="end" class="nvdb-axis">'+injuryFmt0.format(max*fr)+'</text>';
+  }).join("");
+  const tickYears=years.filter((y,i)=>i===0||i===years.length-1||y%2===0);
+  const ticks=tickYears.map(year=>'<text x="'+x(year)+'" y="'+(height-17)+'" text-anchor="middle" class="nvdb-axis">'+year+'</text>').join("");
+  const pts=rows.filter(r=>Number.isFinite(Number(r.antolyckdsl))).map(r=>x(Number(r.ar))+','+y(Number(r.antolyckdsl))).join(" ");
+  const circles=rows.filter(r=>Number.isFinite(Number(r.antolyckdsl))).map(r=>{
+    const year=Number(r.ar),v=Number(r.antolyckdsl);
+    return '<circle cx="'+x(year)+'" cy="'+y(v)+'" r="4" fill="#2563eb"><title>'+year+': '+injuryFmt0.format(v)+' olyckor</title></circle>';
+  }).join("");
+  return '<svg class="nvdb-svg" viewBox="0 0 '+width+' '+height+'" role="img" aria-label="Olyckor med personskada över tid">'+grid+ticks+
+    '<polyline points="'+pts+'" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'+circles+'</svg>';
+}
+
+function renderBarList(rootId,rows,labelField){
+  const root=$(rootId);if(!root)return;
+  root.innerHTML="";
+  const usable=rows
+    .map(r=>({label:r._labels?.[labelField]||r[labelField]||"Okänt",value:Number(r.antolyckdsl)}))
+    .filter(x=>Number.isFinite(x.value)&&x.value>=0)
+    .sort((a,b)=>b.value-a.value);
+  const max=Math.max(1,...usable.map(x=>x.value));
+  usable.forEach(x=>{
+    const item=document.createElement("div");item.className="bar-row";
+    const pct=x.value/max*100;
+    item.innerHTML='<span class="bar-name">'+x.label+'</span>'+
+      '<div class="bar-track"><i style="width:'+pct+'%"></i></div>'+
+      '<strong>'+injuryFmt0.format(x.value)+'</strong>';
+    root.appendChild(item);
+  });
+  if(!usable.length)root.textContent="Ingen data för valt urval.";
+}
+
+function renderInjury(){
+  if(!INJURY_DATA)return;
+  const municipality=$("injuryMunicipality").value;
+  const code=MUNICIPALITY_CODES[municipality];
+  const year=Number($("injuryYear").value||INJURY_DATA.latest_year);
+  const rows=INJURY_DATA.total.filter(r=>String(r.kommun)===String(code)).sort((a,b)=>Number(a.ar)-Number(b.ar));
+  const row=rows.find(r=>Number(r.ar)===year);
+
+  $("injuryDataStatus").textContent=row
+    ? "Trafikanalys "+year+" · polisrapporterade vägtrafikolyckor"
+    : "Ingen data hittades för valt år.";
+
+  const metrics=[
+    ["antolyckdsl","Olyckor med personskada",0,""],
+    ["antpersd","Dödade personer",0,""],
+    ["antperss","Svårt skadade",0,""],
+    ["antpersl","Lindrigt skadade",0,""],
+    ["antdslper100000","Dödade + skadade per 100 000 inv.",2,""]
+  ];
+  const grid=$("injuryMetricGrid");grid.innerHTML="";
+  metrics.forEach(([key,label,digits,suffix])=>{
+    const article=document.createElement("article");article.className="metric-card";
+    const span=document.createElement("span");span.textContent=label;
+    const strong=document.createElement("strong");strong.textContent=injuryValue(row?.[key],digits)+suffix;
+    article.append(span,strong);grid.appendChild(article);
+  });
+
+  $("injuryTrend").innerHTML=rows.length?injuryLineSvg(rows):"Ingen tidsserie tillgänglig.";
+
+  const table=document.createElement("table");table.className="simple-data-table";
+  table.innerHTML="<thead><tr><th>År</th><th>Olyckor</th><th>Dödade</th><th>Svårt skadade</th><th>Lindrigt skadade</th><th>Per 100 000</th></tr></thead>";
+  const tbody=document.createElement("tbody");
+  rows.slice().sort((a,b)=>Number(b.ar)-Number(a.ar)).forEach(r=>{
+    const tr=document.createElement("tr");
+    const vals=[r.ar,injuryValue(r.antolyckdsl),injuryValue(r.antpersd),injuryValue(r.antperss),injuryValue(r.antpersl),injuryValue(r.antdslper100000,2)];
+    vals.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td)});
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  $("injuryTable").replaceChildren(table);
+
+  const latest=Number(INJURY_DATA.latest_year);
+  renderBarList("injurySpeedBars",INJURY_DATA.by_speed_limit.filter(r=>String(r.kommun)===String(code)&&Number(r.ar)===latest),"hastighet");
+  renderBarList("injuryRoadBars",INJURY_DATA.by_road_type.filter(r=>String(r.kommun)===String(code)&&Number(r.ar)===latest),"vagtyp");
+}
+
+async function loadInjuryData(){
+  try{
+    const r=await fetch("data/injuries.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    INJURY_DATA=await r.json();
+    const years=INJURY_DATA.years.slice().sort((a,b)=>b-a);
+    $("injuryYear").innerHTML="";
+    years.forEach(year=>{
+      const o=document.createElement("option");o.value=year;o.textContent=year;$("injuryYear").appendChild(o);
+    });
+    $("injuryYear").value=String(INJURY_DATA.latest_year);
+    $("injuryMunicipality").addEventListener("change",renderInjury);
+    $("injuryYear").addEventListener("change",renderInjury);
+    renderInjury();
+  }catch(err){
+    if($("injuryDataStatus"))$("injuryDataStatus").textContent="Kunde inte läsa vägtrafikskador: "+err.message;
+  }
+}
+loadInjuryData();
