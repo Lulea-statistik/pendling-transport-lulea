@@ -48,7 +48,7 @@ def rows(obj):
     return result
 
 def main():
-    base="t1004|antolyckdsl|antpersd|antperss|antpersl|antpersds|antpersdsl|antdper100000|antdslper100000"
+    base="t1004|antolyckdsl|antpersd|antperss|antpersl|antdslper100000"
     latest="2025"
 
     total=[]
