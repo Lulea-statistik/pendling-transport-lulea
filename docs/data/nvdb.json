@@ -1,0 +1,1376 @@
+{
+  "road": {
+    "source": "https://www.nvdb.se/globalassets/upload/anvandare/statistik/antal-kilometer-bilnat-per-vaghallare-efter-lan-och-kommun.xlsx",
+    "unit": "km",
+    "label": "Bilvägnät",
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "rows": [
+      {
+        "year": 2020,
+        "municipality": "Arjeplog",
+        "private": 2067.554327124481,
+        "municipal": 29.20628956415466,
+        "state": 650.2648359551891,
+        "total": 2747.025452643825
+      },
+      {
+        "year": 2020,
+        "municipality": "Arvidsjaur",
+        "private": 4329.837273851506,
+        "municipal": 63.79069793667309,
+        "state": 865.2280180376412,
+        "total": 5258.855989825821
+      },
+      {
+        "year": 2020,
+        "municipality": "Boden",
+        "private": 3925.092377150258,
+        "municipal": 200.8049568010672,
+        "state": 709.2785324310788,
+        "total": 4835.175866382404
+      },
+      {
+        "year": 2020,
+        "municipality": "Gällivare",
+        "private": 4040.645614008952,
+        "municipal": 234.0863299521775,
+        "state": 852.5038914031792,
+        "total": 5127.2358353643085
+      },
+      {
+        "year": 2020,
+        "municipality": "Haparanda",
+        "private": 766.7996470906224,
+        "municipal": 70.87106272797188,
+        "state": 228.9014092516874,
+        "total": 1066.5721190702818
+      },
+      {
+        "year": 2020,
+        "municipality": "Jokkmokk",
+        "private": 4227.03066002845,
+        "municipal": 61.28092761184723,
+        "state": 716.6271097164173,
+        "total": 5004.938697356714
+      },
+      {
+        "year": 2020,
+        "municipality": "Kalix",
+        "private": 1944.430106249233,
+        "municipal": 149.5076588196582,
+        "state": 528.2471492002256,
+        "total": 2622.1849142691167
+      },
+      {
+        "year": 2020,
+        "municipality": "Kiruna",
+        "private": 2053.684525312554,
+        "municipal": 139.780162972203,
+        "state": 670.3802175887229,
+        "total": 2863.8449058734795
+      },
+      {
+        "year": 2020,
+        "municipality": "Luleå",
+        "private": 2268.843945859987,
+        "municipal": 452.6361948649853,
+        "state": 558.0044344800468,
+        "total": 3279.484575205019
+      },
+      {
+        "year": 2020,
+        "municipality": "Pajala",
+        "private": 4307.9324037924,
+        "municipal": 35.52671072606909,
+        "state": 855.50807353005,
+        "total": 5198.967188048518
+      },
+      {
+        "year": 2020,
+        "municipality": "Piteå",
+        "private": 3254.578946284618,
+        "municipal": 286.8490047556771,
+        "state": 727.4597884809954,
+        "total": 4268.88773952129
+      },
+      {
+        "year": 2020,
+        "municipality": "Älvsbyn",
+        "private": 1770.477768426633,
+        "municipal": 68.65557904563181,
+        "state": 398.8230463436525,
+        "total": 2237.956393815917
+      },
+      {
+        "year": 2020,
+        "municipality": "Överkalix",
+        "private": 2413.25029192189,
+        "municipal": 17.21440008558477,
+        "state": 412.9019431730717,
+        "total": 2843.3666351805464
+      },
+      {
+        "year": 2020,
+        "municipality": "Övertorneå",
+        "private": 1889.866039734715,
+        "municipal": 27.61495302220733,
+        "state": 438.2897390212367,
+        "total": 2355.770731778159
+      },
+      {
+        "year": 2021,
+        "municipality": "Arjeplog",
+        "private": 2088.802901351411,
+        "municipal": 29.20628956415466,
+        "state": 650.264835955189,
+        "total": 2768.274026870755
+      },
+      {
+        "year": 2021,
+        "municipality": "Arvidsjaur",
+        "private": 4329.392977785405,
+        "municipal": 63.7906979366731,
+        "state": 865.2280180376414,
+        "total": 5258.411693759719
+      },
+      {
+        "year": 2021,
+        "municipality": "Boden",
+        "private": 3955.150586048986,
+        "municipal": 201.097170949323,
+        "state": 713.7374786498052,
+        "total": 4869.985235648114
+      },
+      {
+        "year": 2021,
+        "municipality": "Gällivare",
+        "private": 4108.30250464888,
+        "municipal": 234.8129907382312,
+        "state": 852.4942244341416,
+        "total": 5195.609719821253
+      },
+      {
+        "year": 2021,
+        "municipality": "Haparanda",
+        "private": 768.5018096614033,
+        "municipal": 71.46506734631606,
+        "state": 228.9014092516873,
+        "total": 1068.8682862594067
+      },
+      {
+        "year": 2021,
+        "municipality": "Jokkmokk",
+        "private": 4243.448251838371,
+        "municipal": 61.28092761184722,
+        "state": 718.2355317728114,
+        "total": 5022.96471122303
+      },
+      {
+        "year": 2021,
+        "municipality": "Kalix",
+        "private": 1976.685252334777,
+        "municipal": 149.5098468976307,
+        "state": 528.260415613866,
+        "total": 2654.4555148462737
+      },
+      {
+        "year": 2021,
+        "municipality": "Kiruna",
+        "private": 2064.763166311611,
+        "municipal": 139.780162972203,
+        "state": 674.2036100735838,
+        "total": 2878.7469393573974
+      },
+      {
+        "year": 2021,
+        "municipality": "Luleå",
+        "private": 2291.463691634456,
+        "municipal": 453.72930170029,
+        "state": 561.2881331531638,
+        "total": 3306.48112648791
+      },
+      {
+        "year": 2021,
+        "municipality": "Pajala",
+        "private": 4366.97357672732,
+        "municipal": 34.02299975075274,
+        "state": 856.6184598096661,
+        "total": 5257.615036287739
+      },
+      {
+        "year": 2021,
+        "municipality": "Piteå",
+        "private": 3377.59350661082,
+        "municipal": 289.7217894349939,
+        "state": 727.458990966832,
+        "total": 4394.774287012646
+      },
+      {
+        "year": 2021,
+        "municipality": "Älvsbyn",
+        "private": 1796.920309342025,
+        "municipal": 68.6555790456318,
+        "state": 397.9285669566167,
+        "total": 2263.5044553442735
+      },
+      {
+        "year": 2021,
+        "municipality": "Överkalix",
+        "private": 2421.547696493176,
+        "municipal": 17.21440008558477,
+        "state": 412.9019431730717,
+        "total": 2851.664039751832
+      },
+      {
+        "year": 2021,
+        "municipality": "Övertorneå",
+        "private": 1903.307098321534,
+        "municipal": 27.61495302220732,
+        "state": 438.290860796179,
+        "total": 2369.2129121399203
+      },
+      {
+        "year": 2022,
+        "municipality": "Arjeplog",
+        "private": 2097.688298979458,
+        "municipal": 29.48637158264419,
+        "state": 650.2661323301552,
+        "total": 2777.4408028922576
+      },
+      {
+        "year": 2022,
+        "municipality": "Arvidsjaur",
+        "private": 4357.857801896489,
+        "municipal": 63.79654611891542,
+        "state": 865.2285588258137,
+        "total": 5286.882906841218
+      },
+      {
+        "year": 2022,
+        "municipality": "Boden",
+        "private": 3998.715660526992,
+        "municipal": 199.1605073231854,
+        "state": 713.7381737101614,
+        "total": 4911.614341560339
+      },
+      {
+        "year": 2022,
+        "municipality": "Gällivare",
+        "private": 4168.868715300241,
+        "municipal": 236.475655225673,
+        "state": 852.5495236804572,
+        "total": 5257.893894206371
+      },
+      {
+        "year": 2022,
+        "municipality": "Haparanda",
+        "private": 775.4785241853107,
+        "municipal": 71.29203019194202,
+        "state": 228.9012493022171,
+        "total": 1075.6718036794698
+      },
+      {
+        "year": 2022,
+        "municipality": "Jokkmokk",
+        "private": 4312.505873696733,
+        "municipal": 61.29456648458504,
+        "state": 718.2352785654272,
+        "total": 5092.035718746745
+      },
+      {
+        "year": 2022,
+        "municipality": "Kalix",
+        "private": 2004.121918943968,
+        "municipal": 148.7007667984927,
+        "state": 528.2589223749117,
+        "total": 2681.0816081173725
+      },
+      {
+        "year": 2022,
+        "municipality": "Kiruna",
+        "private": 2077.429379007748,
+        "municipal": 143.4896524667594,
+        "state": 674.0607772839309,
+        "total": 2894.9798087584386
+      },
+      {
+        "year": 2022,
+        "municipality": "Luleå",
+        "private": 2315.89388684494,
+        "municipal": 453.947578175805,
+        "state": 561.2666977028182,
+        "total": 3331.108162723563
+      },
+      {
+        "year": 2022,
+        "municipality": "Pajala",
+        "private": 4392.832929675043,
+        "municipal": 34.01867003939158,
+        "state": 856.6262541880224,
+        "total": 5283.477853902456
+      },
+      {
+        "year": 2022,
+        "municipality": "Piteå",
+        "private": 3499.256832739461,
+        "municipal": 290.1652064354041,
+        "state": 724.8547477356738,
+        "total": 4514.276786910539
+      },
+      {
+        "year": 2022,
+        "municipality": "Älvsbyn",
+        "private": 1807.267927476297,
+        "municipal": 68.28135426897126,
+        "state": 397.9276780722785,
+        "total": 2273.4769598175467
+      },
+      {
+        "year": 2022,
+        "municipality": "Överkalix",
+        "private": 2422.327129132716,
+        "municipal": 17.21440008558477,
+        "state": 412.9010242659619,
+        "total": 2852.4425534842626
+      },
+      {
+        "year": 2022,
+        "municipality": "Övertorneå",
+        "private": 1908.103837252416,
+        "municipal": 27.61493346637305,
+        "state": 438.2714257215172,
+        "total": 2373.990196440306
+      },
+      {
+        "year": 2023,
+        "municipality": "Arjeplog",
+        "private": 2101.520126052779,
+        "municipal": 29.48637158264419,
+        "state": 650.2661167610232,
+        "total": 2781.272614396446
+      },
+      {
+        "year": 2023,
+        "municipality": "Arvidsjaur",
+        "private": 4410.481429812129,
+        "municipal": 63.65845766303215,
+        "state": 865.2285588259239,
+        "total": 5339.368446301085
+      },
+      {
+        "year": 2023,
+        "municipality": "Boden",
+        "private": 4040.058541522317,
+        "municipal": 204.3697900970408,
+        "state": 707.6869228225338,
+        "total": 4952.115254441891
+      },
+      {
+        "year": 2023,
+        "municipality": "Gällivare",
+        "private": 4183.694493070479,
+        "municipal": 235.4825197969419,
+        "state": 852.6639485408176,
+        "total": 5271.840961408239
+      },
+      {
+        "year": 2023,
+        "municipality": "Haparanda",
+        "private": 785.3325410725539,
+        "municipal": 71.46488805656801,
+        "state": 229.7084608234991,
+        "total": 1086.5058899526211
+      },
+      {
+        "year": 2023,
+        "municipality": "Jokkmokk",
+        "private": 4325.906048830546,
+        "municipal": 61.29456648458504,
+        "state": 718.2352785654433,
+        "total": 5105.435893880574
+      },
+      {
+        "year": 2023,
+        "municipality": "Kalix",
+        "private": 2013.838799219299,
+        "municipal": 148.5558303558395,
+        "state": 528.2589221736359,
+        "total": 2690.6535517487746
+      },
+      {
+        "year": 2023,
+        "municipality": "Kiruna",
+        "private": 2083.875315846877,
+        "municipal": 144.0183809842951,
+        "state": 674.0607772841367,
+        "total": 2901.954474115309
+      },
+      {
+        "year": 2023,
+        "municipality": "Luleå",
+        "private": 2327.618069855359,
+        "municipal": 453.9996342822989,
+        "state": 561.2666973056438,
+        "total": 3342.8844014433016
+      },
+      {
+        "year": 2023,
+        "municipality": "Pajala",
+        "private": 4467.527444043551,
+        "municipal": 34.32637755310241,
+        "state": 856.6294554075847,
+        "total": 5358.4832770042385
+      },
+      {
+        "year": 2023,
+        "municipality": "Piteå",
+        "private": 3578.41275307607,
+        "municipal": 290.1994015805952,
+        "state": 724.8547477004458,
+        "total": 4593.466902357111
+      },
+      {
+        "year": 2023,
+        "municipality": "Älvsbyn",
+        "private": 1827.283317893264,
+        "municipal": 69.15522582132972,
+        "state": 396.8400718837,
+        "total": 2293.2786155982935
+      },
+      {
+        "year": 2023,
+        "municipality": "Överkalix",
+        "private": 2444.242547795156,
+        "municipal": 17.21440008558477,
+        "state": 412.9010242659619,
+        "total": 2874.3579721467027
+      },
+      {
+        "year": 2023,
+        "municipality": "Övertorneå",
+        "private": 1924.613240954563,
+        "municipal": 27.71035186367146,
+        "state": 438.271425721532,
+        "total": 2390.5950185397664
+      },
+      {
+        "year": 2024,
+        "municipality": "Arjeplog",
+        "private": 2109.584575269071,
+        "municipal": 29.48560754166193,
+        "state": 649.9632996046132,
+        "total": 2789.0334824153465
+      },
+      {
+        "year": 2024,
+        "municipality": "Arvidsjaur",
+        "private": 4415.811358884674,
+        "municipal": 59.90545171518068,
+        "state": 865.2301832002584,
+        "total": 5340.946993800113
+      },
+      {
+        "year": 2024,
+        "municipality": "Boden",
+        "private": 4054.497110578401,
+        "municipal": 206.2919189796798,
+        "state": 707.5751872123889,
+        "total": 4968.36421677047
+      },
+      {
+        "year": 2024,
+        "municipality": "Gällivare",
+        "private": 4198.797204479475,
+        "municipal": 235.4821823830436,
+        "state": 852.6633464377198,
+        "total": 5286.942733300239
+      },
+      {
+        "year": 2024,
+        "municipality": "Haparanda",
+        "private": 796.2320503948785,
+        "municipal": 71.46488805656801,
+        "state": 229.7084606872318,
+        "total": 1097.4053991386781
+      },
+      {
+        "year": 2024,
+        "municipality": "Jokkmokk",
+        "private": 4336.605289872145,
+        "municipal": 61.29456648458503,
+        "state": 718.2352785654443,
+        "total": 5116.135134922174
+      },
+      {
+        "year": 2024,
+        "municipality": "Kalix",
+        "private": 2030.3111984403,
+        "municipal": 148.6058972658472,
+        "state": 528.2585679889205,
+        "total": 2707.1756636950677
+      },
+      {
+        "year": 2024,
+        "municipality": "Kiruna",
+        "private": 2083.25966204441,
+        "municipal": 148.3456224818541,
+        "state": 674.368991539156,
+        "total": 2905.9742760654203
+      },
+      {
+        "year": 2024,
+        "municipality": "Luleå",
+        "private": 2348.441426145126,
+        "municipal": 455.1961393990772,
+        "state": 561.267269024015,
+        "total": 3364.9048345682186
+      },
+      {
+        "year": 2024,
+        "municipality": "Pajala",
+        "private": 4484.223724369048,
+        "municipal": 34.3263775531024,
+        "state": 856.6156823838264,
+        "total": 5375.165784305977
+      },
+      {
+        "year": 2024,
+        "municipality": "Piteå",
+        "private": 3602.752464487505,
+        "municipal": 293.4917238610308,
+        "state": 724.8546210589245,
+        "total": 4621.09880940746
+      },
+      {
+        "year": 2024,
+        "municipality": "Älvsbyn",
+        "private": 1842.88567341766,
+        "municipal": 69.68675938664092,
+        "state": 396.8394771340753,
+        "total": 2309.411909938376
+      },
+      {
+        "year": 2024,
+        "municipality": "Överkalix",
+        "private": 2451.486421367298,
+        "municipal": 17.21440008558477,
+        "state": 412.9023003316198,
+        "total": 2881.603121784503
+      },
+      {
+        "year": 2024,
+        "municipality": "Övertorneå",
+        "private": 1927.091089281443,
+        "municipal": 27.71035186367145,
+        "state": 438.2707687164594,
+        "total": 2393.072209861574
+      },
+      {
+        "year": 2025,
+        "municipality": "Arjeplog",
+        "private": 2111.81092139834,
+        "municipal": 29.48560754166193,
+        "state": 649.963328080993,
+        "total": 2791.259857020995
+      },
+      {
+        "year": 2025,
+        "municipality": "Arvidsjaur",
+        "private": 4423.603105438034,
+        "municipal": 59.90545171518068,
+        "state": 865.2301599284863,
+        "total": 5348.738717081701
+      },
+      {
+        "year": 2025,
+        "municipality": "Boden",
+        "private": 4062.002956386849,
+        "municipal": 206.3332886899111,
+        "state": 707.5763674228497,
+        "total": 4975.912612499609
+      },
+      {
+        "year": 2025,
+        "municipality": "Gällivare",
+        "private": 4210.088097205558,
+        "municipal": 235.4821823830436,
+        "state": 852.6633629257994,
+        "total": 5298.233642514401
+      },
+      {
+        "year": 2025,
+        "municipality": "Haparanda",
+        "private": 796.8876741820528,
+        "municipal": 71.46488805656804,
+        "state": 229.7084326162149,
+        "total": 1098.0609948548358
+      },
+      {
+        "year": 2025,
+        "municipality": "Jokkmokk",
+        "private": 4340.761479898943,
+        "municipal": 61.06312807274898,
+        "state": 718.2352811734769,
+        "total": 5120.059889145169
+      },
+      {
+        "year": 2025,
+        "municipality": "Kalix",
+        "private": 2038.615426782801,
+        "municipal": 148.5734678002617,
+        "state": 528.2587895777315,
+        "total": 2715.4476841607943
+      },
+      {
+        "year": 2025,
+        "municipality": "Kiruna",
+        "private": 2094.941914209053,
+        "municipal": 151.5883758249097,
+        "state": 667.442558636058,
+        "total": 2913.9728486700205
+      },
+      {
+        "year": 2025,
+        "municipality": "Luleå",
+        "private": 2356.434061966639,
+        "municipal": 457.3016021251909,
+        "state": 561.338324475305,
+        "total": 3375.073988567135
+      },
+      {
+        "year": 2025,
+        "municipality": "Pajala",
+        "private": 4510.823773445203,
+        "municipal": 34.3263775473656,
+        "state": 856.6136891363393,
+        "total": 5401.763840128908
+      },
+      {
+        "year": 2025,
+        "municipality": "Piteå",
+        "private": 3608.84155364585,
+        "municipal": 293.5199861699352,
+        "state": 728.0569941491933,
+        "total": 4630.418533964978
+      },
+      {
+        "year": 2025,
+        "municipality": "Älvsbyn",
+        "private": 1850.713856342857,
+        "municipal": 70.54866538225079,
+        "state": 396.8396404535688,
+        "total": 2318.1021621786767
+      },
+      {
+        "year": 2025,
+        "municipality": "Överkalix",
+        "private": 2460.305816330922,
+        "municipal": 17.21440008558477,
+        "state": 412.902271689491,
+        "total": 2890.4224881059977
+      },
+      {
+        "year": 2025,
+        "municipality": "Övertorneå",
+        "private": 1932.796387358654,
+        "municipal": 27.71035186367145,
+        "state": 438.2705888545146,
+        "total": 2398.77732807684
+      }
+    ]
+  },
+  "cycle": {
+    "source": "https://www.nvdb.se/globalassets/upload/anvandare/statistik/antal-meter-cykelnat-per-vaghallare-efter-lan-och-kommun.xlsx",
+    "unit": "m",
+    "label": "Cykelvägnät",
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "rows": [
+      {
+        "year": 2020,
+        "municipality": "Arjeplog",
+        "private": 829.5349685909387,
+        "municipal": 284.1393327263784,
+        "state": 5176.607002712262,
+        "total": 6290.28130402958
+      },
+      {
+        "year": 2020,
+        "municipality": "Arvidsjaur",
+        "private": 379.4309416810353,
+        "municipal": 16128.27771111708,
+        "state": 4132.712493578062,
+        "total": 20640.42114637618
+      },
+      {
+        "year": 2020,
+        "municipality": "Boden",
+        "private": 1739.369380318913,
+        "municipal": 92289.4323539891,
+        "state": 23158.90111683634,
+        "total": 117187.70285114436
+      },
+      {
+        "year": 2020,
+        "municipality": "Gällivare",
+        "private": 2548.124833137806,
+        "municipal": 3833.629127247903,
+        "state": 3931.477628446606,
+        "total": 10313.231588832316
+      },
+      {
+        "year": 2020,
+        "municipality": "Haparanda",
+        "private": 41.81791362435573,
+        "municipal": 20518.6386206238,
+        "state": 6239.465483598803,
+        "total": 26799.92201784696
+      },
+      {
+        "year": 2020,
+        "municipality": "Jokkmokk",
+        "private": null,
+        "municipal": 5974.980026906006,
+        "state": 2455.285349276172,
+        "total": 8430.265376182178
+      },
+      {
+        "year": 2020,
+        "municipality": "Kalix",
+        "private": 119.1286937785247,
+        "municipal": 28240.21433051797,
+        "state": 9969.593652592786,
+        "total": 38328.93667688928
+      },
+      {
+        "year": 2020,
+        "municipality": "Kiruna",
+        "private": 507.6000791150992,
+        "municipal": 7125.751937645367,
+        "state": 20986.34642707887,
+        "total": 28619.698443839337
+      },
+      {
+        "year": 2020,
+        "municipality": "Luleå",
+        "private": 7957.423475122583,
+        "municipal": 193590.9581244134,
+        "state": 26951.49313334206,
+        "total": 228499.87473287803
+      },
+      {
+        "year": 2020,
+        "municipality": "Pajala",
+        "private": null,
+        "municipal": 6189.545668874808,
+        "state": 13877.43353169369,
+        "total": 20066.979200568498
+      },
+      {
+        "year": 2020,
+        "municipality": "Piteå",
+        "private": 1824.581836690114,
+        "municipal": 110129.3442828325,
+        "state": 8879.80776978469,
+        "total": 120833.7338893073
+      },
+      {
+        "year": 2020,
+        "municipality": "Älvsbyn",
+        "private": null,
+        "municipal": 12348.28374495593,
+        "state": 3447.702364982741,
+        "total": 15795.98610993867
+      },
+      {
+        "year": 2020,
+        "municipality": "Överkalix",
+        "private": null,
+        "municipal": 1425.456060683086,
+        "state": 2843.882367971892,
+        "total": 4269.338428654978
+      },
+      {
+        "year": 2020,
+        "municipality": "Övertorneå",
+        "private": null,
+        "municipal": 4138.130351277817,
+        "state": 6266.519692602023,
+        "total": 10404.65004387984
+      },
+      {
+        "year": 2021,
+        "municipality": "Arjeplog",
+        "private": 829.5349685909387,
+        "municipal": 284.1393327263784,
+        "state": 5176.607002712261,
+        "total": 6290.281304029579
+      },
+      {
+        "year": 2021,
+        "municipality": "Arvidsjaur",
+        "private": 379.4309416810353,
+        "municipal": 16128.27771111708,
+        "state": 4132.712493578062,
+        "total": 20640.42114637618
+      },
+      {
+        "year": 2021,
+        "municipality": "Boden",
+        "private": 1739.369380318913,
+        "municipal": 92527.52948048423,
+        "state": 24116.33672553695,
+        "total": 118383.23558634009
+      },
+      {
+        "year": 2021,
+        "municipality": "Gällivare",
+        "private": 2523.93797390477,
+        "municipal": 33007.54279796038,
+        "state": 3931.477628446604,
+        "total": 39462.95840031175
+      },
+      {
+        "year": 2021,
+        "municipality": "Haparanda",
+        "private": 41.81791362435573,
+        "municipal": 20518.6386206238,
+        "state": 6239.465483598803,
+        "total": 26799.92201784696
+      },
+      {
+        "year": 2021,
+        "municipality": "Jokkmokk",
+        "private": null,
+        "municipal": 5974.980026906006,
+        "state": 2455.285349276172,
+        "total": 8430.265376182178
+      },
+      {
+        "year": 2021,
+        "municipality": "Kalix",
+        "private": 119.1286937785247,
+        "municipal": 28501.34762342329,
+        "state": 9057.200668231642,
+        "total": 37677.676985433456
+      },
+      {
+        "year": 2021,
+        "municipality": "Kiruna",
+        "private": 507.600079115099,
+        "municipal": 7125.751937645367,
+        "state": 20986.34642707887,
+        "total": 28619.698443839337
+      },
+      {
+        "year": 2021,
+        "municipality": "Luleå",
+        "private": 9075.372206814045,
+        "municipal": 194935.4359373215,
+        "state": 27383.47037781407,
+        "total": 231394.27852194963
+      },
+      {
+        "year": 2021,
+        "municipality": "Pajala",
+        "private": null,
+        "municipal": 9340.29121136398,
+        "state": 13877.43353169369,
+        "total": 23217.724743057668
+      },
+      {
+        "year": 2021,
+        "municipality": "Piteå",
+        "private": 1899.392228243595,
+        "municipal": 113859.2516510655,
+        "state": 8879.807769784691,
+        "total": 124638.45164909378
+      },
+      {
+        "year": 2021,
+        "municipality": "Älvsbyn",
+        "private": null,
+        "municipal": 12348.28374495594,
+        "state": 5440.023246003733,
+        "total": 17788.306990959674
+      },
+      {
+        "year": 2021,
+        "municipality": "Överkalix",
+        "private": null,
+        "municipal": 2534.924046111033,
+        "state": 1777.574255951008,
+        "total": 4312.498302062041
+      },
+      {
+        "year": 2021,
+        "municipality": "Övertorneå",
+        "private": null,
+        "municipal": 5605.024829133079,
+        "state": 6590.983324786525,
+        "total": 12196.008153919604
+      },
+      {
+        "year": 2022,
+        "municipality": "Arjeplog",
+        "private": 829.5349685909387,
+        "municipal": 284.1393327263784,
+        "state": 5176.60700271227,
+        "total": 6290.281304029587
+      },
+      {
+        "year": 2022,
+        "municipality": "Arvidsjaur",
+        "private": 379.4309416810353,
+        "municipal": 17015.82143748335,
+        "state": 4132.712493578062,
+        "total": 21527.96487274245
+      },
+      {
+        "year": 2022,
+        "municipality": "Boden",
+        "private": 1739.369392203612,
+        "municipal": 93093.00842751746,
+        "state": 24116.33672553602,
+        "total": 118948.7145452571
+      },
+      {
+        "year": 2022,
+        "municipality": "Gällivare",
+        "private": 3221.170674217442,
+        "municipal": 55020.26547107505,
+        "state": 3927.512792443491,
+        "total": 62168.948937735986
+      },
+      {
+        "year": 2022,
+        "municipality": "Haparanda",
+        "private": 41.81791362435573,
+        "municipal": 20518.88079332987,
+        "state": 6239.465483598802,
+        "total": 26800.164190553027
+      },
+      {
+        "year": 2022,
+        "municipality": "Jokkmokk",
+        "private": null,
+        "municipal": 5974.980026906006,
+        "state": 2466.877362696843,
+        "total": 8441.85738960285
+      },
+      {
+        "year": 2022,
+        "municipality": "Kalix",
+        "private": 119.1286937785247,
+        "municipal": 29318.77155117919,
+        "state": 9620.97426280514,
+        "total": 39058.874507762856
+      },
+      {
+        "year": 2022,
+        "municipality": "Kiruna",
+        "private": 507.600079115099,
+        "municipal": 7125.751937645366,
+        "state": 21172.85632796645,
+        "total": 28806.208344726914
+      },
+      {
+        "year": 2022,
+        "municipality": "Luleå",
+        "private": 9082.036262782927,
+        "municipal": 196382.9687040379,
+        "state": 21912.57248082146,
+        "total": 227377.57744764228
+      },
+      {
+        "year": 2022,
+        "municipality": "Pajala",
+        "private": null,
+        "municipal": 9340.68992610945,
+        "state": 13877.43353169369,
+        "total": 23218.12345780314
+      },
+      {
+        "year": 2022,
+        "municipality": "Piteå",
+        "private": 1899.392228243595,
+        "municipal": 113705.2116116122,
+        "state": 13588.94037736494,
+        "total": 129193.54421722074
+      },
+      {
+        "year": 2022,
+        "municipality": "Älvsbyn",
+        "private": null,
+        "municipal": 12334.36981300623,
+        "state": 5260.975263841743,
+        "total": 17595.345076847974
+      },
+      {
+        "year": 2022,
+        "municipality": "Överkalix",
+        "private": null,
+        "municipal": 2534.924046111032,
+        "state": 3162.923518172062,
+        "total": 5697.8475642830945
+      },
+      {
+        "year": 2022,
+        "municipality": "Övertorneå",
+        "private": null,
+        "municipal": 5604.920660860705,
+        "state": 6591.677362682179,
+        "total": 12196.598023542883
+      },
+      {
+        "year": 2023,
+        "municipality": "Arjeplog",
+        "private": 829.5349685909387,
+        "municipal": 284.1393327263784,
+        "state": 5176.60700271227,
+        "total": 6290.281304029587
+      },
+      {
+        "year": 2023,
+        "municipality": "Arvidsjaur",
+        "private": 379.4309416810353,
+        "municipal": 13886.74624957004,
+        "state": 6312.746916736674,
+        "total": 20578.92410798775
+      },
+      {
+        "year": 2023,
+        "municipality": "Boden",
+        "private": 1554.812401580695,
+        "municipal": 95138.39034742939,
+        "state": 24116.33672557386,
+        "total": 120809.53947458394
+      },
+      {
+        "year": 2023,
+        "municipality": "Gällivare",
+        "private": 3221.170674217442,
+        "municipal": 55020.26547107506,
+        "state": 3927.51279244349,
+        "total": 62168.948937735986
+      },
+      {
+        "year": 2023,
+        "municipality": "Haparanda",
+        "private": 41.81791362435573,
+        "municipal": 20461.74718204818,
+        "state": 8735.98466093413,
+        "total": 29239.549756606666
+      },
+      {
+        "year": 2023,
+        "municipality": "Jokkmokk",
+        "private": null,
+        "municipal": 5974.980026906006,
+        "state": 4016.014203629987,
+        "total": 9990.994230535993
+      },
+      {
+        "year": 2023,
+        "municipality": "Kalix",
+        "private": 119.1286937785247,
+        "municipal": 29318.7715511792,
+        "state": 9620.97426280514,
+        "total": 39058.87450776287
+      },
+      {
+        "year": 2023,
+        "municipality": "Kiruna",
+        "private": 507.600079115099,
+        "municipal": 7125.751937645367,
+        "state": 21184.18681033876,
+        "total": 28817.538827099226
+      },
+      {
+        "year": 2023,
+        "municipality": "Luleå",
+        "private": 9083.537644771666,
+        "municipal": 197687.2321935974,
+        "state": 24051.36226657535,
+        "total": 230822.1321049444
+      },
+      {
+        "year": 2023,
+        "municipality": "Pajala",
+        "private": 577.4306832138273,
+        "municipal": 9673.420647819961,
+        "state": 15684.69786569797,
+        "total": 25935.549196731758
+      },
+      {
+        "year": 2023,
+        "municipality": "Piteå",
+        "private": 1899.392228243595,
+        "municipal": 115943.7996094563,
+        "state": 13588.94037736494,
+        "total": 131432.13221506483
+      },
+      {
+        "year": 2023,
+        "municipality": "Älvsbyn",
+        "private": null,
+        "municipal": 13263.06250823108,
+        "state": 4332.282568616891,
+        "total": 17595.34507684797
+      },
+      {
+        "year": 2023,
+        "municipality": "Överkalix",
+        "private": null,
+        "municipal": 2534.924046111033,
+        "state": 3162.923518172062,
+        "total": 5697.8475642830945
+      },
+      {
+        "year": 2023,
+        "municipality": "Övertorneå",
+        "private": null,
+        "municipal": 6095.350158420972,
+        "state": 6591.677362682177,
+        "total": 12687.027521103148
+      },
+      {
+        "year": 2024,
+        "municipality": "Arjeplog",
+        "private": 829.5349685909387,
+        "municipal": 284.1393327263784,
+        "state": 5176.607002712269,
+        "total": 6290.281304029586
+      },
+      {
+        "year": 2024,
+        "municipality": "Arvidsjaur",
+        "private": 200.1172675209913,
+        "municipal": 14291.69353417076,
+        "state": 7340.858934155109,
+        "total": 21832.66973584686
+      },
+      {
+        "year": 2024,
+        "municipality": "Boden",
+        "private": 1554.812401580696,
+        "municipal": 94641.43138230531,
+        "state": 24146.28973334346,
+        "total": 120342.53351722946
+      },
+      {
+        "year": 2024,
+        "municipality": "Gällivare",
+        "private": 3221.278656048501,
+        "municipal": 55020.26547107505,
+        "state": 3927.51279244349,
+        "total": 62169.05691956704
+      },
+      {
+        "year": 2024,
+        "municipality": "Haparanda",
+        "private": 41.81791362435573,
+        "municipal": 20461.74718204818,
+        "state": 8735.98466093413,
+        "total": 29239.549756606666
+      },
+      {
+        "year": 2024,
+        "municipality": "Jokkmokk",
+        "private": null,
+        "municipal": 5974.980026906006,
+        "state": 4016.014203629986,
+        "total": 9990.994230535991
+      },
+      {
+        "year": 2024,
+        "municipality": "Kalix",
+        "private": 118.6614022226078,
+        "municipal": 29318.77155118003,
+        "state": 9620.974262805139,
+        "total": 39058.40721620778
+      },
+      {
+        "year": 2024,
+        "municipality": "Kiruna",
+        "private": 2103.048672971413,
+        "municipal": 7125.751937645367,
+        "state": 21293.98913212595,
+        "total": 30522.78974274273
+      },
+      {
+        "year": 2024,
+        "municipality": "Luleå",
+        "private": 9318.900027318334,
+        "municipal": 203216.4452922668,
+        "state": 28500.3446524888,
+        "total": 241035.68997207395
+      },
+      {
+        "year": 2024,
+        "municipality": "Pajala",
+        "private": 577.4306832138273,
+        "municipal": 9673.420647819961,
+        "state": 15685.12319387132,
+        "total": 25935.97452490511
+      },
+      {
+        "year": 2024,
+        "municipality": "Piteå",
+        "private": 1878.70382932069,
+        "municipal": 116802.3922686478,
+        "state": 13635.09340812487,
+        "total": 132316.18950609336
+      },
+      {
+        "year": 2024,
+        "municipality": "Älvsbyn",
+        "private": null,
+        "municipal": 13244.58604314551,
+        "state": 4332.282568616892,
+        "total": 17576.868611762402
+      },
+      {
+        "year": 2024,
+        "municipality": "Överkalix",
+        "private": null,
+        "municipal": 2534.924046111031,
+        "state": 3162.923518172065,
+        "total": 5697.847564283096
+      },
+      {
+        "year": 2024,
+        "municipality": "Övertorneå",
+        "private": null,
+        "municipal": 6095.350158420972,
+        "state": 6591.67736268218,
+        "total": 12687.027521103151
+      },
+      {
+        "year": 2025,
+        "municipality": "Arjeplog",
+        "private": 829.5349685909387,
+        "municipal": 284.1393327263783,
+        "state": 5176.607002712269,
+        "total": 6290.281304029586
+      },
+      {
+        "year": 2025,
+        "municipality": "Arvidsjaur",
+        "private": 200.1172675209913,
+        "municipal": 14291.69353417076,
+        "state": 7340.858934155109,
+        "total": 21832.66973584686
+      },
+      {
+        "year": 2025,
+        "municipality": "Boden",
+        "private": 1554.812401580695,
+        "municipal": 94744.41655014102,
+        "state": 24146.28973334346,
+        "total": 120445.51868506517
+      },
+      {
+        "year": 2025,
+        "municipality": "Gällivare",
+        "private": 3220.761608437084,
+        "municipal": 55020.26547107506,
+        "state": 3927.51279244349,
+        "total": 62168.53987195563
+      },
+      {
+        "year": 2025,
+        "municipality": "Haparanda",
+        "private": 41.81791362435573,
+        "municipal": 20461.74718204818,
+        "state": 8735.98466093413,
+        "total": 29239.549756606666
+      },
+      {
+        "year": 2025,
+        "municipality": "Jokkmokk",
+        "private": null,
+        "municipal": 5974.980026906006,
+        "state": 4016.014203629987,
+        "total": 9990.994230535993
+      },
+      {
+        "year": 2025,
+        "municipality": "Kalix",
+        "private": 118.6614022226078,
+        "municipal": 29470.23236294054,
+        "state": 9620.974262805139,
+        "total": 39209.86802796829
+      },
+      {
+        "year": 2025,
+        "municipality": "Kiruna",
+        "private": 3863.771871903502,
+        "municipal": 10939.40221156924,
+        "state": 17340.75130158855,
+        "total": 32143.92538506129
+      },
+      {
+        "year": 2025,
+        "municipality": "Luleå",
+        "private": 9324.09871927794,
+        "municipal": 205245.2116126538,
+        "state": 28404.64313722053,
+        "total": 242973.95346915227
+      },
+      {
+        "year": 2025,
+        "municipality": "Pajala",
+        "private": 577.4306832138273,
+        "municipal": 9673.420647819963,
+        "state": 15685.12319387286,
+        "total": 25935.97452490665
+      },
+      {
+        "year": 2025,
+        "municipality": "Piteå",
+        "private": 2453.636313036335,
+        "municipal": 116850.6463530474,
+        "state": 12928.39561383437,
+        "total": 132232.6782799181
+      },
+      {
+        "year": 2025,
+        "municipality": "Älvsbyn",
+        "private": null,
+        "municipal": 15499.70699958821,
+        "state": 4332.282568616891,
+        "total": 19831.9895682051
+      },
+      {
+        "year": 2025,
+        "municipality": "Överkalix",
+        "private": null,
+        "municipal": 2534.92404611103,
+        "state": 3162.923518172065,
+        "total": 5697.8475642830945
+      },
+      {
+        "year": 2025,
+        "municipality": "Övertorneå",
+        "private": null,
+        "municipal": 6095.350158420973,
+        "state": 6591.67736268218,
+        "total": 12687.027521103151
+      }
+    ]
+  }
+}
