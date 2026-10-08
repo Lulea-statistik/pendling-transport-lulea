@@ -80,6 +80,11 @@ def main():
     current=extract_section(soup,"Aktuella")
     planned=extract_section(soup,"Planerade")
     live=current+planned
+    if not live:
+        lines=[clean(x) for x in soup.stripped_strings]
+        for i,x in enumerate(lines):
+            if "Aktuella" in x or "Planerade" in x or x=="Visa":
+                print("DEBUG",i,lines[max(0,i-3):i+8])
 
     existing=load_existing()
     by_id={x["id"]:x for x in existing.get("items",[])}
