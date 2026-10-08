@@ -109,3 +109,50 @@ function render(){
 })().catch(err=>{
   $("matrix").innerHTML='<div style="padding:20px;color:#b42318"><strong>Kunde inte ladda data.</strong><br>'+String(err.message||err)+'</div>';
 });
+
+
+const NORRBOTTEN_MUNICIPALITIES=[
+  "Arjeplog","Arvidsjaur","Boden","Gällivare","Haparanda","Jokkmokk","Kalix",
+  "Kiruna","Luleå","Pajala","Piteå","Älvsbyn","Överkalix","Övertorneå"
+];
+
+function setupPageNavigation(){
+  const tabs=[...document.querySelectorAll(".tab[data-page]")];
+  const pages=[...document.querySelectorAll(".page")];
+
+  function openPage(name){
+    tabs.forEach(t=>t.classList.toggle("active",t.dataset.page===name));
+    pages.forEach(p=>p.classList.toggle("active",p.id==="page-"+name));
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  tabs.forEach(tab=>tab.addEventListener("click",()=>openPage(tab.dataset.page)));
+  document.querySelectorAll("[data-open-page]").forEach(btn=>{
+    btn.addEventListener("click",()=>openPage(btn.dataset.openPage));
+  });
+}
+
+function setupMunicipalityExplorer(selectId,headingIds){
+  const select=$(selectId);
+  if(!select)return;
+  select.innerHTML="";
+  NORRBOTTEN_MUNICIPALITIES.forEach(name=>{
+    const opt=document.createElement("option");
+    opt.value=name;opt.textContent=name;select.appendChild(opt);
+  });
+  select.value="Luleå";
+
+  const update=()=>{
+    headingIds.forEach(id=>{
+      const node=$(id);
+      if(node)node.textContent=select.value;
+    });
+  };
+  select.addEventListener("change",update);
+  update();
+}
+
+setupPageNavigation();
+setupMunicipalityExplorer("vehicleMunicipality",["vehicleMunicipalityTitle","vehicleMunicipalityHeading"]);
+setupMunicipalityExplorer("injuryMunicipality",["injuryMunicipalityHeading"]);
+setupMunicipalityExplorer("serviceMunicipality",["serviceMunicipalityHeading"]);
