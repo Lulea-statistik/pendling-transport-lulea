@@ -21,6 +21,7 @@
   <button class="tab" data-page="injuries">Vägtrafikskador</button>
   <button class="tab" data-page="service">Färdtjänst</button>
   <button class="tab" data-page="nvdb">NVDB & vägnät</button>
+  <button class="tab" data-page="transit">Kollektivtrafik</button>
 </nav>
 
 <main>
@@ -346,6 +347,82 @@
         <article><h3>2. Hastighet + väghållare</h3><p>Nästa praktiska API-spår: visa hur stor del av Luleås vägnät som ligger i olika hastighetsklasser och vem som ansvarar för sträckorna.</p></article>
         <article><h3>3. Tillgänglighet</h3><p>Bygg restids- och räckviddsanalyser till exempelvis arbetsplatser, skolor, industriområden och service.</p></article>
         <article><h3>4. Gång och cykel</h3><p>Kombinera cykelvägnätet med sammanhängande stråk, barriärer och målpunkter för att gå från antal kilometer till faktisk nätverksnytta.</p></article>
+      </div>
+    </section>
+  </section>
+
+
+  <section id="page-transit" class="page">
+    <section class="page-intro panel">
+      <div>
+        <h2>Kollektivtrafik i Luleå</h2>
+        <p>Planerad busstrafik från Luleå Lokaltrafik och Länstrafiken Norrbotten, kompletterad med Luleå kommuns kollektivtrafiklager.</p>
+      </div>
+      <a href="https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik" target="_blank" rel="noopener">Luleå kommunkarta</a>
+    </section>
+
+    <section class="cards source-cards">
+      <article><span>Hållplatser i Luleå</span><strong id="transitStops">–</strong><small>LLT + Länstrafiken</small></article>
+      <article><span>Busslinjer</span><strong id="transitRoutes">–</strong><small>linjer som trafikerar kommunen</small></article>
+      <article><span>Planerade hållplatsavgångar</span><strong id="transitDepartures">–</strong><small id="transitReferenceDay">referensvardag</small></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Datakällor</h2>
+          <p id="transitStatus">Laddar kollektivtrafikdata…</p>
+        </div>
+        <a href="https://www.trafiklab.se/api/gtfs-datasets/gtfs-regional/" target="_blank" rel="noopener">Trafiklab GTFS Regional</a>
+      </div>
+      <div id="transitSourceGrid" class="available-grid">
+        <article>
+          <h3>Luleå Lokaltrafik</h3>
+          <p>GTFS-operatör <code>lulea</code>. Planerade hållplatser, linjer, turer och tidtabeller.</p>
+        </article>
+        <article>
+          <h3>Länstrafiken Norrbotten</h3>
+          <p>GTFS-operatör <code>norrbotten</code>. Endast hållplatser inom Luleå kommuns geografiska gräns tas med i rapporten.</p>
+        </article>
+        <article>
+          <h3>Luleå kommunkarta</h3>
+          <p>Kommunens kollektivtrafiklager innehåller Busshållplats LLT, Busshållplats Länstrafiken, Busslinje LLT och Busslinje Länstrafiken.</p>
+        </article>
+        <article>
+          <h3>Geografisk avgränsning</h3>
+          <p>GTFS-hållplatser filtreras mot Luleå kommuns polygon (kommunkod 2580), så regional trafik utanför kommunen inte räknas in.</p>
+        </article>
+      </div>
+      <p id="transitSetupNote" class="source-note"></p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Mest trafikerade hållplatser</h2>
+          <p>Antal planerade hållplatsavgångar under referensvardagen.</p>
+        </div>
+      </div>
+      <div id="transitStopBars" class="bar-list"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Busslinjer</h2>
+          <p>Linjer som har minst en hållplats inom Luleå kommun under referensvardagen.</p>
+        </div>
+      </div>
+      <div id="transitRouteTable" class="data-table-wrap"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Analysmöjligheter</h2>
+      <div class="available-grid">
+        <article><h3>Hållplatstäthet</h3><p>Antal hållplatser och antal linjer per hållplats, med möjlighet att senare bryta ner till NYKO/DeSO.</p></article>
+        <article><h3>Turtäthet</h3><p>Planerade avgångar per hållplats och linje. Det gör det möjligt att skilja en hållplats nära bostaden från en faktiskt vältrafikerad hållplats.</p></article>
+        <article><h3>500 meter till kollektivtrafik</h3><p>Nästa steg kan vara att kombinera hållplatserna med befolkning och beräkna andel invånare inom 500 meter från hållplats.</p></article>
+        <article><h3>Pendling + kollektivtrafik</h3><p>Pendlingsmatrisen kan kopplas mot kollektivtrafikutbudet för att identifiera starka arbetsmarknadsrelationer där kollektivtrafikutbudet är svagt eller starkt.</p></article>
       </div>
     </section>
   </section>
