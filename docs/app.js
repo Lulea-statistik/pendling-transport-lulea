@@ -156,6 +156,7 @@ setupPageNavigation();
 setupMunicipalityExplorer("vehicleMunicipality",["vehicleMunicipalityTitle","vehicleMunicipalityHeading"]);
 setupMunicipalityExplorer("injuryMunicipality",["injuryMunicipalityHeading"]);
 setupMunicipalityExplorer("serviceMunicipality",["serviceMunicipalityHeading"]);
+setupMunicipalityExplorer("nvdbMunicipality",["nvdbMunicipalityTitle","nvdbMunicipalityHeading"]);
 
 
 let TRAFA=null;
@@ -300,3 +301,119 @@ async function loadTrafaData(){
   }
 }
 loadTrafaData();
+
+
+let NVDB_DATA=null;
+const nvdbFmt=new Intl.NumberFormat("sv-SE",{minimumFractionDigits:0,maximumFractionDigits:1});
+
+function nvdbKm(section,value){
+  if(value==null||!Number.isFinite(Number(value)))return null;
+  return section==="cycle"?Number(value)/1000:Number(value);
+}
+
+function nvdbValueText(value){
+  if(value==null||!Number.isFinite(Number(value)))return "–";
+  return nvdbFmt.format(Number(value))+" km";
+}
+
+function nvdbLineSvg(series){
+  const width=900,height=330,p={l:62,r:22,t:26,b:48};
+  const all=series.flatMap(s=>s.values.map(v=>v.value).filter(Number.isFinite));
+  const max=Math.max(1,...all);
+  const years=[...new Set(series.flatMap(s=>s.values.map(v=>v.year)))].sort((a,b)=>a-b);
+  const x=year=>p.l+(years.indexOf(year)/(Math.max(1,years.length-1)))*(width-p.l-p.r);
+  const y=value=>height-p.b-(value/max)*(height-p.t-p.b);
+  const colors=["#2563eb","#dc2626","#16a34a"];
+  const labels=series.map((s,i)=>'<span class="nvdb-legend-item"><i style="background:'+colors[i]+'"></i>'+s.label+'</span>').join("");
+  const grid=[0,.25,.5,.75,1].map(fr=>{
+    const yy=height-p.b-fr*(height-p.t-p.b);
+    return '<line x1="'+p.l+'" x2="'+(width-p.r)+'" y1="'+yy+'" y2="'+yy+'" class="nvdb-gridline"/>'+
+      '<text x="'+(p.l-10)+'" y="'+(yy+4)+'" text-anchor="end" class="nvdb-axis">'+nvdbFmt.format(max*fr)+'</text>';
+  }).join("");
+  const yearTicks=years.map(year=>'<text x="'+x(year)+'" y="'+(height-18)+'" text-anchor="middle" class="nvdb-axis">'+year+'</text>').join("");
+  const lines=series.map((s,i)=>{
+    const pts=s.values.filter(v=>Number.isFinite(v.value)).map(v=>x(v.year)+','+y(v.value)).join(' ');
+    const circles=s.values.filter(v=>Number.isFinite(v.value)).map(v=>
+      '<circle cx="'+x(v.year)+'" cy="'+y(v.value)+'" r="4" fill="'+colors[i]+'"><title>'+s.label+' '+v.year+': '+nvdbFmt.format(v.value)+' km</title></circle>'
+    ).join("");
+    return '<polyline points="'+pts+'" fill="none" stroke="'+colors[i]+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'+circles;
+  }).join("");
+  return '<div class="nvdb-legend">'+labels+'</div><svg class="nvdb-svg" viewBox="0 0 '+width+' '+height+'" role="img" aria-label="Utveckling av vägnät">'+grid+yearTicks+lines+'</svg>';
+}
+
+function renderNvdb(){
+  if(!NVDB_DATA)return;
+  const section=$("nvdbDataset").value;
+  const municipality=$("nvdbMunicipality").value;
+  const data=NVDB_DATA[section];
+  if(!data)return;
+  const years=data.years.slice().sort((a,b)=>a-b);
+  if(!$("nvdbYear").options.length){
+    years.slice().sort((a,b)=>b-a).forEach(year=>{
+      const o=document.createElement("option");o.value=year;o.textContent=year;$("nvdbYear").appendChild(o);
+    });
+  }
+  let year=Number($("nvdbYear").value||years[years.length-1]);
+  if(!years.includes(year)){
+    year=years[years.length-1];
+    $("nvdbYear").value=year;
+  }
+  const row=data.rows.find(r=>r.year===year&&r.municipality===municipality);
+  $("nvdbDatasetTitle").textContent=data.label;
+  $("nvdbStatus").textContent=row
+    ? "NVDB "+year+" · värden efter väghållare"
+    : "Ingen kommunrad hittades för valt år.";
+  $("nvdbPeriod").textContent=years[0]+"–"+years[years.length-1];
+  $("nvdbChartUnit").textContent="kilometer";
+
+  const metrics=[
+    ["private","Enskild väghållare"],
+    ["municipal","Kommunal väghållare"],
+    ["state","Statlig väghållare"],
+    ["total","Totalt vägnät"]
+  ];
+  const grid=$("nvdbMetricGrid");grid.innerHTML="";
+  metrics.forEach(([key,label])=>{
+    const article=document.createElement("article");article.className="metric-card";
+    const span=document.createElement("span");span.textContent=label;
+    const strong=document.createElement("strong");strong.textContent=nvdbValueText(row?nvdbKm(section,row[key]):null);
+    article.append(span,strong);grid.appendChild(article);
+  });
+
+  const municipalRows=data.rows.filter(r=>r.municipality===municipality).sort((a,b)=>a.year-b.year);
+  const series=[
+    {label:"Enskild",values:municipalRows.map(r=>({year:r.year,value:nvdbKm(section,r.private)}))},
+    {label:"Kommunal",values:municipalRows.map(r=>({year:r.year,value:nvdbKm(section,r.municipal)}))},
+    {label:"Statlig",values:municipalRows.map(r=>({year:r.year,value:nvdbKm(section,r.state)}))}
+  ];
+  $("nvdbTrend").innerHTML=nvdbLineSvg(series);
+
+  const table=document.createElement("table");table.className="simple-data-table";
+  table.innerHTML="<thead><tr><th>År</th><th>Enskild</th><th>Kommunal</th><th>Statlig</th><th>Totalt</th></tr></thead>";
+  const tbody=document.createElement("tbody");
+  municipalRows.slice().sort((a,b)=>b.year-a.year).forEach(r=>{
+    const tr=document.createElement("tr");
+    [r.year,nvdbValueText(nvdbKm(section,r.private)),nvdbValueText(nvdbKm(section,r.municipal)),nvdbValueText(nvdbKm(section,r.state)),nvdbValueText(nvdbKm(section,r.total))].forEach(v=>{
+      const td=document.createElement("td");td.textContent=v;tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  $("nvdbTable").replaceChildren(table);
+}
+
+async function loadNvdbData(){
+  try{
+    const r=await fetch("data/nvdb.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    NVDB_DATA=await r.json();
+    const years=[...new Set(Object.values(NVDB_DATA).flatMap(x=>x.years||[]))].sort((a,b)=>b-a);
+    $("nvdbYear").innerHTML="";
+    years.forEach(year=>{const o=document.createElement("option");o.value=year;o.textContent=year;$("nvdbYear").appendChild(o)});
+    ["nvdbMunicipality","nvdbDataset","nvdbYear"].forEach(id=>$(id).addEventListener("change",renderNvdb));
+    renderNvdb();
+  }catch(err){
+    $("nvdbStatus").textContent="Kunde inte läsa NVDB-data: "+err.message;
+  }
+}
+loadNvdbData();
