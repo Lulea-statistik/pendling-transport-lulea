@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Pendling i Norrbotten</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <header>
@@ -152,26 +152,58 @@
     <section class="page-intro panel">
       <div>
         <h2>Vägtrafikskador</h2>
-        <p>Kommunal statistik över olyckor och personskador i vägtrafiken.</p>
+        <p>Kommunal statistik över polisrapporterade vägtrafikolyckor och personskador från Trafikanalys öppna API.</p>
       </div>
       <a href="https://www.trafa.se/vagtrafik/vagtrafikskador/" target="_blank" rel="noopener">Källa: Trafikanalys</a>
     </section>
+
     <section class="controls">
       <label>Kommun
         <select id="injuryMunicipality"></select>
       </label>
+      <label>År
+        <select id="injuryYear"></select>
+      </label>
     </section>
+
     <section class="panel">
-      <h2>Tillgängliga data för <span id="injuryMunicipalityHeading">Luleå</span></h2>
-      <div class="available-grid">
-        <article><h3>Olyckor med personskada</h3><p>Antal registrerade vägtrafikolyckor med personskada.</p></article>
-        <article><h3>Omkomna</h3><p>Antal personer som omkommit i vägtrafiken.</p></article>
-        <article><h3>Skadade</h3><p>Svårt skadade och lindrigt skadade enligt publicerad statistik.</p></article>
-        <article><h3>Jämförelsetal</h3><p>Kommunjämförelser, bland annat per 100&nbsp;000 invånare där måttet publiceras.</p></article>
-        <article><h3>Mer detaljerade variabler</h3><p>Underliggande statistik innehåller bland annat trafikmiljö, vägtyp, hastighetsgräns och gatumiljö. Subkommunal publicering behöver inventeras separat.</p></article>
+      <div class="panel-head">
+        <div>
+          <h2>Vägtrafikskador i <span id="injuryMunicipalityHeading">Luleå</span></h2>
+          <p id="injuryDataStatus">Laddar Trafikanalys-data…</p>
+        </div>
       </div>
-      <p id="injuryDataStatus" class="source-note">Kommunstatistiken finns hos Trafikanalys statistikstudio, men kommunraderna ingår inte i 2025 års publicerade Excel-tabellverk. Jag kopplar därför denna sida mot statistikportal/API i nästa steg i stället för att använda fel geografisk nivå.</p>
-      <p><a href="https://www.trafa.se/vagtrafik/hur-manga-omkommer-och-skadas-i-vagtrafiken-i-olika-kommuner-11557/" target="_blank" rel="noopener">Öppna Trafikanalys kommunstatistik för vägtrafikskador</a></p>
+
+      <div id="injuryMetricGrid" class="metric-grid"></div>
+
+      <div class="nvdb-chart-head">
+        <h3>Olyckor med personskada över tid</h3>
+        <span>antal olyckor</span>
+      </div>
+      <div id="injuryTrend" class="nvdb-trend"></div>
+
+      <div class="data-table-wrap" id="injuryTable"></div>
+      <p class="source-note">Trafikanalys officiella statistik bygger på polisrapporterade vägtrafikolyckor. Självmord exkluderas från och med 2010 enligt den officiella statistikens metodik.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Olyckor efter hastighetsgräns</h2>
+          <p>Fördelning för senaste statistikåret 2025. Visar olyckor med dödlig utgång, svår eller lindrig personskada.</p>
+        </div>
+      </div>
+      <div id="injurySpeedBars" class="bar-list"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Olyckor efter vägtyp</h2>
+          <p>Fördelning för senaste statistikåret 2025.</p>
+        </div>
+      </div>
+      <div id="injuryRoadBars" class="bar-list"></div>
     </section>
   </section>
 
@@ -249,6 +281,55 @@
     <section class="panel">
       <div class="section-head">
         <div>
+          <h2>Hastighetsgräns + väghållare</h2>
+          <p>Första fördjupningsspåret: kombinera vem som ansvarar för vägen med gällande hastighetsgräns.</p>
+        </div>
+        <a href="https://nvdbpakarta.trafikverket.se/" target="_blank" rel="noopener">Öppna NVDB på karta</a>
+      </div>
+      <div class="analysis-grid">
+        <article class="analysis-card">
+          <h3>Väghållarandel i valt år</h3>
+          <div id="nvdbHolderShares" class="share-bars"></div>
+          <p>Beräknas från NVDB:s kommunstatistik för valt år och vald kommun.</p>
+        </article>
+        <article class="analysis-card">
+          <h3>Hastighetsgräns</h3>
+          <p>NVDB:s aktuella API innehåller gällande högsta tillåtna hastighet som linjeobjekt. När segmentdata hämtas kan rapporten visa kilometer och andel väg i exempelvis 30, 40, 50, 60, 70, 80, 90, 100, 110 och 120 km/h.</p>
+          <div class="api-badge">Aktuell NVDB-datamängd · Hastighetsgräns</div>
+        </article>
+      </div>
+      <p class="source-note">Trafikverkets Datautbytesportal låter alla läsa om datamängderna utan inloggning, men ett kostnadsfritt konto krävs för att hämta segmentdata via API:t. Därför visar rapporten nu faktiska väghållarandelar, medan hastighetsfördelningen aktiveras när API-hämtningen kan autentiseras.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Vägbredd + funktionell vägklass</h2>
+          <p>Andra fördjupningsspåret: vägens fysiska bredd tillsammans med dess betydelse i vägnätet.</p>
+        </div>
+        <a href="https://www.nvdb.se/sv/kund/hamta-aktuella-data/" target="_blank" rel="noopener">NVDB öppna API</a>
+      </div>
+      <div class="analysis-grid">
+        <article class="analysis-card">
+          <h3>Vägbredd</h3>
+          <p>NVDB redovisar vägbanans bredd i meter. För belagd väg avses avståndet mellan beläggningskanterna eller kantstöden; för övrig väg den bäriga bredden.</p>
+          <div class="api-badge">Aktuell NVDB-datamängd · Vägbredd</div>
+        </article>
+        <article class="analysis-card">
+          <h3>Funktionell vägklass</h3>
+          <p>Klasserna går från 0 till 9. Klass 0 är de viktigaste vägarna för vägnätets förbindelsemöjligheter och klass 9 de minst viktiga. Detta lämpar sig för att skilja huvudstråk från lokala vägar.</p>
+          <div class="class-scale">
+            <span>0</span><i></i><span>9</span>
+          </div>
+          <div class="api-badge">Aktuell NVDB-datamängd · Funktionell vägklass</div>
+        </article>
+      </div>
+      <p class="source-note">När segmenthämtningen är autentiserad kan vi lägga in median/medelvägbredd, fördelning på breddklasser och kilometer per funktionell vägklass för vald kommun.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
           <h2>Aktuella NVDB-data via Trafikverkets öppna API</h2>
           <p>De här datamängderna kan användas för mer detaljerad analys än årsstatistiken ovan.</p>
         </div>
@@ -289,6 +370,6 @@
   </section>
 
 </main>
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>
