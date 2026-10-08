@@ -1,0 +1,16 @@
+name: Test injury API query
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/test_injury_query.py"
+      - ".github/workflows/test-injury-query.yml"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/test_injury_query.py
