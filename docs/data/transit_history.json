@@ -1,0 +1,236 @@
+{
+  "source": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/",
+  "method": "Första tillgängliga GTFS Sverige 2-snapshot i oktober, annars närmaste höstmånad. Endast LLT och Länstrafiken Norrbotten, buss, hållplatser inom Luleå kommun.",
+  "years": [
+    {
+      "snapshot_date": "2017-10-02",
+      "reference_weekday": "2017-10-02",
+      "stops": 365,
+      "routes": 49,
+      "weekday_trips": 978,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 211,
+          "routes": 24,
+          "weekday_trips": 639
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 165,
+          "routes": 25,
+          "weekday_trips": 339
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2017/10/sweden-20171002.zip",
+      "year": 2017
+    },
+    {
+      "snapshot_date": "2018-10-01",
+      "reference_weekday": "2018-10-01",
+      "stops": 367,
+      "routes": 51,
+      "weekday_trips": 994,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 210,
+          "routes": 26,
+          "weekday_trips": 658
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 168,
+          "routes": 25,
+          "weekday_trips": 336
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2018/10/sweden-20181001.zip",
+      "year": 2018
+    },
+    {
+      "snapshot_date": "2019-10-01",
+      "reference_weekday": "2019-10-07",
+      "stops": 367,
+      "routes": 51,
+      "weekday_trips": 984,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 209,
+          "routes": 25,
+          "weekday_trips": 644
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 176,
+          "routes": 26,
+          "weekday_trips": 340
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2019/10/sweden-20191001.zip",
+      "year": 2019
+    },
+    {
+      "snapshot_date": "2020-10-01",
+      "reference_weekday": "2020-10-05",
+      "stops": 363,
+      "routes": 51,
+      "weekday_trips": 1051,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 209,
+          "routes": 25,
+          "weekday_trips": 708
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 175,
+          "routes": 26,
+          "weekday_trips": 343
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2020/10/sweden-20201001.zip",
+      "year": 2020
+    },
+    {
+      "snapshot_date": "2021-10-01",
+      "reference_weekday": "2021-10-04",
+      "stops": 362,
+      "routes": 50,
+      "weekday_trips": 975,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 206,
+          "routes": 25,
+          "weekday_trips": 644
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 177,
+          "routes": 25,
+          "weekday_trips": 331
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2021/10/sweden-20211001.zip",
+      "year": 2021
+    },
+    {
+      "snapshot_date": "2022-10-02",
+      "reference_weekday": "2022-10-03",
+      "stops": 358,
+      "routes": 48,
+      "weekday_trips": 1005,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 203,
+          "routes": 24,
+          "weekday_trips": 683
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 174,
+          "routes": 24,
+          "weekday_trips": 322
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2022/10/sweden-20221002.zip",
+      "year": 2022
+    },
+    {
+      "snapshot_date": "2023-10-02",
+      "reference_weekday": "2023-10-02",
+      "stops": 351,
+      "routes": 47,
+      "weekday_trips": 1016,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 191,
+          "routes": 23,
+          "weekday_trips": 703
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 180,
+          "routes": 24,
+          "weekday_trips": 313
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2023/10/sweden-20231002.zip",
+      "year": 2023
+    },
+    {
+      "snapshot_date": "2024-10-01",
+      "reference_weekday": "2024-10-07",
+      "stops": 349,
+      "routes": 46,
+      "weekday_trips": 1022,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 188,
+          "routes": 23,
+          "weekday_trips": 704
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 181,
+          "routes": 23,
+          "weekday_trips": 318
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2024/10/sweden-20241001.zip",
+      "year": 2024
+    },
+    {
+      "snapshot_date": "2025-10-01",
+      "reference_weekday": "2025-10-06",
+      "stops": 358,
+      "routes": 46,
+      "weekday_trips": 1020,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 187,
+          "routes": 23,
+          "weekday_trips": 706
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 190,
+          "routes": 23,
+          "weekday_trips": 314
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2025/10/sweden-20251001.zip",
+      "year": 2025
+    },
+    {
+      "snapshot_date": "2026-10-01",
+      "reference_weekday": "2026-10-05",
+      "stops": 360,
+      "routes": 46,
+      "weekday_trips": 1070,
+      "operators": [
+        {
+          "label": "Luleå Lokaltrafik",
+          "stops": 183,
+          "routes": 23,
+          "weekday_trips": 743
+        },
+        {
+          "label": "Länstrafiken Norrbotten",
+          "stops": 196,
+          "routes": 23,
+          "weekday_trips": 327
+        }
+      ],
+      "source_url": "https://data.samtrafiken.se/trafiklab/gtfs-sverige-2/2026/10/sweden-20261001.zip",
+      "year": 2026
+    }
+  ]
+}
