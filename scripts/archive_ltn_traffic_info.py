@@ -24,84 +24,46 @@ def clean(text):
     return re.sub(r"\s+"," ",text or "").strip()
 
 def extract_section(soup, heading_text):
-    heading=None
-    for h in soup.find_all(["h2","h3"]):
-        if clean(h.get_text(" ",strip=True)).casefold()==heading_text.casefold():
-            heading=h
-            break
-    if not heading:
+    lines=[clean(x) for x in soup.stripped_strings]
+    lines=[x for x in lines if x]
+    try:
+        start=next(i for i,x in enumerate(lines) if x.casefold()==heading_text.casefold())+1
+    except StopIteration:
         return []
 
-    nodes=[]
-    for el in heading.find_all_next():
-        if el is heading:
-            continue
-        if el.name in {"h2","h3"} and el is not heading:
-            txt=clean(el.get_text(" ",strip=True))
-            if txt.casefold() in {"aktuella","planerade","prenumerera på trafikinformation"}:
-                break
-        nodes.append(el)
-
-    # Titles on the live page are short text blocks followed by a "Visa" button.
-    candidates=[]
-    for el in nodes:
-        txt=clean(el.get_text(" ",strip=True))
-        if not txt or txt=="Visa":
-            continue
-        if el.name in {"h3","h4","strong"}:
-            candidates.append((el,txt))
-        elif el.name in {"p","div"} and len(txt)<180:
-            nxt=el.find_next()
-            if nxt and clean(nxt.get_text(" ",strip=True))=="Visa":
-                candidates.append((el,txt))
-
-    # Fallback: inspect buttons named Visa and use nearest previous compact text.
-    if not candidates:
-        for btn in nodes:
-            if clean(btn.get_text(" ",strip=True))!="Visa":
-                continue
-            prev=btn.find_previous()
-            seen=0
-            while prev and seen<8:
-                txt=clean(prev.get_text(" ",strip=True))
-                if txt and txt!="Visa" and len(txt)<180:
-                    candidates.append((prev,txt))
-                    break
-                prev=prev.find_previous()
-                seen+=1
+    stop_names={"aktuella","planerade","prenumerera på trafikinformation","länstrafiken norrbotten"}
+    end=len(lines)
+    for i in range(start,len(lines)):
+        if lines[i].casefold() in stop_names and lines[i].casefold()!=heading_text.casefold():
+            end=i
+            break
+    section=lines[start:end]
 
     out=[]
-    used=set()
-    for el,title in candidates:
-        if title in used:
-            continue
-        used.add(title)
-        pieces=[]
-        cur=el.find_next()
-        while cur:
-            txt=clean(cur.get_text(" ",strip=True))
-            if cur.name in {"h2","h3","h4"} and txt and txt!=title:
-                break
-            if txt=="Visa":
-                cur=cur.find_next()
-                continue
-            if txt and txt not in pieces and len(txt)<1200:
-                pieces.append(txt)
-            if len(" ".join(pieces))>2500:
-                break
-            cur=cur.find_next()
-        body=clean(" ".join(pieces))
-        if body.startswith(title):
-            body=clean(body[len(title):])
-        key=hashlib.sha1((heading_text+"|"+title+"|"+body[:300]).encode("utf-8")).hexdigest()[:16]
-        line_nums=sorted(set(re.findall(r"(?i)linje\s+(\d+)",title+" "+body)))
-        out.append({
-            "id":key,
-            "status":heading_text,
-            "title":title,
-            "body":body,
-            "lines":line_nums,
-        })
+    i=0
+    while i<len(section)-1:
+        title=section[i]
+        if i+1<len(section) and section[i+1].casefold()=="visa":
+            j=i+2
+            body_parts=[]
+            while j<len(section):
+                if j+1<len(section) and section[j+1].casefold()=="visa":
+                    break
+                body_parts.append(section[j])
+                j+=1
+            body=clean(" ".join(body_parts))
+            key=hashlib.sha1((heading_text+"|"+title).encode("utf-8")).hexdigest()[:16]
+            line_nums=sorted(set(re.findall(r"(?i)linje\\s+(\\d+)",title+" "+body)))
+            out.append({
+                "id":key,
+                "status":heading_text,
+                "title":title,
+                "body":body,
+                "lines":line_nums,
+            })
+            i=j
+        else:
+            i+=1
     return out
 
 def load_existing():
