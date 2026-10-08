@@ -7,6 +7,7 @@ import json
 import re
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 
 API_URL = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/AM/AM0210/AM0210F/ArRegPend2"
 
@@ -56,8 +57,15 @@ def post_json(url: str, payload: dict) -> str:
             "User-Agent": "pendling-transport-lulea/1.0",
         },
     )
-    with urlopen(req, timeout=120) as r:
-        return r.read().decode("utf-8-sig")
+    try:
+        with urlopen(req, timeout=120) as r:
+            return r.read().decode("utf-8-sig")
+    except HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        print("SCB API HTTP-fel:", e.code, e.reason)
+        print("SCB API svar:", body)
+        print("Payload:", json.dumps(payload, ensure_ascii=False))
+        raise
 
 
 def find_var(metadata: dict, *needles: str) -> dict:
