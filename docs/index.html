@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Pendling i Norrbotten</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 <header>
@@ -20,6 +20,7 @@
   <button class="tab" data-page="vehicles">Fordon i kommuner</button>
   <button class="tab" data-page="injuries">Vägtrafikskador</button>
   <button class="tab" data-page="service">Färdtjänst</button>
+  <button class="tab" data-page="nvdb">NVDB & vägnät</button>
 </nav>
 
 <main>
@@ -198,7 +199,96 @@
       <p class="source-note">Källa: Trafikanalys, Färdtjänst och riksfärdtjänst 2025. Statistiken är en totalundersökning av landets kommuner.</p>
     </section>
   </section>
+  <section id="page-nvdb" class="page">
+    <section class="page-intro panel">
+      <div>
+        <h2>NVDB & vägnät</h2>
+        <p>Kommunal vägnätsstatistik från Nationella vägdatabasen samt exempel på hur andra kommuner använder NVDB i praktiken.</p>
+      </div>
+      <a href="https://www.nvdb.se/sv/kund/statistik/" target="_blank" rel="noopener">Källa: NVDB</a>
+    </section>
+
+    <section class="controls">
+      <label>Kommun
+        <select id="nvdbMunicipality"></select>
+      </label>
+      <label>Typ av vägnät
+        <select id="nvdbDataset">
+          <option value="road">Bilvägnät</option>
+          <option value="cycle">Cykelvägnät</option>
+        </select>
+      </label>
+      <label>År
+        <select id="nvdbYear"></select>
+      </label>
+    </section>
+
+    <section class="cards source-cards">
+      <article><span>Vald kommun</span><strong id="nvdbMunicipalityTitle">Luleå</strong><small>kommun</small></article>
+      <article><span>Statistikperiod</span><strong id="nvdbPeriod">2020–2025</strong><small>årlig NVDB-statistik</small></article>
+      <article><span>Väghållare</span><strong>3 kategorier</strong><small>enskild · kommunal · statlig</small></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2><span id="nvdbDatasetTitle">Bilvägnät</span> i <span id="nvdbMunicipalityHeading">Luleå</span></h2>
+          <p id="nvdbStatus">Laddar NVDB-data…</p>
+        </div>
+      </div>
+      <div id="nvdbMetricGrid" class="metric-grid"></div>
+      <div class="nvdb-chart-head">
+        <h3>Utveckling 2020–2025</h3>
+        <span id="nvdbChartUnit">kilometer</span>
+      </div>
+      <div id="nvdbTrend" class="nvdb-trend"></div>
+      <div id="nvdbTable" class="data-table-wrap"></div>
+      <p class="source-note">NVDB:s kommunstatistik är årsaggregerad. Bilvägnätet publiceras i kilometer och cykelvägnätet i meter; på denna sida räknas cykelvägnätet om till kilometer för att bli lättare att läsa.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Aktuella NVDB-data via Trafikverkets öppna API</h2>
+          <p>De här datamängderna kan användas för mer detaljerad analys än årsstatistiken ovan.</p>
+        </div>
+        <a href="https://www.nvdb.se/sv/kund/hamta-aktuella-data/" target="_blank" rel="noopener">Hämta aktuella data</a>
+      </div>
+      <div class="available-grid">
+        <article><h3>Väghållare</h3><p>Vem som ansvarar för en vägsträcka. Lämpligt för drift, planering och medborgarfrågor.</p></article>
+        <article><h3>Hastighetsgräns</h3><p>Kan kombineras med vägnätet för analyser av trafiksäkerhet, tillgänglighet och restid.</p></article>
+        <article><h3>Vägbredd och antal körfält</h3><p>Ger ett strukturellt mått på vägnätets kapacitet och utformning.</p></article>
+        <article><h3>Funktionell vägklass</h3><p>Kan användas för att skilja huvudstråk från lokala vägar och prioritera analyser.</p></article>
+        <article><h3>Bärighet</h3><p>Relevant för gods, industri, tunga transporter och tillgänglighet till målpunkter.</p></article>
+        <article><h3>Vägtrafiknät</h3><p>Själva nätverket möjliggör rutt-, räckvidds- och tillgänglighetsanalyser på subkommunal nivå.</p></article>
+      </div>
+      <p class="source-note">NVDB anger att 12 aktuella datamängder finns i Trafikverkets öppna API. De kan läsas utan inloggning, men konto krävs för att hämta data. Historiska data hänvisas till Lastkajen.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Lärdomar från ”Månadens kommun”</h2>
+      <p class="lead-note">Gemensamt för kommunerna är att NVDB blir mest användbart när vägdata kopplas till konkreta arbetsflöden, nätverksanalys och kvalitetssäkring – inte bara visas som ett kartlager.</p>
+      <div class="lesson-grid">
+        <article><h3>Boden</h3><p>Använder NVDB i webbGIS och som underlag för översiktsplaner, fördjupade översiktsplaner och detaljplaner. Väghållare, vägnummer, hastighet, bärighet och vägbredd används i flera verksamheter. Arbetet med Blåljuskollen lyfter behovet av kvalitetssäkrad vägdata.</p></article>
+        <article><h3>Strömstad</h3><p>Kombinerar NVDB med skolskjuts, räddningstjänstens räckviddsanalyser, gång- och cykelvägar, trafikföreskrifter och bärighetsanalyser för att nå skolor och fabriker.</p></article>
+        <article><h3>Sundsvall</h3><p>Gör återkommande nätverksanalyser för skolskjuts. Det visar värdet av att bygga analysen som en återanvändbar modell snarare än ett engångsuttag.</p></article>
+        <article><h3>Svedala</h3><p>Använder NVDB i tekniska system för trafikföreskrifter, platsuppslagning, belysning, grävtillstånd samt i kartor för snöröjning och cykelvägar.</p></article>
+        <article><h3>Kristianstad</h3><p>Hämtar tillbaka NVDB-data till kommunens egen databas och använder den som en central del av bakgrundskartan, där olika vägföreteelser kan visualiseras separat.</p></article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Vad vi kan bygga vidare för Luleå</h2>
+      <div class="available-grid">
+        <article><h3>1. Vägnätets struktur</h3><p>Kommunalt, statligt och enskilt bil- och cykelvägnät över tid – nu inlagt på sidan.</p></article>
+        <article><h3>2. Hastighet + väghållare</h3><p>Nästa praktiska API-spår: visa hur stor del av Luleås vägnät som ligger i olika hastighetsklasser och vem som ansvarar för sträckorna.</p></article>
+        <article><h3>3. Tillgänglighet</h3><p>Bygg restids- och räckviddsanalyser till exempelvis arbetsplatser, skolor, industriområden och service.</p></article>
+        <article><h3>4. Gång och cykel</h3><p>Kombinera cykelvägnätet med sammanhängande stråk, barriärer och målpunkter för att gå från antal kilometer till faktisk nätverksnytta.</p></article>
+      </div>
+    </section>
+  </section>
+
 </main>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
