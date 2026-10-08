@@ -10,14 +10,13 @@ label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--mute
 .legend{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);white-space:nowrap}.legend i{width:120px;height:13px;border-radius:8px;background:linear-gradient(90deg,#eef5ff,#1d4ed8)}
 .matrix-wrap{overflow:auto;margin-top:14px}.matrix{border-collapse:separate;border-spacing:2px;min-width:1100px}.matrix th{font-size:11px;font-weight:600;padding:5px;min-width:65px;max-width:90px}.matrix th.col{height:120px;vertical-align:bottom}.matrix th.col span{display:inline-block;transform:rotate(-55deg);transform-origin:left bottom;white-space:nowrap}
 .matrix th.row{text-align:right;white-space:nowrap;position:sticky;left:0;background:#fff;z-index:2}.matrix td{height:42px;min-width:65px;text-align:center;border-radius:4px;font-size:12px;font-variant-numeric:tabular-nums;cursor:default}
-.matrix .focus-label{color:var(--focus);font-weight:800}.matrix td.focus-edge{outline:2px solid rgba(180,35,24,.22)}.matrix td.diagonal{box-shadow:inset 0 0 0 2px rgba(23,32,51,.22)}
+.matrix .focus-label{color:var(--focus);font-weight:800}.matrix td.focus-edge{outline:2px solid rgba(180,35,24,.22)}
+.matrix td.diagonal{background:#e5e7eb!important;color:#475569!important;box-shadow:inset 0 0 0 2px rgba(23,32,51,.22)}
+.matrix td.matrix-hover-guide{box-shadow:inset 0 0 0 3px rgba(245,158,11,.72);filter:brightness(.98)}
+.matrix th.matrix-hover-header{background:#fff7ed;color:#9a3412!important;border-radius:4px}
 .matrix td:hover{outline:3px solid #111827;position:relative;z-index:3}.matrix td[data-tip]:hover:after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);background:#111827;color:#fff;padding:7px 9px;border-radius:6px;white-space:nowrap;font-size:11px;z-index:10}
 @media(max-width:800px){header{display:block}.controls{display:block}.controls label{margin-bottom:10px}.cards{grid-template-columns:1fr}.panel-head{display:block}.legend{margin-top:12px}}
 
-.matrix td.neutral-cell{
-  background:#e5e7eb!important;
-  color:#475569!important;
-}
 
 .transport-data{padding:18px}
 .section-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:14px}
