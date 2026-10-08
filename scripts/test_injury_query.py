@@ -8,6 +8,8 @@ queries=[
  "t1004|antolyckdsl|ar:2025|olyckspl|lan:25|kommun:2580",
  "t1004|antolyckdsl|antpersd|antperss|antpersl|ar:2025|hastighet:030,040,050,060,070,080,090,100,110,120,999|lan:25|kommun:2580",
  "t1004|antolyckdsl|antpersd|antperss|antpersl|ar:2025|vagtyp:1,10,11,12,13,2,3,4,5,6,9|lan:25|kommun:2580",
+ "t1004|antolyckdsl|antpersd|antperss|antpersl|ar:2025|hastighet|lan:25|kommun:2580",
+ "t1004|antolyckdsl|antpersd|antperss|antpersl|ar:2025|vagtyp|lan:25|kommun:2580",
 ]
 for q in queries:
     url="https://api.trafa.se/api/data?query="+quote(q,safe="|:,")+"&lang=sv"
