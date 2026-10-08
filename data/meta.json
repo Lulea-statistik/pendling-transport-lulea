@@ -1,0 +1,90 @@
+{
+  "source": "SCB Statistikdatabasen",
+  "table": "ArRegPend2",
+  "api": "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/AM/AM0210/AM0210F/ArRegPend2",
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "sex": [
+    "kvinnor",
+    "män",
+    "totalt"
+  ],
+  "municipalities": [
+    {
+      "code": "2505",
+      "name": "Arvidsjaur",
+      "focus": false
+    },
+    {
+      "code": "2506",
+      "name": "Arjeplog",
+      "focus": false
+    },
+    {
+      "code": "2510",
+      "name": "Jokkmokk",
+      "focus": false
+    },
+    {
+      "code": "2513",
+      "name": "Överkalix",
+      "focus": false
+    },
+    {
+      "code": "2514",
+      "name": "Kalix",
+      "focus": true
+    },
+    {
+      "code": "2518",
+      "name": "Övertorneå",
+      "focus": false
+    },
+    {
+      "code": "2521",
+      "name": "Pajala",
+      "focus": false
+    },
+    {
+      "code": "2523",
+      "name": "Gällivare",
+      "focus": false
+    },
+    {
+      "code": "2560",
+      "name": "Älvsbyn",
+      "focus": true
+    },
+    {
+      "code": "2580",
+      "name": "Luleå",
+      "focus": true
+    },
+    {
+      "code": "2581",
+      "name": "Piteå",
+      "focus": true
+    },
+    {
+      "code": "2582",
+      "name": "Boden",
+      "focus": true
+    },
+    {
+      "code": "2583",
+      "name": "Haparanda",
+      "focus": false
+    },
+    {
+      "code": "2584",
+      "name": "Kiruna",
+      "focus": false
+    }
+  ],
+  "rows": 2940
+}
