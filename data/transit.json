@@ -1,12 +1,4264 @@
 {
-  "configured": false,
+  "configured": true,
   "generated": "2026-10-08",
   "reference_weekday": "2026-10-12",
-  "source": "Trafiklab GTFS Regional / Samtrafiken",
+  "source": "Trafiklab GTFS Sverige 2 / Samtrafiken",
   "municipality": "Luleå",
-  "operators": [],
-  "summary": {},
-  "routes": [],
-  "stops": [],
-  "note": "TRAFIKLAB_API_KEY saknas i GitHub Actions secrets."
+  "operators": [
+    {
+      "label": "Luleå Lokaltrafik",
+      "stops": 184,
+      "routes": 23,
+      "weekday_trips": 794
+    },
+    {
+      "label": "Länstrafiken Norrbotten",
+      "stops": 196,
+      "routes": 23,
+      "weekday_trips": 327
+    },
+    {
+      "label": "Länstrafiken Västerbotten",
+      "stops": 29,
+      "routes": 2,
+      "weekday_trips": 16
+    },
+    {
+      "label": "Norrtåg",
+      "stops": 3,
+      "routes": 4,
+      "weekday_trips": 4
+    }
+  ],
+  "summary": {
+    "stops": 370,
+    "routes": 52,
+    "weekday_departures": 27964,
+    "operators": 4
+  },
+  "routes": [
+    {
+      "id": "860000000000000001-1",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000001-1",
+      "short_name": "1",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 73
+    },
+    {
+      "id": "860000000000000010-10",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000010-10",
+      "short_name": "10",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 77
+    },
+    {
+      "id": "860000000000000023-104",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000023-104",
+      "short_name": "104",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 14
+    },
+    {
+      "id": "860000000000000011-11",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000011-11",
+      "short_name": "11",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 6
+    },
+    {
+      "id": "860000000000000012-12",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000012-12",
+      "short_name": "12",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 24
+    },
+    {
+      "id": "860000000000000013-14",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000013-14",
+      "short_name": "14",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 28
+    },
+    {
+      "id": "860000000000000014-15",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000014-15",
+      "short_name": "15",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 35
+    },
+    {
+      "id": "860000000000000002-2",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000002-2",
+      "short_name": "2",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 70
+    },
+    {
+      "id": "860000000000000003-3",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000003-3",
+      "short_name": "3",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 70
+    },
+    {
+      "id": "860000000000000004-4",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000004-4",
+      "short_name": "4",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 72
+    },
+    {
+      "id": "860000000000000015-40",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000015-40",
+      "short_name": "40",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "860000000000000016-41",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000016-41",
+      "short_name": "41",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "860000000000000017-42",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000017-42",
+      "short_name": "42",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "860000000000000018-43",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000018-43",
+      "short_name": "43",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "860000000000000019-44",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000019-44",
+      "short_name": "44",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 3
+    },
+    {
+      "id": "860000000000000020-45",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000020-45",
+      "short_name": "45",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "860000000000000021-46",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000021-46",
+      "short_name": "46",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "860000000000000022-48",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000022-48",
+      "short_name": "48",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "860000000000000005-5",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000005-5",
+      "short_name": "5",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 73
+    },
+    {
+      "id": "860000000000000006-6",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000006-6",
+      "short_name": "6",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 74
+    },
+    {
+      "id": "860000000000000007-7",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000007-7",
+      "short_name": "7",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 73
+    },
+    {
+      "id": "860000000000000008-8",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000008-8",
+      "short_name": "8",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 35
+    },
+    {
+      "id": "860000000000000009-9",
+      "agency_id": "602",
+      "operator_label": "Luleå Lokaltrafik",
+      "route_id": "860000000000000009-9",
+      "short_name": "9",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 60
+    },
+    {
+      "id": "250000000000000001-10",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000001-10",
+      "short_name": "10",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 4
+    },
+    {
+      "id": "250000000000000002-11",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000002-11",
+      "short_name": "11",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 14
+    },
+    {
+      "id": "250000000000000148-14",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000148-14",
+      "short_name": "14",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 42
+    },
+    {
+      "id": "250000000000000004-18",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000004-18",
+      "short_name": "18",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 6
+    },
+    {
+      "id": "250000000000000157-209",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000157-209",
+      "short_name": "209",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 4
+    },
+    {
+      "id": "250000000000000006-21",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000006-21",
+      "short_name": "21",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 6
+    },
+    {
+      "id": "250000000000000105-220",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000105-220",
+      "short_name": "220",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 6
+    },
+    {
+      "id": "250000000000000106-221",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000106-221",
+      "short_name": "221",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 21
+    },
+    {
+      "id": "250000000000000107-222",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000107-222",
+      "short_name": "222",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 6
+    },
+    {
+      "id": "250000000000000108-223",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000108-223",
+      "short_name": "223",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 41
+    },
+    {
+      "id": "250000000000000109-224",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000109-224",
+      "short_name": "224",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 6
+    },
+    {
+      "id": "250000000000000110-225",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000110-225",
+      "short_name": "225",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 4
+    },
+    {
+      "id": "250000000000000111-226",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000111-226",
+      "short_name": "226",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 5
+    },
+    {
+      "id": "250000000000000112-227",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000112-227",
+      "short_name": "227",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 3
+    },
+    {
+      "id": "250000000000000113-228",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000113-228",
+      "short_name": "228",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 8
+    },
+    {
+      "id": "250000000000000114-229",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000114-229",
+      "short_name": "229",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 4
+    },
+    {
+      "id": "250000000000000165-260",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000165-260",
+      "short_name": "260",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 3
+    },
+    {
+      "id": "250000000000000161-28",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000161-28",
+      "short_name": "28",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 71
+    },
+    {
+      "id": "250000000000000162-29",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000162-29",
+      "short_name": "29",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 17
+    },
+    {
+      "id": "250000000000000163-30",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000163-30",
+      "short_name": "30",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 30
+    },
+    {
+      "id": "250000000000000149-31",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000149-31",
+      "short_name": "31",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 16
+    },
+    {
+      "id": "250000000000000164-44",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000164-44",
+      "short_name": "44",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 6
+    },
+    {
+      "id": "250000000000000014-55",
+      "agency_id": "273",
+      "operator_label": "Länstrafiken Norrbotten",
+      "route_id": "250000000000000014-55",
+      "short_name": "55",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 4
+    },
+    {
+      "id": "240000000000000024-100",
+      "agency_id": "272",
+      "operator_label": "Länstrafiken Västerbotten",
+      "route_id": "240000000000000024-100",
+      "short_name": "100",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 9
+    },
+    {
+      "id": "240000000000000004-20",
+      "agency_id": "272",
+      "operator_label": "Länstrafiken Västerbotten",
+      "route_id": "240000000000000004-20",
+      "short_name": "20",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 7
+    },
+    {
+      "id": "910000000033000001-57103",
+      "agency_id": "513",
+      "operator_label": "Norrtåg",
+      "route_id": "910000000033000001-57103",
+      "short_name": "57103",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "910000000030000001-57151",
+      "agency_id": "513",
+      "operator_label": "Norrtåg",
+      "route_id": "910000000030000001-57151",
+      "short_name": "57151",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "910000000031000001-57183",
+      "agency_id": "513",
+      "operator_label": "Norrtåg",
+      "route_id": "910000000031000001-57183",
+      "short_name": "57183",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    },
+    {
+      "id": "910000000031000001-57184",
+      "agency_id": "513",
+      "operator_label": "Norrtåg",
+      "route_id": "910000000031000001-57184",
+      "short_name": "57184",
+      "long_name": "",
+      "route_type": "700",
+      "weekday_trips": 1
+    }
+  ],
+  "stops": [
+    {
+      "id": "740037660",
+      "name": "Luleå Smedjegatan",
+      "lat": 65.583669,
+      "lon": 22.152431,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 800,
+      "routes": 15
+    },
+    {
+      "id": "740036530",
+      "name": "Malmuddsviadukten",
+      "lat": 65.581893,
+      "lon": 22.161722,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 577,
+      "routes": 14
+    },
+    {
+      "id": "740036335",
+      "name": "Luleå Shopping",
+      "lat": 65.585505,
+      "lon": 22.155448,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 535,
+      "routes": 14
+    },
+    {
+      "id": "740023784",
+      "name": "Luleå Munkeberg",
+      "lat": 65.599042,
+      "lon": 22.138168,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 406,
+      "routes": 17
+    },
+    {
+      "id": "740037135",
+      "name": "Malmudden",
+      "lat": 65.580434,
+      "lon": 22.175007,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 394,
+      "routes": 11
+    },
+    {
+      "id": "740037138",
+      "name": "Örnäsrondellen",
+      "lat": 65.579689,
+      "lon": 22.190336,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 353,
+      "routes": 9
+    },
+    {
+      "id": "740037235",
+      "name": "Porsö centrum LTN",
+      "lat": 65.619123,
+      "lon": 22.145715,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 350,
+      "routes": 9
+    },
+    {
+      "id": "740037234",
+      "name": "Professorsvägen",
+      "lat": 65.615793,
+      "lon": 22.148255,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 345,
+      "routes": 8
+    },
+    {
+      "id": "740037336",
+      "name": "Pontusbadet",
+      "lat": 65.589351,
+      "lon": 22.147053,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 332,
+      "routes": 10
+    },
+    {
+      "id": "740037228",
+      "name": "Luleå Depåvägen",
+      "lat": 65.609739,
+      "lon": 22.13647,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 309,
+      "routes": 13
+    },
+    {
+      "id": "740014856",
+      "name": "Luleå busstation",
+      "lat": 65.585669,
+      "lon": 22.160341,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 293,
+      "routes": 16
+    },
+    {
+      "id": "740037231",
+      "name": "Björkskataleden",
+      "lat": 65.613168,
+      "lon": 22.137613,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 285,
+      "routes": 7
+    },
+    {
+      "id": "740036326",
+      "name": "Sunderby sjukhus",
+      "lat": 65.670625,
+      "lon": 21.932198,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 280,
+      "routes": 9
+    },
+    {
+      "id": "740037338",
+      "name": "Midgårdsvägen",
+      "lat": 65.603879,
+      "lon": 22.137303,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 271,
+      "routes": 6
+    },
+    {
+      "id": "740037353",
+      "name": "Luleå Banvägen",
+      "lat": 65.612414,
+      "lon": 22.105539,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 256,
+      "routes": 9
+    },
+    {
+      "id": "740037257",
+      "name": "Bergnäset Rudtjärnsv",
+      "lat": 65.577155,
+      "lon": 22.102241,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 244,
+      "routes": 8
+    },
+    {
+      "id": "740036456",
+      "name": "Robertsviksgatan",
+      "lat": 65.590463,
+      "lon": 22.154704,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 239,
+      "routes": 6
+    },
+    {
+      "id": "740036437",
+      "name": "Kungsgatan",
+      "lat": 65.588364,
+      "lon": 22.154494,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 237,
+      "routes": 4
+    },
+    {
+      "id": "740037375",
+      "name": "Stadsö centrum",
+      "lat": 65.641832,
+      "lon": 22.014468,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 229,
+      "routes": 6
+    },
+    {
+      "id": "740037352",
+      "name": "Luleå Spantgatan",
+      "lat": 65.606461,
+      "lon": 22.12245,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 228,
+      "routes": 8
+    },
+    {
+      "id": "740037128",
+      "name": "Blåmesgränd",
+      "lat": 65.583698,
+      "lon": 22.266314,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 227,
+      "routes": 6
+    },
+    {
+      "id": "740037125",
+      "name": "Bäverstigen",
+      "lat": 65.586181,
+      "lon": 22.260903,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 227,
+      "routes": 6
+    },
+    {
+      "id": "740037112",
+      "name": "Hertsö Centrum",
+      "lat": 65.590628,
+      "lon": 22.241897,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 227,
+      "routes": 6
+    },
+    {
+      "id": "740037116",
+      "name": "Hjortstigen",
+      "lat": 65.588461,
+      "lon": 22.256008,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 227,
+      "routes": 6
+    },
+    {
+      "id": "740037129",
+      "name": "Kråkörvägen",
+      "lat": 65.579579,
+      "lon": 22.260065,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 227,
+      "routes": 6
+    },
+    {
+      "id": "740037114",
+      "name": "Mörtgränd",
+      "lat": 65.591127,
+      "lon": 22.248791,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 227,
+      "routes": 6
+    },
+    {
+      "id": "740037110",
+      "name": "Smultronstigen",
+      "lat": 65.591011,
+      "lon": 22.233938,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 227,
+      "routes": 6
+    },
+    {
+      "id": "740037100",
+      "name": "Örnässkolan",
+      "lat": 65.581989,
+      "lon": 22.201347,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 222,
+      "routes": 6
+    },
+    {
+      "id": "740036553",
+      "name": "Prästgatan",
+      "lat": 65.586672,
+      "lon": 22.162001,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 212,
+      "routes": 3
+    },
+    {
+      "id": "740037184",
+      "name": "Sotargatan",
+      "lat": 65.592145,
+      "lon": 22.163104,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 212,
+      "routes": 3
+    },
+    {
+      "id": "740037181",
+      "name": "Sundsbacken",
+      "lat": 65.589301,
+      "lon": 22.165867,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 212,
+      "routes": 3
+    },
+    {
+      "id": "740037329",
+      "name": "Ankarkronan",
+      "lat": 65.604012,
+      "lon": 22.119654,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037359",
+      "name": "Betongvägen",
+      "lat": 65.619772,
+      "lon": 22.053753,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037358",
+      "name": "Kraftverksvägen",
+      "lat": 65.620718,
+      "lon": 22.07248,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037328",
+      "name": "Mjölkudden centrum",
+      "lat": 65.601746,
+      "lon": 22.129292,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037334",
+      "name": "Notviksvägen",
+      "lat": 65.611892,
+      "lon": 22.098834,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037360",
+      "name": "Storheden",
+      "lat": 65.617053,
+      "lon": 22.041704,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037354",
+      "name": "Storhedsvägen",
+      "lat": 65.615767,
+      "lon": 22.096377,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037333",
+      "name": "Tunastigen",
+      "lat": 65.609087,
+      "lon": 22.102422,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740037332",
+      "name": "Tunavallen",
+      "lat": 65.606834,
+      "lon": 22.108973,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 195,
+      "routes": 5
+    },
+    {
+      "id": "740023791",
+      "name": "Luleå Norra hamnen",
+      "lat": 65.584572,
+      "lon": 22.146341,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 192,
+      "routes": 12
+    },
+    {
+      "id": "740019829",
+      "name": "Luleå Stadshuset",
+      "lat": 65.583156,
+      "lon": 22.144668,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 192,
+      "routes": 12
+    },
+    {
+      "id": "740037185",
+      "name": "Golfängen LTN",
+      "lat": 65.594734,
+      "lon": 22.167069,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 182,
+      "routes": 5
+    },
+    {
+      "id": "740037203",
+      "name": "Bensbyvägen",
+      "lat": 65.59779,
+      "lon": 22.176201,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 181,
+      "routes": 4
+    },
+    {
+      "id": "740037236",
+      "name": "Assistentvägen",
+      "lat": 65.623174,
+      "lon": 22.143373,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 178,
+      "routes": 5
+    },
+    {
+      "id": "740037197",
+      "name": "Björkskatan Centrum LTN",
+      "lat": 65.616523,
+      "lon": 22.178086,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 176,
+      "routes": 6
+    },
+    {
+      "id": "740037193",
+      "name": "Regnvägen LTN",
+      "lat": 65.611317,
+      "lon": 22.183035,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 176,
+      "routes": 6
+    },
+    {
+      "id": "740037327",
+      "name": "Fallgatan",
+      "lat": 65.600118,
+      "lon": 22.132923,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 171,
+      "routes": 4
+    },
+    {
+      "id": "740037324",
+      "name": "Skutgatan",
+      "lat": 65.597231,
+      "lon": 22.1352,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 171,
+      "routes": 4
+    },
+    {
+      "id": "740037243",
+      "name": "Universitetsentrén",
+      "lat": 65.616637,
+      "lon": 22.139486,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 169,
+      "routes": 4
+    },
+    {
+      "id": "740037369",
+      "name": "Öhemmanet",
+      "lat": 65.635321,
+      "lon": 22.030105,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 169,
+      "routes": 5
+    },
+    {
+      "id": "740037378",
+      "name": "Buttergränd",
+      "lat": 65.646849,
+      "lon": 22.000319,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037386",
+      "name": "Folkhögskolevägen",
+      "lat": 65.659285,
+      "lon": 21.947292,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037384",
+      "name": "Hektarvägen",
+      "lat": 65.65359,
+      "lon": 21.948295,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037385",
+      "name": "Hemängsvägen",
+      "lat": 65.657677,
+      "lon": 21.950095,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037388",
+      "name": "Kläppenskolan",
+      "lat": 65.66309,
+      "lon": 21.928405,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037389",
+      "name": "Kläppenskolevägen",
+      "lat": 65.665501,
+      "lon": 21.934912,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037383",
+      "name": "Lagaskiftesvägen",
+      "lat": 65.650772,
+      "lon": 21.955412,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037381",
+      "name": "Landbovägen",
+      "lat": 65.653871,
+      "lon": 21.966248,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037382",
+      "name": "Nyåkersvägen",
+      "lat": 65.651941,
+      "lon": 21.963018,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037379",
+      "name": "Räfsarstigen",
+      "lat": 65.650571,
+      "lon": 21.990065,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037387",
+      "name": "Sunderbyvägen",
+      "lat": 65.659792,
+      "lon": 21.939427,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037377",
+      "name": "Tröttergränd",
+      "lat": 65.645209,
+      "lon": 22.004964,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037380",
+      "name": "Övägen",
+      "lat": 65.653455,
+      "lon": 21.980044,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 168,
+      "routes": 4
+    },
+    {
+      "id": "740037195",
+      "name": "Andreaskyrkan",
+      "lat": 65.613309,
+      "lon": 22.18065,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 164,
+      "routes": 4
+    },
+    {
+      "id": "740037201",
+      "name": "Stormvägen",
+      "lat": 65.619934,
+      "lon": 22.177706,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 164,
+      "routes": 4
+    },
+    {
+      "id": "740036356",
+      "name": "Rättscentrum",
+      "lat": 65.586053,
+      "lon": 22.160218,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 156,
+      "routes": 3
+    },
+    {
+      "id": "740036525",
+      "name": "Varvet",
+      "lat": 65.580369,
+      "lon": 22.136829,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 155,
+      "routes": 3
+    },
+    {
+      "id": "740037255",
+      "name": "Villavägen",
+      "lat": 65.577627,
+      "lon": 22.111253,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 155,
+      "routes": 3
+    },
+    {
+      "id": "740030167",
+      "name": "Luleå Pontusbadet",
+      "lat": 65.58938,
+      "lon": 22.146995,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 152,
+      "routes": 10
+    },
+    {
+      "id": "740037121",
+      "name": "Kattgrundsvägen",
+      "lat": 65.584926,
+      "lon": 22.252082,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 151,
+      "routes": 5
+    },
+    {
+      "id": "740037104",
+      "name": "Bredviken",
+      "lat": 65.584371,
+      "lon": 22.21423,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 150,
+      "routes": 4
+    },
+    {
+      "id": "740037108",
+      "name": "Hertsö hälsocentral",
+      "lat": 65.58888,
+      "lon": 22.226423,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 150,
+      "routes": 4
+    },
+    {
+      "id": "740037106",
+      "name": "Jägarstigen",
+      "lat": 65.586196,
+      "lon": 22.22282,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 150,
+      "routes": 4
+    },
+    {
+      "id": "740037102",
+      "name": "Kronbacksvägen",
+      "lat": 65.58322,
+      "lon": 22.208026,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 150,
+      "routes": 4
+    },
+    {
+      "id": "740037238",
+      "name": "Sundet",
+      "lat": 65.626939,
+      "lon": 22.144862,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 149,
+      "routes": 4
+    },
+    {
+      "id": "740037067",
+      "name": "Burströmska",
+      "lat": 65.58846,
+      "lon": 22.182223,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 146,
+      "routes": 2
+    },
+    {
+      "id": "740037168",
+      "name": "Kulturbyn",
+      "lat": 65.592142,
+      "lon": 22.189311,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 146,
+      "routes": 2
+    },
+    {
+      "id": "740037226",
+      "name": "Kräftgatan",
+      "lat": 65.600915,
+      "lon": 22.140564,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 145,
+      "routes": 3
+    },
+    {
+      "id": "740037246",
+      "name": "Luleå Science Park",
+      "lat": 65.618356,
+      "lon": 22.127008,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 145,
+      "routes": 3
+    },
+    {
+      "id": "740037248",
+      "name": "Teknikvägen",
+      "lat": 65.61812,
+      "lon": 22.122723,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 145,
+      "routes": 3
+    },
+    {
+      "id": "740037221",
+      "name": "Delfingatan",
+      "lat": 65.596168,
+      "lon": 22.15092,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 144,
+      "routes": 2
+    },
+    {
+      "id": "740037222",
+      "name": "Ostrongatan",
+      "lat": 65.597848,
+      "lon": 22.144996,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 144,
+      "routes": 2
+    },
+    {
+      "id": "740037278",
+      "name": "Nävervägen",
+      "lat": 65.574415,
+      "lon": 22.094312,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 120,
+      "routes": 3
+    },
+    {
+      "id": "740062874",
+      "name": "Kronanvägen LTN",
+      "lat": 65.599271,
+      "lon": 22.18595,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 112,
+      "routes": 3
+    },
+    {
+      "id": "740037205",
+      "name": "Ormberget LTN",
+      "lat": 65.603749,
+      "lon": 22.184831,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 112,
+      "routes": 3
+    },
+    {
+      "id": "740037131",
+      "name": "Domherregränd",
+      "lat": 65.581086,
+      "lon": 22.263792,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 108,
+      "routes": 3
+    },
+    {
+      "id": "740023777",
+      "name": "Bergnäset Bergnässkolan",
+      "lat": 65.577869,
+      "lon": 22.084838,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 100,
+      "routes": 6
+    },
+    {
+      "id": "740071788",
+      "name": "Bergnäset Villavägen",
+      "lat": 65.577635,
+      "lon": 22.111276,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 100,
+      "routes": 6
+    },
+    {
+      "id": "740018005",
+      "name": "Luleå Varvet",
+      "lat": 65.580369,
+      "lon": 22.136829,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 100,
+      "routes": 6
+    },
+    {
+      "id": "740037143",
+      "name": "Edeforsgatan",
+      "lat": 65.577507,
+      "lon": 22.204919,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 96,
+      "routes": 3
+    },
+    {
+      "id": "740037145",
+      "name": "Klyvargatan",
+      "lat": 65.575807,
+      "lon": 22.212114,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 96,
+      "routes": 3
+    },
+    {
+      "id": "740037141",
+      "name": "Örnäset centrum",
+      "lat": 65.578825,
+      "lon": 22.199936,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 96,
+      "routes": 3
+    },
+    {
+      "id": "740037087",
+      "name": "Aronstorpsvägen",
+      "lat": 65.568091,
+      "lon": 22.199292,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 95,
+      "routes": 2
+    },
+    {
+      "id": "740037089",
+      "name": "Bältesgatan",
+      "lat": 65.563606,
+      "lon": 22.193099,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 95,
+      "routes": 2
+    },
+    {
+      "id": "740037088",
+      "name": "Laxgatan",
+      "lat": 65.565126,
+      "lon": 22.191451,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 95,
+      "routes": 2
+    },
+    {
+      "id": "740037090",
+      "name": "Sandgatan",
+      "lat": 65.560941,
+      "lon": 22.197357,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 95,
+      "routes": 2
+    },
+    {
+      "id": "740037199",
+      "name": "Stormvägen LTN",
+      "lat": 65.618675,
+      "lon": 22.177439,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 93,
+      "routes": 5
+    },
+    {
+      "id": "740037323",
+      "name": "Ålgatan",
+      "lat": 65.595126,
+      "lon": 22.146137,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 93,
+      "routes": 2
+    },
+    {
+      "id": "740027385",
+      "name": "Gammelstad väg 97",
+      "lat": 65.64262,
+      "lon": 22.013675,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 89,
+      "routes": 4
+    },
+    {
+      "id": "740026945",
+      "name": "Luleå Malmuddsviadukten",
+      "lat": 65.582002,
+      "lon": 22.161684,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 87,
+      "routes": 3
+    },
+    {
+      "id": "740037283",
+      "name": "Industrivägen",
+      "lat": 65.573652,
+      "lon": 22.085144,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 85,
+      "routes": 2
+    },
+    {
+      "id": "740014867",
+      "name": "Luleå Airport",
+      "lat": 65.549151,
+      "lon": 22.12407,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 85,
+      "routes": 2
+    },
+    {
+      "id": "740071209",
+      "name": "Maskinvägen",
+      "lat": 65.571046,
+      "lon": 22.082643,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 85,
+      "routes": 2
+    },
+    {
+      "id": "740037397",
+      "name": "Nordkalotten",
+      "lat": 65.565061,
+      "lon": 22.094285,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 85,
+      "routes": 2
+    },
+    {
+      "id": "740071208",
+      "name": "Norrsågsvägen",
+      "lat": 65.568915,
+      "lon": 22.087543,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 85,
+      "routes": 2
+    },
+    {
+      "id": "740037285",
+      "name": "Parkvägen",
+      "lat": 65.572671,
+      "lon": 22.089909,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 85,
+      "routes": 2
+    },
+    {
+      "id": "740037281",
+      "name": "Västra Skolgatan",
+      "lat": 65.574699,
+      "lon": 22.082266,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 85,
+      "routes": 2
+    },
+    {
+      "id": "740037361",
+      "name": "Storsandsvägen",
+      "lat": 65.625907,
+      "lon": 22.036362,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 83,
+      "routes": 3
+    },
+    {
+      "id": "740036400",
+      "name": "N Sunderbyn V97 ljussignal",
+      "lat": 65.681745,
+      "lon": 21.856645,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 77,
+      "routes": 2
+    },
+    {
+      "id": "740014862",
+      "name": "N Sunderbyn v97 infoplats",
+      "lat": 65.701522,
+      "lon": 21.818762,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 77,
+      "routes": 2
+    },
+    {
+      "id": "740002953",
+      "name": "Luleå Notviken station",
+      "lat": 65.612013,
+      "lon": 22.114765,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 76,
+      "routes": 5
+    },
+    {
+      "id": "740037206",
+      "name": "Bergvikstorget",
+      "lat": 65.596074,
+      "lon": 22.158103,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 75,
+      "routes": 3
+    },
+    {
+      "id": "740036980",
+      "name": "Brogatan",
+      "lat": 65.581537,
+      "lon": 22.186461,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 75,
+      "routes": 2
+    },
+    {
+      "id": "740037059",
+      "name": "Gränsgatan",
+      "lat": 65.583575,
+      "lon": 22.186593,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 75,
+      "routes": 2
+    },
+    {
+      "id": "740037210",
+      "name": "Kallkällan",
+      "lat": 65.59956,
+      "lon": 22.152294,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 75,
+      "routes": 3
+    },
+    {
+      "id": "740037239",
+      "name": "Berget",
+      "lat": 65.623566,
+      "lon": 22.136583,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 1
+    },
+    {
+      "id": "740059037",
+      "name": "Dragongatan",
+      "lat": 65.594015,
+      "lon": 22.198719,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 1
+    },
+    {
+      "id": "740077062",
+      "name": "Exercisvägen",
+      "lat": 65.597368,
+      "lon": 22.187963,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 1
+    },
+    {
+      "id": "740077525",
+      "name": "Husargatan",
+      "lat": 65.598575,
+      "lon": 22.19414,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 1
+    },
+    {
+      "id": "740037083",
+      "name": "Höjdgatan",
+      "lat": 65.584685,
+      "lon": 22.196158,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 3
+    },
+    {
+      "id": "740071210",
+      "name": "Klintvägen",
+      "lat": 65.606362,
+      "lon": 22.153285,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 2
+    },
+    {
+      "id": "740077063",
+      "name": "Kronan Centrum",
+      "lat": 65.595034,
+      "lon": 22.185865,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 1
+    },
+    {
+      "id": "740037212",
+      "name": "Lingonstigen",
+      "lat": 65.603611,
+      "lon": 22.152307,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 2
+    },
+    {
+      "id": "740037065",
+      "name": "Rundgatan",
+      "lat": 65.585984,
+      "lon": 22.187556,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 3
+    },
+    {
+      "id": "740071211",
+      "name": "Torpslingan",
+      "lat": 65.61094,
+      "lon": 22.146304,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 2
+    },
+    {
+      "id": "740037082",
+      "name": "Tvärgatan",
+      "lat": 65.586088,
+      "lon": 22.193217,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 3
+    },
+    {
+      "id": "740037084",
+      "name": "Örnäset hälsocentral",
+      "lat": 65.583114,
+      "lon": 22.199448,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 3
+    },
+    {
+      "id": "740037173",
+      "name": "Östra Kronan",
+      "lat": 65.595423,
+      "lon": 22.204814,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 74,
+      "routes": 1
+    },
+    {
+      "id": "740037249",
+      "name": "Datavägen",
+      "lat": 65.619243,
+      "lon": 22.118029,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 73,
+      "routes": 2
+    },
+    {
+      "id": "740037216",
+      "name": "Kanotvägen",
+      "lat": 65.601119,
+      "lon": 22.161495,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 73,
+      "routes": 1
+    },
+    {
+      "id": "740037214",
+      "name": "Klintbacken",
+      "lat": 65.60403,
+      "lon": 22.158224,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 73,
+      "routes": 1
+    },
+    {
+      "id": "740037250",
+      "name": "Vänortsvägen",
+      "lat": 65.621684,
+      "lon": 22.116293,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 73,
+      "routes": 2
+    },
+    {
+      "id": "740037123",
+      "name": "Hubertusstigen",
+      "lat": 65.583746,
+      "lon": 22.248698,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 72,
+      "routes": 2
+    },
+    {
+      "id": "740037170",
+      "name": "Kompanirondellen",
+      "lat": 65.593421,
+      "lon": 22.187384,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 72,
+      "routes": 1
+    },
+    {
+      "id": "740072005",
+      "name": "Lulsundsberget",
+      "lat": 65.593734,
+      "lon": 22.17995,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 72,
+      "routes": 1
+    },
+    {
+      "id": "740072950",
+      "name": "Gäddvik Gäddviksgården/Bron",
+      "lat": 65.584441,
+      "lon": 22.032535,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 71,
+      "routes": 4
+    },
+    {
+      "id": "740037320",
+      "name": "Bergnäset hälsocentral",
+      "lat": 65.573805,
+      "lon": 22.10617,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740037289",
+      "name": "Bergnäskyrkan",
+      "lat": 65.571133,
+      "lon": 22.105912,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740037319",
+      "name": "Brantgatan",
+      "lat": 65.574118,
+      "lon": 22.109682,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740037312",
+      "name": "Faktorsvägen",
+      "lat": 65.567204,
+      "lon": 22.122398,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740072948",
+      "name": "Gäddvik",
+      "lat": 65.5816,
+      "lon": 22.050584,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 4
+    },
+    {
+      "id": "740072949",
+      "name": "Gäddvik Frörenserivägen",
+      "lat": 65.582199,
+      "lon": 22.042157,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 4
+    },
+    {
+      "id": "740036455",
+      "name": "Järnvägen",
+      "lat": 65.583584,
+      "lon": 22.163682,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740037297",
+      "name": "Kedjestigen",
+      "lat": 65.569063,
+      "lon": 22.111499,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740037299",
+      "name": "Småstigen",
+      "lat": 65.566671,
+      "lon": 22.115527,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740037287",
+      "name": "Stengatan",
+      "lat": 65.573758,
+      "lon": 22.098002,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740072947",
+      "name": "Sundet Vackerbacken",
+      "lat": 65.580751,
+      "lon": 22.063063,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 4
+    },
+    {
+      "id": "740037318",
+      "name": "Trollebergsvägen",
+      "lat": 65.57187,
+      "lon": 22.11653,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 70,
+      "routes": 1
+    },
+    {
+      "id": "740037191",
+      "name": "Batterivägen",
+      "lat": 65.6053,
+      "lon": 22.183514,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 69,
+      "routes": 1
+    },
+    {
+      "id": "740037189",
+      "name": "Kårvägen",
+      "lat": 65.603143,
+      "lon": 22.179565,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 69,
+      "routes": 1
+    },
+    {
+      "id": "740077103",
+      "name": "Norra Infart Sunderby sjukhus",
+      "lat": 65.673317,
+      "lon": 21.914959,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 69,
+      "routes": 1
+    },
+    {
+      "id": "740037188",
+      "name": "Ormbergsvägen",
+      "lat": 65.599865,
+      "lon": 22.176777,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 69,
+      "routes": 1
+    },
+    {
+      "id": "740037367",
+      "name": "Framlänningsvägen",
+      "lat": 65.643614,
+      "lon": 22.025253,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 61,
+      "routes": 2
+    },
+    {
+      "id": "740037364",
+      "name": "Kockvägen",
+      "lat": 65.640342,
+      "lon": 22.03829,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 61,
+      "routes": 2
+    },
+    {
+      "id": "740037366",
+      "name": "Kyrktorget, Church Town",
+      "lat": 65.645414,
+      "lon": 22.029873,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 61,
+      "routes": 2
+    },
+    {
+      "id": "740037365",
+      "name": "Sandåkersvägen",
+      "lat": 65.643535,
+      "lon": 22.03267,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 61,
+      "routes": 2
+    },
+    {
+      "id": "740037374",
+      "name": "Möbelvägen",
+      "lat": 65.639923,
+      "lon": 22.018872,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 58,
+      "routes": 1
+    },
+    {
+      "id": "740037371",
+      "name": "Rådmansvägen",
+      "lat": 65.631677,
+      "lon": 22.023671,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 58,
+      "routes": 1
+    },
+    {
+      "id": "740037370",
+      "name": "Rågvägen",
+      "lat": 65.632148,
+      "lon": 22.028448,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 58,
+      "routes": 1
+    },
+    {
+      "id": "740037372",
+      "name": "Öhemsvägen",
+      "lat": 65.634905,
+      "lon": 22.018713,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 58,
+      "routes": 1
+    },
+    {
+      "id": "740023785",
+      "name": "Luleå universitet Aurorum",
+      "lat": 65.617015,
+      "lon": 22.131299,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 54,
+      "routes": 11
+    },
+    {
+      "id": "740077983",
+      "name": "Gäddvik rondellen",
+      "lat": 65.585755,
+      "lon": 22.025301,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 53,
+      "routes": 3
+    },
+    {
+      "id": "740036615",
+      "name": "Luleå Rutviksnäset",
+      "lat": 65.658122,
+      "lon": 22.105069,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 53,
+      "routes": 6
+    },
+    {
+      "id": "740014859",
+      "name": "Antnäs E4",
+      "lat": 65.548404,
+      "lon": 21.847,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 51,
+      "routes": 4
+    },
+    {
+      "id": "740020147",
+      "name": "Ersnäs E4",
+      "lat": 65.531419,
+      "lon": 21.79174,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 50,
+      "routes": 3
+    },
+    {
+      "id": "740072968",
+      "name": "Alviksheden väg 94",
+      "lat": 65.557173,
+      "lon": 21.815969,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 46,
+      "routes": 4
+    },
+    {
+      "id": "740027296",
+      "name": "Antnäs Mantalsvägen väg 94",
+      "lat": 65.554377,
+      "lon": 21.836265,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 46,
+      "routes": 4
+    },
+    {
+      "id": "740040210",
+      "name": "Antnäs OKQ8 väg 94",
+      "lat": 65.55113,
+      "lon": 21.843637,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 46,
+      "routes": 4
+    },
+    {
+      "id": "740072969",
+      "name": "Antnäs Sörbyhallen väg 94",
+      "lat": 65.556464,
+      "lon": 21.825886,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 46,
+      "routes": 4
+    },
+    {
+      "id": "740037322",
+      "name": "Svartövägen",
+      "lat": 65.59318,
+      "lon": 22.153671,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 46,
+      "routes": 2
+    },
+    {
+      "id": "740073188",
+      "name": "Hällbacken",
+      "lat": 65.627934,
+      "lon": 22.200077,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 44,
+      "routes": 2
+    },
+    {
+      "id": "740074119",
+      "name": "Hällbacken Björsbyv",
+      "lat": 65.623961,
+      "lon": 22.194999,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 44,
+      "routes": 2
+    },
+    {
+      "id": "740073143",
+      "name": "Bensbyn Nordlundsvägen",
+      "lat": 65.636139,
+      "lon": 22.224586,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 41,
+      "routes": 1
+    },
+    {
+      "id": "740076149",
+      "name": "Dalbo Dalbogatan",
+      "lat": 65.626022,
+      "lon": 22.21168,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 41,
+      "routes": 1
+    },
+    {
+      "id": "740076150",
+      "name": "Dalbo Kärrviolgatan",
+      "lat": 65.629458,
+      "lon": 22.215387,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 41,
+      "routes": 1
+    },
+    {
+      "id": "740023789",
+      "name": "Luleå Robertsviksgatan",
+      "lat": 65.590503,
+      "lon": 22.1548,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 41,
+      "routes": 1
+    },
+    {
+      "id": "740073144",
+      "name": "Sinksundet",
+      "lat": 65.619296,
+      "lon": 22.201823,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 41,
+      "routes": 1
+    },
+    {
+      "id": "740027298",
+      "name": "Luleå Midgårdsvägen",
+      "lat": 65.603443,
+      "lon": 22.136717,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 40,
+      "routes": 7
+    },
+    {
+      "id": "740026985",
+      "name": "Bensbyn",
+      "lat": 65.640588,
+      "lon": 22.235003,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 39,
+      "routes": 1
+    },
+    {
+      "id": "740078782",
+      "name": "Bergnäset Färjvägen",
+      "lat": 65.577511,
+      "lon": 22.09541,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 39,
+      "routes": 3
+    },
+    {
+      "id": "740000887",
+      "name": "Råneå busstation",
+      "lat": 65.856257,
+      "lon": 22.290256,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 38,
+      "routes": 8
+    },
+    {
+      "id": "740037156",
+      "name": "Fridhemsgatan",
+      "lat": 65.58982,
+      "lon": 22.206979,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 37,
+      "routes": 3
+    },
+    {
+      "id": "740037155",
+      "name": "Hagaplan",
+      "lat": 65.587727,
+      "lon": 22.203872,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 37,
+      "routes": 3
+    },
+    {
+      "id": "740037158",
+      "name": "Siktgatan",
+      "lat": 65.591783,
+      "lon": 22.212753,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 37,
+      "routes": 3
+    },
+    {
+      "id": "740037153",
+      "name": "Storstigen",
+      "lat": 65.584919,
+      "lon": 22.205965,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 37,
+      "routes": 3
+    },
+    {
+      "id": "740037160",
+      "name": "Öresvägen",
+      "lat": 65.592973,
+      "lon": 22.220166,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 37,
+      "routes": 3
+    },
+    {
+      "id": "740027300",
+      "name": "Luleå Haparandavägen",
+      "lat": 65.613379,
+      "lon": 22.133831,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 36,
+      "routes": 7
+    },
+    {
+      "id": "740037166",
+      "name": "Valörvägen",
+      "lat": 65.594544,
+      "lon": 22.23747,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 36,
+      "routes": 2
+    },
+    {
+      "id": "740037262",
+      "name": "Arcushallen",
+      "lat": 65.595546,
+      "lon": 22.061301,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 1
+    },
+    {
+      "id": "740037276",
+      "name": "Cementvägen",
+      "lat": 65.614706,
+      "lon": 22.047979,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 1
+    },
+    {
+      "id": "740037266",
+      "name": "Disponentvägen",
+      "lat": 65.597304,
+      "lon": 22.069322,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 1
+    },
+    {
+      "id": "740037270",
+      "name": "Karlshäll",
+      "lat": 65.602692,
+      "lon": 22.062024,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 1
+    },
+    {
+      "id": "740037272",
+      "name": "Karlsviksvägen",
+      "lat": 65.608276,
+      "lon": 22.04386,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 1
+    },
+    {
+      "id": "740037274",
+      "name": "Murbruksvägen",
+      "lat": 65.611749,
+      "lon": 22.05025,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 1
+    },
+    {
+      "id": "740036582",
+      "name": "Rutviksreveln",
+      "lat": 65.641298,
+      "lon": 22.117523,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 3
+    },
+    {
+      "id": "740037268",
+      "name": "Skolan",
+      "lat": 65.599158,
+      "lon": 22.067375,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 35,
+      "routes": 1
+    },
+    {
+      "id": "740036322",
+      "name": "Börjelslandet Norra E4",
+      "lat": 65.775228,
+      "lon": 22.168892,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 34,
+      "routes": 6
+    },
+    {
+      "id": "740036974",
+      "name": "Malmuddsvägen",
+      "lat": 65.580939,
+      "lon": 22.17735,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 34,
+      "routes": 1
+    },
+    {
+      "id": "740037251",
+      "name": "Björsbyvägen LTN",
+      "lat": 65.632693,
+      "lon": 22.141845,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 33,
+      "routes": 3
+    },
+    {
+      "id": "740037253",
+      "name": "Ekobyn LTN",
+      "lat": 65.639938,
+      "lon": 22.126393,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 33,
+      "routes": 3
+    },
+    {
+      "id": "740036973",
+      "name": "Brännanvägen",
+      "lat": 65.67903,
+      "lon": 22.100975,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 32,
+      "routes": 3
+    },
+    {
+      "id": "740036676",
+      "name": "Flarkenvägen",
+      "lat": 65.675183,
+      "lon": 22.09102,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 32,
+      "routes": 3
+    },
+    {
+      "id": "740036625",
+      "name": "Kammenvägen",
+      "lat": 65.666872,
+      "lon": 22.088408,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 32,
+      "routes": 3
+    },
+    {
+      "id": "740036627",
+      "name": "Nordanvägen",
+      "lat": 65.669288,
+      "lon": 22.084412,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 32,
+      "routes": 3
+    },
+    {
+      "id": "740036633",
+      "name": "Pernilsaväg",
+      "lat": 65.673464,
+      "lon": 22.090558,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 32,
+      "routes": 3
+    },
+    {
+      "id": "740036632",
+      "name": "Rutviksvägen",
+      "lat": 65.670517,
+      "lon": 22.084754,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 32,
+      "routes": 3
+    },
+    {
+      "id": "740027042",
+      "name": "Strömsund E4",
+      "lat": 65.874135,
+      "lon": 22.382547,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 31,
+      "routes": 5
+    },
+    {
+      "id": "740020375",
+      "name": "Jämtön E4",
+      "lat": 65.873688,
+      "lon": 22.490588,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 30,
+      "routes": 5
+    },
+    {
+      "id": "740020144",
+      "name": "Persön E4 Ljussignal",
+      "lat": 65.739753,
+      "lon": 22.164239,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 30,
+      "routes": 6
+    },
+    {
+      "id": "740036614",
+      "name": "Vallinsväg",
+      "lat": 65.646588,
+      "lon": 22.114386,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 29,
+      "routes": 2
+    },
+    {
+      "id": "740036439",
+      "name": "Börjelslandet Södra E4",
+      "lat": 65.765503,
+      "lon": 22.167582,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 27,
+      "routes": 5
+    },
+    {
+      "id": "740060360",
+      "name": "Börtnäsheden väg 580",
+      "lat": 65.524059,
+      "lon": 21.952985,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 27,
+      "routes": 2
+    },
+    {
+      "id": "740026941",
+      "name": "Kallax Hpl Byn",
+      "lat": 65.529733,
+      "lon": 22.055278,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 27,
+      "routes": 2
+    },
+    {
+      "id": "740075920",
+      "name": "Kallax Skanska/BDX",
+      "lat": 65.55046,
+      "lon": 22.079211,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 27,
+      "routes": 2
+    },
+    {
+      "id": "740073119",
+      "name": "Kallviken",
+      "lat": 65.519343,
+      "lon": 22.002346,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 27,
+      "routes": 2
+    },
+    {
+      "id": "740073122",
+      "name": "Måttsundsvägen Västra",
+      "lat": 65.536588,
+      "lon": 21.898774,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 27,
+      "routes": 2
+    },
+    {
+      "id": "740078071",
+      "name": "Svedjan",
+      "lat": 65.528018,
+      "lon": 21.934861,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 27,
+      "routes": 2
+    },
+    {
+      "id": "740012151",
+      "name": "Börjelslandet E4 ljussignal",
+      "lat": 65.782957,
+      "lon": 22.171201,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 25,
+      "routes": 5
+    },
+    {
+      "id": "740020377",
+      "name": "Råneå Norra byn",
+      "lat": 65.863117,
+      "lon": 22.304534,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 25,
+      "routes": 4
+    },
+    {
+      "id": "740036575",
+      "name": "Haparandavägen",
+      "lat": 65.61338,
+      "lon": 22.133831,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 24,
+      "routes": 1
+    },
+    {
+      "id": "740026992",
+      "name": "Måttsund Långbackavägen",
+      "lat": 65.543701,
+      "lon": 21.901419,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 23,
+      "routes": 2
+    },
+    {
+      "id": "740076829",
+      "name": "Måttsund Långbacken",
+      "lat": 65.538141,
+      "lon": 21.914273,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 23,
+      "routes": 2
+    },
+    {
+      "id": "740073120",
+      "name": "Måttsund Skolan",
+      "lat": 65.533199,
+      "lon": 21.918952,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 23,
+      "routes": 2
+    },
+    {
+      "id": "740072967",
+      "name": "Alvik Klubbvägen väg 94",
+      "lat": 65.562642,
+      "lon": 21.789482,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 22,
+      "routes": 2
+    },
+    {
+      "id": "740072966",
+      "name": "Alvik Pålvägen väg 94",
+      "lat": 65.565176,
+      "lon": 21.781155,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 22,
+      "routes": 2
+    },
+    {
+      "id": "740014860",
+      "name": "Alvik vsk Ale väg 94",
+      "lat": 65.567692,
+      "lon": 21.776235,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 22,
+      "routes": 2
+    },
+    {
+      "id": "740014870",
+      "name": "Bjursträsk Väg 94",
+      "lat": 65.599389,
+      "lon": 21.511066,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 22,
+      "routes": 2
+    },
+    {
+      "id": "740014871",
+      "name": "Hällfors Väg 94",
+      "lat": 65.591031,
+      "lon": 21.654346,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 22,
+      "routes": 2
+    },
+    {
+      "id": "740053572",
+      "name": "Rågholmen Väg 94",
+      "lat": 65.572909,
+      "lon": 21.745868,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 22,
+      "routes": 2
+    },
+    {
+      "id": "740073526",
+      "name": "Ängesbyn E4",
+      "lat": 65.719182,
+      "lon": 22.143612,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 22,
+      "routes": 3
+    },
+    {
+      "id": "740073126",
+      "name": "Alvik Alviksvägen",
+      "lat": 65.562442,
+      "lon": 21.79363,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 2
+    },
+    {
+      "id": "740077875",
+      "name": "Alvik Alviksvägen södra",
+      "lat": 65.559717,
+      "lon": 21.805171,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 2
+    },
+    {
+      "id": "740027297",
+      "name": "Alvik Hpl Sörby Kiosken",
+      "lat": 65.567426,
+      "lon": 21.779564,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 2
+    },
+    {
+      "id": "740073125",
+      "name": "Alvik Mässvägen",
+      "lat": 65.566248,
+      "lon": 21.782488,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 2
+    },
+    {
+      "id": "740073142",
+      "name": "Benbyn Bensbyvägen",
+      "lat": 65.648089,
+      "lon": 22.228207,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 1
+    },
+    {
+      "id": "740073141",
+      "name": "Bensbyn Benslinsvägen",
+      "lat": 65.645146,
+      "lon": 22.232428,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 1
+    },
+    {
+      "id": "740073140",
+      "name": "Bensbyn Inre Skäret",
+      "lat": 65.65341,
+      "lon": 22.224838,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 1
+    },
+    {
+      "id": "740078783",
+      "name": "Kallax vsk Edvägen",
+      "lat": 65.524368,
+      "lon": 22.038685,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 1
+    },
+    {
+      "id": "740023780",
+      "name": "Nickbyn E4",
+      "lat": 65.727361,
+      "lon": 22.151969,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 3
+    },
+    {
+      "id": "740073139",
+      "name": "Örarna Affären",
+      "lat": 65.708257,
+      "lon": 22.236938,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 1
+    },
+    {
+      "id": "740071488",
+      "name": "Örarna Bodöbacken",
+      "lat": 65.709718,
+      "lon": 22.242835,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 1
+    },
+    {
+      "id": "740071486",
+      "name": "Örarna Sågverksvägen",
+      "lat": 65.712643,
+      "lon": 22.261587,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 21,
+      "routes": 1
+    },
+    {
+      "id": "740073131",
+      "name": "Alvik Västigårdsvägen",
+      "lat": 65.575355,
+      "lon": 21.772953,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740073132",
+      "name": "Alviksskolan",
+      "lat": 65.571529,
+      "lon": 21.774791,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740073137",
+      "name": "Brändön Brändövägen",
+      "lat": 65.690723,
+      "lon": 22.340545,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740071485",
+      "name": "Brändön Staffansvägen",
+      "lat": 65.703262,
+      "lon": 22.311974,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740026986",
+      "name": "Brändön Torget",
+      "lat": 65.695422,
+      "lon": 22.336839,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740064365",
+      "name": "Brändön Vändplan",
+      "lat": 65.686238,
+      "lon": 22.347844,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740073138",
+      "name": "Brändön vsk Fiskehamn",
+      "lat": 65.697883,
+      "lon": 22.332391,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740027048",
+      "name": "Långnäs Kalvtorget",
+      "lat": 65.584143,
+      "lon": 21.775148,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740073130",
+      "name": "Långnäs Långnäsvägen",
+      "lat": 65.579042,
+      "lon": 21.770756,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 20,
+      "routes": 1
+    },
+    {
+      "id": "740072965",
+      "name": "Klöverträsk Affären",
+      "lat": 65.6348,
+      "lon": 21.40389,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 19,
+      "routes": 3
+    },
+    {
+      "id": "740014868",
+      "name": "Klöverträsk Byaväg Förskolan",
+      "lat": 65.634015,
+      "lon": 21.407598,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 19,
+      "routes": 3
+    },
+    {
+      "id": "740072964",
+      "name": "Klöverträsk Pingstkyrkan",
+      "lat": 65.637171,
+      "lon": 21.39521,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 19,
+      "routes": 3
+    },
+    {
+      "id": "740027266",
+      "name": "Ale Alviksvägen 165",
+      "lat": 65.608189,
+      "lon": 21.699792,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 1
+    },
+    {
+      "id": "740073128",
+      "name": "Ale Skolhus",
+      "lat": 65.609378,
+      "lon": 21.696972,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 1
+    },
+    {
+      "id": "740073830",
+      "name": "Ale Vändplats",
+      "lat": 65.626015,
+      "lon": 21.670348,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 1
+    },
+    {
+      "id": "740073129",
+      "name": "Ale södra",
+      "lat": 65.606018,
+      "lon": 21.704936,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 1
+    },
+    {
+      "id": "740000144",
+      "name": "Luleå Centralstation",
+      "lat": 65.58409,
+      "lon": 22.164937,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 5
+    },
+    {
+      "id": "740072946",
+      "name": "Luleå Rutviksreveln",
+      "lat": 65.640685,
+      "lon": 22.116872,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 3
+    },
+    {
+      "id": "740078959",
+      "name": "Långnäs",
+      "lat": 65.592111,
+      "lon": 21.77052,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 1
+    },
+    {
+      "id": "740073755",
+      "name": "Råneå OK/Q8",
+      "lat": 65.85077,
+      "lon": 22.275453,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 2
+    },
+    {
+      "id": "740076566",
+      "name": "Råneå Sundsvägen",
+      "lat": 65.857361,
+      "lon": 22.32419,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 18,
+      "routes": 2
+    },
+    {
+      "id": "740072979",
+      "name": "Avan Baronvägen",
+      "lat": 65.682305,
+      "lon": 21.799834,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 1
+    },
+    {
+      "id": "740072981",
+      "name": "Avan Sandnäsetvägen",
+      "lat": 65.674636,
+      "lon": 21.799386,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 1
+    },
+    {
+      "id": "740014872",
+      "name": "Avan föreningshuset",
+      "lat": 65.679896,
+      "lon": 21.80386,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 1
+    },
+    {
+      "id": "740072978",
+      "name": "Avan norra byn",
+      "lat": 65.689218,
+      "lon": 21.784274,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 1
+    },
+    {
+      "id": "740076828",
+      "name": "Bäckerskäret E4",
+      "lat": 65.872054,
+      "lon": 22.365174,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 2
+    },
+    {
+      "id": "740072983",
+      "name": "Bälinge Bälingebyaväg Luleå",
+      "lat": 65.632974,
+      "lon": 21.926685,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 1
+    },
+    {
+      "id": "740072984",
+      "name": "Bälinge Sandtorpsvägen",
+      "lat": 65.630619,
+      "lon": 21.928612,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 1
+    },
+    {
+      "id": "740072982",
+      "name": "Stenudden Luleå",
+      "lat": 65.660472,
+      "lon": 21.829763,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 17,
+      "routes": 1
+    },
+    {
+      "id": "740073121",
+      "name": "Måttsundsvägen Östra",
+      "lat": 65.532464,
+      "lon": 21.916196,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 15,
+      "routes": 2
+    },
+    {
+      "id": "740037133",
+      "name": "Ridhuset Hertsön",
+      "lat": 65.573769,
+      "lon": 22.245698,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 14,
+      "routes": 3
+    },
+    {
+      "id": "740014869",
+      "name": "Klöverträsk S Vsk Väg 94",
+      "lat": 65.620268,
+      "lon": 21.412485,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 13,
+      "routes": 2
+    },
+    {
+      "id": "740044618",
+      "name": "Råneå Skolan",
+      "lat": 65.854292,
+      "lon": 22.28967,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 13,
+      "routes": 5
+    },
+    {
+      "id": "740072985",
+      "name": "Bergskolan skolhållplats",
+      "lat": 65.573067,
+      "lon": 22.100531,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 12,
+      "routes": 3
+    },
+    {
+      "id": "740077876",
+      "name": "Bjursträsk norra Väg 94",
+      "lat": 65.599495,
+      "lon": 21.516854,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 11,
+      "routes": 2
+    },
+    {
+      "id": "740076658",
+      "name": "Bensbyn Långänget",
+      "lat": 65.667324,
+      "lon": 22.225479,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 10,
+      "routes": 1
+    },
+    {
+      "id": "740071490",
+      "name": "Bensbyn Benzeliusskolan",
+      "lat": 65.640789,
+      "lon": 22.240026,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 9,
+      "routes": 1
+    },
+    {
+      "id": "740014876",
+      "name": "Jämtön ICA",
+      "lat": 65.855833,
+      "lon": 22.49776,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 9,
+      "routes": 2
+    },
+    {
+      "id": "740074225",
+      "name": "Luleå Traktorvägen",
+      "lat": 65.61338,
+      "lon": 22.133831,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 9,
+      "routes": 1
+    },
+    {
+      "id": "740073134",
+      "name": "Sundom Bygdegården",
+      "lat": 65.773174,
+      "lon": 22.276217,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 9,
+      "routes": 2
+    },
+    {
+      "id": "740073135",
+      "name": "Sundom Gamla Skolan",
+      "lat": 65.771908,
+      "lon": 22.272938,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 9,
+      "routes": 2
+    },
+    {
+      "id": "740026939",
+      "name": "Sundom Vsk Gussövägen",
+      "lat": 65.77293,
+      "lon": 22.262453,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 9,
+      "routes": 2
+    },
+    {
+      "id": "740073136",
+      "name": "Sundom Åkerstrandsvägen",
+      "lat": 65.774942,
+      "lon": 22.238733,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 9,
+      "routes": 2
+    },
+    {
+      "id": "740027269",
+      "name": "Högsön",
+      "lat": 65.90774,
+      "lon": 22.453031,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 8,
+      "routes": 1
+    },
+    {
+      "id": "740073156",
+      "name": "Niemisel Affären",
+      "lat": 66.019848,
+      "lon": 21.989659,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 8,
+      "routes": 2
+    },
+    {
+      "id": "740023778",
+      "name": "Storheden",
+      "lat": 65.61724,
+      "lon": 22.041531,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 8,
+      "routes": 2
+    },
+    {
+      "id": "740076586",
+      "name": "Bälinge Förskola",
+      "lat": 65.627451,
+      "lon": 21.929933,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 7,
+      "routes": 1
+    },
+    {
+      "id": "740026940",
+      "name": "Mjöfjärden Vägskäl",
+      "lat": 65.818839,
+      "lon": 22.307084,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 7,
+      "routes": 2
+    },
+    {
+      "id": "740027270",
+      "name": "Vitå",
+      "lat": 65.926731,
+      "lon": 22.43058,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 7,
+      "routes": 1
+    },
+    {
+      "id": "740027271",
+      "name": "Vitåfors",
+      "lat": 65.951953,
+      "lon": 22.397633,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 7,
+      "routes": 1
+    },
+    {
+      "id": "740027299",
+      "name": "Bodvallen väg 97",
+      "lat": 65.677754,
+      "lon": 21.880423,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740076564",
+      "name": "Bäckerskäret",
+      "lat": 65.872054,
+      "lon": 22.365175,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740014865",
+      "name": "Börjelslandet vsk Boden",
+      "lat": 65.782457,
+      "lon": 22.173928,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740077519",
+      "name": "Ersnäs Lejanvägen",
+      "lat": 65.528198,
+      "lon": 21.796707,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740073124",
+      "name": "Ersnäs Ostibyvägen",
+      "lat": 65.524875,
+      "lon": 21.809223,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740077520",
+      "name": "Ersnäs Zackesväg",
+      "lat": 65.529739,
+      "lon": 21.793698,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740076445",
+      "name": "Klöverträsk byaväg",
+      "lat": 65.638713,
+      "lon": 21.387286,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740074872",
+      "name": "Mjöfjärden",
+      "lat": 65.808465,
+      "lon": 22.327069,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740027045",
+      "name": "Mörön",
+      "lat": 65.473787,
+      "lon": 21.960973,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740077521",
+      "name": "Mörön Vsk Alhamnsvägen",
+      "lat": 65.463055,
+      "lon": 21.919357,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740073123",
+      "name": "Ralph Lundstengården",
+      "lat": 65.525574,
+      "lon": 21.802722,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 1
+    },
+    {
+      "id": "740020143",
+      "name": "Råneå E4",
+      "lat": 65.849699,
+      "lon": 22.315269,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 2
+    },
+    {
+      "id": "740036402",
+      "name": "Råneå Södra",
+      "lat": 65.850857,
+      "lon": 22.275519,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 6,
+      "routes": 3
+    },
+    {
+      "id": "740027284",
+      "name": "Böle",
+      "lat": 65.887558,
+      "lon": 22.258688,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740023787",
+      "name": "Luleå Hermelinsparken",
+      "lat": 65.583548,
+      "lon": 22.137475,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 5
+    },
+    {
+      "id": "740027280",
+      "name": "N Prästholm",
+      "lat": 65.934149,
+      "lon": 22.162885,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740027278",
+      "name": "Niemiholm",
+      "lat": 65.974002,
+      "lon": 22.075519,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740001550",
+      "name": "Niemisel station",
+      "lat": 66.028614,
+      "lon": 21.995799,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740036472",
+      "name": "Norra Hamn",
+      "lat": 65.584615,
+      "lon": 22.146613,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 5
+    },
+    {
+      "id": "740027279",
+      "name": "Orrbyn",
+      "lat": 65.953683,
+      "lon": 22.118199,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740071734",
+      "name": "Persön Skolan",
+      "lat": 65.743767,
+      "lon": 22.165603,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 2
+    },
+    {
+      "id": "740023781",
+      "name": "Smedsbyn Kolabergsvägen",
+      "lat": 65.808717,
+      "lon": 22.021557,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740073146",
+      "name": "Smedsbyn Missionshuset",
+      "lat": 65.811341,
+      "lon": 22.015037,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740073147",
+      "name": "Smedsbyn Smedsbygården",
+      "lat": 65.805223,
+      "lon": 22.032385,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740073148",
+      "name": "Smedsbyvägen Södra",
+      "lat": 65.792069,
+      "lon": 22.077405,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 5,
+      "routes": 1
+    },
+    {
+      "id": "740001549",
+      "name": "Avafors station",
+      "lat": 66.046237,
+      "lon": 22.286783,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740027276",
+      "name": "Bjurå Hpl",
+      "lat": 66.036221,
+      "lon": 22.16573,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740077589",
+      "name": "Björsbyvägen 142",
+      "lat": 65.630379,
+      "lon": 22.179231,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740077590",
+      "name": "Björsbyvägen Vsk Oppibysväg",
+      "lat": 65.632677,
+      "lon": 22.162661,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740044612",
+      "name": "Ersnäs Klubbenvägen",
+      "lat": 65.537845,
+      "lon": 21.776936,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740027267",
+      "name": "Fällträsk (Ersnäs)",
+      "lat": 65.526719,
+      "lon": 21.65512,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740071072",
+      "name": "Jämtöavan",
+      "lat": 65.826668,
+      "lon": 22.522208,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740026942",
+      "name": "Kallax Fiskehamn",
+      "lat": 65.52108,
+      "lon": 22.065527,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740036554",
+      "name": "Residensgatan",
+      "lat": 65.583124,
+      "lon": 22.136196,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 4
+    },
+    {
+      "id": "740027264",
+      "name": "Selet vsk Avan",
+      "lat": 65.664481,
+      "lon": 21.66354,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740073656",
+      "name": "Smedsbyvägen",
+      "lat": 65.814575,
+      "lon": 22.007918,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740073145",
+      "name": "Smedsbyvägen Norra",
+      "lat": 65.816413,
+      "lon": 22.002786,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740022983",
+      "name": "Sunderby sjukhus station",
+      "lat": 65.675129,
+      "lon": 21.931455,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 4
+    },
+    {
+      "id": "740073149",
+      "name": "Södra Smedsbyn Stenviksvägen",
+      "lat": 65.811019,
+      "lon": 21.982609,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740073152",
+      "name": "Ängesbyn Kapellet",
+      "lat": 65.772394,
+      "lon": 22.071948,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740073151",
+      "name": "Ängesbyn Maritholm",
+      "lat": 65.777448,
+      "lon": 22.046437,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740073154",
+      "name": "Ängesbyn Nickbyvägen",
+      "lat": 65.725792,
+      "lon": 22.130841,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740073153",
+      "name": "Ängesbyn Storholmsvägen",
+      "lat": 65.76963,
+      "lon": 22.080041,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740026987",
+      "name": "Ängesbyn vsk Ängesbygården",
+      "lat": 65.774908,
+      "lon": 22.060068,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740073150",
+      "name": "Ängesbyn Östlingsvägen",
+      "lat": 65.777393,
+      "lon": 22.03325,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 2
+    },
+    {
+      "id": "740074412",
+      "name": "Ängesträsk Byn",
+      "lat": 66.009585,
+      "lon": 22.160482,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740073155",
+      "name": "Ängesträsk väg 356",
+      "lat": 66.030905,
+      "lon": 22.140972,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740071487",
+      "name": "Örnabben",
+      "lat": 65.698586,
+      "lon": 22.256232,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 4,
+      "routes": 1
+    },
+    {
+      "id": "740078958",
+      "name": "Bredträsk Byaväg vsk väg 583",
+      "lat": 65.646874,
+      "lon": 21.495138,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740078954",
+      "name": "Brännbergsvägen vsk väg 583",
+      "lat": 65.648838,
+      "lon": 21.512593,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740036328",
+      "name": "Hollsvattnet vsk väg 583",
+      "lat": 65.651949,
+      "lon": 21.474694,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740027283",
+      "name": "S Niemiholm",
+      "lat": 65.970836,
+      "lon": 22.05824,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740027282",
+      "name": "S Orrbyn",
+      "lat": 65.943929,
+      "lon": 22.105988,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740027281",
+      "name": "S Prästholm",
+      "lat": 65.934936,
+      "lon": 22.135619,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740027263",
+      "name": "Solberg Luleå",
+      "lat": 65.649609,
+      "lon": 21.578617,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740073127",
+      "name": "Västmark Sågen",
+      "lat": 65.669589,
+      "lon": 21.589165,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 3,
+      "routes": 1
+    },
+    {
+      "id": "740027272",
+      "name": "Forshed",
+      "lat": 66.164923,
+      "lon": 22.19906,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 2,
+      "routes": 1
+    },
+    {
+      "id": "740014858",
+      "name": "Luleå SSAB",
+      "lat": 65.558438,
+      "lon": 22.228177,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 2,
+      "routes": 2
+    },
+    {
+      "id": "740078941",
+      "name": "Luleå SSAB Koksverket",
+      "lat": 65.551782,
+      "lon": 22.258025,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 2,
+      "routes": 2
+    },
+    {
+      "id": "740076830",
+      "name": "Måttsund vsk Sundet",
+      "lat": 65.534764,
+      "lon": 21.906489,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 2,
+      "routes": 1
+    },
+    {
+      "id": "740073157",
+      "name": "Niemisel Kvarnåskolan",
+      "lat": 66.017877,
+      "lon": 21.992343,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 2,
+      "routes": 1
+    },
+    {
+      "id": "740075648",
+      "name": "Vsk Kvarnberg",
+      "lat": 66.129979,
+      "lon": 22.245375,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 2,
+      "routes": 1
+    },
+    {
+      "id": "740071735",
+      "name": "Altersund Strandgården",
+      "lat": 65.733852,
+      "lon": 22.171406,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740071736",
+      "name": "Börjelslandet Holmarvägen",
+      "lat": 65.772412,
+      "lon": 22.155241,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740053534",
+      "name": "Gamla Lövskärsvägen",
+      "lat": 65.56487,
+      "lon": 22.318322,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740053535",
+      "name": "Hamngårda",
+      "lat": 65.557969,
+      "lon": 22.336334,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740037224",
+      "name": "Hummergatan",
+      "lat": 65.59963,
+      "lon": 22.1448,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740077381",
+      "name": "Långsel 286",
+      "lat": 66.216826,
+      "lon": 22.128948,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740053555",
+      "name": "Lövskärs hamn",
+      "lat": 65.542782,
+      "lon": 22.374,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740053541",
+      "name": "Nickebovägen",
+      "lat": 65.547457,
+      "lon": 22.360098,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740053540",
+      "name": "Trädgårdsvägen",
+      "lat": 65.553737,
+      "lon": 22.3459,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 1,
+      "routes": 1
+    },
+    {
+      "id": "740073655",
+      "name": "Bensbyvägen Vsk Brändöv",
+      "lat": 65.707853,
+      "lon": 22.234563,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 0,
+      "routes": 0
+    },
+    {
+      "id": "740037445",
+      "name": "Coop Arena",
+      "lat": 65.596879,
+      "lon": 22.146413,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 0,
+      "routes": 0
+    },
+    {
+      "id": "740037147",
+      "name": "Germandövägen",
+      "lat": 65.579584,
+      "lon": 22.215005,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 0,
+      "routes": 0
+    },
+    {
+      "id": "740027273",
+      "name": "Långsel",
+      "lat": 66.208362,
+      "lon": 22.138396,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 0,
+      "routes": 0
+    },
+    {
+      "id": "740073736",
+      "name": "Persön Byahuset",
+      "lat": 65.739385,
+      "lon": 22.166162,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 0,
+      "routes": 0
+    },
+    {
+      "id": "740036330",
+      "name": "Stadshuset",
+      "lat": 65.583001,
+      "lon": 22.144522,
+      "location_type": "",
+      "parent_station": "",
+      "weekday_departures": 0,
+      "routes": 0
+    }
+  ],
+  "note": "GTFS Sverige 2 har filtrerats till busslinjer med hållplatser inom Luleå kommuns polygon. Avgångar avser nästa måndag med aktivt GTFS-utbud."
 }
