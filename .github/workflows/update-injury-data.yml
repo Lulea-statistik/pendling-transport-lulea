@@ -31,5 +31,6 @@ jobs:
             echo "No changes"
           else
             git commit -m "Update municipal road injury data"
+            git pull --rebase origin main
             git push
           fi
