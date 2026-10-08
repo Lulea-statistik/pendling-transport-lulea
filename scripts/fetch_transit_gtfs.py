@@ -153,6 +153,11 @@ def main():
 
     agency_by_id={a.get("agency_id",""):a for a in agencies}
     route_by_id={r.get("route_id",""):r for r in routes}
+    allowed_agencies={
+        aid for aid,a in agency_by_id.items()
+        if any(x in (a.get("agency_name","") or "").casefold()
+               for x in ("luleå lokaltrafik","länstrafiken norrbotten"))
+    }
 
     def is_bus(route):
         try:
@@ -186,6 +191,8 @@ def main():
             continue
         route=route_by_id.get(r.get("route_id",""),{})
         if not is_bus(route):
+            continue
+        if route.get("agency_id","") not in allowed_agencies:
             continue
         trips_by_id[r.get("trip_id","")]=r
 
