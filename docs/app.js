@@ -156,3 +156,147 @@ setupPageNavigation();
 setupMunicipalityExplorer("vehicleMunicipality",["vehicleMunicipalityTitle","vehicleMunicipalityHeading"]);
 setupMunicipalityExplorer("injuryMunicipality",["injuryMunicipalityHeading"]);
 setupMunicipalityExplorer("serviceMunicipality",["serviceMunicipalityHeading"]);
+
+
+let TRAFA=null;
+const trafaFmt0=new Intl.NumberFormat("sv-SE",{maximumFractionDigits:0});
+const trafaFmt2=new Intl.NumberFormat("sv-SE",{maximumFractionDigits:2});
+
+function formatTrafaValue(value,suffix=""){
+  if(value==null||value==="")return "–";
+  const n=Number(value);
+  if(Number.isFinite(n)){
+    const text=Math.abs(n-Math.round(n))<1e-9?trafaFmt0.format(n):trafaFmt2.format(n);
+    return text+(suffix||"");
+  }
+  return String(value);
+}
+
+const VEHICLE_DATASETS=[
+  {sheet:"Tabell 3 Personbil",label:"Personbilar och ägande",metrics:[
+    ["Kolumn 3","Personbilar i trafik",""],
+    ["Kolumn 5","Ägda av kvinnor",""],
+    ["Kolumn 6","Ägda av män",""],
+    ["Kolumn 7","Ägda av juridiska personer",""],
+    ["Kolumn 13","Personbilar per 1 000 invånare",""],
+    ["Kolumn 14","Privatägda personbilar per 1 000 invånare",""]
+  ]},
+  {sheet:"Tabell 6 Lätt lastbil",label:"Lätta lastbilar",metrics:[["Kolumn 11","Lätta lastbilar i trafik",""]]},
+  {sheet:"Tabell 7 Tung lastbil",label:"Tunga lastbilar",metrics:[["Kolumn 11","Tunga lastbilar i trafik",""]]},
+  {sheet:"Tabell 8 Buss",label:"Bussar",metrics:[["Kolumn 10","Bussar i trafik",""]]}
+];
+
+const SERVICE_DATASETS=[
+  {sheet:"Tabell 2b",label:"Färdtjänsttillstånd",metrics:[
+    ["Kolumn 3","Män under 65 år",""],
+    ["Kolumn 4","Kvinnor under 65 år",""],
+    ["Kolumn 5","Män 65 år eller äldre",""],
+    ["Kolumn 6","Kvinnor 65 år eller äldre",""],
+    ["Kolumn 7","Män totalt",""],
+    ["Kolumn 8","Kvinnor totalt",""],
+    ["Kolumn 9","Tillstånd totalt",""]
+  ]},
+  {sheet:"Tabell 3b",label:"Tillstånd per 1 000 invånare",metrics:[
+    ["Kolumn 3","Tillstånd totalt",""],
+    ["6.98 · 3.11 · 7.53","Män under 65 år per 1 000",""],
+    ["10.13 · 5.84 · 8.67","Kvinnor under 65 år per 1 000",""],
+    ["68.97 · 67.42 · 88.22","Män 65+ per 1 000",""],
+    ["113.95 · 71.09 · 128.84","Kvinnor 65+ per 1 000",""],
+    ["19.64 · 23.43 · 24.07","Män totalt per 1 000",""],
+    ["34.06 · 27.39 · 36.62","Kvinnor totalt per 1 000",""],
+    ["26.7 · 25.31 · 30.24","Totalt per 1 000",""]
+  ]},
+  {sheet:"Tabell 4",label:"Färdtjänstresor och nyttjande",metrics:[
+    ["Kolumn 3","Enkelresor, män",""],
+    ["Kolumn 4","Enkelresor, kvinnor",""],
+    ["Kolumn 5","Enkelresor totalt",""],
+    ["35.98 · 14.97 · 50.34","Resor per tillstånd, män",""],
+    ["17.44 · 27.66 · 39.49","Resor per tillstånd, kvinnor",""],
+    ["24.4 · 21.5 · 43.88","Resor per tillstånd, totalt",""],
+    ["65.22 · 63.64 · 65.65","Andel nyttjare, män"," %"],
+    ["56.86 · 85.71 · 68.37","Andel nyttjare, kvinnor"," %"],
+    ["87.74 · 80.27 · 67.27","Andel nyttjare, totalt"," %"]
+  ]},
+  {sheet:"Tabell 7b",label:"Riksfärdtjänst – nyttjare",metrics:[
+    ["Kolumn 3","Män",""],["Kolumn 4","Kvinnor",""],["Kolumn 5","Totalt",""]
+  ]},
+  {sheet:"Tabell 8b",label:"Riksfärdtjänst – nyttjare per 1 000",metrics:[
+    ["3.2 · 0.71 · 1.18","Män per 1 000",""],["6.23 · 6.26 · 1.7","Kvinnor per 1 000",""],["4.69 · 3.35 · 1.44","Totalt per 1 000",""]
+  ]},
+  {sheet:"Tabell 9",label:"Riksfärdtjänst – resor",metrics:[
+    ["Kolumn 3","Enkelresor, män",""],["Kolumn 4","Enkelresor, kvinnor",""],["Kolumn 5","Enkelresor totalt",""],
+    ["6.45 · 16.87 · 6.3","Resor per nyttjare, män",""],["10.89 · 4.75 · 5.52","Resor per nyttjare, kvinnor",""],["12.98 · 4.44 · 5.85","Resor per nyttjare, totalt",""]
+  ]}
+];
+
+function fillDatasetSelect(id,defs){
+  const s=$(id);if(!s)return;
+  s.innerHTML="";
+  defs.forEach(d=>{
+    const o=document.createElement("option");
+    o.value=d.sheet;o.textContent=d.label;s.appendChild(o);
+  });
+}
+
+function renderMetricGrid(gridId,metrics,values){
+  const grid=$(gridId);if(!grid)return;
+  grid.innerHTML="";
+  metrics.forEach(([key,label,suffix])=>{
+    if(!(key in values))return;
+    const article=document.createElement("article");
+    article.className="metric-card";
+    const span=document.createElement("span");span.textContent=label;
+    const strong=document.createElement("strong");strong.textContent=formatTrafaValue(values[key],suffix);
+    article.append(span,strong);
+    grid.appendChild(article);
+  });
+}
+
+function findTrafaRow(section,sheetName,municipality){
+  const sheet=TRAFA?.[section]?.sheets?.find(s=>s.title===sheetName);
+  return sheet?.rows?.find(r=>r.municipality===municipality)||null;
+}
+
+function renderVehicleData(){
+  if(!TRAFA)return;
+  const municipality=$("vehicleMunicipality").value;
+  const sheetName=$("vehicleDataset").value;
+  const def=VEHICLE_DATASETS.find(d=>d.sheet===sheetName)||VEHICLE_DATASETS[0];
+  const row=findTrafaRow("vehicles",def.sheet,municipality);
+  $("vehicleDataStatus").textContent=row
+    ? "Trafikanalys 2025 · "+def.label
+    : "Ingen kommunrad hittades i valt tabellblad.";
+  renderMetricGrid("vehicleDataGrid",def.metrics,row?.values||{});
+}
+
+function renderServiceData(){
+  if(!TRAFA)return;
+  const municipality=$("serviceMunicipality").value;
+  const sheetName=$("serviceDataset").value;
+  const def=SERVICE_DATASETS.find(d=>d.sheet===sheetName)||SERVICE_DATASETS[0];
+  const row=findTrafaRow("service",def.sheet,municipality);
+  $("serviceDataStatus").textContent=row
+    ? "Trafikanalys 2025 · "+def.label
+    : "Ingen kommunrad hittades i valt tabellblad.";
+  renderMetricGrid("serviceDataGrid",def.metrics,row?.values||{});
+}
+
+async function loadTrafaData(){
+  try{
+    const r=await fetch("data/trafa.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    TRAFA=await r.json();
+    fillDatasetSelect("vehicleDataset",VEHICLE_DATASETS);
+    fillDatasetSelect("serviceDataset",SERVICE_DATASETS);
+    $("vehicleMunicipality").addEventListener("change",renderVehicleData);
+    $("vehicleDataset").addEventListener("change",renderVehicleData);
+    $("serviceMunicipality").addEventListener("change",renderServiceData);
+    $("serviceDataset").addEventListener("change",renderServiceData);
+    renderVehicleData();
+    renderServiceData();
+  }catch(err){
+    if($("vehicleDataStatus"))$("vehicleDataStatus").textContent="Kunde inte läsa Trafikanalys-data: "+err.message;
+    if($("serviceDataStatus"))$("serviceDataStatus").textContent="Kunde inte läsa Trafikanalys-data: "+err.message;
+  }
+}
+loadTrafaData();
