@@ -603,3 +603,90 @@ async function loadInjuryData(){
   }
 }
 loadInjuryData();
+
+
+let TRANSIT_DATA=null;
+
+function renderTransitBars(){
+  const root=$("transitStopBars");
+  if(!root)return;
+  root.innerHTML="";
+  const rows=(TRANSIT_DATA?.stops||[]).slice(0,15);
+  const max=Math.max(1,...rows.map(r=>Number(r.weekday_departures)||0));
+  rows.forEach(r=>{
+    const value=Number(r.weekday_departures)||0;
+    const item=document.createElement("div");item.className="bar-row";
+    item.innerHTML='<span class="bar-name">'+r.name+'</span>'+
+      '<div class="bar-track"><i style="width:'+(value/max*100)+'%"></i></div>'+
+      '<strong>'+fmt.format(value)+'</strong>';
+    root.appendChild(item);
+  });
+  if(!rows.length)root.innerHTML='<p class="empty-state">Ingen hållplatsdata tillgänglig ännu.</p>';
+}
+
+function renderTransitRoutes(){
+  const root=$("transitRouteTable");
+  if(!root)return;
+  const rows=(TRANSIT_DATA?.routes||[]).slice().sort((a,b)=>
+    (a.operator_label||"").localeCompare(b.operator_label||"","sv")||
+    String(a.short_name||"").localeCompare(String(b.short_name||""),"sv",{numeric:true})
+  );
+  if(!rows.length){
+    root.innerHTML='<p class="empty-state">Ingen linjedata tillgänglig ännu.</p>';
+    return;
+  }
+  const table=document.createElement("table");table.className="simple-data-table transit-route-table";
+  table.innerHTML="<thead><tr><th>Operatör</th><th>Linje</th><th>Destination/beskrivning</th><th>Vardagsturer</th></tr></thead>";
+  const tbody=document.createElement("tbody");
+  rows.forEach(r=>{
+    const tr=document.createElement("tr");
+    const vals=[
+      r.operator_label||r.operator||"–",
+      r.short_name||r.route_id||"–",
+      r.long_name||"–",
+      fmt.format(Number(r.weekday_trips)||0)
+    ];
+    vals.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td)});
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  root.replaceChildren(table);
+}
+
+function renderTransit(){
+  const data=TRANSIT_DATA;
+  if(!data)return;
+
+  const summary=data.summary||{};
+  $("transitStops").textContent=summary.stops!=null?fmt.format(Number(summary.stops)):"–";
+  $("transitRoutes").textContent=summary.routes!=null?fmt.format(Number(summary.routes)):"–";
+  $("transitDepartures").textContent=summary.weekday_departures!=null?fmt.format(Number(summary.weekday_departures)):"–";
+  $("transitReferenceDay").textContent=data.reference_weekday
+    ? "referensvardag "+data.reference_weekday
+    : "referensvardag";
+
+  if(data.configured){
+    $("transitStatus").textContent=
+      "GTFS-data hämtad från Trafiklab för LLT och Länstrafiken Norrbotten. Senast byggd "+(data.generated||"–")+".";
+    $("transitSetupNote").textContent=data.note||"";
+  }else{
+    $("transitStatus").textContent="Kollektivtrafiksidan är förberedd, men GTFS-hämtningen väntar på Trafiklab-nyckel.";
+    $("transitSetupNote").innerHTML=
+      'Lägg till GitHub Actions-secret <code>TRAFIKLAB_API_KEY</code> i repot och kör workflowet <strong>Update public transport data</strong>. Därefter fylls sidan automatiskt med hållplatser, linjer och planerade avgångar.';
+  }
+
+  renderTransitBars();
+  renderTransitRoutes();
+}
+
+async function loadTransitData(){
+  try{
+    const r=await fetch("data/transit.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    TRANSIT_DATA=await r.json();
+    renderTransit();
+  }catch(err){
+    if($("transitStatus"))$("transitStatus").textContent="Kunde inte läsa kollektivtrafikdata: "+err.message;
+  }
+}
+loadTransitData();
