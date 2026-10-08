@@ -99,7 +99,17 @@ def main():
     sex = find_var(metadata, "kon")
     residence = find_var(metadata, "bostad", "kommun")
     workplace = find_var(metadata, "arbets", "kommun")
-    year = find_var(metadata, "ar")
+
+    year = next(
+        (
+            v for v in metadata["variables"]
+            if str(v.get("code", "")).lower() in {"tid", "time", "ar", "år"}
+            or str(v.get("text", "")).strip().lower() in {"år", "tid", "årtal"}
+        ),
+        None,
+    )
+    if year is None:
+        raise KeyError("Kan inte hitta SCB:s tidsvariabel")
 
     res_values = municipality_values(residence)
     work_values = municipality_values(workplace)
