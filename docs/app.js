@@ -742,3 +742,79 @@ async function loadTrafficInfo(){
   }
 }
 loadTrafficInfo();
+
+
+let TRANSIT_HISTORY=null;
+
+function transitHistorySvg(rows,metric){
+  const width=900,height=330,p={l:62,r:22,t:26,b:48};
+  const values=rows.map(r=>Number(r[metric])).filter(Number.isFinite);
+  if(!values.length)return '<p class="empty-state">Ingen historisk serie tillgänglig ännu.</p>';
+  const max=Math.max(1,...values);
+  const years=rows.map(r=>Number(r.year));
+  const minYear=Math.min(...years),maxYear=Math.max(...years);
+  const x=year=>p.l+((year-minYear)/Math.max(1,maxYear-minYear))*(width-p.l-p.r);
+  const y=value=>height-p.b-(value/max)*(height-p.t-p.b);
+  const grid=[0,.25,.5,.75,1].map(fr=>{
+    const yy=height-p.b-fr*(height-p.t-p.b);
+    return '<line x1="'+p.l+'" x2="'+(width-p.r)+'" y1="'+yy+'" y2="'+yy+'" class="nvdb-gridline"/>'+
+      '<text x="'+(p.l-10)+'" y="'+(yy+4)+'" text-anchor="end" class="nvdb-axis">'+fmt.format(Math.round(max*fr))+'</text>';
+  }).join("");
+  const ticks=years.map(year=>'<text x="'+x(year)+'" y="'+(height-17)+'" text-anchor="middle" class="nvdb-axis">'+year+'</text>').join("");
+  const pts=rows.filter(r=>Number.isFinite(Number(r[metric]))).map(r=>x(Number(r.year))+','+y(Number(r[metric]))).join(" ");
+  const circles=rows.filter(r=>Number.isFinite(Number(r[metric]))).map(r=>{
+    const year=Number(r.year),v=Number(r[metric]);
+    return '<circle cx="'+x(year)+'" cy="'+y(v)+'" r="4" fill="#2563eb"><title>'+year+': '+fmt.format(v)+'</title></circle>';
+  }).join("");
+  return '<svg class="nvdb-svg" viewBox="0 0 '+width+' '+height+'" role="img" aria-label="Historiskt kollektivtrafikutbud">'+
+    grid+ticks+'<polyline points="'+pts+'" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'+circles+'</svg>';
+}
+
+function renderTransitHistory(){
+  if(!TRANSIT_HISTORY)return;
+  const rows=(TRANSIT_HISTORY.years||[]).slice().sort((a,b)=>Number(a.year)-Number(b.year));
+  const metric=$("transitHistoryMetric")?.value||"weekday_trips";
+  const labels={weekday_trips:"Vardagsturer",routes:"Busslinjer",stops:"Hållplatser"};
+  $("transitHistoryStatus").textContent=rows.length
+    ? labels[metric]+" · "+rows[0].year+"–"+rows[rows.length-1].year
+    : "Historikfilen innehåller ännu inga färdiga år.";
+
+  $("transitHistoryChart").innerHTML=transitHistorySvg(rows,metric);
+
+  const root=$("transitHistoryTable");
+  if(!root)return;
+  if(!rows.length){
+    root.innerHTML='<p class="empty-state">Historik byggs nu från GTFS Sverige 2-arkivet.</p>';
+    return;
+  }
+  const table=document.createElement("table");table.className="simple-data-table";
+  table.innerHTML="<thead><tr><th>År</th><th>Snapshot</th><th>Hållplatser</th><th>Busslinjer</th><th>Vardagsturer</th></tr></thead>";
+  const tbody=document.createElement("tbody");
+  rows.slice().sort((a,b)=>Number(b.year)-Number(a.year)).forEach(r=>{
+    const tr=document.createElement("tr");
+    const vals=[
+      r.year,
+      r.snapshot_date||"–",
+      fmt.format(Number(r.stops)||0),
+      fmt.format(Number(r.routes)||0),
+      fmt.format(Number(r.weekday_trips)||0)
+    ];
+    vals.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td)});
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  root.replaceChildren(table);
+}
+
+async function loadTransitHistory(){
+  try{
+    const r=await fetch("data/transit_history.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    TRANSIT_HISTORY=await r.json();
+    if($("transitHistoryMetric"))$("transitHistoryMetric").addEventListener("change",renderTransitHistory);
+    renderTransitHistory();
+  }catch(err){
+    if($("transitHistoryStatus"))$("transitHistoryStatus").textContent="Historiken byggs fortfarande: "+err.message;
+  }
+}
+loadTransitHistory();
