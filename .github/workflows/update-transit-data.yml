@@ -16,7 +16,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     env:
-      TRAFIKLAB_API_KEY: ${{ secrets.TRAFIKLAB_API_KEY3 }}
+      TRAFIKLAB_API_KEY: ${{ secrets.TRAFIKLAB_API_KEY4 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
