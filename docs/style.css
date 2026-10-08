@@ -64,3 +64,13 @@ label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--mute
 .lesson-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.lesson-grid article{border:1px solid var(--line);border-radius:8px;padding:14px;background:#fbfcfe}.lesson-grid h3{margin:0 0 6px;font-size:15px}.lesson-grid p{margin:0;color:#475569;font-size:13px;line-height:1.48}.lead-note{color:#475569;margin-top:-4px}
 @media(max-width:1000px){.lesson-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.lesson-grid{grid-template-columns:1fr}}
+
+.analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.analysis-card{border:1px solid var(--line);border-radius:9px;padding:14px;background:#fbfcfe}
+.analysis-card h3{margin:0 0 8px;font-size:15px}.analysis-card p{margin:0 0 10px;color:#475569;font-size:13px;line-height:1.5}
+.api-badge{display:inline-block;padding:5px 8px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:700}
+.class-scale{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin:10px 0 12px;color:#475569;font-size:11px}
+.class-scale i{height:9px;border-radius:999px;background:linear-gradient(90deg,#0f3b82,#cbd5e1)}
+.share-bars{display:grid;gap:10px}.share-row{display:grid;grid-template-columns:1fr;gap:4px}.share-label{display:flex;justify-content:space-between;gap:12px;font-size:12px}.share-label strong{font-variant-numeric:tabular-nums}.share-track{height:9px;background:#e5e7eb;border-radius:999px;overflow:hidden}.share-track i{display:block;height:100%;background:#2563eb;border-radius:999px}.share-row small{color:var(--muted);font-size:11px}
+.bar-list{display:grid;gap:9px}.bar-row{display:grid;grid-template-columns:minmax(140px,220px) minmax(160px,1fr) 52px;gap:10px;align-items:center}.bar-name{font-size:12px;color:#475569}.bar-track{height:13px;background:#e5e7eb;border-radius:999px;overflow:hidden}.bar-track i{display:block;height:100%;background:#2563eb;border-radius:999px}.bar-row strong{text-align:right;font-size:12px;font-variant-numeric:tabular-nums}
+@media(max-width:800px){.analysis-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:120px 1fr 42px}}
