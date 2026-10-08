@@ -135,9 +135,14 @@ def extract_workbook(key, cfg):
             rows.append({"municipality":name,"values":data})
 
         if rows:
+            top_rows=[]
+            for idx,vals in scanned[:45]:
+                if any(v not in ("",None) for v in vals):
+                    top_rows.append({"row":idx,"values":vals[:40]})
             result["sheets"].append({
                 "title":ws.title,
                 "columns":labels,
+                "header_rows":top_rows,
                 "rows":rows,
             })
 
