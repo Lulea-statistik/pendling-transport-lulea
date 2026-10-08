@@ -690,3 +690,55 @@ async function loadTransitData(){
   }
 }
 loadTransitData();
+
+
+let TRAFFIC_INFO=null;
+
+function renderTrafficInfo(){
+  if(!TRAFFIC_INFO)return;
+  const active=TRAFFIC_INFO.items?.filter(x=>x.active)||[];
+  $("trafficActiveCount").textContent=fmt.format(Number(TRAFFIC_INFO.active_count||0));
+  $("trafficHistoryCount").textContent=fmt.format(Number(TRAFFIC_INFO.history_count||0));
+  $("trafficUpdated").textContent=TRAFFIC_INFO.updated
+    ? new Date(TRAFFIC_INFO.updated).toLocaleDateString("sv-SE")
+    : "–";
+
+  const root=$("trafficDisruptionList");
+  if(!root)return;
+  root.innerHTML="";
+  const items=(active.length?active:(TRAFFIC_INFO.items||[]).slice(0,8));
+  if(!items.length){
+    root.innerHTML='<p class="empty-state">Inga aktiva trafikstörningar registrerade vid senaste kontrollen.</p>';
+    return;
+  }
+  items.forEach(item=>{
+    const article=document.createElement("article");
+    article.className="disruption-card"+(item.active?" active":"");
+    const lines=(item.lines||[]).length
+      ? '<div class="disruption-lines">Linje '+item.lines.join(", ")+'</div>'
+      : "";
+    article.innerHTML=
+      '<div class="disruption-meta"><span>'+String(item.status||"")+'</span>'+
+      '<span>'+(item.active?"Aktiv":"Historik")+'</span></div>'+
+      '<h3>'+String(item.title||"")+'</h3>'+
+      lines+
+      '<p>'+String(item.body||"")+'</p>'+
+      '<small>Först sedd '+String(item.first_seen||"").slice(0,10)+
+      ' · senast sedd '+String(item.last_seen||"").slice(0,10)+'</small>';
+    root.appendChild(article);
+  });
+}
+
+async function loadTrafficInfo(){
+  try{
+    const r=await fetch("data/traffic_disruptions.json",{cache:"no-store"});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    TRAFFIC_INFO=await r.json();
+    renderTrafficInfo();
+  }catch(err){
+    if($("trafficDisruptionList")){
+      $("trafficDisruptionList").innerHTML='<p class="empty-state">Kunde inte läsa störningshistoriken: '+err.message+'</p>';
+    }
+  }
+}
+loadTrafficInfo();
