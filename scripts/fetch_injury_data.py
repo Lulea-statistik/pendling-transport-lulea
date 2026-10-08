@@ -7,7 +7,7 @@ from urllib.request import Request, urlopen
 
 API="https://api.trafa.se/api/data"
 CODES=["2505","2506","2510","2513","2514","2518","2521","2523","2560","2580","2581","2582","2583","2584"]
-YEARS=[str(y) for y in range(2010,2026)]
+YEARS=[str(y) for y in range(2020,2026)]
 SPEEDS=["030","040","050","060","070","080","090","100","110","120","999"]
 ROAD_TYPES=["1","10","11","12","13","2","3","4","5","6","9"]
 
