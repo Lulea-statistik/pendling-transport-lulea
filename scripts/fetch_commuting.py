@@ -165,14 +165,14 @@ def main():
     c_sex = col("kon")
     c_res = col("bostad", "kommun")
     c_work = col("arbets", "kommun")
-    c_year = col("ar")
-    value_candidates = [
-        h for h in headers
-        if h not in {c_sex, c_res, c_work, c_year}
-    ]
-    if len(value_candidates) != 1:
-        raise RuntimeError(f"Kan inte entydigt hitta värdekolumn: {value_candidates}")
-    c_value = value_candidates[0]
+
+    year_columns = []
+    for h in headers:
+        m = re.search(r"((?:19|20)\\d{2})", str(h))
+        if m and h not in {c_sex, c_res, c_work}:
+            year_columns.append((h, int(m.group(1))))
+    if not year_columns:
+        raise RuntimeError(f"Kan inte hitta årskolumner i SCB-svaret: {headers}")
 
     out = []
     for r in rows:
@@ -180,22 +180,25 @@ def main():
         wc = code_from_label(r[c_work])
         if rc not in NBR or wc not in NBR:
             continue
-        raw = str(r[c_value]).strip().replace(" ", "").replace(",", ".")
-        try:
-            value = int(float(raw)) if raw not in {"", "..", ".", "-"} else None
-        except ValueError:
-            value = None
-        out.append({
-            "year": int(r[c_year]),
-            "sex": r[c_sex],
-            "residence_code": rc,
-            "residence": NBR[rc],
-            "workplace_code": wc,
-            "workplace": NBR[wc],
-            "employed": value,
-            "residence_focus": "1" if rc in FOCUS else "0",
-            "workplace_focus": "1" if wc in FOCUS else "0",
-        })
+
+        for c_value, year_value in year_columns:
+            raw = str(r.get(c_value, "")).strip().replace(" ", "").replace(",", ".")
+            try:
+                value = int(float(raw)) if raw not in {"", "..", ".", "-"} else None
+            except ValueError:
+                value = None
+
+            out.append({
+                "year": year_value,
+                "sex": r[c_sex],
+                "residence_code": rc,
+                "residence": NBR[rc],
+                "workplace_code": wc,
+                "workplace": NBR[wc],
+                "employed": value,
+                "residence_focus": "1" if rc in FOCUS else "0",
+                "workplace_focus": "1" if wc in FOCUS else "0",
+            })
 
     out.sort(key=lambda x: (x["year"], x["sex"], x["residence_code"], x["workplace_code"]))
 
