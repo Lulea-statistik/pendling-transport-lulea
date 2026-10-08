@@ -11,7 +11,1268 @@
     2025
   ],
   "latest_year": 2025,
-  "total": [],
+  "total": [
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2505",
+      "antolyckdsl": 7,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 7,
+      "antdslper100000": 113.913751017087,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Arvidsjaur"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2505",
+      "antolyckdsl": 13,
+      "antpersd": 1,
+      "antperss": 2,
+      "antpersl": 17,
+      "antdslper100000": 325.573823864561,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Arvidsjaur"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2505",
+      "antolyckdsl": 5,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 4,
+      "antdslper100000": 98.1836033382425,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Arvidsjaur"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2505",
+      "antolyckdsl": 8,
+      "antpersd": 0,
+      "antperss": 4,
+      "antpersl": 9,
+      "antdslper100000": 212.661540978243,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Arvidsjaur"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2505",
+      "antolyckdsl": 5,
+      "antpersd": 0,
+      "antperss": 3,
+      "antpersl": 3,
+      "antdslper100000": 98.5383478403679,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Arvidsjaur"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2505",
+      "antolyckdsl": 12,
+      "antpersd": 1,
+      "antperss": 7,
+      "antpersl": 10,
+      "antdslper100000": 298.705609027547,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Arvidsjaur"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2506",
+      "antolyckdsl": 4,
+      "antpersd": 1,
+      "antperss": 0,
+      "antpersl": 4,
+      "antdslper100000": 183.958793230316,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Arjeplog"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2506",
+      "antolyckdsl": 4,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 8,
+      "antdslper100000": 369.41263391208,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Arjeplog"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2506",
+      "antolyckdsl": 4,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 3,
+      "antdslper100000": 149.981252343457,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Arjeplog"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2506",
+      "antolyckdsl": 3,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 4,
+      "antdslper100000": 191.644308164048,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Arjeplog"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2506",
+      "antolyckdsl": 1,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 1,
+      "antdslper100000": 38.4763370527126,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Arjeplog"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2506",
+      "antolyckdsl": 2,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 2,
+      "antdslper100000": 77.8210116731517,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Arjeplog"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2510",
+      "antolyckdsl": 7,
+      "antpersd": 0,
+      "antperss": 3,
+      "antpersl": 5,
+      "antdslper100000": 164.914450628736,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Jokkmokk"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2510",
+      "antolyckdsl": 15,
+      "antpersd": 1,
+      "antperss": 3,
+      "antpersl": 17,
+      "antdslper100000": 439.330543933054,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Jokkmokk"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2510",
+      "antolyckdsl": 11,
+      "antpersd": 1,
+      "antperss": 0,
+      "antpersl": 11,
+      "antdslper100000": 252.100840336134,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Jokkmokk"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2510",
+      "antolyckdsl": 5,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 3,
+      "antdslper100000": 105.75296108291,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Jokkmokk"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2510",
+      "antolyckdsl": 5,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 3,
+      "antdslper100000": 85.0882790895554,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Jokkmokk"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2510",
+      "antolyckdsl": 5,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 4,
+      "antdslper100000": 106.496272630458,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Jokkmokk"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2513",
+      "antolyckdsl": 8,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 9,
+      "antdslper100000": 273.639404074187,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Överkalix"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2513",
+      "antolyckdsl": 6,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 5,
+      "antdslper100000": 215.252152521525,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Överkalix"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2513",
+      "antolyckdsl": 6,
+      "antpersd": 1,
+      "antperss": 2,
+      "antpersl": 5,
+      "antdslper100000": 253.164556962025,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Överkalix"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2513",
+      "antolyckdsl": 7,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 9,
+      "antdslper100000": 316.255534471853,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Överkalix"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2513",
+      "antolyckdsl": 7,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 11,
+      "antdslper100000": 406.123086535458,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Överkalix"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2513",
+      "antolyckdsl": 9,
+      "antpersd": 1,
+      "antperss": 3,
+      "antpersl": 10,
+      "antdslper100000": 439.836632108074,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Överkalix"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2514",
+      "antolyckdsl": 16,
+      "antpersd": 0,
+      "antperss": 6,
+      "antpersl": 16,
+      "antdslper100000": 139.134834303061,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Kalix"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2514",
+      "antolyckdsl": 18,
+      "antpersd": 2,
+      "antperss": 1,
+      "antpersl": 19,
+      "antdslper100000": 139.523084728564,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Kalix"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2514",
+      "antolyckdsl": 14,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 17,
+      "antdslper100000": 120.79598194418,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Kalix"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2514",
+      "antolyckdsl": 14,
+      "antpersd": 0,
+      "antperss": 3,
+      "antpersl": 16,
+      "antdslper100000": 122.210072682833,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Kalix"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2514",
+      "antolyckdsl": 17,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 18,
+      "antdslper100000": 129.946072379962,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Kalix"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2514",
+      "antolyckdsl": 10,
+      "antpersd": 1,
+      "antperss": 4,
+      "antpersl": 9,
+      "antdslper100000": 91.7912404930501,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Kalix"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2518",
+      "antolyckdsl": 6,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 6,
+      "antdslper100000": 189.708323452691,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Övertorneå"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2518",
+      "antolyckdsl": 9,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 13,
+      "antdslper100000": 308.715269532178,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Övertorneå"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2518",
+      "antolyckdsl": 6,
+      "antpersd": 1,
+      "antperss": 2,
+      "antpersl": 5,
+      "antdslper100000": 194.221898519058,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Övertorneå"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2518",
+      "antolyckdsl": 6,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 6,
+      "antdslper100000": 195.694716242661,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Övertorneå"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2518",
+      "antolyckdsl": 2,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 2,
+      "antdslper100000": 49.297510475721,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Övertorneå"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2518",
+      "antolyckdsl": 4,
+      "antpersd": 0,
+      "antperss": 5,
+      "antpersl": 3,
+      "antdslper100000": 200.250312891114,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Övertorneå"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2521",
+      "antolyckdsl": 4,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 3,
+      "antdslper100000": 67.0465973851827,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Pajala"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2521",
+      "antolyckdsl": 8,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 7,
+      "antdslper100000": 133.936045538255,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Pajala"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2521",
+      "antolyckdsl": 5,
+      "antpersd": 5,
+      "antperss": 1,
+      "antpersl": 3,
+      "antdslper100000": 152.983171851096,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Pajala"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2521",
+      "antolyckdsl": 6,
+      "antpersd": 1,
+      "antperss": 2,
+      "antpersl": 4,
+      "antdslper100000": 119.230114120252,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Pajala"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2521",
+      "antolyckdsl": 9,
+      "antpersd": 0,
+      "antperss": 3,
+      "antpersl": 10,
+      "antdslper100000": 221.956633088612,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Pajala"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2521",
+      "antolyckdsl": 6,
+      "antpersd": 2,
+      "antperss": 7,
+      "antpersl": 3,
+      "antdslper100000": 210.304942166141,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Pajala"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2523",
+      "antolyckdsl": 28,
+      "antpersd": 1,
+      "antperss": 2,
+      "antpersl": 29,
+      "antdslper100000": 183.255068147978,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Gällivare"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2523",
+      "antolyckdsl": 22,
+      "antpersd": 3,
+      "antperss": 2,
+      "antpersl": 23,
+      "antdslper100000": 160.46764857585,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Gällivare"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2523",
+      "antolyckdsl": 18,
+      "antpersd": 0,
+      "antperss": 4,
+      "antpersl": 17,
+      "antdslper100000": 120.551090700344,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Gällivare"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2523",
+      "antolyckdsl": 19,
+      "antpersd": 0,
+      "antperss": 4,
+      "antpersl": 23,
+      "antdslper100000": 155.799192152337,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Gällivare"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2523",
+      "antolyckdsl": 20,
+      "antpersd": 1,
+      "antperss": 3,
+      "antpersl": 24,
+      "antdslper100000": 162.478964776882,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Gällivare"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2523",
+      "antolyckdsl": 18,
+      "antpersd": 0,
+      "antperss": 5,
+      "antpersl": 17,
+      "antdslper100000": 128.392179749052,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Gällivare"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2560",
+      "antolyckdsl": 10,
+      "antpersd": 1,
+      "antperss": 1,
+      "antpersl": 11,
+      "antdslper100000": 161.410479264962,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Älvsbyn"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2560",
+      "antolyckdsl": 5,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 4,
+      "antdslper100000": 74.9157198152079,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Älvsbyn"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2560",
+      "antolyckdsl": 4,
+      "antpersd": 1,
+      "antperss": 0,
+      "antpersl": 3,
+      "antdslper100000": 50.5625079003919,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Älvsbyn"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2560",
+      "antolyckdsl": 13,
+      "antpersd": 1,
+      "antperss": 4,
+      "antpersl": 15,
+      "antdslper100000": 256.970319928048,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Älvsbyn"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2560",
+      "antolyckdsl": 9,
+      "antpersd": 0,
+      "antperss": 4,
+      "antpersl": 9,
+      "antdslper100000": 167.224080267559,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Älvsbyn"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2560",
+      "antolyckdsl": 8,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 8,
+      "antdslper100000": 102.367242482406,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Älvsbyn"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2580",
+      "antolyckdsl": 73,
+      "antpersd": 1,
+      "antperss": 6,
+      "antpersl": 79,
+      "antdslper100000": 109.48579867344,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Luleå"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2580",
+      "antolyckdsl": 58,
+      "antpersd": 1,
+      "antperss": 8,
+      "antpersl": 70,
+      "antdslper100000": 100.168638340497,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Luleå"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2580",
+      "antolyckdsl": 50,
+      "antpersd": 1,
+      "antperss": 9,
+      "antpersl": 48,
+      "antdslper100000": 73.1916611983242,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Luleå"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2580",
+      "antolyckdsl": 56,
+      "antpersd": 0,
+      "antperss": 11,
+      "antpersl": 55,
+      "antdslper100000": 83.173707026918,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Luleå"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2580",
+      "antolyckdsl": 61,
+      "antpersd": 5,
+      "antperss": 10,
+      "antpersl": 67,
+      "antdslper100000": 102.956871115575,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Luleå"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2580",
+      "antolyckdsl": 52,
+      "antpersd": 0,
+      "antperss": 8,
+      "antpersl": 61,
+      "antdslper100000": 85.9234907352062,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Luleå"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2581",
+      "antolyckdsl": 37,
+      "antpersd": 1,
+      "antperss": 7,
+      "antpersl": 55,
+      "antdslper100000": 149.197177094681,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Piteå"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2581",
+      "antolyckdsl": 50,
+      "antpersd": 2,
+      "antperss": 8,
+      "antpersl": 46,
+      "antdslper100000": 132.315762115162,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Piteå"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2581",
+      "antolyckdsl": 35,
+      "antpersd": 0,
+      "antperss": 5,
+      "antpersl": 35,
+      "antdslper100000": 94.4242481469241,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Piteå"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2581",
+      "antolyckdsl": 23,
+      "antpersd": 2,
+      "antperss": 3,
+      "antpersl": 24,
+      "antdslper100000": 68.4866805214434,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Piteå"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2581",
+      "antolyckdsl": 38,
+      "antpersd": 1,
+      "antperss": 11,
+      "antpersl": 38,
+      "antdslper100000": 117.793954814239,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Piteå"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2581",
+      "antolyckdsl": 35,
+      "antpersd": 1,
+      "antperss": 8,
+      "antpersl": 31,
+      "antdslper100000": 94.8226815854352,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Piteå"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2582",
+      "antolyckdsl": 26,
+      "antpersd": 0,
+      "antperss": 3,
+      "antpersl": 35,
+      "antdslper100000": 135.424091233072,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Boden"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2582",
+      "antolyckdsl": 19,
+      "antpersd": 3,
+      "antperss": 4,
+      "antpersl": 21,
+      "antdslper100000": 99.4318181818182,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Boden"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2582",
+      "antolyckdsl": 26,
+      "antpersd": 2,
+      "antperss": 12,
+      "antpersl": 23,
+      "antdslper100000": 131.916714204221,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Boden"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2582",
+      "antolyckdsl": 26,
+      "antpersd": 1,
+      "antperss": 2,
+      "antpersl": 30,
+      "antdslper100000": 118.097555738468,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Boden"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2582",
+      "antolyckdsl": 25,
+      "antpersd": 0,
+      "antperss": 2,
+      "antpersl": 28,
+      "antdslper100000": 106.955684694642,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Boden"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2582",
+      "antolyckdsl": 31,
+      "antpersd": 1,
+      "antperss": 3,
+      "antpersl": 35,
+      "antdslper100000": 136.249301285634,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Boden"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2583",
+      "antolyckdsl": 13,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 17,
+      "antdslper100000": 177.064889074055,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Haparanda"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2583",
+      "antolyckdsl": 9,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 11,
+      "antdslper100000": 126.36899747262,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Haparanda"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2583",
+      "antolyckdsl": 6,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 7,
+      "antdslper100000": 85.6531049250535,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Haparanda"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2583",
+      "antolyckdsl": 6,
+      "antpersd": 0,
+      "antperss": 1,
+      "antpersl": 5,
+      "antdslper100000": 65.38084341288,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Haparanda"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2583",
+      "antolyckdsl": 11,
+      "antpersd": 0,
+      "antperss": 0,
+      "antpersl": 13,
+      "antdslper100000": 142.060976942411,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Haparanda"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2583",
+      "antolyckdsl": 14,
+      "antpersd": 3,
+      "antperss": 1,
+      "antpersl": 19,
+      "antdslper100000": 254.791182009527,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Haparanda"
+      }
+    },
+    {
+      "ar": "2020",
+      "lan": "25",
+      "kommun": "2584",
+      "antolyckdsl": 21,
+      "antpersd": 0,
+      "antperss": 3,
+      "antpersl": 25,
+      "antdslper100000": 123.543946346629,
+      "_labels": {
+        "ar": "2020",
+        "lan": "Norrbottens län",
+        "kommun": "Kiruna"
+      }
+    },
+    {
+      "ar": "2021",
+      "lan": "25",
+      "kommun": "2584",
+      "antolyckdsl": 21,
+      "antpersd": 0,
+      "antperss": 4,
+      "antpersl": 21,
+      "antdslper100000": 110.840168477056,
+      "_labels": {
+        "ar": "2021",
+        "lan": "Norrbottens län",
+        "kommun": "Kiruna"
+      }
+    },
+    {
+      "ar": "2022",
+      "lan": "25",
+      "kommun": "2584",
+      "antolyckdsl": 16,
+      "antpersd": 2,
+      "antperss": 2,
+      "antpersl": 20,
+      "antdslper100000": 107.032957231414,
+      "_labels": {
+        "ar": "2022",
+        "lan": "Norrbottens län",
+        "kommun": "Kiruna"
+      }
+    },
+    {
+      "ar": "2023",
+      "lan": "25",
+      "kommun": "2584",
+      "antolyckdsl": 23,
+      "antpersd": 2,
+      "antperss": 3,
+      "antpersl": 38,
+      "antdslper100000": 191.68189720501,
+      "_labels": {
+        "ar": "2023",
+        "lan": "Norrbottens län",
+        "kommun": "Kiruna"
+      }
+    },
+    {
+      "ar": "2024",
+      "lan": "25",
+      "kommun": "2584",
+      "antolyckdsl": 16,
+      "antpersd": 1,
+      "antperss": 2,
+      "antpersl": 15,
+      "antdslper100000": 80.2639793097298,
+      "_labels": {
+        "ar": "2024",
+        "lan": "Norrbottens län",
+        "kommun": "Kiruna"
+      }
+    },
+    {
+      "ar": "2025",
+      "lan": "25",
+      "kommun": "2584",
+      "antolyckdsl": 18,
+      "antpersd": 1,
+      "antperss": 4,
+      "antpersl": 21,
+      "antdslper100000": 116.061065976252,
+      "_labels": {
+        "ar": "2025",
+        "lan": "Norrbottens län",
+        "kommun": "Kiruna"
+      }
+    }
+  ],
   "by_speed_limit": [],
   "by_road_type": []
 }
