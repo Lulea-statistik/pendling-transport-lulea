@@ -1,5 +1,5 @@
 const FOCUS=new Set(["Luleå","Boden","Piteå","Älvsbyn","Kalix"]);
-const NEUTRAL_MATRIX=new Set(["Arjeplog"]);
+
 let rows=[];
 
 const $=id=>document.getElementById(id);
@@ -49,7 +49,7 @@ function render(){
   const map=new Map(data.map(r=>[r.residence+"|"+r.workplace,Number(r.employed)]));
   const values=[];
   for(const a of shown)for(const b of shown){
-    if(NEUTRAL_MATRIX.has(a)||NEUTRAL_MATRIX.has(b))continue;
+    if(a===b)continue;
     const v=map.get(a+"|"+b);
     if(Number.isFinite(v))values.push(v);
   }
@@ -58,31 +58,69 @@ function render(){
   const table=document.createElement("table");table.className="matrix";
   const thead=document.createElement("thead"),tr=document.createElement("tr");
   const corner=document.createElement("th");corner.textContent="Bostad ↓ / Arbete →";corner.className="row";tr.appendChild(corner);
-  shown.forEach(name=>{
+  shown.forEach((name,colIndex)=>{
     const th=document.createElement("th");th.className="col"+(FOCUS.has(name)?" focus-label":"");
+    th.dataset.colIndex=String(colIndex);
     const span=document.createElement("span");span.textContent=name;th.appendChild(span);tr.appendChild(th);
   });
   thead.appendChild(tr);table.appendChild(thead);
   const tbody=document.createElement("tbody");
-  shown.forEach(res=>{
+  shown.forEach((res,rowIndex)=>{
     const rr=document.createElement("tr");
-    const th=document.createElement("th");th.className="row"+(FOCUS.has(res)?" focus-label":"");th.textContent=res;rr.appendChild(th);
-    shown.forEach(work=>{
+    const th=document.createElement("th");th.className="row"+(FOCUS.has(res)?" focus-label":"");
+    th.dataset.rowIndex=String(rowIndex);
+    th.textContent=res;rr.appendChild(th);
+    shown.forEach((work,colIndex)=>{
       const td=document.createElement("td");
       const v=map.get(res+"|"+work);
       td.textContent=Number.isFinite(v)?fmt.format(v):"–";
-      const neutral=NEUTRAL_MATRIX.has(res)||NEUTRAL_MATRIX.has(work);
-      td.style.background=neutral?"#e5e7eb":cellColor(v,max);
-      td.style.color=neutral?"#475569":textColor(v,max);
-      if(neutral)td.classList.add("neutral-cell");
-      if(res===work)td.classList.add("diagonal");
-      if(!neutral&&(FOCUS.has(res)||FOCUS.has(work)))td.classList.add("focus-edge");
+      td.dataset.rowIndex=String(rowIndex);
+      td.dataset.colIndex=String(colIndex);
+      if(res===work){
+        td.classList.add("diagonal");
+        td.style.background="#e5e7eb";
+        td.style.color="#475569";
+      }else{
+        td.style.background=cellColor(v,max);
+        td.style.color=textColor(v,max);
+        if(FOCUS.has(res)||FOCUS.has(work))td.classList.add("focus-edge");
+      }
       td.dataset.tip=res+" → "+work+": "+(Number.isFinite(v)?fmt.format(v):"saknas");
       rr.appendChild(td);
     });
     tbody.appendChild(rr);
   });
   table.appendChild(tbody);
+
+  const clearMatrixGuide=()=>{
+    table.querySelectorAll(".matrix-hover-guide,.matrix-hover-header").forEach(el=>{
+      el.classList.remove("matrix-hover-guide","matrix-hover-header");
+    });
+  };
+
+  table.addEventListener("mouseover",event=>{
+    const cell=event.target.closest("td");
+    if(!cell||!table.contains(cell))return;
+    clearMatrixGuide();
+    const rowIndex=Number(cell.dataset.rowIndex);
+    const colIndex=Number(cell.dataset.colIndex);
+
+    table.querySelectorAll("tbody td").forEach(td=>{
+      const r=Number(td.dataset.rowIndex);
+      const c=Number(td.dataset.colIndex);
+      if((r===rowIndex&&c<colIndex)||(c===colIndex&&r<rowIndex)){
+        td.classList.add("matrix-hover-guide");
+      }
+    });
+
+    const rowHeader=table.querySelector('tbody th.row[data-row-index="'+rowIndex+'"]');
+    const colHeader=table.querySelector('thead th.col[data-col-index="'+colIndex+'"]');
+    if(rowHeader)rowHeader.classList.add("matrix-hover-header");
+    if(colHeader)colHeader.classList.add("matrix-hover-header");
+  });
+
+  table.addEventListener("mouseleave",clearMatrixGuide);
+
   $("matrix").replaceChildren(table);
 
   const cross=data.filter(r=>r.residence!==r.workplace&&Number(r.employed)>0).sort((a,b)=>Number(b.employed)-Number(a.employed));
