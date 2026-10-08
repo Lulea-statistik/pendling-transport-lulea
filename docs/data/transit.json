@@ -1,0 +1,12 @@
+{
+  "configured": false,
+  "generated": "2026-10-08",
+  "reference_weekday": "2026-10-12",
+  "source": "Trafiklab GTFS Regional / Samtrafiken",
+  "municipality": "Luleå",
+  "operators": [],
+  "summary": {},
+  "routes": [],
+  "stops": [],
+  "note": "TRAFIKLAB_API_KEY saknas i GitHub Actions secrets."
+}
