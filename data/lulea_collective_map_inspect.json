@@ -1,0 +1,754 @@
+{
+  "start": "https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik",
+  "final_url": "https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik",
+  "html_size": 28263,
+  "assets": [
+    {
+      "url": "https://code.jquery.com/jquery-3.4.1.min.js",
+      "content_type": "application/javascript; charset=utf-8",
+      "size": 88145
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+      "content_type": "application/javascript; charset=utf-8",
+      "size": 21004
+    },
+    {
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+      "content_type": "application/javascript; charset=utf-8",
+      "size": 60010
+    },
+    {
+      "url": "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+      "content_type": "application/javascript; charset=utf-8",
+      "size": 253668
+    },
+    {
+      "url": "https://kartor.lulea.se/common/js/utils.js",
+      "content_type": "application/javascript",
+      "size": 2822
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/solkarta.js",
+      "content_type": "application/javascript",
+      "size": 15858
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "content_type": "application/javascript",
+      "size": 76975
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "content_type": "application/javascript",
+      "size": 74887
+    }
+  ],
+  "hits": [
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik",
+      "line": 19,
+      "text": "    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik",
+      "line": 364,
+      "text": "\t\t\t<div class=\"tocgroup\" id=\"bokbuss\">"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik",
+      "line": 365,
+      "text": "\t\t\t  <a href='javascript:void(0)' class='tocicon94 tocicon grayscale'>Bokbuss</a>"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik",
+      "line": 530,
+      "text": "\t\t\t<div class=\"tocgroup\" id=\"kollektivtrafik\">"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/?layers=kollektivtrafik",
+      "line": 531,
+      "text": "\t\t\t  <a href='javascript:void(0)' class='tocicon80 tocicon grayscale'>Kollektivtrafik</a>"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 40,
+      "text": "    var kommunDataArr, forskola, grundskola, gymnasieskola, sarskola, vuxenutbildning, upptagningsomrade, skolomrade0_3, skolomrade4_6, bad, bibliotek, bokbuss, cykla_lulea, grillplats, gasthamn, hundrastgard, fiske, konst, skridskoakning, lekplats, park, sporthall, utegym, motionsspar, skoterled, skoterforbud, vandringsled, mtb, skargard, naturguiden, skyddadnatur, norrsken, tysta_omraden, vob, avfallskarl, hjartstartare_hlrradet, atervinning, geoarkiv, lokalaforeskrifter, skyddsrum, grasyta, naturmark, markradon, solkarta, vatten, spillvatten, dagvatten, vattenskyddsomrade, parkering, trafikstorning, cykelstrak, kollektivtrafik, elsparkcykel, offentliga_toaletter, skolvag, snorojning, vaghallare, isvag, farligtgods, bostadsomrade, detaljplan, detaljplan_pagaende, markanvisning, upplatelser, kvarter, fastigheter, val, forvaltning, kommunalfastighet, nyko6, nyko4, nyko2;"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 104,
+      "text": "      forskola = new KommunData(\"forskolor\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [0], pointTolerance, true, true, \"NAMN\", null, \"förskola\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 105,
+      "text": "      grundskola = new KommunData(\"grundskolor\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [1], pointTolerance, true, true, \"NAMN\", null, \"grundskola\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 106,
+      "text": "      gymnasieskola = new KommunData(\"gymnasieskolor\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [2], pointTolerance, true, true, \"INFO\", null, \"gymnasieskoleenhet\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 107,
+      "text": "      sarskola = new KommunData(\"sarskolor\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [3], pointTolerance, true, true, \"NAMN\", null, \"särskola\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 108,
+      "text": "      vuxenutbildning = new KommunData(\"vuxenutbildning\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [7], pointTolerance, true, true, \"INFO\", null, \"vuxenutbildning\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 109,
+      "text": "      //vuxenutbildning = new KommunData(\"vuxenutbildning\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [7], pointTolerance);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 110,
+      "text": "      skolomrade0_3 = new KommunData(\"skolomrade0_3\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [5], polygonTolerance, true, true, \"SKOLOMRADE\", null, \"skolområde\", skolomradeLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 111,
+      "text": "\t  skolomrade4_6 = new KommunData(\"skolomrade4_6\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [8], polygonTolerance, true, true, \"SKOLOMRADE\", null, \"skolområde\", skolomradeLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 112,
+      "text": "      upptagningsomrade = new KommunData(\"upptagningsomraden\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skolor/MapServer\", [4], polygonTolerance, true, true, \"NAMN\", null, \"upptagningsområde\", upptagningsomradeLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 114,
+      "text": "      bad = new KommunData(\"bad\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [0], pointTolerance, true, true, \"NAMN\", null, \"bad\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 115,
+      "text": "      bibliotek = new KommunData(\"bibliotek\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [1], pointTolerance, null, true, \"NAMN\", null, \"bibliotek\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 116,
+      "text": "      bokbuss = new KommunData(\"bokbuss\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [13], pointTolerance, null, true, \"PLATS_ADRESS\", null, \"bokbuss\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 117,
+      "text": "\t  cykla_lulea = new KommunData(\"cykla_lulea\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [14], lineTolerance, true, true, \"NAMN\", null, \"Cykelslingor\",cykla_luleaLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 118,
+      "text": "\t  //grillplats = new KommunData(\"grillplatser\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [3], pointTolerance, true, null, null, null, null, grillplatsLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 119,
+      "text": "      grillplats = new KommunData(\"grillplatser\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [3], pointTolerance);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 120,
+      "text": "      gasthamn = new KommunData(\"gasthamnar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [5], pointTolerance, null, true, \"HAMN\", null, \"gästhamn\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 121,
+      "text": "\t  hundrastgard = new KommunData(\"hundrastgard\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [6,7], pointTolerance, true, null, \"NAMN\", null, \"hundrastgård\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 122,
+      "text": "      fiske = new KommunData(\"fiske\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [11,12], pointTolerance, true, true, \"NAMN\", null, \"fiske\", fiskeLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 123,
+      "text": "\t  konst = new KommunData (\"konst\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [8], pointTolerance, true, true, \"NAMN\", null, \"konst\", konstLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 124,
+      "text": "\t  lekplats = new KommunData(\"lekplatser\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [0], pointTolerance, null, true, \"NAMN\", null, \"lekplats\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 125,
+      "text": "      park = new KommunData(\"parker\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [1], pointTolerance, null, true, \"NAMN\", null, \"park\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 126,
+      "text": "      skridskoakning = new KommunData(\"skridskoakning\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skridskoakning/MapServer\", null, pointTolerance, true, true, \"NAMN\", null, \"skridskoåkning\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 127,
+      "text": "      sporthall = new KommunData(\"sporthallar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [2], pointTolerance, null, true, \"NAMN\", null, \"sporthall\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 128,
+      "text": "      utegym = new KommunData(\"utegym\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [4], pointTolerance, true, true, \"NAMN\", null, \"utegym\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 129,
+      "text": "      motionsspar = new KommunData(\"motionsspar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [7], lineTolerance, true, null, \"ANLAGGNING\", null, \"motionsspår\", motionssparLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 130,
+      "text": "      skoterled = new KommunData(\"skoterleder\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [4,10], lineTolerance, true, null, null, null, null, skoterledLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 131,
+      "text": "      vandringsled = new KommunData(\"vandringsleder\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/vandringsleder/MapServer\", null, lineTolerance, true, null, \"NAMN\", [1], \"vandringsled\",vandringsledLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 132,
+      "text": "      mtb = new KommunData(\"mtb\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [3], lineTolerance, true, true, \"NAMN\", null, \"MTB-spår\",mtbLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 133,
+      "text": "      skargard = new KommunData(\"skargard\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/skargard/MapServer\", null, polygonTolerance, true, null, null, null, null, skargardLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 134,
+      "text": "\t  naturguiden = new KommunData(\"naturguiden\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/natur/MapServer\", [3], polygonTolerance, true, null, null, null, null, naturguidenLayerText); //layer find - list is not sorted! (shapefile?)"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 135,
+      "text": "      skyddadnatur = new KommunData(\"skyddadnatur\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/natur/MapServer\", [0,1,2], polygonTolerance, true, true, \"NAMN\", null, \"skyddad natur\",skyddadnaturLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 136,
+      "text": "\t  skoterforbud = new KommunData (\"skoterforbud\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\",[6], polygonTolerance, true, null, null, null, \"skoterforbud\", skoterforbudLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 137,
+      "text": "      norrsken = new KommunData(\"norrsken\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/fritid/MapServer\", [9], pointTolerance, true, null, null, null, null, norrskenLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 138,
+      "text": "\t  tysta_omraden = new KommunData(\"tysta_omraden\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/natur/MapServer\", [4], polygonTolerance, true, null, null, null, null, tysta_omradenLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 140,
+      "text": "      vob = new KommunData(\"vob\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/omsorg/MapServer\", [0], pointTolerance, null, true, \"NAMN\", null, \"vård- och omsorgsboende\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 142,
+      "text": "\t  avfallskarl = new KommunData(\"avfallskarl\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [8], pointTolerance);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 143,
+      "text": "\t  hjartstartare_hlrradet = new KommunData(\"hjartstartare_hlrradet\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/hjartstartare_hlrradet/MapServer\", [0], pointTolerance, true, null, null, null, null, hjartstartare_hlrradetLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 144,
+      "text": "      atervinning = new KommunData(\"atervinning\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [0,1], pointTolerance, true, null, null, null, null, atervinningLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 145,
+      "text": "      geoarkiv = new KommunData(\"geoarkiv\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/geoarkiv/MapServer\", [0,1,4], pointTolerance, true, true, \"Name\", [0], \"borrhål\", geoarkivLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 146,
+      "text": "      lokalaforeskrifter = new KommunData(\"lokalaforeskrifter\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/allmanna_lokala_ordningsforeskrifter/MapServer\", null, pointTolerance, true, null, null, null, null, lokalaforeskrifterLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 147,
+      "text": "      skyddsrum = new KommunData(\"skyddsrum\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [23], pointTolerance, true, null, null, null, \"skyddsrum\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 148,
+      "text": "\t  grasyta = new KommunData(\"kommunalagrasytor\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [2], polygonTolerance, true, null, null, null, null, grasytaLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 149,
+      "text": "      naturmark = new KommunData(\"naturmark\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/park/MapServer\", [5], polygonTolerance, true, null, null, null, null, naturmarkLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 150,
+      "text": "\t  markradon = new KommunData(\"markradon\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [18,19], polygonTolerance, true, null, null, null, null, markradonLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 151,
+      "text": "      solkarta = new KommunData(\"solkarta\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [16], polygonTolerance, true, null, null, null, null, solkartaLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 152,
+      "text": "      vatten = new KommunData(\"vatten\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [13], polygonTolerance, true, null, null, null, null, vattenLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 153,
+      "text": "      spillvatten = new KommunData(\"spillvatten\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [14], polygonTolerance, true, null, null, null, null, spillvattenLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 154,
+      "text": "      dagvatten = new KommunData(\"dagvatten\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [15], polygonTolerance, true, null, null, null, null, dagvattenLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 155,
+      "text": "      vattenskyddsomrade = new KommunData(\"vattenskyddsomraden\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [2,32], polygonTolerance, true, null, null, null, null, vattenskyddsomradeLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 156,
+      "text": "      //vaplan = new KommunData(\"vaplan\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [12], polygonTolerance, true, null, null, null, null, vaplanLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 157,
+      "text": "      //vaplan = new KommunData(\"vaplan\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [22], polygonTolerance, true, null, null, null, null, vaplanLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 159,
+      "text": "      parkering = new KommunData(\"parkering\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/parkering/MapServer\", null, pointTolerance, true, true, \"PARKAUTO\", [3], \"parkeringsautomat\", parkeringLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 160,
+      "text": "      trafikstorning = new KommunData(\"trafikstorningar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [7,8], pointTolerance, true, null, null, null, null, trafikstorningLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 161,
+      "text": "      cykelstrak = new KommunData(\"cykelstrak\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/cykel/MapServer\", null, lineTolerance, true, null, null, null, null, cykelstrakLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 162,
+      "text": "      kollektivtrafik = new KommunData(\"kollektivtrafik\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/kollektivtrafik/MapServer\", null, pointTolerance, true, true, \"DESTINATION\", [7,8,9,10,11], \"busslinje\", kollektivtrafikLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 163,
+      "text": "      elsparkcykel = new KommunData(\"elsparkcykel\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [33,35,34,36,37], polygonTolerance, true, null, null, null, null, elsparkcykelLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 164,
+      "text": "\t  offentliga_toaletter = new KommunData(\"offentliga_toaletter\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [28], pointTolerance, true, null, null, null, \"offentliga toaletter\", offentliga_toaletterLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 165,
+      "text": "\t  skolvag = new KommunData(\"skolvagar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [5], lineTolerance, true, null, null, null, null, skolvagLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 166,
+      "text": "      snorojning = new KommunData(\"snorojning\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [9,10,17], pointTolerance, true, null, null, null, null, snorojningLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 167,
+      "text": "      vaghallare = new KommunData(\"vaghallare\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [6], lineTolerance, true);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 168,
+      "text": "      isvag = new KommunData(\"isvagar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [11,38], pointTolerance, true, null, null, null, null, isvagLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 169,
+      "text": "      farligtgods = new KommunData(\"farligtgods\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [24,25], lineTolerance, true, null, null, null, null, farligtgodsLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 170,
+      "text": "\t  bostadsomrade = new KommunData(\"bostadsomraden\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [4], polygonTolerance, true, true, \"OMRADE\", null, \"bostadsområde\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 171,
+      "text": "      detaljplan = new KommunData(\"detaljplaner\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [3], polygonTolerance, true, true, \"PL_NR_INTERN\", null, \"detaljplan\", detaljplanLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 172,
+      "text": "      detaljplan_pagaende = new KommunData(\"detaljplaner_pagaende\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [39], polygonTolerance, true, true, \"DP_NAMN\", null, \"pågående detaljplan\", detaljplanPagaendeLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 173,
+      "text": "      markanvisning = new KommunData(\"markanvisningar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [20], polygonTolerance, true, true, \"Fastighet\", null, \"fastighet\", null);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 174,
+      "text": "\t  upplatelser = new KommunData(\"upplatelser\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [30,21,31], polygonTolerance, true, null, null, null, null, upplatelserLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 175,
+      "text": "\t  kvarter = new KommunData(\"kvarter\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [26], polygonTolerance, true, true, \"NAMN\", null, \"kvarter\", kvarterLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 176,
+      "text": "\t  fastigheter = new KommunData(\"fastigheter\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/samhalle/MapServer\", [27], polygonTolerance, true, true, \"FBET\", null, \"fastigheter\", fastigheterLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 178,
+      "text": "      val = new KommunData(\"val\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/val/MapServer\", [0,1], pointTolerance, true, true, \"VDNAMN\", [1], \"valdistrikt\", valLayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 179,
+      "text": "      forvaltning = new KommunData(\"kommunalaforvaltningar\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/kommun/MapServer\", [0], pointTolerance);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 180,
+      "text": "      kommunalfastighet = new KommunData(\"kommunalafastigheter\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/kommun/MapServer\", [1], polygonTolerance, true, true, \"FBET\", null, \"kommunal fastighet\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 181,
+      "text": "      nyko6 = new KommunData(\"nyko6\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/kommun/MapServer\", [2], polygonTolerance, true, true, \"OMRADE\", null, \"nyckelkod\", nyko6LayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 182,
+      "text": "      nyko4 = new KommunData(\"nyko4\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/kommun/MapServer\", [3], polygonTolerance, true, true, \"OMRADE\", null, \"nyckelkod\", nyko4LayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 183,
+      "text": "      nyko2 = new KommunData(\"nyko2\", \"https://s-gis07.lulea.se/arcgis/rest/services/ext/kommun/MapServer\", [4], polygonTolerance, true, true, \"OMRADE\", null, \"nyckelkod\", nyko2LayerText);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 185,
+      "text": "      kommunDataArr = [forskola, grundskola, gymnasieskola, sarskola, vuxenutbildning, upptagningsomrade, skolomrade0_3, skolomrade4_6, bad, bibliotek, bokbuss, cykla_lulea, grillplats, gasthamn, hundrastgard, fiske, konst, skridskoakning, lekplats, park, sporthall, utegym, motionsspar, skoterled, skoterforbud, vandringsled, mtb, skargard, naturguiden, skyddadnatur, norrsken, tysta_omraden, vob, avfallskarl, hjartstartare_hlrradet, atervinning, geoarkiv, lokalaforeskrifter, skyddsrum, grasyta, naturmark, markradon, solkarta, vatten, spillvatten, dagvatten, vattenskyddsomrade, parkering, trafikstorning, cykelstrak, kollektivtrafik, elsparkcykel, offentliga_toaletter, skolvag, snorojning, vaghallare, isvag, farligtgods, bostadsomrade, detaljplan, detaljplan_pagaende, markanvisning, upplatelser, kvarter, fastigheter, val, forvaltning, kommunalfastighet, nyko6, nyko4, nyko2];"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 601,
+      "text": "         url: \"https://gisserver/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task\""
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 675,
+      "text": "    /*busskortsomrade.setupLayerFind = function () {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 676,
+      "text": "      var busskortBtn;"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 677,
+      "text": "      createAttributeList(\"https://gisserver/arcgis/rest/services/ext/sok/MapServer/\", \"NAMN\", [3]).then(function(addressArr) { //adresspunkter"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 688,
+      "text": "        busskortBtn = '<button type=\"button\" id=\"busskortBtn\" class=\"btn btn-light\">Kontrollera busskort</button>';"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 689,
+      "text": "        $(\"#selectZoomBtn\").parent().prepend(busskortBtn);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 690,
+      "text": "        $(\"#busskortBtn\").on(\"click\", function () {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 692,
+      "text": "            queryBusskort($(\"#selectField\").val());"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 697,
+      "text": "            maputils.findObject(view, ($(\"#selectField\").val()).toUpperCase(), \"https://gisserver/arcgis/rest/services/ext/sok/MapServer\", [3], [\"NAMN2\"], false, true, closeLayerFind);"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 703,
+      "text": "          $(\"#busskortBtn\").remove();"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 708,
+      "text": "    function queryBusskort(address) {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 710,
+      "text": "      findTask = new FindTask(\"https://gisserver/arcgis/rest/services/ext/sok/MapServer\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 720,
+      "text": "          queryTask = new QueryTask(\"https://gisserver/arcgis/rest/services/ext/skolor/MapServer/6\"); //busskortsomrade.url + \"/\" + busskortsomrade.layerIndexArr[0]"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 725,
+      "text": "          query.outFields = [busskortsomrade.findField];"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 729,
+      "text": "              if (results.features[0].attributes[busskortsomrade.findField] === \"Ja\") {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 730,
+      "text": "                msg = \"Ja, busskort för gymnasieskolan kan erhållas för \" + address;"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 732,
+      "text": "                msg = \"Nej, busskort för gymnasieskolan kan inte erhållas för \" + address;"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 735,
+      "text": "            showPopover(msg, \"busskortBtn\", \"top\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 738,
+      "text": "          showPopover(\"Ingen träff\", \"busskortBtn\", \"top\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1160,
+      "text": "    /*busskortsomrade.setSublayers = function () {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1164,
+      "text": "          title: \"Busskortsområde\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1165,
+      "text": "          content: \"Busskort för gymnasieskolan kan erhållas inom detta område: <b>{SKOLSKJUTS}</b>\""
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1190,
+      "text": "\tbokbuss.setSublayers = function () {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1194,
+      "text": "          title: \"Bokbuss\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1195,
+      "text": "          content: bokbussContent"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1635,
+      "text": "      solkartaRaster = new MapImageLayer(\"https://kartportal.lulea.se/server/rest/services/solkarta/MapServer\");"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1753,
+      "text": "    kollektivtrafik.setSublayers = function () {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1760,
+      "text": "        title: \"Busshållplats (LLT)\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1761,
+      "text": "        content: busshallplatsContent"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1764,
+      "text": "        title: \"Busshållplats (LLT)\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1765,
+      "text": "        content: busshallplatsContent"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1768,
+      "text": "        title: \"Busshållplats (Länstrafiken)\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1769,
+      "text": "        content: busshallplatsContent"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1772,
+      "text": "        title: \"Busshållplats (Länstrafiken)\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1773,
+      "text": "        content: busshallplatsContent"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1779,
+      "text": "      var busslinjeLLTPopupTemplate = {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1780,
+      "text": "        title: \"Busslinje (LLT)\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1781,
+      "text": "        content: busslinjeLLTContent"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1784,
+      "text": "        mapLayer.findSublayerById(i).popupTemplate = busslinjeLLTPopupTemplate;"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1787,
+      "text": "        title: \"Busslinje (Länstrafiken)\","
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/main.js",
+      "line": 1788,
+      "text": "        content: busslinjeLTNBDContent"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 84,
+      "text": "\tcase \"kollektivtrafik\":"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 85,
+      "text": "      return \"https://www.lulea.se/boende--gator/gator-och-trafik/kollektivtrafik.html\";"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 116,
+      "text": "\tcase \"bokbuss\":"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 117,
+      "text": "\t  return \"https://bibblo.se/bibliotek/lulea-bokbuss\";"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 262,
+      "text": "function bokbussContent() {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 268,
+      "text": "  content += \"<a href='\" + urlData(\"bokbuss\") + \"' target='_blank'>Bokbuss</a> på lulea.se<br>\";"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 874,
+      "text": "function busshallplatsContent(feature) {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 886,
+      "text": "    content += \"<a href='\" + urlData(\"kollektivtrafik\") + \"' target='_blank'>Kollektivtrafik</a> på lulea.se<br>\";"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 892,
+      "text": "    //return $.getJSON(\"https://s-gis07.lulea.se/utils/api/Buss/\" + attributes.AGENCY_ID + \"/\" + attributes.STOP_ID).then(function(apiData) {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 893,
+      "text": "    return $.getJSON(\"/utils/api/Buss/\" + attributes.AGENCY_ID + \"/\" + attributes.STOP_ID).then(function(apiData) {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 918,
+      "text": "function busslinjeLLTContent() {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 922,
+      "text": "  content += \"<a href='\" + urlData(\"kollektivtrafik\") + \"' target='_blank'>Kollektivtrafik</a> på lulea.se\";"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 926,
+      "text": "function busslinjeLTNBDContent() {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 1244,
+      "text": "/*busskortsomradeLayerText = function () {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 1245,
+      "text": "  var content = \"Gymnasieelev kan få kostnadsfritt busskort om avståndet till skolan är minst 6 kilometer och man inte har inackorderingstillägg.<br>\";"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 1247,
+      "text": "  content += \"<a href='\" + urlData(\"busskortsomrade\") + \"' target='_blank'>Gymnasieskolans webbsida om busskort&nbsp;<img src='/common/image/external_link.png' class='linkicon'></a>.\";"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 1447,
+      "text": "kollektivtrafikLayerText = function () {"
+    },
+    {
+      "url": "https://kartor.lulea.se/kommunkarta/js/kommundata.js",
+      "line": 1448,
+      "text": "  var content = \"<a href='\" + urlData(\"kollektivtrafik\") + \"' target='_blank'>Kollektivtrafik</a> på lulea.se\";"
+    }
+  ]
+}
