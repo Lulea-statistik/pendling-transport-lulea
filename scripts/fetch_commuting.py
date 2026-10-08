@@ -168,7 +168,7 @@ def main():
 
     year_columns = []
     for h in headers:
-        m = re.search(r"((?:19|20)\\d{2})", str(h))
+        m = re.search(r"((?:19|20)\d{2})", str(h))
         if m and h not in {c_sex, c_res, c_work}:
             year_columns.append((h, int(m.group(1))))
     if not year_columns:
