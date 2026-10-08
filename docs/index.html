@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pendling i Norrbotten</title>
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<header>
+  <div>
+    <h1>Pendling i Norrbotten</h1>
+    <p>Sysselsatta 15–74 år · bostadskommun → arbetsställekommun</p>
+  </div>
+  <a href="https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__AM__AM0210__AM0210F/ArRegPend2/" target="_blank" rel="noopener">Källa: SCB</a>
+</header>
+
+<main>
+  <section class="controls">
+    <label>År<select id="year"></select></label>
+    <label>Kön<select id="sex"></select></label>
+    <label>Kommunurval
+      <select id="scope">
+        <option value="all" selected>Alla Norrbottens kommuner</option>
+        <option value="focus">Fokus: Luleå, Boden, Piteå, Älvsbyn, Kalix</option>
+      </select>
+    </label>
+  </section>
+
+  <section class="cards">
+    <article><span>Största pendlingsflöde</span><strong id="largest">–</strong><small id="largestSub">–</small></article>
+    <article><span>In till Luleå</span><strong id="intoLulea">–</strong><small>från övriga Norrbotten</small></article>
+    <article><span>Ut från Luleå</span><strong id="outLulea">–</strong><small>till övriga Norrbotten</small></article>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div>
+        <h2>Pendlingsmatris</h2>
+        <p>Rader visar bostadskommun. Kolumner visar arbetsställekommun. Diagonalen visar personer som bor och arbetar i samma kommun.</p>
+      </div>
+      <div class="legend"><span>Lägre</span><i></i><span>Högre</span></div>
+    </div>
+    <div id="matrix" class="matrix-wrap"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Så läses matrisen</h2>
+    <p>Exempel: cellen på raden <strong>Boden</strong> och kolumnen <strong>Luleå</strong> visar antal sysselsatta som bor i Boden och har sitt arbetsställe i Luleå. Matrisen är riktningsberoende: Boden → Luleå och Luleå → Boden är två separata flöden.</p>
+    <p>Fokuskommunerna Luleå, Boden, Piteå, Älvsbyn och Kalix markeras tydligare. Övriga nio kommuner i Norrbotten finns kvar i matrisen.</p>
+  </section>
+</main>
+<script src="app.js?v=1"></script>
+</body>
+</html>
