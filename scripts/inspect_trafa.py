@@ -51,10 +51,19 @@ def main():
                     matches.append({"row":i,"values":vals[:40]})
                     if len(matches)>=30:
                         break
+            header_rows=[]
+            if matches:
+                first_match=matches[0]["row"]
+                start=max(1, first_match-14)
+                for hr in range(start, first_match):
+                    vals=row_values(ws,hr)
+                    if any(v not in (None,"") for v in vals):
+                        header_rows.append({"row":hr,"values":vals[:40]})
             info["sheets"].append({
                 "title":ws.title,
                 "max_row":ws.max_row,
                 "max_column":ws.max_column,
+                "headers":header_rows,
                 "matches":matches,
             })
         out[key]=info
