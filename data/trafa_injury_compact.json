@@ -1,0 +1,344 @@
+{
+  "kommun": [
+    {
+      "Name": "antolyckd",
+      "Label": "Antal olyckor med dödlig utgång",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolycks",
+      "Label": "Antal olyckor med svår personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckl",
+      "Label": "Antal olyckor med lindrig personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckds",
+      "Label": "Antal olyckor med dödlig utgång eller svår personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckdsl",
+      "Label": "Antal olyckor med dödlig utgång, svår personskada eller lindrig personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersd",
+      "Label": "Antal dödade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antperss",
+      "Label": "Antal svårt skadade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersl",
+      "Label": "Antal lindrigt skadade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antford",
+      "Label": "Antal dödade motorfordonsförare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antdper100000",
+      "Label": "Antal dödade personer per 100 000 invånare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antelement",
+      "Label": "Antal element",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersds",
+      "Label": "Summa dödade och svårt skadade",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersdsl",
+      "Label": "Summa dödade, svårt skadade och lindrigt skadade",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antdslper100000",
+      "Label": "Antal dödade, svårt skadade och lindrigt skadade per 100 000 invånare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    }
+  ],
+  "metrics": [
+    {
+      "Name": "antolyckd",
+      "Label": "Antal olyckor med dödlig utgång",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolycks",
+      "Label": "Antal olyckor med svår personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckl",
+      "Label": "Antal olyckor med lindrig personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckds",
+      "Label": "Antal olyckor med dödlig utgång eller svår personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckdsl",
+      "Label": "Antal olyckor med dödlig utgång, svår personskada eller lindrig personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersd",
+      "Label": "Antal dödade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antperss",
+      "Label": "Antal svårt skadade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersl",
+      "Label": "Antal lindrigt skadade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antford",
+      "Label": "Antal dödade motorfordonsförare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antdper100000",
+      "Label": "Antal dödade personer per 100 000 invånare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antelement",
+      "Label": "Antal element",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersds",
+      "Label": "Summa dödade och svårt skadade",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersdsl",
+      "Label": "Summa dödade, svårt skadade och lindrigt skadade",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antdslper100000",
+      "Label": "Antal dödade, svårt skadade och lindrigt skadade per 100 000 invånare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    }
+  ],
+  "base": [
+    {
+      "Name": "antolyckd",
+      "Label": "Antal olyckor med dödlig utgång",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolycks",
+      "Label": "Antal olyckor med svår personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckl",
+      "Label": "Antal olyckor med lindrig personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckds",
+      "Label": "Antal olyckor med dödlig utgång eller svår personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antolyckdsl",
+      "Label": "Antal olyckor med dödlig utgång, svår personskada eller lindrig personskada",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersd",
+      "Label": "Antal dödade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antperss",
+      "Label": "Antal svårt skadade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersl",
+      "Label": "Antal lindrigt skadade personer",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    },
+    {
+      "Name": "antford",
+      "Label": "Antal dödade motorfordonsförare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antdper100000",
+      "Label": "Antal dödade personer per 100 000 invånare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antelement",
+      "Label": "Antal element",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersds",
+      "Label": "Summa dödade och svårt skadade",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antpersdsl",
+      "Label": "Summa dödade, svårt skadade och lindrigt skadade",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": false,
+      "StructureItems": []
+    },
+    {
+      "Name": "antdslper100000",
+      "Label": "Antal dödade, svårt skadade och lindrigt skadade per 100 000 invånare",
+      "Type": "M",
+      "ParentName": "t1004",
+      "Selected": true,
+      "StructureItems": []
+    }
+  ]
+}
