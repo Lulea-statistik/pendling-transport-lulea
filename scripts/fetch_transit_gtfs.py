@@ -12,7 +12,10 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 BOUNDARY_URL="https://raw.githubusercontent.com/okfse/sweden-geojson/master/swedish_municipalities.geojson"
-GTFS_URL="https://api.resrobot.se/gtfs/sweden.zip?key={key}"
+REGIONAL_OPERATORS={
+    "lulea":"Luleå Lokaltrafik",
+    "norrbotten":"Länstrafiken Norrbotten",
+}
 
 def fetch_bytes(url: str) -> bytes:
     req=Request(url,headers={"User-Agent":"pendling-transport-lulea/1.0"})
@@ -110,7 +113,7 @@ def main():
         "configured":bool(key),
         "generated":today.isoformat(),
         "reference_weekday":target.isoformat(),
-        "source":"Trafiklab GTFS Sverige 2 / Samtrafiken",
+        "source":"Trafiklab GTFS Regional / Samtrafiken",
         "municipality":"Luleå",
         "operators":[],
         "summary":{},
@@ -142,123 +145,104 @@ def main():
     route_records=[]
     stop_departures=Counter()
     stop_routes=defaultdict(set)
+    operator_summary=[]
 
-    raw=fetch_bytes(GTFS_URL.format(key=key))
-    zf=zipfile.ZipFile(io.BytesIO(raw))
-    stops=read_txt(zf,"stops.txt")
-    routes=read_txt(zf,"routes.txt")
-    trips=read_txt(zf,"trips.txt")
-    stop_times=read_txt(zf,"stop_times.txt")
-    agencies=read_txt(zf,"agency.txt")
+    for op,label in REGIONAL_OPERATORS.items():
+        url=f"https://opendata.samtrafiken.se/gtfs/{op}/{op}.zip?key={key}"
+        raw=fetch_bytes(url)
+        zf=zipfile.ZipFile(io.BytesIO(raw))
 
-    agency_by_id={a.get("agency_id",""):a for a in agencies}
-    route_by_id={r.get("route_id",""):r for r in routes}
-    allowed_agencies={
-        aid for aid,a in agency_by_id.items()
-        if any(x in (a.get("agency_name","") or "").casefold()
-               for x in ("luleå lokaltrafik","länstrafiken norrbotten"))
-    }
+        stops=read_txt(zf,"stops.txt")
+        routes=read_txt(zf,"routes.txt")
+        trips=read_txt(zf,"trips.txt")
+        stop_times=read_txt(zf,"stop_times.txt")
+        agencies=read_txt(zf,"agency.txt")
 
-    def is_bus(route):
-        try:
-            rt=int(route.get("route_type",""))
-        except Exception:
-            return False
-        return rt==3 or 700<=rt<800
+        route_by_id={r.get("route_id",""):r for r in routes}
+        services=active_services(zf,target)
 
-    selected={}
-    for r in stops:
-        try:
-            lat=float(r.get("stop_lat",""))
-            lon=float(r.get("stop_lon",""))
-        except Exception:
-            continue
-        if point_in_geometry(lon,lat,geom):
-            sid=r.get("stop_id","")
-            selected[sid]={
-                "id":sid,
-                "name":r.get("stop_name","") or sid,
-                "lat":lat,
-                "lon":lon,
-                "location_type":r.get("location_type",""),
-                "parent_station":r.get("parent_station",""),
-            }
+        def is_bus(route):
+            try:
+                rt=int(route.get("route_type",""))
+            except Exception:
+                return False
+            return rt==3 or 700<=rt<800
 
-    services=active_services(zf,target)
-    trips_by_id={}
-    for r in trips:
-        if services and r.get("service_id","") not in services:
-            continue
-        route=route_by_id.get(r.get("route_id",""),{})
-        if not is_bus(route):
-            continue
-        if route.get("agency_id","") not in allowed_agencies:
-            continue
-        trips_by_id[r.get("trip_id","")]=r
+        selected={}
+        for r in stops:
+            try:
+                lat=float(r.get("stop_lat",""))
+                lon=float(r.get("stop_lon",""))
+            except Exception:
+                continue
+            if point_in_geometry(lon,lat,geom):
+                sid=r.get("stop_id","")
+                selected[sid]={
+                    "id":f"{op}:{sid}",
+                    "operator":op,
+                    "operator_label":label,
+                    "name":r.get("stop_name","") or sid,
+                    "lat":lat,
+                    "lon":lon,
+                    "location_type":r.get("location_type",""),
+                    "parent_station":r.get("parent_station",""),
+                }
 
-    trip_ids_at_selected=set()
-    for st in stop_times:
-        sid=st.get("stop_id","")
-        tid=st.get("trip_id","")
-        if sid not in selected or tid not in trips_by_id:
-            continue
-        trip_ids_at_selected.add(tid)
-        stop_departures[sid]+=1
-        rid=trips_by_id[tid].get("route_id","")
-        if rid:
-            stop_routes[sid].add(rid)
+        trips_by_id={}
+        for r in trips:
+            if services and r.get("service_id","") not in services:
+                continue
+            route=route_by_id.get(r.get("route_id",""),{})
+            if not is_bus(route):
+                continue
+            trips_by_id[r.get("trip_id","")]=r
 
-    relevant_route_ids={trips_by_id[tid].get("route_id","") for tid in trip_ids_at_selected}
-    trip_counts=Counter(trips_by_id[tid].get("route_id","") for tid in trip_ids_at_selected)
+        trip_ids_at_selected=set()
+        for st in stop_times:
+            sid=st.get("stop_id","")
+            tid=st.get("trip_id","")
+            if sid not in selected or tid not in trips_by_id:
+                continue
+            trip_ids_at_selected.add(tid)
+            stop_key=f"{op}:{sid}"
+            stop_departures[stop_key]+=1
+            rid=trips_by_id[tid].get("route_id","")
+            if rid:
+                stop_routes[stop_key].add(f"{op}:{rid}")
 
-    agency_summary=defaultdict(lambda: {"routes":set(),"trips":set(),"stops":set()})
-    for rid in relevant_route_ids:
-        if not rid:
-            continue
-        r=route_by_id.get(rid,{})
-        agency_id=r.get("agency_id","")
-        agency=agency_by_id.get(agency_id,{})
-        label=agency.get("agency_name","") or agency_id or "Okänd operatör"
-        route_records.append({
-            "id":rid,
-            "agency_id":agency_id,
-            "operator_label":label,
-            "route_id":rid,
-            "short_name":r.get("route_short_name",""),
-            "long_name":r.get("route_long_name",""),
-            "route_type":r.get("route_type",""),
-            "weekday_trips":trip_counts.get(rid,0),
-        })
-        agency_summary[label]["routes"].add(rid)
+        relevant_route_ids={trips_by_id[tid].get("route_id","") for tid in trip_ids_at_selected}
+        trip_counts=Counter(trips_by_id[tid].get("route_id","") for tid in trip_ids_at_selected)
 
-    for sid,rec in selected.items():
-        rec["weekday_departures"]=stop_departures[sid]
-        rec["routes"]=len(stop_routes[sid])
-        all_stops[sid]=rec
+        for rid in relevant_route_ids:
+            if not rid:
+                continue
+            r=route_by_id.get(rid,{})
+            route_records.append({
+                "id":f"{op}:{rid}",
+                "operator":op,
+                "operator_label":label,
+                "route_id":rid,
+                "short_name":r.get("route_short_name",""),
+                "long_name":r.get("route_long_name",""),
+                "route_type":r.get("route_type",""),
+                "weekday_trips":trip_counts.get(rid,0),
+            })
 
-    for tid in trip_ids_at_selected:
-        trip=trips_by_id[tid]
-        rid=trip.get("route_id","")
-        route=route_by_id.get(rid,{})
-        agency_id=route.get("agency_id","")
-        label=agency_by_id.get(agency_id,{}).get("agency_name","") or agency_id or "Okänd operatör"
-        agency_summary[label]["trips"].add(tid)
-    for sid in selected:
-        for rid in stop_routes[sid]:
-            route=route_by_id.get(rid,{})
-            agency_id=route.get("agency_id","")
-            label=agency_by_id.get(agency_id,{}).get("agency_name","") or agency_id or "Okänd operatör"
-            agency_summary[label]["stops"].add(sid)
+        for sid,rec in selected.items():
+            key2=f"{op}:{sid}"
+            rec["weekday_departures"]=stop_departures[key2]
+            rec["routes"]=len(stop_routes[key2])
+            all_stops[key2]=rec
 
-    operator_summary=[
-        {
+        operator_summary.append({
+            "operator":op,
             "label":label,
-            "stops":len(v["stops"]),
-            "routes":len(v["routes"]),
-            "weekday_trips":len(v["trips"]),
-        }
-        for label,v in sorted(agency_summary.items())
-    ]
+            "stops":len(selected),
+            "routes":len(relevant_route_ids),
+            "weekday_trips":len(trip_ids_at_selected),
+            "agency_names":[a.get("agency_name","") for a in agencies if a.get("agency_name")],
+            "source_url":url.split("?")[0],
+        })
 
     routes_sorted=sorted(route_records,key=lambda r:(r["operator_label"],r["short_name"],r["long_name"]))
     stops_sorted=sorted(all_stops.values(),key=lambda r:(-r["weekday_departures"],r["name"]))
@@ -274,7 +258,7 @@ def main():
         },
         "routes":routes_sorted,
         "stops":stops_sorted,
-        "note":"GTFS Sverige 2 har filtrerats till busslinjer med hållplatser inom Luleå kommuns polygon. Avgångar avser nästa måndag med aktivt GTFS-utbud.",
+        "note":"Aktuell data hämtas direkt från GTFS Regional för Luleå Lokaltrafik och Länstrafiken Norrbotten. Hållplatser filtreras mot Luleå kommuns polygon. Avgångar avser nästa måndag med aktivt GTFS-utbud.",
     })
 
     for p in [Path("data/transit.json"),Path("docs/data/transit.json")]:
