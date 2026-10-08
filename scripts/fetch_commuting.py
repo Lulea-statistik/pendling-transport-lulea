@@ -59,7 +59,19 @@ def post_json(url: str, payload: dict) -> str:
     )
     try:
         with urlopen(req, timeout=120) as r:
-            return r.read().decode("utf-8-sig")
+            raw = r.read()
+            charset = r.headers.get_content_charset()
+            if charset:
+                try:
+                    return raw.decode(charset)
+                except (LookupError, UnicodeDecodeError):
+                    pass
+            for encoding in ("utf-8-sig", "cp1252", "latin-1"):
+                try:
+                    return raw.decode(encoding)
+                except UnicodeDecodeError:
+                    continue
+            return raw.decode("latin-1", errors="replace")
     except HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
         print("SCB API HTTP-fel:", e.code, e.reason)
