@@ -10,6 +10,7 @@ from collections import Counter, defaultdict
 from datetime import date, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 
 BOUNDARY_URL="https://raw.githubusercontent.com/okfse/sweden-geojson/master/swedish_municipalities.geojson"
 REGIONAL_OPERATORS={
@@ -149,7 +150,13 @@ def main():
 
     for op,label in REGIONAL_OPERATORS.items():
         url=f"https://opendata.samtrafiken.se/gtfs/{op}/{op}.zip?key={key}"
-        raw=fetch_bytes(url)
+        try:
+            raw=fetch_bytes(url)
+        except HTTPError as e:
+            if e.code in (401,403,406):
+                print(f"GTFS Regional är inte tillgängligt med nuvarande API-nyckel ({e.code}) för {op}. Behåller senast publicerade transit.json.")
+                return
+            raise
         zf=zipfile.ZipFile(io.BytesIO(raw))
 
         stops=read_txt(zf,"stops.txt")
