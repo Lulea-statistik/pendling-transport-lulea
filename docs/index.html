@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Pendling i Norrbotten</title>
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <header>
@@ -129,6 +129,9 @@
       <label>Kommun
         <select id="vehicleMunicipality"></select>
       </label>
+      <label>Dataområde
+        <select id="vehicleDataset"></select>
+      </label>
     </section>
     <section class="cards source-cards">
       <article><span>Vald kommun</span><strong id="vehicleMunicipalityTitle">Luleå</strong><small>kommun</small></article>
@@ -136,14 +139,11 @@
       <article><span>Datakälla</span><strong>Vägtrafikregistret</strong><small>via Trafikanalys</small></article>
     </section>
     <section class="panel">
-      <h2>Tillgängliga data för <span id="vehicleMunicipalityHeading">Luleå</span></h2>
-      <div class="available-grid">
-        <article><h3>Fordonsbestånd</h3><p>Personbilar, lastbilar, bussar, motorcyklar och andra registrerade fordon.</p></article>
-        <article><h3>Drivmedel</h3><p>Fördelningar efter exempelvis el, laddhybrid, bensin, diesel och övriga drivmedel där tabellen medger det.</p></article>
-        <article><h3>Ägarkategori</h3><p>Privatägda respektive juridiskt ägda fordon och andra publicerade ägarkategorier.</p></article>
-        <article><h3>Ägare</h3><p>Kön och andra publicerade egenskaper för privata fordonsägare där uppgifterna finns på kommunnivå.</p></article>
-      </div>
-      <p class="source-note">Nästa steg är att läsa in tabellverket/API-data som tidsserier så att värden och diagram visas direkt här.</p>
+      <h2>Fordon i <span id="vehicleMunicipalityHeading">Luleå</span></h2>
+      <div id="vehicleDataStatus" class="data-status">Laddar Trafikanalys-data…</div>
+      <div id="vehicleDataGrid" class="metric-grid"></div>
+      <div id="vehicleDataTable" class="data-table-wrap"></div>
+      <p class="source-note">Källa: Trafikanalys, Fordon i län och kommuner 2025. Uppgifterna avser registrerade fordon och den geografiska indelningen bygger på var ägaren är folkbokförd.</p>
     </section>
   </section>
 
@@ -169,7 +169,8 @@
         <article><h3>Jämförelsetal</h3><p>Kommunjämförelser, bland annat per 100&nbsp;000 invånare där måttet publiceras.</p></article>
         <article><h3>Mer detaljerade variabler</h3><p>Underliggande statistik innehåller bland annat trafikmiljö, vägtyp, hastighetsgräns och gatumiljö. Subkommunal publicering behöver inventeras separat.</p></article>
       </div>
-      <p class="source-note">Nästa steg är att koppla kommunserierna till sidan och därefter inventera möjlig plats-/subkommunal nivå.</p>
+      <p id="injuryDataStatus" class="source-note">Kommunstatistiken finns hos Trafikanalys statistikstudio, men kommunraderna ingår inte i 2025 års publicerade Excel-tabellverk. Jag kopplar därför denna sida mot statistikportal/API i nästa steg i stället för att använda fel geografisk nivå.</p>
+      <p><a href="https://www.trafa.se/vagtrafik/hur-manga-omkommer-och-skadas-i-vagtrafiken-i-olika-kommuner-11557/" target="_blank" rel="noopener">Öppna Trafikanalys kommunstatistik för vägtrafikskador</a></p>
     </section>
   </section>
 
@@ -185,20 +186,19 @@
       <label>Kommun
         <select id="serviceMunicipality"></select>
       </label>
+      <label>Dataområde
+        <select id="serviceDataset"></select>
+      </label>
     </section>
     <section class="panel">
-      <h2>Tillgängliga data för <span id="serviceMunicipalityHeading">Luleå</span></h2>
-      <div class="available-grid">
-        <article><h3>Färdtjänsttillstånd</h3><p>Personer med färdtjänsttillstånd samt tillstånd per 1&nbsp;000 invånare.</p></article>
-        <article><h3>Resor</h3><p>Antal enkelresor och resor per person med färdtjänsttillstånd.</p></article>
-        <article><h3>Nyttjande</h3><p>Andel eller antal personer som faktiskt använder färdtjänsten där måttet finns.</p></article>
-        <article><h3>Kön och ålder</h3><p>Uppdelningar efter kön och ålder där Trafikanalys publicerar dem.</p></article>
-        <article><h3>Riksfärdtjänst</h3><p>Nyttjare och genomförda resor inom riksfärdtjänsten.</p></article>
-      </div>
-      <p class="source-note">Nästa steg är att läsa in de kommunala tidsserierna och skapa jämförelser mellan Norrbottens kommuner.</p>
+      <h2>Färdtjänst i <span id="serviceMunicipalityHeading">Luleå</span></h2>
+      <div id="serviceDataStatus" class="data-status">Laddar Trafikanalys-data…</div>
+      <div id="serviceDataGrid" class="metric-grid"></div>
+      <div id="serviceDataTable" class="data-table-wrap"></div>
+      <p class="source-note">Källa: Trafikanalys, Färdtjänst och riksfärdtjänst 2025. Statistiken är en totalundersökning av landets kommuner.</p>
     </section>
   </section>
 </main>
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
