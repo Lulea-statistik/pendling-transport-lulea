@@ -49,15 +49,24 @@ def rows(obj):
 
 def main():
     base="t1004|antolyckdsl|antpersd|antperss|antpersl|antpersds|antpersdsl|antdper100000|antdslper100000"
-    q_tot=base+"|ar:"+",".join(YEARS)+"|lan:25|kommun:"+",".join(CODES)
-    total=rows(get(q_tot))
-
     latest="2025"
-    q_speed="t1004|antolyckdsl|antpersd|antperss|antpersl|ar:"+latest+"|hastighet:"+",".join(SPEEDS)+"|lan:25|kommun:"+",".join(CODES)
-    speed=rows(get(q_speed))
 
-    q_road="t1004|antolyckdsl|antpersd|antperss|antpersl|ar:"+latest+"|vagtyp:"+",".join(ROAD_TYPES)+"|lan:25|kommun:"+",".join(CODES)
-    road=rows(get(q_road))
+    total=[]
+    speed=[]
+    road=[]
+    for code in CODES:
+        q_tot=base+"|ar:"+",".join(YEARS)+"|lan:25|kommun:"+code
+        total.extend(rows(get(q_tot)))
+
+        q_speed="t1004|antolyckdsl|antpersd|antperss|antpersl|ar:"+latest+"|hastighet:"+",".join(SPEEDS)+"|lan:25|kommun:"+code
+        speed.extend(rows(get(q_speed)))
+
+        q_road="t1004|antolyckdsl|antpersd|antperss|antpersl|ar:"+latest+"|vagtyp:"+",".join(ROAD_TYPES)+"|lan:25|kommun:"+code
+        road.extend(rows(get(q_road)))
+
+        print(code,"total",len([r for r in total if str(r.get("kommun"))==code]),
+              "speed",len([r for r in speed if str(r.get("kommun"))==code]),
+              "road",len([r for r in road if str(r.get("kommun"))==code]))
 
     out={
         "source":"Trafikanalys API",
