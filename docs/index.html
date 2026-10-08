@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Pendling i Norrbotten</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header>
@@ -48,6 +48,64 @@
     <h2>Så läses matrisen</h2>
     <p>Exempel: cellen på raden <strong>Boden</strong> och kolumnen <strong>Luleå</strong> visar antal sysselsatta som bor i Boden och har sitt arbetsställe i Luleå. Matrisen är riktningsberoende: Boden → Luleå och Luleå → Boden är två separata flöden.</p>
     <p>Fokuskommunerna Luleå, Boden, Piteå, Älvsbyn och Kalix markeras tydligare. Övriga nio kommuner i Norrbotten finns kvar i matrisen.</p>
+  </section>
+
+  <section class="panel transport-data">
+    <div class="section-head">
+      <div>
+        <h2>Transportdata på kommunnivå</h2>
+        <p>Tre nästa dataspår för rapporten, baserade på Trafikanalys öppna statistik och API.</p>
+      </div>
+      <a href="https://www.trafa.se/sidor/oppen-data-api/" target="_blank" rel="noopener">Trafikanalys öppna data API</a>
+    </div>
+
+    <div class="transport-grid">
+      <article class="transport-card">
+        <div class="transport-number">1</div>
+        <div>
+          <h3>Fordon i län och kommuner</h3>
+          <p>Kommunstatistik över fordonsbeståndet. Särskilt relevant för jämförelser mellan Luleå, Boden, Piteå, Älvsbyn, Kalix och övriga kommuner i Norrbotten.</p>
+          <ul>
+            <li>Personbilar och andra fordonsslag</li>
+            <li>Drivmedel, exempelvis el, laddhybrid, bensin och diesel</li>
+            <li>Privatägda respektive juridiskt ägda fordon</li>
+            <li>Kön bland privata fordonsägare där statistiken medger det</li>
+          </ul>
+          <a href="https://www.trafa.se/vagtrafik/fordon/" target="_blank" rel="noopener">Källa och statistik hos Trafikanalys</a>
+        </div>
+      </article>
+
+      <article class="transport-card">
+        <div class="transport-number">2</div>
+        <div>
+          <h3>Vägtrafikskador</h3>
+          <p>Kommunvis statistik över olyckor och personskador i vägtrafiken. Detta blir också vårt viktigaste spår för att senare undersöka mer detaljerad, subkommunal olycksdata.</p>
+          <ul>
+            <li>Olyckor med personskada</li>
+            <li>Omkomna, svårt skadade och lindrigt skadade</li>
+            <li>Jämförelser per 100&nbsp;000 invånare</li>
+            <li>Underliggande data innehåller bland annat trafikmiljö, vägtyp, hastighetsgräns och gatumiljö</li>
+          </ul>
+          <a href="https://www.trafa.se/vagtrafik/vagtrafikskador/" target="_blank" rel="noopener">Källa och statistik hos Trafikanalys</a>
+        </div>
+      </article>
+
+      <article class="transport-card">
+        <div class="transport-number">3</div>
+        <div>
+          <h3>Färdtjänst och riksfärdtjänst</h3>
+          <p>Kommunbaserad statistik som kan ge ett tillgänglighets- och mobilitetsperspektiv utöver den vanliga arbets- och bilpendlingen.</p>
+          <ul>
+            <li>Personer med färdtjänsttillstånd</li>
+            <li>Tillstånd per 1&nbsp;000 invånare</li>
+            <li>Antal resor och resor per person med tillstånd</li>
+            <li>Kön och ålder där uppdelningar finns</li>
+            <li>Riksfärdtjänst och nyttjande</li>
+          </ul>
+          <a href="https://www.trafa.se/kollektivtrafik/fardtjanst/" target="_blank" rel="noopener">Källa och statistik hos Trafikanalys</a>
+        </div>
+      </article>
+    </div>
   </section>
 </main>
 <script src="app.js?v=2"></script>
