@@ -2,9 +2,10 @@ from urllib.request import Request,urlopen
 from urllib.parse import quote
 
 queries=[
- "t1004|antolyckdsl|antpersd|antperss|antpersl|antdslper100000|ar:2020,2021,2022,2023,2024,2025|kommun:2580",
- "t1004|antolyckdsl|antpersd|antperss|antpersl|antdslper100000|ar|kommun:2580",
- "t1004|antolyckdsl|ar:2025|kommun:2580",
+ "t1004|antolyckdsl|antpersd|antperss|antpersl|antdslper100000|ar:2020,2021,2022,2023,2024,2025|lan:25|kommun:2580",
+ "t1004|antolyckdsl|antpersd|antperss|antpersl|antdslper100000|ar:2025|lan:25|kommun:2580",
+ "t1004|antolyckdsl|ar:2025|manad:t1|lan:25|kommun:2580",
+ "t1004|antolyckdsl|ar:2025|olyckspl|lan:25|kommun:2580",
 ]
 for q in queries:
     url="https://api.trafa.se/api/data?query="+quote(q,safe="|:,")+"&lang=sv"
