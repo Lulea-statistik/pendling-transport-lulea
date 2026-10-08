@@ -18,6 +18,8 @@ def main():
     text=get(BASE)
     Path("data").mkdir(exist_ok=True)
     Path("data/trafa_structure_all.json").write_text(text,encoding="utf-8")
+    product_text=get(BASE+"?query=t1004")
+    Path("data/trafa_injury_structure.json").write_text(product_text,encoding="utf-8")
     try:
         obj=json.loads(text)
     except Exception:
