@@ -260,6 +260,29 @@
       <p class="source-note">NVDB:s kommunstatistik är årsaggregerad. Bilvägnätet publiceras i kilometer och cykelvägnätet i meter; på denna sida räknas cykelvägnätet om till kilometer för att bli lättare att läsa.</p>
     </section>
 
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Jämför vägnätets längd mellan Norrbottens kommuner</h2>
+          <p>Beräknat direkt från NVDB:s publicerade årsstatistik. Staplarna avser väglängd, inte vägarnas antal, trafikarbetet eller uppmätt trafik.</p>
+        </div>
+        <a href="https://www.nvdb.se/sv/kund/statistik/" target="_blank" rel="noopener">NVDB statistik</a>
+      </div>
+      <section class="controls">
+        <label>Vägnät <select id="nvdbCompareType"><option value="road">Bilvägnät</option><option value="cycle">Cykelvägnät</option></select></label>
+        <label>År <select id="nvdbCompareYear"></select></label>
+      </section>
+      <p id="nvdbCompareStatus" class="source-note">Laddar jämförelse…</p>
+      <div id="nvdbCompare"></div>
+      <p class="source-note">Datakällan är årsaggregerad NVDB-statistik, inte ett nytt uttag av vägsegment. Kommunstorlek och tätortsstruktur påverkar resultaten. För kartläggning av enskilda sträckor krävs faktiska linjegeometrier.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Geodatalager och källornas relation</h2>
+      <p><a href="https://nvdbpakarta.trafikverket.se/map" target="_blank" rel="noopener">NVDB på karta</a> visar Trafikverkets vägdataprodukter. <a href="https://www.geodata.se/geodataportalen/srv/swe/catalog.search#/metadata/5fc411ee-05a0-405c-9626-9bd284ec017c" target="_blank" rel="noopener">Geodataportalens metadatapost</a> beskriver en resurs; det är inte i sig en nedladdningsbar geografisk datamängd. Den exakta postens identitet har inte verifierats.</p>
+      <p>Detaljerade segmentdata (exempelvis hastighetsgräns, vägbredd och funktionell vägklass) finns i NVDB:s datautbyte, men har ännu inte hämtats till rapporten. <a href="https://www.nvdb.se/sv/kund/hamta-aktuella-data/" target="_blank" rel="noopener">Läs om åtkomst till aktuella vägdata</a>.</p>
+    </section>
     <section class="panel">
       <div class="section-head">
         <div>
@@ -477,5 +500,6 @@
 
 </main>
 <script src="app.js?v=8"></script>
+<script src="nvdb-compare.js?v=1"></script>
 </body>
 </html>
