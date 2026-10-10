@@ -1,0 +1,36 @@
+
+name: Inventory Lastkajen data packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      package_limit:
+        description: "Packages to inspect (0 = all)"
+        required: false
+        default: "5"
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inventory Lastkajen packages
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+          LASTKAJEN_PACKAGE_LIMIT: ${{ inputs.package_limit }}
+        run: python3 scripts/inventory_lastkajen.py
+
+      - name: Upload inventory
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lastkajen-inventory
+          path: lastkajen_inventory.json
+          retention-days: 7
