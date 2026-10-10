@@ -21,6 +21,7 @@
   <button class="tab" data-page="injuries">Vägtrafikskador</button>
   <button class="tab" data-page="service">Färdtjänst</button>
   <button class="tab" data-page="nvdb">NVDB & vägnät</button>
+  <button class="tab" data-page="trafficenvironment">Vägmiljö & trafikflöden</button>
   <button class="tab" data-page="transit">Kollektivtrafik</button>
 </nav>
 
@@ -375,6 +376,49 @@
   </section>
 
 
+
+  <section id="page-trafficenvironment" class="page">
+    <section class="page-intro panel">
+      <div>
+        <h2>Vägmiljö & trafikflöden</h2>
+        <p>Analyser av gång-, cykel- och motortrafik: vad som styr framkomlighet, vägval och trafikflöden. Trafiksäkerhet och nätets begränsningar redovisas separat från uppmätta trafikmängder.</p>
+      </div>
+      <a href="https://vektor-pr.trafikverket.se/gis/rest/services/GCM/Trafiks%C3%A4kerhetsklass_Passager_GCM/FeatureServer" target="_blank" rel="noopener">Källa: Trafikverkets GCM-tjänst</a>
+    </section>
+    <section class="controls">
+      <label>Trafikantgrupp<select id="trafficMode">
+        <option value="walk">Fotgängare</option><option value="cycle">Cyklister</option><option value="motor">Bilar och andra motorfordon</option>
+      </select></label>
+      <label>Analysområde<select id="trafficArea">
+        <option value="Luleå">Luleå</option><option value="Boden">Boden</option><option value="Piteå">Piteå</option>
+        <option value="Kalix">Kalix</option><option value="Älvsbyn">Älvsbyn</option>
+      </select></label>
+    </section>
+    <section class="panel">
+      <h2 id="trafficModeHeading">Fotgängare</h2>
+      <p id="trafficModeDescription"></p>
+      <div id="trafficFactors" class="available-grid"></div>
+      <p class="source-note">Datastatus: lagertjänsterna är identifierade, men geometrier och attribut är ännu inte inlästa i rapportens statistik. Kommunvalet anger analysområde för kommande datainsamling, inte ett färdigt geografiskt filtrerat uttag. Inga värden har beräknats från kartbilden.</p>
+    </section>
+    <section class="panel">
+      <h2>Skillnaden mellan trafikflöde och framkomlighet</h2>
+      <div class="analysis-grid">
+        <article class="analysis-card"><h3>Flöde: observerad trafik</h3><p>ÅDT anger genomsnittligt antal fordon per dygn och gäller inte automatiskt gång- eller cykeltrafik. För dessa krävs särskilda räkningar eller tillförlitliga modeller.</p></article>
+        <article class="analysis-card"><h3>Nätets egenskaper</h3><p>Hastighetsgräns, enkelriktning, passage, farthinder, cykelnät och vägklass påverkar sannolika vägval och framkomlighet men är inte mätningar av hur många som passerar.</p></article>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Datatjänster för fördjupning</h2>
+      <div class="available-grid">
+        <article><h3>GCM-passager och säkerhetsklass</h3><p>Plats och trafiksäkerhetsklass för gång-, cykel- och mopedpassager.</p><a target="_blank" rel="noopener" href="https://vektor-pr.trafikverket.se/gis/rest/services/GCM/Trafiks%C3%A4kerhetsklass_Passager_GCM/FeatureServer/0">Visa objektlagret</a></article>
+        <article><h3>Hastighet och vägtrafikflöden</h3><p>Publicerade hastighetsgränser och ÅDT i samma GCM-tjänst. Täckning och aktualitet måste kontrolleras före summering.</p><a target="_blank" rel="noopener" href="https://vektor-pr.trafikverket.se/gis/rest/services/GCM/Trafiks%C3%A4kerhetsklass_Passager_GCM/FeatureServer/5">Visa ÅDT-lagret</a></article>
+        <article><h3>Farthinder, vägklass och cykelnät</h3><p>Skilj på hastighetsdämpning, nätets hierarki och förbindelser för cykel.</p><a target="_blank" rel="noopener" href="https://vektor-pr.trafikverket.se/gis/rest/services/GCM/Trafiks%C3%A4kerhetsklass_Passager_GCM/FeatureServer">Visa samtliga lager</a></article>
+        <article><h3>Enkelriktning / förbjuden färdriktning</h3><p>Behöver separat verifierat NVDB-objektlager. Riktningen måste hanteras topologiskt per länk innan rutt- eller flödesberäkningar.</p><a target="_blank" rel="noopener" href="https://www.nvdb.se/sv/kund/hamta-aktuella-data/">NVDB datautbyte</a></article>
+      </div>
+      <p class="source-note">Tjänsten anger EPSG:3006. Vid senare kartvisning i Web Mercator ska geometrin omprojiceras till EPSG:3857; använd EPSG:3006 för längd- och nätanalys där lämpligt.</p>
+    </section>
+  </section>
+
   <section id="page-transit" class="page">
     <section class="page-intro panel">
       <div>
@@ -501,5 +545,6 @@
 </main>
 <script src="app.js?v=8"></script>
 <script src="nvdb-compare.js?v=1"></script>
+<script src="traffic-environment.js?v=1"></script>
 </body>
 </html>
