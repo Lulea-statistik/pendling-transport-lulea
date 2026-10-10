@@ -1,0 +1,119 @@
+{
+  "source": "Trafikverket NVDB Lastkajen Norrbottens län paket 10155",
+  "run_id": 38074514605,
+  "status": "preliminary_geometry_union",
+  "method": "SCB RegSO 2025 municipalities, EPSG:3006. Within-category overlapping lines unioned. FA totals are sums of disjoint municipality statistics; boundary overlap and network definitions need further checks.",
+  "warning": "Väghållarlagret omfattar gång-, cykel- och bilnät. Väghållarlängd får inte direkt jämföras med funktionell vägklass för endast bilnät.",
+  "municipalities": [
+    {
+      "code": "2580",
+      "name": "Luleå",
+      "car_km": 3518.38,
+      "all_network_km": 4027.52,
+      "road_class": {
+        "0": 132.527,
+        "1": 20.751,
+        "2": 60.67,
+        "3": 59.487,
+        "4": 119.443,
+        "5": 411.861,
+        "6": 45.14,
+        "7": 548.118,
+        "8": 682.901,
+        "9": 1437.481
+      },
+      "maintainer": {
+        "statlig": 706.186,
+        "kommunal": 838.382,
+        "enskild": 2482.955
+      }
+    },
+    {
+      "code": "2582",
+      "name": "Boden",
+      "car_km": 5029.88,
+      "all_network_km": 5154.664,
+      "road_class": {
+        "2": 104.716,
+        "3": 81.01,
+        "4": 71.735,
+        "5": 500.992,
+        "6": 28.323,
+        "7": 693.801,
+        "8": 1109.893,
+        "9": 2439.409
+      },
+      "maintainer": {
+        "statlig": 749.955,
+        "kommunal": 306.322,
+        "enskild": 4098.387
+      }
+    },
+    {
+      "code": "2581",
+      "name": "Piteå",
+      "car_km": 4764.405,
+      "all_network_km": 4899.844,
+      "road_class": {
+        "0": 108.914,
+        "1": 17.418,
+        "2": 4.088,
+        "3": 125.544,
+        "4": 130.138,
+        "5": 470.436,
+        "6": 4.814,
+        "7": 720.362,
+        "8": 879.933,
+        "9": 2302.758
+      },
+      "maintainer": {
+        "statlig": 833.148,
+        "kommunal": 415.795,
+        "enskild": 3650.901
+      }
+    },
+    {
+      "code": "2514",
+      "name": "Kalix",
+      "car_km": 2769.547,
+      "all_network_km": 2808.754,
+      "road_class": {
+        "0": 129.061,
+        "1": 5.531,
+        "3": 26.749,
+        "4": 128.193,
+        "5": 293.05,
+        "6": 3.174,
+        "7": 286.134,
+        "8": 486.897,
+        "9": 1410.758
+      },
+      "maintainer": {
+        "statlig": 588.151,
+        "kommunal": 178.146,
+        "enskild": 2042.458
+      }
+    },
+    {
+      "code": "2560",
+      "name": "Älvsbyn",
+      "car_km": 2338.891,
+      "all_network_km": 2359.068,
+      "road_class": {
+        "2": 57.495,
+        "3": 71.273,
+        "4": 10.134,
+        "5": 262.923,
+        "6": 0.197,
+        "7": 290.075,
+        "8": 489.849,
+        "9": 1156.946
+      },
+      "maintainer": {
+        "statlig": 401.865,
+        "kommunal": 86.47,
+        "enskild": 1870.733
+      }
+    }
+  ]
+}
