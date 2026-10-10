@@ -1,0 +1,121 @@
+{
+  "status": "preliminary_proximity",
+  "run_id": 38069375831,
+  "source": "Trafikverket NVDB Lastkajen",
+  "method": "Nearest registered speed geometry within 12 meters. At-grade passage attributes and refuge yes/no/unknown reported separately; may not be crossed road.",
+  "municipalities": {
+    "2514": {
+      "name": "Kalix",
+      "at_grade_by_refuge_and_speed": {
+        "okänt": {
+          "50": 10
+        },
+        "nej": {
+          "30": 1,
+          "50": 4,
+          "70": 9
+        },
+        "ja": {
+          "60": 4,
+          "70": 2,
+          "80": 5
+        }
+      }
+    },
+    "2560": {
+      "name": "Älvsbyn",
+      "at_grade_by_refuge_and_speed": {
+        "ja": {
+          "30": 1,
+          "40": 9,
+          "60": 1,
+          "70": 1
+        },
+        "nej": {
+          "30": 20,
+          "40": 17,
+          "60": 3,
+          "70": 5
+        }
+      }
+    },
+    "2580": {
+      "name": "Luleå",
+      "at_grade_by_refuge_and_speed": {
+        "ja": {
+          "30": 56,
+          "40": 45,
+          "50": 94,
+          "60": 3,
+          "70": 4
+        },
+        "okänt": {
+          "30": 29,
+          "40": 13,
+          "50": 52,
+          "60": 1,
+          "70": 27,
+          "110": 2
+        },
+        "nej": {
+          "30": 208,
+          "40": 12,
+          "50": 47,
+          "60": 3,
+          "70": 12,
+          "100": 1,
+          "110": 1
+        }
+      }
+    },
+    "2581": {
+      "name": "Piteå",
+      "at_grade_by_refuge_and_speed": {
+        "nej": {
+          "30": 29,
+          "40": 185,
+          "50": 7,
+          "60": 5,
+          "70": 7
+        },
+        "ja": {
+          "30": 2,
+          "40": 18,
+          "50": 9,
+          "60": 4,
+          "70": 4,
+          "80": 2
+        },
+        "okänt": {
+          "30": 7,
+          "40": 66,
+          "60": 1
+        }
+      }
+    },
+    "2582": {
+      "name": "Boden",
+      "at_grade_by_refuge_and_speed": {
+        "okänt": {
+          "30": 28,
+          "40": 2,
+          "50": 111,
+          "60": 3,
+          "70": 1
+        },
+        "ja": {
+          "30": 3,
+          "50": 54,
+          "60": 3
+        },
+        "nej": {
+          "30": 34,
+          "50": 39,
+          "60": 3,
+          "70": 13,
+          "100": 2
+        }
+      }
+    }
+  }
+}
