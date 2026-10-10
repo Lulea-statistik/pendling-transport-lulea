@@ -15,6 +15,10 @@ params={"service":"WFS","version":"1.1.0","request":"GetFeature",
 def main():
     r=requests.get(URL,params=params,timeout=180);r.raise_for_status()
     data=r.json()
+    # Reject unexpected response CRS; WFS 1.1 services can have axis-order pitfalls.
+    declared=json.dumps(data.get("crs",{})).upper()
+    if declared and "3006" not in declared:
+        raise ValueError("Unexpected GeoJSON CRS declaration: "+declared[:200])
     features=data.get("features",[])
     if not features: raise ValueError("No RegSO 2025 features returned")
     # Only use a four-digit municipality code field, never guess from feature ordering.
@@ -35,6 +39,9 @@ def main():
         if code in group:
             geom=shape(f["geometry"])
             if geom.is_empty or not geom.is_valid: raise ValueError("Invalid source geometry for "+code)
+            minx,miny,maxx,maxy=geom.bounds
+            if not (100000<minx<1000000 and 6000000<miny<8000000 and 100000<maxx<1000000 and 6000000<maxy<8000000):
+                raise ValueError("Coordinates are not plausible EPSG:3006 for "+code)
             group[code].append(geom)
     missing=[code for code,items in group.items() if not items]
     if missing: raise ValueError("Missing municipalities: "+", ".join(missing))
