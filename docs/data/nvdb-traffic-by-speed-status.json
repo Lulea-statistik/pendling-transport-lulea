@@ -1,9 +1,9 @@
 {
   "workflow": "NVDB traffic by speed",
-  "run_id": 38046284675,
-  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38046284675",
+  "run_id": 38046576446,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38046576446",
   "attempt": 1,
   "status": "success",
-  "commit": "1ebee270b9ec8c5346114b6b2e76532d2d571a34",
-  "updated_utc": "2026-10-10T10:51:19.795107+00:00"
+  "commit": "370b711d60ab6aa4f88337627bca74a29f8491cb",
+  "updated_utc": "2026-10-10T10:56:16.169187+00:00"
 }
