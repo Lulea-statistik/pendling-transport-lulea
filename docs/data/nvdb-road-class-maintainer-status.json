@@ -1,9 +1,9 @@
 {
   "workflow": "Analyze NVDB road class by maintainer",
-  "run_id": 38077423351,
-  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38077423351",
+  "run_id": 38086141588,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38086141588",
   "attempt": 1,
-  "status": "failure",
-  "commit": "19d65f00689724714e90fcb876e689cdc1403b41",
-  "updated_utc": "2026-10-10T18:52:49.946016+00:00"
+  "status": "success",
+  "commit": "16bad8ef41efb99e9d757c0b288c0c57d9294f2e",
+  "updated_utc": "2026-10-10T21:05:06.427036+00:00"
 }
