@@ -1,0 +1,70 @@
+{
+  "source": "Trafikverket NVDB Lastkajen Norrbottens län paket 10155",
+  "analysis": "SCB RegSO 2025 kommungränser, EPSG:3006",
+  "run_id": 38044930975,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38044930975",
+  "status": "preliminary_not_deduplicated",
+  "notes": "Summerade klippta NVDB-featurelängder, inte unika vägkilometer. Längdvägt ÅDT avser endast registrerade trafiksträckor, med risk för överlapp och skev täckning.",
+  "municipalities": [
+    {
+      "code": "2580",
+      "name": "Luleå",
+      "speed_km": 3847.481,
+      "speed70_km": 2615.751,
+      "adt": 1675.7,
+      "adt_heavy": 132.9,
+      "adt_km": 676.052,
+      "gcm_passages": 774,
+      "cycle_km": 246.039,
+      "cycle_commute_km": 45.625
+    },
+    {
+      "code": "2582",
+      "name": "Boden",
+      "speed_km": 5555.498,
+      "speed70_km": 4450.062,
+      "adt": 554.9,
+      "adt_heavy": 33.2,
+      "adt_km": 725.341,
+      "gcm_passages": 338,
+      "cycle_km": 126.431,
+      "cycle_commute_km": 48.427
+    },
+    {
+      "code": "2581",
+      "name": "Piteå",
+      "speed_km": 5248.747,
+      "speed70_km": 4118.334,
+      "adt": 1049.4,
+      "adt_heavy": 106.6,
+      "adt_km": 818.099,
+      "gcm_passages": 419,
+      "cycle_km": 138.34,
+      "cycle_commute_km": 19.636
+    },
+    {
+      "code": "2514",
+      "name": "Kalix",
+      "speed_km": 3188.318,
+      "speed70_km": 2471.981,
+      "adt": 743.4,
+      "adt_heavy": 81.7,
+      "adt_km": 578.531,
+      "gcm_passages": 53,
+      "cycle_km": 39.207,
+      "cycle_commute_km": 9.771
+    },
+    {
+      "code": "2560",
+      "name": "Älvsbyn",
+      "speed_km": 2647.252,
+      "speed70_km": 2211.953,
+      "adt": 511.2,
+      "adt_heavy": 48.1,
+      "adt_km": 397.533,
+      "gcm_passages": 61,
+      "cycle_km": 26.075,
+      "cycle_commute_km": 2.771
+    }
+  ]
+}
