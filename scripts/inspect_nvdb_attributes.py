@@ -7,7 +7,8 @@ from urllib.request import urlopen
 from inspect_lastkajen_norrbotten import api, BASE, PACKAGE_ID, FILE_NAME
 
 KEYWORDS = ("Trafik", "Hastighetsgrans", "ForbjudenFardriktning", "GCM_passage",
-            "CykelVgsKat", "GCM_vagtyp", "Farthinder", "FunkVagklass", "Vagbredd", "Vagtrafiknat")
+            "CykelVgsKat", "GCM_vagtyp", "Farthinder", "FunkVagklass", "Vagbredd", "Vagtrafiknat",
+            "Vaghallare", "Korfalt", "Barighetsklass", "Vagnummer")
 MAX_ZIP = 1_500_000_000
 def quote(name): return '"' + name.replace('"','""') + '"'
 def inspect(path):
