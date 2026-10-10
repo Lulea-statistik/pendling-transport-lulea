@@ -60,7 +60,7 @@ def analyze(dbfile, regions):
         output=[]
         for topic,frag in TARGETS.items():
             # Exact layer-name suffix avoids "Trafik" also matching "Vagtrafiknat".
-            matches=[x for x in layers if x[0].lower().split("_")[-1]==frag.lower()]
+            matches=[x for x in layers if x[0].lower().endswith("_"+frag.lower())]
             if len(matches)!=1:
                 raise ValueError(f"Expected one {topic} layer, found {len(matches)}: "+str([m[0] for m in matches]))
             table,geocol,srs=matches[0]
