@@ -23,7 +23,9 @@
   managerSelect.addEventListener('change',()=>{maintainer=managerSelect.value;render()});
   el.append(managerSelect);
   if(managerSelect.disabled){const wait=document.createElement('p');wait.className='source-note';wait.textContent='Väghållaruppdelningen beräknas i nästa GIS-körning. Tills dess visas samtliga väghållare tillsammans.';el.append(wait)}
-  const info=document.createElement('p');info.textContent='Preliminär GIS-samkörning mellan NVDB:s trafikmängder och ordinarie hastighetsgräns. Inte särskilt personbilar: ÅDT avser samtliga fordon.';el.append(info);
+  const info=document.createElement('p');info.textContent='Preliminär GIS-samkörning mellan NVDB:s trafikmängder och ordinarie hastighetsgräns. Inte särskilt personbilar: ÅDT avser samtliga fordon. Trafikdata i detta uttag omfattar endast statliga vägar; kommunala och enskilda vägar saknar ÅDT-underlag.';el.append(info);
+  const unavailable=(maintainer==='kommunal'||maintainer==='enskild') && !Object.values(row.manager_by_speed||{}).some(categories=>categories[maintainer]);
+  if(unavailable){const msg=document.createElement('p');msg.className='source-note';msg.textContent='ÅDT-uppgifter saknas för '+(maintainer==='kommunal'?'kommunala':'enskilda')+' vägar i detta NVDB-uttag. Detta betyder inte att trafikflödet är noll. Välj Statlig väg eller Alla väghållare för att se de registrerade värdena.';el.append(msg);return;}
   const values=(row.speed_classes||[]).map(x=>{
     if(maintainer==='all'||!row.manager_by_speed)return x;
     const match=row.manager_by_speed[String(x.speed_kmh)]?.[maintainer];
