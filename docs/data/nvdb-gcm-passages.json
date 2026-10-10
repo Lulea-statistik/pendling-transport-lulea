@@ -1,0 +1,131 @@
+{
+  "source": "Trafikverket NVDB Lastkajen Norrbottens län paket 10155; GCM_passage",
+  "run_id": 38044930975,
+  "status": "preliminary",
+  "types": [
+    "Övergångsställe/cykelpassage i plan",
+    "Annan ordnad passage i plan",
+    "Underfart",
+    "Signalreglerad passage i plan",
+    "Överfart (bro)"
+  ],
+  "traveler_types": [
+    "Gång, cykel och moped",
+    "Endast gång",
+    "Cykel och moped",
+    "Okänt"
+  ],
+  "municipalities": [
+    {
+      "name": "Luleå",
+      "code": "2580",
+      "types": [
+        286,
+        260,
+        144,
+        66,
+        18
+      ],
+      "travelers": [
+        499,
+        249,
+        16,
+        10
+      ],
+      "refuge": {
+        "yes": 203,
+        "no": 447,
+        "unknown": 124
+      }
+    },
+    {
+      "name": "Boden",
+      "code": "2582",
+      "types": [
+        189,
+        95,
+        32,
+        18,
+        4
+      ],
+      "travelers": [
+        242,
+        34,
+        62,
+        0
+      ],
+      "refuge": {
+        "yes": 61,
+        "no": 127,
+        "unknown": 150
+      }
+    },
+    {
+      "name": "Piteå",
+      "code": "2581",
+      "types": [
+        192,
+        142,
+        54,
+        12,
+        19
+      ],
+      "travelers": [
+        363,
+        42,
+        14,
+        0
+      ],
+      "refuge": {
+        "yes": 39,
+        "no": 306,
+        "unknown": 74
+      }
+    },
+    {
+      "name": "Kalix",
+      "code": "2514",
+      "types": [
+        3,
+        32,
+        16,
+        0,
+        2
+      ],
+      "travelers": [
+        44,
+        9,
+        0,
+        0
+      ],
+      "refuge": {
+        "yes": 11,
+        "no": 32,
+        "unknown": 10
+      }
+    },
+    {
+      "name": "Älvsbyn",
+      "code": "2560",
+      "types": [
+        40,
+        18,
+        3,
+        0,
+        0
+      ],
+      "travelers": [
+        40,
+        21,
+        0,
+        0
+      ],
+      "refuge": {
+        "yes": 12,
+        "no": 49,
+        "unknown": 0
+      }
+    }
+  ],
+  "limitations": "GCM-passager, inte alla korsningsställen; objekt berör kommunpolygon; inga uppgifter om faktisk passagevolym eller säkerhetsklass; tabellerna är marginalfördelningar, inte korsklassificerade trafikanttyp × passagetyp."
+}
