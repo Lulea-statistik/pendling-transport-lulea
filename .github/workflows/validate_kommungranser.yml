@@ -1,0 +1,22 @@
+name: Validate five municipality boundaries
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install spatial dependencies
+        run: python3 -m pip install requests shapely pyproj
+      - name: Fetch and validate SCB 2025 boundaries
+        run: python3 scripts/build_kommungranser.py
+      - name: Upload verified geometries and QA
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: municipalities-5-validated
+          path: boundary_output/
+          retention-days: 7
