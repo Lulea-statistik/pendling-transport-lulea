@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - scripts/analyze_nvdb_road_class_maintainer.py
+      - scripts/publish_road_class_maintainer.py
       - .github/workflows/analyze_nvdb_road_class_maintainer.yml
 permissions:
   contents: write
@@ -30,6 +31,17 @@ jobs:
           name: nvdb-road-class-maintainer-qa
           path: nvdb_output/nvdb_road_class_maintainer_qa.json
           retention-days: 7
+      - name: Validate and publish website data
+        if: success()
+        run: |
+          python3 scripts/publish_road_class_maintainer.py
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add docs/data/nvdb-road-class-maintainer.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update validated NVDB road class x maintainer data"
+            git push
+          fi
       - name: Save status for automatic discovery
         if: always()
         env:
