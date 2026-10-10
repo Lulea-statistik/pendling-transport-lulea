@@ -15,6 +15,7 @@ from inspect_lastkajen_norrbotten import api, BASE, PACKAGE_ID, FILE_NAME
 
 SPEED_LAYER="NVDB_DK_O_48_Hastighetsgrans"
 TRAFFIC_LAYER="TRAFIK_DK_O_105_Trafik"
+MANAGER_LAYER="NVDB_DK_O_2_Vaghallare"
 def fields(con,table):
     return [r[1] for r in con.execute("PRAGMA table_info("+quote(table)+")")]
 def layer(con,table):
@@ -53,6 +54,7 @@ def road_maintainer_inventory(con):
 
 def run(con,municipalities):
     speed_geom=layer(con,SPEED_LAYER);traffic_geom=layer(con,TRAFFIC_LAYER)
+    manager_geom=layer(con,MANAGER_LAYER)
     speed_attr="Hogsta_tillatna_hastighet"
     adt_attr="Adt_samtliga_fordon"
     if speed_attr not in fields(con,SPEED_LAYER) or adt_attr not in fields(con,TRAFFIC_LAYER):
@@ -60,11 +62,17 @@ def run(con,municipalities):
     speed=fetch_segments(con,SPEED_LAYER,speed_geom,speed_attr,lambda x:int(x) if numeric(x) is not None and 5<=float(x)<=140 else None)
     traffic=fetch_segments(con,TRAFFIC_LAYER,traffic_geom,adt_attr,numeric)
     if not speed or not traffic:raise ValueError("No relevant speed or traffic data")
+    manager=fetch_segments(con,MANAGER_LAYER,manager_geom,"Vaghallartyp",
+        lambda x:str(x).strip().lower() if x is not None and str(x).strip().lower() in ("statlig","kommunal","enskild") else None)
+    if not manager:raise ValueError("No valid road manager segments")
+    manager_tree=STRtree([x[0] for x in manager])
     geometries=[x[0] for x in speed];tree=STRtree(geometries)
     out={}
     for code,name,boundary,prepared in municipalities:
         bins=defaultdict(lambda:{"traffic_exposure_vehicle_km_per_day":0.0,"covered_length_km":0.0,"traffic_features":0})
         total_traffic_km=matched_km=ambiguous_km=unmatched_km=0.0
+        manager_bins=defaultdict(lambda:defaultdict(lambda:{"traffic_exposure_vehicle_km_per_day":0.0,"covered_length_km":0.0}))
+        manager_unmatched_km=manager_ambiguous_km=0.0
         features=0
         for road,adt in traffic:
             if not prepared.intersects(road):continue
@@ -93,6 +101,29 @@ def run(con,municipalities):
                 bins[str(limit)]["covered_length_km"]+=distance
                 bins[str(limit)]["traffic_features"]+=1
                 matched_km+=distance
+                by_manager=defaultdict(list)
+                for midx in manager_tree.query(line):
+                    mg,category=manager[int(midx)]
+                    if not mg.intersects(line):continue
+                    shared=mg.intersection(line)
+                    if shared.length>0:by_manager[category].append(shared)
+                if not by_manager:
+                    manager_unmatched_km+=distance
+                    continue
+                merged={cat:unary_union(parts) for cat,parts in by_manager.items()}
+                assigned=0.0
+                for cat,part in merged.items():
+                    conflicts=[other for othercat,other in merged.items() if othercat!=cat]
+                    unique=part.difference(unary_union(conflicts)) if conflicts else part
+                    km=unique.length/1000
+                    if km<=0:continue
+                    cell=manager_bins[str(limit)][cat]
+                    cell["covered_length_km"]+=km
+                    cell["traffic_exposure_vehicle_km_per_day"]+=adt*km
+                    assigned+=km
+                possible=unary_union(list(merged.values())).length/1000
+                manager_ambiguous_km+=max(0,possible-assigned)
+                manager_unmatched_km+=max(0,distance-possible)
             available=unary_union(list(class_lines.values())).length/1000
             ambiguous_km+=max(0,available-sum(
                 class_lines[limit].difference(unary_union([other for x,other in other_classes if x!=limit])).length/1000
@@ -107,7 +138,20 @@ def run(con,municipalities):
                 "length_weighted_adt":round(exposure/km,1) if km else None,
                 "covered_length_km":round(km,3),
                 "traffic_feature_intersections":vals["traffic_features"]})
+        manager_by_speed={}
+        for speed_class,categories in manager_bins.items():
+            manager_by_speed[speed_class]={}
+            for category,values in categories.items():
+                km=values["covered_length_km"]
+                exposure=values["traffic_exposure_vehicle_km_per_day"]
+                manager_by_speed[speed_class][category]={
+                    "covered_length_km":round(km,3),
+                    "traffic_exposure_vehicle_km_per_day":round(exposure,2),
+                    "length_weighted_adt":round(exposure/km,1) if km else None}
         out[code]={"name":name,"speed_classes":bins_output,
+                   "manager_by_speed":manager_by_speed,
+                   "manager_unmatched_km":round(manager_unmatched_km,3),
+                   "manager_ambiguous_km":round(manager_ambiguous_km,3),
                    "traffic_features_intersecting":features,
                    "traffic_source_length_km":round(total_traffic_km,3),
                    "matched_length_km":round(matched_km,3),
@@ -150,7 +194,7 @@ def main():
         "source":"NVDB Lastkajen Norrbottens län",
         "analysis_crs":"EPSG:3006",
         "units":{"traffic_exposure":"vehicle-km/day","length_weighted_adt":"vehicles/day"},
-        "limitations":"Only NVDB traffic features with ordinary speed geometry matching; no deduplication of overlapping traffic features; excludes conflicts between speed classes and unmatched lengths; cannot isolate passenger cars from all motor vehicles.",
+        "limitations":"Road manager classified from Vaghallartyp; conflicting categories excluded. Only NVDB traffic features with ordinary speed geometry matching; no deduplication of overlapping traffic features; excludes conflicts between speed classes and unmatched lengths; cannot isolate passenger cars from all motor vehicles.",
         "municipalities":data},ensure_ascii=False,indent=2),encoding="utf-8")
 if __name__=="__main__":
     try:main()
