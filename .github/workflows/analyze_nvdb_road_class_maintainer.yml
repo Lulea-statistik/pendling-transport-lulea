@@ -33,15 +33,33 @@ jobs:
           retention-days: 7
       - name: Validate and publish website data
         if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python3 scripts/publish_road_class_maintainer.py
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add docs/data/nvdb-road-class-maintainer.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update validated NVDB road class x maintainer data"
-            git push
-          fi
+          python3 - <<'PY'
+          import base64,json,os,urllib.request,urllib.error
+          path="docs/data/nvdb-road-class-maintainer.json"
+          api="https://api.github.com/repos/"+os.environ["GITHUB_REPOSITORY"]+"/contents/"+path
+          token=os.environ["GH_TOKEN"]
+          headers={"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","Content-Type":"application/json"}
+          content=open(path,"rb").read()
+          for attempt in range(4):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(api,headers=headers),timeout=30) as r:
+                      current=json.load(r);sha=current["sha"]
+              except urllib.error.HTTPError as e:
+                  if e.code!=404:raise
+                  sha=None
+              payload={"message":"Update validated NVDB road class x maintainer data","content":base64.b64encode(content).decode()}
+              if sha:payload["sha"]=sha
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(api,method="PUT",headers=headers,data=json.dumps(payload).encode()),timeout=30) as r:
+                      print("Published validated road structure",r.status)
+                  break
+              except urllib.error.HTTPError as e:
+                  if e.code not in (409,422) or attempt==3:raise
+          PY
       - name: Save status for automatic discovery
         if: always()
         env:
