@@ -1,9 +1,9 @@
 {
   "workflow": "Analyze NVDB traffic attributes",
-  "run_id": 38044930975,
-  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38044930975",
+  "run_id": 38045612016,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38045612016",
   "attempt": 1,
   "status": "success",
-  "commit": "65dea9a298e2feb9417989bb66971737bcb2e090",
-  "updated_utc": "2026-10-10T10:28:47.935012+00:00"
+  "commit": "eb39fa039a1dca7d014461ec9b7505c404d5ca2c",
+  "updated_utc": "2026-10-10T10:39:42.325160+00:00"
 }
