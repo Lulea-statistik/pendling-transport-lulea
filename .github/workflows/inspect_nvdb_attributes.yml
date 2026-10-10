@@ -1,8 +1,12 @@
 name: Inspect NVDB priority attributes
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - scripts/inspect_nvdb_attributes.py
+      - .github/workflows/inspect_nvdb_attributes.yml
 permissions:
-  contents: read
+  contents: write
 jobs:
   inspect:
     runs-on: ubuntu-latest
@@ -20,3 +24,16 @@ jobs:
           name: nvdb-field-inventory
           path: nvdb_field_inventory.json
           retention-days: 7
+
+      - name: Save latest inventory run ID
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/nvdb-road-structure-inventory-status.json
+          RUN_WORKFLOW_NAME: Inspect NVDB priority attributes
+        run: python3 scripts/publish_nvdb_run_status.py
