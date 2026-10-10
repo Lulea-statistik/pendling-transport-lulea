@@ -6,7 +6,7 @@ on:
       - scripts/analyze_nvdb_attribute_diagnostics.py
       - .github/workflows/analyze_nvdb_attributes.yml
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: nvdb-attribute-diagnostics
   cancel-in-progress: false
@@ -30,3 +30,14 @@ jobs:
           name: nvdb-attribute-diagnostics
           path: nvdb_output/nvdb_attribute_diagnostics.json
           retention-days: 7
+
+      - name: Publish latest run status for inspection
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+        run: python3 scripts/publish_nvdb_run_status.py
