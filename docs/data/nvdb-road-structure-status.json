@@ -1,0 +1,9 @@
+{
+  "workflow": "Analyze NVDB road structure",
+  "run_id": 38074514605,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38074514605",
+  "attempt": 1,
+  "status": "success",
+  "commit": "376b316f5d1e2c0b633c3e34a5443f3e703733cc",
+  "updated_utc": "2026-10-10T18:09:16.378371+00:00"
+}
