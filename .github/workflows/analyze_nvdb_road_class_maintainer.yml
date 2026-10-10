@@ -1,0 +1,44 @@
+name: Analyze NVDB road class by maintainer
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/analyze_nvdb_road_class_maintainer.py
+      - .github/workflows/analyze_nvdb_road_class_maintainer.yml
+permissions:
+  contents: write
+concurrency:
+  group: nvdb-road-class-maintainer
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GIS tools
+        run: python3 -m pip install requests shapely pyproj
+      - name: Intersect functional road classes with road maintainers
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+        run: python3 scripts/analyze_nvdb_road_class_maintainer.py
+      - name: Upload diagnostic only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nvdb-road-class-maintainer-qa
+          path: nvdb_output/nvdb_road_class_maintainer_qa.json
+          retention-days: 7
+      - name: Save status for automatic discovery
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/nvdb-road-class-maintainer-status.json
+          RUN_WORKFLOW_NAME: Analyze NVDB road class by maintainer
+        run: python3 scripts/publish_nvdb_run_status.py
