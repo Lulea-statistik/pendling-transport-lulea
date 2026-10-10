@@ -1,0 +1,448 @@
+{
+  "status": "preliminary_validated",
+  "source": "Trafikverket NVDB Lastkajen Norrbottens län paket 10155",
+  "method": "NVDB funktionell vägklass 0–9 × väghållartyp; exakt geografiskt sammanfallande linjegeometri i EPSG:3006; unika längder per klass; omatchat särredovisas.",
+  "caveat": "Ingen kontroll av samtliga nästan sammanfallande väggeometrier, separata körbanor eller fullständig vägnätstopologi. Längderna är preliminära; FA-summa är summa av fem kommunala utklipp.",
+  "municipalities": {
+    "2580": {
+      "name": "Luleå",
+      "car_network_km": 3518.38,
+      "unmatched_km": 15.971,
+      "classes": {
+        "0": {
+          "total_km": 132.527,
+          "km": {
+            "statlig": 132.527,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.0
+          }
+        },
+        "1": {
+          "total_km": 20.751,
+          "km": {
+            "statlig": 20.751,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.0
+          }
+        },
+        "2": {
+          "total_km": 60.67,
+          "km": {
+            "statlig": 60.453,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.217
+          }
+        },
+        "3": {
+          "total_km": 59.487,
+          "km": {
+            "statlig": 44.524,
+            "kommunal": 14.87,
+            "enskild": 0,
+            "okand": 0.093
+          }
+        },
+        "4": {
+          "total_km": 119.443,
+          "km": {
+            "statlig": 101.11,
+            "kommunal": 17.309,
+            "enskild": 0,
+            "okand": 1.024
+          }
+        },
+        "5": {
+          "total_km": 411.861,
+          "km": {
+            "statlig": 315.02,
+            "kommunal": 90.215,
+            "enskild": 2.388,
+            "okand": 4.237
+          }
+        },
+        "6": {
+          "total_km": 45.14,
+          "km": {
+            "statlig": 0.404,
+            "kommunal": 38.069,
+            "enskild": 2.344,
+            "okand": 4.323
+          }
+        },
+        "7": {
+          "total_km": 548.118,
+          "km": {
+            "statlig": 0,
+            "kommunal": 283.789,
+            "enskild": 259.93,
+            "okand": 4.4
+          }
+        },
+        "8": {
+          "total_km": 682.901,
+          "km": {
+            "statlig": 0,
+            "kommunal": 2.994,
+            "enskild": 679.84,
+            "okand": 0.067
+          }
+        },
+        "9": {
+          "total_km": 1437.481,
+          "km": {
+            "statlig": 0,
+            "kommunal": 5.327,
+            "enskild": 1430.543,
+            "okand": 1.61
+          }
+        }
+      }
+    },
+    "2582": {
+      "name": "Boden",
+      "car_network_km": 5029.88,
+      "unmatched_km": 7.043,
+      "classes": {
+        "2": {
+          "total_km": 104.716,
+          "km": {
+            "statlig": 104.671,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.046
+          }
+        },
+        "3": {
+          "total_km": 81.01,
+          "km": {
+            "statlig": 80.998,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.013
+          }
+        },
+        "4": {
+          "total_km": 71.735,
+          "km": {
+            "statlig": 68.228,
+            "kommunal": 2.689,
+            "enskild": 0,
+            "okand": 0.818
+          }
+        },
+        "5": {
+          "total_km": 500.992,
+          "km": {
+            "statlig": 470.612,
+            "kommunal": 30.15,
+            "enskild": 0,
+            "okand": 0.23
+          }
+        },
+        "6": {
+          "total_km": 28.323,
+          "km": {
+            "statlig": 0,
+            "kommunal": 27.52,
+            "enskild": 0.695,
+            "okand": 0.109
+          }
+        },
+        "7": {
+          "total_km": 693.801,
+          "km": {
+            "statlig": 0,
+            "kommunal": 145.289,
+            "enskild": 546.579,
+            "okand": 1.934
+          }
+        },
+        "8": {
+          "total_km": 1109.893,
+          "km": {
+            "statlig": 0,
+            "kommunal": 0.191,
+            "enskild": 1108.49,
+            "okand": 1.212
+          }
+        },
+        "9": {
+          "total_km": 2439.409,
+          "km": {
+            "statlig": 0,
+            "kommunal": 1.525,
+            "enskild": 2435.201,
+            "okand": 2.683
+          }
+        }
+      }
+    },
+    "2581": {
+      "name": "Piteå",
+      "car_network_km": 4764.405,
+      "unmatched_km": 9.041,
+      "classes": {
+        "0": {
+          "total_km": 108.914,
+          "km": {
+            "statlig": 108.655,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.258
+          }
+        },
+        "1": {
+          "total_km": 17.418,
+          "km": {
+            "statlig": 17.278,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.14
+          }
+        },
+        "2": {
+          "total_km": 4.088,
+          "km": {
+            "statlig": 4.088,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.0
+          }
+        },
+        "3": {
+          "total_km": 125.544,
+          "km": {
+            "statlig": 124.736,
+            "kommunal": 0.628,
+            "enskild": 0,
+            "okand": 0.18
+          }
+        },
+        "4": {
+          "total_km": 130.138,
+          "km": {
+            "statlig": 121.005,
+            "kommunal": 8.542,
+            "enskild": 0,
+            "okand": 0.591
+          }
+        },
+        "5": {
+          "total_km": 470.436,
+          "km": {
+            "statlig": 436.151,
+            "kommunal": 32.646,
+            "enskild": 0,
+            "okand": 1.639
+          }
+        },
+        "6": {
+          "total_km": 4.814,
+          "km": {
+            "statlig": 3.746,
+            "kommunal": 0.653,
+            "enskild": 0.409,
+            "okand": 0.005
+          }
+        },
+        "7": {
+          "total_km": 720.362,
+          "km": {
+            "statlig": 0,
+            "kommunal": 248.703,
+            "enskild": 466.948,
+            "okand": 4.711
+          }
+        },
+        "8": {
+          "total_km": 879.933,
+          "km": {
+            "statlig": 0,
+            "kommunal": 1.523,
+            "enskild": 876.894,
+            "okand": 1.516
+          }
+        },
+        "9": {
+          "total_km": 2302.758,
+          "km": {
+            "statlig": 0,
+            "kommunal": 2.674,
+            "enskild": 2300.084,
+            "okand": 0.0
+          }
+        }
+      }
+    },
+    "2514": {
+      "name": "Kalix",
+      "car_network_km": 2769.547,
+      "unmatched_km": 6.33,
+      "classes": {
+        "0": {
+          "total_km": 129.061,
+          "km": {
+            "statlig": 128.518,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.543
+          }
+        },
+        "1": {
+          "total_km": 5.531,
+          "km": {
+            "statlig": 5.531,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.0
+          }
+        },
+        "3": {
+          "total_km": 26.749,
+          "km": {
+            "statlig": 26.749,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.0
+          }
+        },
+        "4": {
+          "total_km": 128.193,
+          "km": {
+            "statlig": 125.486,
+            "kommunal": 1.438,
+            "enskild": 0,
+            "okand": 1.269
+          }
+        },
+        "5": {
+          "total_km": 293.05,
+          "km": {
+            "statlig": 286.858,
+            "kommunal": 3.339,
+            "enskild": 0,
+            "okand": 2.853
+          }
+        },
+        "6": {
+          "total_km": 3.174,
+          "km": {
+            "statlig": 0.368,
+            "kommunal": 2.789,
+            "enskild": 0,
+            "okand": 0.017
+          }
+        },
+        "7": {
+          "total_km": 286.134,
+          "km": {
+            "statlig": 0.385,
+            "kommunal": 126.486,
+            "enskild": 158.79,
+            "okand": 0.474
+          }
+        },
+        "8": {
+          "total_km": 486.897,
+          "km": {
+            "statlig": 0,
+            "kommunal": 0.857,
+            "enskild": 485.016,
+            "okand": 1.023
+          }
+        },
+        "9": {
+          "total_km": 1410.758,
+          "km": {
+            "statlig": 0,
+            "kommunal": 13.093,
+            "enskild": 1397.513,
+            "okand": 0.151
+          }
+        }
+      }
+    },
+    "2560": {
+      "name": "Älvsbyn",
+      "car_network_km": 2338.891,
+      "unmatched_km": 3.635,
+      "classes": {
+        "2": {
+          "total_km": 57.495,
+          "km": {
+            "statlig": 57.405,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.09
+          }
+        },
+        "3": {
+          "total_km": 71.273,
+          "km": {
+            "statlig": 71.273,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.0
+          }
+        },
+        "4": {
+          "total_km": 10.134,
+          "km": {
+            "statlig": 10.11,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.025
+          }
+        },
+        "5": {
+          "total_km": 262.923,
+          "km": {
+            "statlig": 256.596,
+            "kommunal": 4.398,
+            "enskild": 0,
+            "okand": 1.928
+          }
+        },
+        "6": {
+          "total_km": 0.197,
+          "km": {
+            "statlig": 0.197,
+            "kommunal": 0,
+            "enskild": 0,
+            "okand": 0.0
+          }
+        },
+        "7": {
+          "total_km": 290.075,
+          "km": {
+            "statlig": 0,
+            "kommunal": 64.321,
+            "enskild": 225.299,
+            "okand": 0.455
+          }
+        },
+        "8": {
+          "total_km": 489.849,
+          "km": {
+            "statlig": 0,
+            "kommunal": 0,
+            "enskild": 489.849,
+            "okand": 0.0
+          }
+        },
+        "9": {
+          "total_km": 1156.946,
+          "km": {
+            "statlig": 0,
+            "kommunal": 1.639,
+            "enskild": 1154.169,
+            "okand": 1.137
+          }
+        }
+      }
+    }
+  }
+}
