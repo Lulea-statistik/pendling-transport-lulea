@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - scripts/analyze_nvdb_attribute_diagnostics.py
+      - scripts/publish_nvdb_run_status.py
       - .github/workflows/analyze_nvdb_attributes.yml
 permissions:
   contents: write
