@@ -399,7 +399,11 @@
       <h2 id="trafficModeHeading">Fotgängare</h2>
       <p id="trafficModeDescription"></p>
       <div id="trafficFactors" class="available-grid"></div>
-      <p class="source-note">Datastatus: lagertjänsterna är identifierade, men geometrier och attribut är ännu inte inlästa i rapportens statistik. Kommunvalet anger analysområde för kommande datainsamling, inte ett färdigt geografiskt filtrerat uttag. Inga värden har beräknats från kartbilden.</p>
+      <p class="source-note">Datastatus: geografiskt avgränsade NVDB-attribut är analyserade för fem kommuner och visas i en separat preliminär jämförelse nedan. Fördjupade nätverks- och ruttanalyser återstår.</p>
+    </section>
+    <section class="panel" id="nvdbMunicipalityDiagnostics" aria-live="polite">
+      <h2>Preliminär kommunvis NVDB-statistik</h2>
+      <p>Laddar kommunjämförelse…</p>
     </section>
     <section class="panel">
       <h2>Skillnaden mellan trafikflöde och framkomlighet</h2>
@@ -575,5 +579,6 @@
 <script src="app.js?v=8"></script>
 <script src="nvdb-compare.js?v=1"></script>
 <script src="traffic-environment.js?v=1"></script>
+<script src="nvdb-municipality-diagnostics.js?v=1"></script>
 </body>
 </html>
