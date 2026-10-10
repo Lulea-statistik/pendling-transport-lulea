@@ -1,0 +1,33 @@
+name: Build five municipality NVDB QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/build_nvdb_five_municipalities.py
+      - scripts/build_kommungranser.py
+      - .github/workflows/build_nvdb_five_municipalities.yml
+permissions:
+  contents: read
+concurrency:
+  group: nvdb-five-municipalities
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GIS dependencies
+        run: python3 -m pip install requests shapely pyproj
+      - name: Calculate five municipality NVDB exploratory QA
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+        run: python3 scripts/build_nvdb_five_municipalities.py
+      - name: Save QA report only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nvdb-five-municipalities-qa
+          path: nvdb_output/municipality_nvdb_qa.json
+          retention-days: 7
