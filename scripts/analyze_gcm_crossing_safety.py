@@ -35,7 +35,7 @@ def analyze(con,regions):
     attr=[x for x in ("Passagetyp","Trafikanttyp","Refugpassage") if x in columns]
     if "Passagetyp" not in attr:raise ValueError("Missing passage classification")
     statement="SELECT "+",".join(quote(x) for x in [cg]+attr)+" FROM "+quote(cross_table)
-    out={code:{"name":name,"passages":0,"matches":0,"unmatched":0,"ambiguous":0,"speed_classes":Counter(),"speed_by_type":{},"attribute_columns":attr} for code,name,*_ in regions}
+    out={code:{"name":name,"passages":0,"matches":0,"unmatched":0,"ambiguous":0,"speed_classes":Counter(),"speed_by_type":{},"at_grade_by_refuge_and_speed":{},"at_grade_by_traveler_and_speed":{},"attribute_columns":attr} for code,name,*_ in regions}
     for row in con.execute(statement):
         geom=gpkg_geom(row[0])
         if geom is None or geom.is_empty or not geom.is_valid:continue
@@ -61,9 +61,22 @@ def analyze(con,regions):
             p=str(attrs["Passagetyp"]) if attrs["Passagetyp"] is not None else "(saknas)"
             bytype=bucket["speed_by_type"].setdefault(p,Counter())
             bytype[key]+=1
+            if p in ("Annan ordnad passage i plan","Övergångsställe/cykelpassage i plan","Signalreglerad passage i plan"):
+                refuge=str(attrs.get("Refugpassage")) if attrs.get("Refugpassage") is not None else "(saknas)"
+                traveler=str(attrs.get("Trafikanttyp")) if attrs.get("Trafikanttyp") is not None else "(saknas)"
+                bucket["at_grade_by_refuge_and_speed"].setdefault(refuge,Counter())[key]+=1
+                bucket["at_grade_by_traveler_and_speed"].setdefault(traveler,Counter())[key]+=1
     for item in out.values():
         item["speed_classes"]=dict(item["speed_classes"])
         item["speed_by_type"]={k:dict(v) for k,v in item["speed_by_type"].items()}
+        item["at_grade_by_refuge_and_speed"]={k:dict(v) for k,v in item["at_grade_by_refuge_and_speed"].items()}
+        item["at_grade_by_traveler_and_speed"]={k:dict(v) for k,v in item["at_grade_by_traveler_and_speed"].items()}
+        if item["matches"]!=sum(sum(v.values()) for v in item["speed_by_type"].values()):
+            raise ValueError("Passage type by speed does not balance")
+        in_plan=("Annan ordnad passage i plan","Övergångsställe/cykelpassage i plan","Signalreglerad passage i plan")
+        nplan=sum(sum(v.values()) for k,v in item["speed_by_type"].items() if k in in_plan)
+        if "Refugpassage" in attr and nplan!=sum(sum(v.values()) for v in item["at_grade_by_refuge_and_speed"].values()):
+            raise ValueError("Refuge at-grade totals do not balance")
         if item["passages"]!=item["matches"]+item["unmatched"]+item["ambiguous"]:
             raise ValueError("Passage total mismatch")
     return out
@@ -95,7 +108,7 @@ def main():
     Path("nvdb_output/gcm_crossing_speed_qa.json").write_text(json.dumps({
       "status":"qa_only","source":"Trafikverket NVDB Lastkajen Norrbotten",
       "method":"Nearest posted-speed geometry within 12m; ties between speed classes within 1m excluded; no causal safety classification.",
-      "limits":"This proximity join does not prove which physical carriageway is crossed; bridges and tunnels can overlap in 2D. Traffic volume, accident history and legal priority not used.",
+      "limits":"Refuges and traveler types are source attributes, not safety grades. This proximity join does not prove which physical carriageway is crossed; bridges and tunnels can overlap in 2D. Traffic volume, accident history and legal priority not used.",
       "municipalities":result},ensure_ascii=False,indent=2),encoding="utf-8")
     print("Computed GCM crossing speed proximity QA for",len(result),"municipalities")
 if __name__=="__main__":
