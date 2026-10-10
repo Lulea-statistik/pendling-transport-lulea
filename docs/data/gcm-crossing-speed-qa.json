@@ -1,0 +1,202 @@
+{
+  "status": "preliminary_proximity",
+  "run_id": 38054676462,
+  "source": "Trafikverket NVDB Lastkajen, Norrbotten",
+  "method": "Nearest posted speed geometry within 12 meters; competing speed classes within 1 meter excluded",
+  "note": "Speed is proximity-based, not proven speed of crossed carriageway. Bridges and tunnels must not be considered at-grade crossings. These are not observed pedestrian counts or safety grades.",
+  "types": [
+    "Annan ordnad passage i plan",
+    "Övergångsställe/cykelpassage i plan",
+    "Signalreglerad passage i plan",
+    "Underfart",
+    "Överfart (bro)"
+  ],
+  "municipalities": {
+    "2514": {
+      "name": "Kalix",
+      "passages": 53,
+      "matches": 53,
+      "ambiguous": 0,
+      "unmatched": 0,
+      "speed_by_type": {
+        "Annan ordnad passage i plan": {
+          "30": 1,
+          "50": 12,
+          "60": 4,
+          "70": 11,
+          "80": 4
+        },
+        "Övergångsställe/cykelpassage i plan": {
+          "50": 2,
+          "80": 1
+        },
+        "Underfart": {
+          "50": 9,
+          "70": 4,
+          "90": 3
+        },
+        "Överfart (bro)": {
+          "90": 2
+        }
+      }
+    },
+    "2560": {
+      "name": "Älvsbyn",
+      "passages": 61,
+      "matches": 60,
+      "ambiguous": 1,
+      "unmatched": 0,
+      "speed_by_type": {
+        "Annan ordnad passage i plan": {
+          "30": 5,
+          "40": 7,
+          "70": 6
+        },
+        "Övergångsställe/cykelpassage i plan": {
+          "30": 16,
+          "40": 19,
+          "60": 4
+        },
+        "Underfart": {
+          "60": 1,
+          "80": 2
+        }
+      }
+    },
+    "2580": {
+      "name": "Luleå",
+      "passages": 774,
+      "matches": 772,
+      "ambiguous": 2,
+      "unmatched": 0,
+      "speed_by_type": {
+        "Annan ordnad passage i plan": {
+          "30": 123,
+          "40": 30,
+          "50": 64,
+          "60": 6,
+          "70": 32,
+          "100": 1,
+          "110": 2
+        },
+        "Övergångsställe/cykelpassage i plan": {
+          "30": 146,
+          "40": 33,
+          "50": 99,
+          "60": 1,
+          "70": 6,
+          "110": 1
+        },
+        "Signalreglerad passage i plan": {
+          "30": 24,
+          "40": 7,
+          "50": 30,
+          "70": 5
+        },
+        "Underfart": {
+          "30": 6,
+          "40": 2,
+          "50": 63,
+          "60": 9,
+          "70": 30,
+          "80": 3,
+          "90": 6,
+          "100": 13,
+          "110": 12
+        },
+        "Överfart (bro)": {
+          "50": 5,
+          "60": 1,
+          "70": 2,
+          "100": 2,
+          "110": 8
+        }
+      }
+    },
+    "2581": {
+      "name": "Piteå",
+      "passages": 419,
+      "matches": 417,
+      "ambiguous": 2,
+      "unmatched": 0,
+      "speed_by_type": {
+        "Annan ordnad passage i plan": {
+          "30": 11,
+          "40": 108,
+          "50": 7,
+          "60": 7,
+          "70": 7,
+          "80": 2
+        },
+        "Övergångsställe/cykelpassage i plan": {
+          "30": 27,
+          "40": 153,
+          "50": 7,
+          "60": 3,
+          "70": 2
+        },
+        "Signalreglerad passage i plan": {
+          "40": 8,
+          "50": 2,
+          "70": 2
+        },
+        "Underfart": {
+          "40": 3,
+          "50": 3,
+          "60": 9,
+          "70": 15,
+          "80": 6,
+          "90": 2,
+          "100": 2,
+          "110": 13
+        },
+        "Överfart (bro)": {
+          "40": 2,
+          "50": 1,
+          "60": 2,
+          "70": 1,
+          "100": 2,
+          "110": 10
+        }
+      }
+    },
+    "2582": {
+      "name": "Boden",
+      "passages": 338,
+      "matches": 331,
+      "ambiguous": 2,
+      "unmatched": 5,
+      "speed_by_type": {
+        "Annan ordnad passage i plan": {
+          "30": 28,
+          "40": 2,
+          "50": 36,
+          "60": 8,
+          "70": 14,
+          "100": 2
+        },
+        "Övergångsställe/cykelpassage i plan": {
+          "30": 37,
+          "50": 150,
+          "60": 1
+        },
+        "Signalreglerad passage i plan": {
+          "50": 18
+        },
+        "Underfart": {
+          "40": 1,
+          "50": 18,
+          "60": 1,
+          "70": 5,
+          "80": 2,
+          "100": 4
+        },
+        "Överfart (bro)": {
+          "50": 1,
+          "80": 1,
+          "100": 2
+        }
+      }
+    }
+  }
+}
