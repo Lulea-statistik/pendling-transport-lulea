@@ -1,0 +1,32 @@
+name: Analyze NVDB traffic attributes
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/analyze_nvdb_attribute_diagnostics.py
+      - .github/workflows/analyze_nvdb_attributes.yml
+permissions:
+  contents: read
+concurrency:
+  group: nvdb-attribute-diagnostics
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install geospatial dependencies
+        run: python3 -m pip install requests shapely pyproj
+      - name: Build speed, ADT and GCM diagnostic distributions
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+        run: python3 scripts/analyze_nvdb_attribute_diagnostics.py
+      - name: Upload diagnostic report
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nvdb-attribute-diagnostics
+          path: nvdb_output/nvdb_attribute_diagnostics.json
+          retention-days: 7
