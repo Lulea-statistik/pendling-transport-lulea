@@ -59,7 +59,8 @@ def analyze(dbfile, regions):
         layers=con.execute("SELECT table_name,column_name,srs_id FROM gpkg_geometry_columns").fetchall()
         output=[]
         for topic,frag in TARGETS.items():
-            matches=[x for x in layers if frag.lower() in x[0].lower()]
+            # Exact layer-name suffix avoids "Trafik" also matching "Vagtrafiknat".
+            matches=[x for x in layers if x[0].lower().split("_")[-1]==frag.lower()]
             if len(matches)!=1:
                 raise ValueError(f"Expected one {topic} layer, found {len(matches)}: "+str([m[0] for m in matches]))
             table,geocol,srs=matches[0]
