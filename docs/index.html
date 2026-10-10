@@ -23,6 +23,7 @@
   <button class="tab" data-page="nvdb">NVDB & vägnät</button>
   <button class="tab" data-page="trafficenvironment">Vägmiljö & trafikflöden</button>
   <button class="tab" data-page="transit">Kollektivtrafik</button>
+  <button class="tab" data-page="migrationmodels">Inflyttningsmodeller</button>
 </nav>
 
 <main>
@@ -539,6 +540,34 @@
         <article><h3>500 meter till kollektivtrafik</h3><p>Nästa steg kan vara att kombinera hållplatserna med befolkning och beräkna andel invånare inom 500 meter från hållplats.</p></article>
         <article><h3>Pendling + kollektivtrafik</h3><p>Pendlingsmatrisen kan kopplas mot kollektivtrafikutbudet för att identifiera starka arbetsmarknadsrelationer där kollektivtrafikutbudet är svagt eller starkt.</p></article>
       </div>
+    </section>
+  </section>
+
+
+  <section id="page-migrationmodels" class="page">
+    <section class="page-intro panel">
+      <div>
+        <h2>Inflyttningsmodeller</h2>
+        <p>Två parallella modeller används för olika frågor: en prognosmodell som får använda historisk demografi när det förbättrar träffsäkerheten, och en demografiskt blind strukturmodell som i stället försöker identifiera samband med kommunens strukturella egenskaper.</p>
+      </div>
+      <a href="https://lulea-statistik.github.io/Samband-inflyttning/" target="_blank" rel="noopener">Öppna full regressionsrapport</a>
+    </section>
+
+    <section class="available-grid">
+      <article>
+        <h3>Prognosmodell</h3>
+        <p><strong>Syfte:</strong> maximera prognosförmåga. Historisk inflyttning, utflyttning, befolkningsutveckling och andra demografiska variabler får användas om de förbättrar valideringen.</p>
+      </article>
+      <article>
+        <h3>Demografiskt blind strukturmodell</h3>
+        <p><strong>Syfte:</strong> undersöka vilka strukturella egenskaper som hänger ihop med inflyttning utan att historisk migration eller tidigare befolkningstillväxt används som genväg. Kommunstorlek får ingå som strukturell kontroll, liksom bostads- och arbetsmarknadsförändringar.</p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h3>Senaste test: snöskoterandel som klimat-/nordlighetsproxy</h3>
+      <p>Snöskoterandelen hade ett litet samband i den fulla modellen, men signalen blev mycket svag när nordlighet, kommunstorlek, tätortsgrad, bebyggd/anlagd mark och havsandel hölls konstanta. Därför behandlas variabeln fortsatt som kandidat/proxy och inte som etablerad drivare.</p>
+      <p class="note">Detta är viktigt metodiskt: en proxy kan se stark ut innan närliggande geografiska och urbana faktorer kontrolleras, utan att den tillför mycket självständig information.</p>
     </section>
   </section>
 
