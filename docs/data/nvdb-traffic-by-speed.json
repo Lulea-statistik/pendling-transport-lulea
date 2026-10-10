@@ -1,7 +1,7 @@
 {
   "status": "preliminary",
   "source": "NVDB Lastkajen Norrbottens län, paket 10155",
-  "run_id": 38046284675,
+  "run_id": 38053488660,
   "analysis_crs": "EPSG:3006",
   "limitations": "Fordonstrafik (alla motorfordon), ej separat personbilar. Endast NVDB-trafiksträckor med matchad ordinarie hastighetsgräns. Överlappande trafikobjekt har ännu inte avdubbelräknats. Ingen heltäckande kommunal ÅDT.",
   "municipalities": {
@@ -66,7 +66,74 @@
           "length_weighted_adt": 1997.4,
           "covered_length_km": 59.848
         }
-      ]
+      ],
+      "manager_by_speed": {
+        "30": {
+          "statlig": {
+            "covered_length_km": 1.211,
+            "traffic_exposure_vehicle_km_per_day": 572.51,
+            "length_weighted_adt": 472.7
+          }
+        },
+        "40": {
+          "statlig": {
+            "covered_length_km": 3.342,
+            "traffic_exposure_vehicle_km_per_day": 1829.95,
+            "length_weighted_adt": 547.6
+          }
+        },
+        "50": {
+          "statlig": {
+            "covered_length_km": 48.373,
+            "traffic_exposure_vehicle_km_per_day": 31142.66,
+            "length_weighted_adt": 643.8
+          }
+        },
+        "60": {
+          "statlig": {
+            "covered_length_km": 7.551,
+            "traffic_exposure_vehicle_km_per_day": 9848.48,
+            "length_weighted_adt": 1304.3
+          }
+        },
+        "70": {
+          "statlig": {
+            "covered_length_km": 251.547,
+            "traffic_exposure_vehicle_km_per_day": 52187.52,
+            "length_weighted_adt": 207.5
+          }
+        },
+        "80": {
+          "statlig": {
+            "covered_length_km": 56.287,
+            "traffic_exposure_vehicle_km_per_day": 60765.66,
+            "length_weighted_adt": 1079.6
+          }
+        },
+        "90": {
+          "statlig": {
+            "covered_length_km": 125.285,
+            "traffic_exposure_vehicle_km_per_day": 115145.56,
+            "length_weighted_adt": 919.1
+          }
+        },
+        "100": {
+          "statlig": {
+            "covered_length_km": 13.625,
+            "traffic_exposure_vehicle_km_per_day": 28952.22,
+            "length_weighted_adt": 2125
+          }
+        },
+        "110": {
+          "statlig": {
+            "covered_length_km": 59.848,
+            "traffic_exposure_vehicle_km_per_day": 119540.11,
+            "length_weighted_adt": 1997.4
+          }
+        }
+      },
+      "manager_unmatched_km": 0.018,
+      "manager_ambiguous_km": 0
     },
     "2560": {
       "name": "Älvsbyn",
@@ -123,7 +190,67 @@
           "length_weighted_adt": 897,
           "covered_length_km": 56.492
         }
-      ]
+      ],
+      "manager_by_speed": {
+        "30": {
+          "statlig": {
+            "covered_length_km": 1.938,
+            "traffic_exposure_vehicle_km_per_day": 390.51,
+            "length_weighted_adt": 201.5
+          }
+        },
+        "40": {
+          "statlig": {
+            "covered_length_km": 2.598,
+            "traffic_exposure_vehicle_km_per_day": 4079.66,
+            "length_weighted_adt": 1570.5
+          }
+        },
+        "50": {
+          "statlig": {
+            "covered_length_km": 16.156,
+            "traffic_exposure_vehicle_km_per_day": 4617.35,
+            "length_weighted_adt": 285.8
+          }
+        },
+        "60": {
+          "statlig": {
+            "covered_length_km": 4.352,
+            "traffic_exposure_vehicle_km_per_day": 12365.47,
+            "length_weighted_adt": 2841.2
+          }
+        },
+        "70": {
+          "statlig": {
+            "covered_length_km": 186.233,
+            "traffic_exposure_vehicle_km_per_day": 24502.92,
+            "length_weighted_adt": 131.6
+          }
+        },
+        "80": {
+          "statlig": {
+            "covered_length_km": 67.746,
+            "traffic_exposure_vehicle_km_per_day": 30272.51,
+            "length_weighted_adt": 446.9
+          }
+        },
+        "90": {
+          "statlig": {
+            "covered_length_km": 57.23,
+            "traffic_exposure_vehicle_km_per_day": 73167.01,
+            "length_weighted_adt": 1278.5
+          }
+        },
+        "100": {
+          "statlig": {
+            "covered_length_km": 56.492,
+            "traffic_exposure_vehicle_km_per_day": 50671.57,
+            "length_weighted_adt": 897
+          }
+        }
+      },
+      "manager_unmatched_km": 0.09,
+      "manager_ambiguous_km": 0
     },
     "2580": {
       "name": "Luleå",
@@ -186,7 +313,74 @@
           "length_weighted_adt": 3952.3,
           "covered_length_km": 137.993
         }
-      ]
+      ],
+      "manager_by_speed": {
+        "30": {
+          "statlig": {
+            "covered_length_km": 6.827,
+            "traffic_exposure_vehicle_km_per_day": 3932.12,
+            "length_weighted_adt": 575.9
+          }
+        },
+        "40": {
+          "statlig": {
+            "covered_length_km": 2.217,
+            "traffic_exposure_vehicle_km_per_day": 642.42,
+            "length_weighted_adt": 289.8
+          }
+        },
+        "50": {
+          "statlig": {
+            "covered_length_km": 40.726,
+            "traffic_exposure_vehicle_km_per_day": 40056.86,
+            "length_weighted_adt": 983.6
+          }
+        },
+        "60": {
+          "statlig": {
+            "covered_length_km": 26.554,
+            "traffic_exposure_vehicle_km_per_day": 48791.94,
+            "length_weighted_adt": 1837.5
+          }
+        },
+        "70": {
+          "statlig": {
+            "covered_length_km": 226.382,
+            "traffic_exposure_vehicle_km_per_day": 99992.6,
+            "length_weighted_adt": 441.7
+          }
+        },
+        "80": {
+          "statlig": {
+            "covered_length_km": 96.352,
+            "traffic_exposure_vehicle_km_per_day": 98562.35,
+            "length_weighted_adt": 1022.9
+          }
+        },
+        "90": {
+          "statlig": {
+            "covered_length_km": 85.635,
+            "traffic_exposure_vehicle_km_per_day": 113000.31,
+            "length_weighted_adt": 1319.6
+          }
+        },
+        "100": {
+          "statlig": {
+            "covered_length_km": 33.718,
+            "traffic_exposure_vehicle_km_per_day": 154991.3,
+            "length_weighted_adt": 4596.7
+          }
+        },
+        "110": {
+          "statlig": {
+            "covered_length_km": 137.939,
+            "traffic_exposure_vehicle_km_per_day": 545308.46,
+            "length_weighted_adt": 3953.3
+          }
+        }
+      },
+      "manager_unmatched_km": 0.191,
+      "manager_ambiguous_km": 0
     },
     "2581": {
       "name": "Piteå",
@@ -249,7 +443,74 @@
           "length_weighted_adt": 3258.5,
           "covered_length_km": 103.375
         }
-      ]
+      ],
+      "manager_by_speed": {
+        "30": {
+          "statlig": {
+            "covered_length_km": 5.618,
+            "traffic_exposure_vehicle_km_per_day": 1496.87,
+            "length_weighted_adt": 266.5
+          }
+        },
+        "40": {
+          "statlig": {
+            "covered_length_km": 17.166,
+            "traffic_exposure_vehicle_km_per_day": 16839.8,
+            "length_weighted_adt": 981
+          }
+        },
+        "50": {
+          "statlig": {
+            "covered_length_km": 30.685,
+            "traffic_exposure_vehicle_km_per_day": 36056.79,
+            "length_weighted_adt": 1175.1
+          }
+        },
+        "60": {
+          "statlig": {
+            "covered_length_km": 26.778,
+            "traffic_exposure_vehicle_km_per_day": 35369.61,
+            "length_weighted_adt": 1320.8
+          }
+        },
+        "70": {
+          "statlig": {
+            "covered_length_km": 320.685,
+            "traffic_exposure_vehicle_km_per_day": 151288.81,
+            "length_weighted_adt": 471.8
+          }
+        },
+        "80": {
+          "statlig": {
+            "covered_length_km": 142.42,
+            "traffic_exposure_vehicle_km_per_day": 88420.37,
+            "length_weighted_adt": 620.8
+          }
+        },
+        "90": {
+          "statlig": {
+            "covered_length_km": 104.575,
+            "traffic_exposure_vehicle_km_per_day": 127315.28,
+            "length_weighted_adt": 1217.5
+          }
+        },
+        "100": {
+          "statlig": {
+            "covered_length_km": 14.257,
+            "traffic_exposure_vehicle_km_per_day": 25573.31,
+            "length_weighted_adt": 1793.7
+          }
+        },
+        "110": {
+          "statlig": {
+            "covered_length_km": 103.367,
+            "traffic_exposure_vehicle_km_per_day": 336841.06,
+            "length_weighted_adt": 3258.7
+          }
+        }
+      },
+      "manager_unmatched_km": 0.106,
+      "manager_ambiguous_km": 0
     },
     "2582": {
       "name": "Boden",
@@ -300,7 +561,66 @@
           "length_weighted_adt": 1699.1,
           "covered_length_km": 75.32
         }
-      ]
+      ],
+      "manager_by_speed": {
+        "30": {
+          "statlig": {
+            "covered_length_km": 1.802,
+            "traffic_exposure_vehicle_km_per_day": 1344.1,
+            "length_weighted_adt": 745.7
+          }
+        },
+        "50": {
+          "statlig": {
+            "covered_length_km": 42.153,
+            "traffic_exposure_vehicle_km_per_day": 59481.33,
+            "length_weighted_adt": 1411.1
+          }
+        },
+        "60": {
+          "statlig": {
+            "covered_length_km": 21.331,
+            "traffic_exposure_vehicle_km_per_day": 18625.44,
+            "length_weighted_adt": 873.2
+          }
+        },
+        "70": {
+          "statlig": {
+            "covered_length_km": 266.311,
+            "traffic_exposure_vehicle_km_per_day": 50946.15,
+            "length_weighted_adt": 191.3
+          }
+        },
+        "80": {
+          "statlig": {
+            "covered_length_km": 191.09,
+            "traffic_exposure_vehicle_km_per_day": 95443.86,
+            "length_weighted_adt": 499.5
+          }
+        },
+        "90": {
+          "statlig": {
+            "covered_length_km": 114.812,
+            "traffic_exposure_vehicle_km_per_day": 38759.88,
+            "length_weighted_adt": 337.6
+          }
+        },
+        "100": {
+          "statlig": {
+            "covered_length_km": 75.32,
+            "traffic_exposure_vehicle_km_per_day": 127977.55,
+            "length_weighted_adt": 1699.1
+          }
+        }
+      },
+      "manager_unmatched_km": 0.066,
+      "manager_ambiguous_km": 0
     }
-  }
+  },
+  "manager_coverage_note": "All matched traffic features in this source are classified as statlig. Municipal and enskild road traffic are unavailable (missing observations), NOT zero.",
+  "road_manager_categories": [
+    "statlig",
+    "kommunal",
+    "enskild"
+  ]
 }
