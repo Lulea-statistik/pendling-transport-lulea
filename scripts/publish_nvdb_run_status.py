@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 repository=os.environ["GH_REPO"]
 token=os.environ["GH_TOKEN"]
 run_id=os.environ["RUN_ID"]
-path="docs/data/nvdb-run-status.json"
+path=os.environ.get("RUN_POINTER_PATH","docs/data/nvdb-run-status.json")
 url=f"https://api.github.com/repos/{repository}/contents/{path}"
 headers={"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json",
          "X-GitHub-Api-Version":"2022-11-28"}
@@ -25,7 +25,7 @@ def get(url):
         raise
 current=get(url)
 status={
-    "workflow":"Analyze NVDB traffic attributes",
+    "workflow":os.environ.get("RUN_WORKFLOW_NAME","Analyze NVDB traffic attributes"),
     "run_id":int(run_id),
     "run_url":f"https://github.com/{repository}/actions/runs/{run_id}",
     "attempt":int(os.environ["RUN_ATTEMPT"]),
