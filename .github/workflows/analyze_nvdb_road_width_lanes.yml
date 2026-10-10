@@ -1,0 +1,44 @@
+name: Analyze NVDB road width and lanes
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/analyze_nvdb_road_width_lanes.py
+      - .github/workflows/analyze_nvdb_road_width_lanes.yml
+permissions:
+  contents: write
+concurrency:
+  group: nvdb-road-width-lanes
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GIS dependencies
+        run: python3 -m pip install requests shapely pyproj
+      - name: Analyze width and lane count by functional road class
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+        run: python3 scripts/analyze_nvdb_road_width_lanes.py
+      - name: Upload QA artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nvdb-road-width-lanes-qa
+          path: nvdb_output/nvdb_road_width_lanes_qa.json
+          retention-days: 7
+      - name: Record run status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/nvdb-road-width-lanes-status.json
+          RUN_WORKFLOW_NAME: Analyze NVDB road width and lanes
+        run: python3 scripts/publish_nvdb_run_status.py
