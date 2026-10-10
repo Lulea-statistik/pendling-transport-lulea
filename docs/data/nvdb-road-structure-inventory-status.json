@@ -1,0 +1,9 @@
+{
+  "workflow": "Inspect NVDB priority attributes",
+  "run_id": 38073001508,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38073001508",
+  "attempt": 1,
+  "status": "success",
+  "commit": "9694995df83cd4614bf2b53b97155754099f1688",
+  "updated_utc": "2026-10-10T17:45:37.655982+00:00"
+}
