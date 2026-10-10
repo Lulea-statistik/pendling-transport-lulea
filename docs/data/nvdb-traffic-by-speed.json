@@ -1,0 +1,306 @@
+{
+  "status": "preliminary",
+  "source": "NVDB Lastkajen Norrbottens län, paket 10155",
+  "run_id": 38046284675,
+  "analysis_crs": "EPSG:3006",
+  "limitations": "Fordonstrafik (alla motorfordon), ej separat personbilar. Endast NVDB-trafiksträckor med matchad ordinarie hastighetsgräns. Överlappande trafikobjekt har ännu inte avdubbelräknats. Ingen heltäckande kommunal ÅDT.",
+  "municipalities": {
+    "2514": {
+      "name": "Kalix",
+      "traffic_source_length_km": 578.531,
+      "matched_length_km": 567.085,
+      "ambiguous_speed_length_km": 0.88,
+      "without_speed_match_km": 10.566,
+      "speed_classes": [
+        {
+          "speed_kmh": 30,
+          "traffic_exposure_vehicle_km_per_day": 572.51,
+          "length_weighted_adt": 472.7,
+          "covered_length_km": 1.211
+        },
+        {
+          "speed_kmh": 40,
+          "traffic_exposure_vehicle_km_per_day": 1829.95,
+          "length_weighted_adt": 547.6,
+          "covered_length_km": 3.342
+        },
+        {
+          "speed_kmh": 50,
+          "traffic_exposure_vehicle_km_per_day": 31186.4,
+          "length_weighted_adt": 644.5,
+          "covered_length_km": 48.391
+        },
+        {
+          "speed_kmh": 60,
+          "traffic_exposure_vehicle_km_per_day": 9848.48,
+          "length_weighted_adt": 1304.3,
+          "covered_length_km": 7.551
+        },
+        {
+          "speed_kmh": 70,
+          "traffic_exposure_vehicle_km_per_day": 52187.52,
+          "length_weighted_adt": 207.5,
+          "covered_length_km": 251.547
+        },
+        {
+          "speed_kmh": 80,
+          "traffic_exposure_vehicle_km_per_day": 60765.66,
+          "length_weighted_adt": 1079.6,
+          "covered_length_km": 56.287
+        },
+        {
+          "speed_kmh": 90,
+          "traffic_exposure_vehicle_km_per_day": 115145.56,
+          "length_weighted_adt": 919.1,
+          "covered_length_km": 125.285
+        },
+        {
+          "speed_kmh": 100,
+          "traffic_exposure_vehicle_km_per_day": 28952.22,
+          "length_weighted_adt": 2125,
+          "covered_length_km": 13.625
+        },
+        {
+          "speed_kmh": 110,
+          "traffic_exposure_vehicle_km_per_day": 119540.11,
+          "length_weighted_adt": 1997.4,
+          "covered_length_km": 59.848
+        }
+      ]
+    },
+    "2560": {
+      "name": "Älvsbyn",
+      "traffic_source_length_km": 397.533,
+      "matched_length_km": 392.834,
+      "ambiguous_speed_length_km": 0.69,
+      "without_speed_match_km": 4.009,
+      "speed_classes": [
+        {
+          "speed_kmh": 30,
+          "traffic_exposure_vehicle_km_per_day": 390.51,
+          "length_weighted_adt": 201.5,
+          "covered_length_km": 1.938
+        },
+        {
+          "speed_kmh": 40,
+          "traffic_exposure_vehicle_km_per_day": 4095,
+          "length_weighted_adt": 1572.4,
+          "covered_length_km": 2.604
+        },
+        {
+          "speed_kmh": 50,
+          "traffic_exposure_vehicle_km_per_day": 4617.35,
+          "length_weighted_adt": 285.8,
+          "covered_length_km": 16.156
+        },
+        {
+          "speed_kmh": 60,
+          "traffic_exposure_vehicle_km_per_day": 12497.86,
+          "length_weighted_adt": 2847.9,
+          "covered_length_km": 4.388
+        },
+        {
+          "speed_kmh": 70,
+          "traffic_exposure_vehicle_km_per_day": 24502.92,
+          "length_weighted_adt": 131.6,
+          "covered_length_km": 186.233
+        },
+        {
+          "speed_kmh": 80,
+          "traffic_exposure_vehicle_km_per_day": 30402.51,
+          "length_weighted_adt": 448.5,
+          "covered_length_km": 67.792
+        },
+        {
+          "speed_kmh": 90,
+          "traffic_exposure_vehicle_km_per_day": 73167.01,
+          "length_weighted_adt": 1278.5,
+          "covered_length_km": 57.23
+        },
+        {
+          "speed_kmh": 100,
+          "traffic_exposure_vehicle_km_per_day": 50671.57,
+          "length_weighted_adt": 897,
+          "covered_length_km": 56.492
+        }
+      ]
+    },
+    "2580": {
+      "name": "Luleå",
+      "traffic_source_length_km": 676.052,
+      "matched_length_km": 656.541,
+      "ambiguous_speed_length_km": 0.169,
+      "without_speed_match_km": 19.342,
+      "speed_classes": [
+        {
+          "speed_kmh": 30,
+          "traffic_exposure_vehicle_km_per_day": 3932.12,
+          "length_weighted_adt": 575.9,
+          "covered_length_km": 6.827
+        },
+        {
+          "speed_kmh": 40,
+          "traffic_exposure_vehicle_km_per_day": 642.42,
+          "length_weighted_adt": 289.8,
+          "covered_length_km": 2.217
+        },
+        {
+          "speed_kmh": 50,
+          "traffic_exposure_vehicle_km_per_day": 40606.19,
+          "length_weighted_adt": 995,
+          "covered_length_km": 40.812
+        },
+        {
+          "speed_kmh": 60,
+          "traffic_exposure_vehicle_km_per_day": 48791.94,
+          "length_weighted_adt": 1837.5,
+          "covered_length_km": 26.554
+        },
+        {
+          "speed_kmh": 70,
+          "traffic_exposure_vehicle_km_per_day": 100160.6,
+          "length_weighted_adt": 442.3,
+          "covered_length_km": 226.433
+        },
+        {
+          "speed_kmh": 80,
+          "traffic_exposure_vehicle_km_per_day": 98562.35,
+          "length_weighted_adt": 1022.9,
+          "covered_length_km": 96.352
+        },
+        {
+          "speed_kmh": 90,
+          "traffic_exposure_vehicle_km_per_day": 113000.31,
+          "length_weighted_adt": 1319.6,
+          "covered_length_km": 85.635
+        },
+        {
+          "speed_kmh": 100,
+          "traffic_exposure_vehicle_km_per_day": 154991.3,
+          "length_weighted_adt": 4596.7,
+          "covered_length_km": 33.718
+        },
+        {
+          "speed_kmh": 110,
+          "traffic_exposure_vehicle_km_per_day": 545387.13,
+          "length_weighted_adt": 3952.3,
+          "covered_length_km": 137.993
+        }
+      ]
+    },
+    "2581": {
+      "name": "Piteå",
+      "traffic_source_length_km": 818.099,
+      "matched_length_km": 765.657,
+      "ambiguous_speed_length_km": 1.263,
+      "without_speed_match_km": 51.18,
+      "speed_classes": [
+        {
+          "speed_kmh": 30,
+          "traffic_exposure_vehicle_km_per_day": 1496.87,
+          "length_weighted_adt": 266.5,
+          "covered_length_km": 5.618
+        },
+        {
+          "speed_kmh": 40,
+          "traffic_exposure_vehicle_km_per_day": 16839.8,
+          "length_weighted_adt": 981,
+          "covered_length_km": 17.166
+        },
+        {
+          "speed_kmh": 50,
+          "traffic_exposure_vehicle_km_per_day": 36081.23,
+          "length_weighted_adt": 1175.7,
+          "covered_length_km": 30.688
+        },
+        {
+          "speed_kmh": 60,
+          "traffic_exposure_vehicle_km_per_day": 35369.61,
+          "length_weighted_adt": 1320.8,
+          "covered_length_km": 26.778
+        },
+        {
+          "speed_kmh": 70,
+          "traffic_exposure_vehicle_km_per_day": 151288.81,
+          "length_weighted_adt": 471.8,
+          "covered_length_km": 320.685
+        },
+        {
+          "speed_kmh": 80,
+          "traffic_exposure_vehicle_km_per_day": 88449.97,
+          "length_weighted_adt": 621,
+          "covered_length_km": 142.428
+        },
+        {
+          "speed_kmh": 90,
+          "traffic_exposure_vehicle_km_per_day": 127377.85,
+          "length_weighted_adt": 1217,
+          "covered_length_km": 104.662
+        },
+        {
+          "speed_kmh": 100,
+          "traffic_exposure_vehicle_km_per_day": 25573.31,
+          "length_weighted_adt": 1793.7,
+          "covered_length_km": 14.257
+        },
+        {
+          "speed_kmh": 110,
+          "traffic_exposure_vehicle_km_per_day": 336850.1,
+          "length_weighted_adt": 3258.5,
+          "covered_length_km": 103.375
+        }
+      ]
+    },
+    "2582": {
+      "name": "Boden",
+      "traffic_source_length_km": 725.341,
+      "matched_length_km": 712.887,
+      "ambiguous_speed_length_km": 0.317,
+      "without_speed_match_km": 12.137,
+      "speed_classes": [
+        {
+          "speed_kmh": 30,
+          "traffic_exposure_vehicle_km_per_day": 1344.1,
+          "length_weighted_adt": 745.7,
+          "covered_length_km": 1.802
+        },
+        {
+          "speed_kmh": 50,
+          "traffic_exposure_vehicle_km_per_day": 59481.33,
+          "length_weighted_adt": 1411.1,
+          "covered_length_km": 42.153
+        },
+        {
+          "speed_kmh": 60,
+          "traffic_exposure_vehicle_km_per_day": 18626.85,
+          "length_weighted_adt": 872.8,
+          "covered_length_km": 21.342
+        },
+        {
+          "speed_kmh": 70,
+          "traffic_exposure_vehicle_km_per_day": 50958.87,
+          "length_weighted_adt": 191.3,
+          "covered_length_km": 266.366
+        },
+        {
+          "speed_kmh": 80,
+          "traffic_exposure_vehicle_km_per_day": 95443.86,
+          "length_weighted_adt": 499.5,
+          "covered_length_km": 191.09
+        },
+        {
+          "speed_kmh": 90,
+          "traffic_exposure_vehicle_km_per_day": 38759.88,
+          "length_weighted_adt": 337.6,
+          "covered_length_km": 114.812
+        },
+        {
+          "speed_kmh": 100,
+          "traffic_exposure_vehicle_km_per_day": 127977.55,
+          "length_weighted_adt": 1699.1,
+          "covered_length_km": 75.32
+        }
+      ]
+    }
+  }
+}
