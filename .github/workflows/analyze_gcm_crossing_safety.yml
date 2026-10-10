@@ -1,0 +1,44 @@
+name: Analyze GCM crossing safety
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/analyze_gcm_crossing_safety.py
+      - .github/workflows/analyze_gcm_crossing_safety.yml
+permissions:
+  contents: write
+concurrency:
+  group: nvdb-gcm-crossing-safety
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install geometry dependencies
+        run: python3 -m pip install requests shapely pyproj
+      - name: Match GCM passages to ordinary speed limits
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+        run: python3 scripts/analyze_gcm_crossing_safety.py
+      - name: Upload QA
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gcm-crossing-speed-qa
+          path: nvdb_output/gcm_crossing_speed_qa.json
+          retention-days: 7
+      - name: Save run ID
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/gcm-crossing-safety-status.json
+          RUN_WORKFLOW_NAME: Analyze GCM crossing safety
+        run: python3 scripts/publish_nvdb_run_status.py
