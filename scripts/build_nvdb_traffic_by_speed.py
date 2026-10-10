@@ -36,6 +36,21 @@ def fetch_segments(con,table,geometry_column,attribute,validate):
         if value is None or g.geom_type not in ("LineString","MultiLineString"):continue
         out.append((g,value))
     return out
+def road_maintainer_inventory(con):
+    """Inspect actual Lastkajen schema before attempting a road-manager join."""
+    layers=con.execute("SELECT table_name,column_name,srs_id FROM gpkg_geometry_columns").fetchall()
+    relevant=[]
+    for table,geom,srs in layers:
+        if any(part in table.lower() for part in ("vaghall","vag_hall","roadowner","vagagare")):
+            cols=fields(con,table)
+            selected=[c for c in cols if c!=geom and any(x in c.lower() for x in ("vaghall","agare","typ","kategori"))]
+            counts={}
+            for col in selected[:8]:
+                rows=con.execute("SELECT "+quote(col)+",COUNT(*) FROM "+quote(table)+" GROUP BY "+quote(col)+" ORDER BY COUNT(*) DESC LIMIT 15").fetchall()
+                counts[col]=[{"value":str(val) if val is not None else None,"features":n} for val,n in rows]
+            relevant.append({"layer":table,"geom_column":geom,"srs_id":srs,"all_columns":cols,"distribution":counts})
+    return relevant
+
 def run(con,municipalities):
     speed_geom=layer(con,SPEED_LAYER);traffic_geom=layer(con,TRAFFIC_LAYER)
     speed_attr="Hogsta_tillatna_hastighet"
@@ -124,11 +139,14 @@ def main():
             with archive.open(parts[0]) as src,dbpath.open("wb") as dst:
                 while b:=src.read(1024*1024):dst.write(b)
             con=sqlite3.connect("file:"+str(dbpath)+"?mode=ro",uri=True)
-            try:data=run(con,regions)
+            try:
+                manager_inventory=road_maintainer_inventory(con)
+                data=run(con,regions)
             finally:con.close()
     dest=Path("nvdb_output");dest.mkdir(exist_ok=True)
     (dest/"traffic_by_speed_diagnostics.json").write_text(json.dumps({
         "status":"preliminary","package_id":PACKAGE_ID,
+        "road_maintainer_schema_inventory":manager_inventory,
         "source":"NVDB Lastkajen Norrbottens län",
         "analysis_crs":"EPSG:3006",
         "units":{"traffic_exposure":"vehicle-km/day","length_weighted_adt":"vehicles/day"},
