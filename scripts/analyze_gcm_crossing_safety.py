@@ -61,7 +61,7 @@ def analyze(con,regions):
             p=str(attrs["Passagetyp"]) if attrs["Passagetyp"] is not None else "(saknas)"
             bytype=bucket["speed_by_type"].setdefault(p,Counter())
             bytype[key]+=1
-            if p in ("Annan ordnad passage i plan","Övergångsställe/cykelpassage i plan","Signalreglerad passage i plan"):
+            if " i plan" in p.lower() and "planskild" not in p.lower():
                 refuge=str(attrs.get("Refugpassage")) if attrs.get("Refugpassage") is not None else "(saknas)"
                 traveler=str(attrs.get("Trafikanttyp")) if attrs.get("Trafikanttyp") is not None else "(saknas)"
                 bucket["at_grade_by_refuge_and_speed"].setdefault(refuge,Counter())[key]+=1
@@ -73,10 +73,13 @@ def analyze(con,regions):
         item["at_grade_by_traveler_and_speed"]={k:dict(v) for k,v in item["at_grade_by_traveler_and_speed"].items()}
         if item["matches"]!=sum(sum(v.values()) for v in item["speed_by_type"].values()):
             raise ValueError("Passage type by speed does not balance")
-        in_plan=("Annan ordnad passage i plan","Övergångsställe/cykelpassage i plan","Signalreglerad passage i plan")
-        nplan=sum(sum(v.values()) for k,v in item["speed_by_type"].items() if k in in_plan)
+        nplan=sum(sum(v.values()) for k,v in item["speed_by_type"].items() if " i plan" in k.lower() and "planskild" not in k.lower())
+        if nplan and not item["at_grade_by_refuge_and_speed"]:
+            raise ValueError("At-grade refuge classification is unexpectedly empty")
         if "Refugpassage" in attr and nplan!=sum(sum(v.values()) for v in item["at_grade_by_refuge_and_speed"].values()):
             raise ValueError("Refuge at-grade totals do not balance")
+        if "Trafikanttyp" in attr and nplan!=sum(sum(v.values()) for v in item["at_grade_by_traveler_and_speed"].values()):
+            raise ValueError("Traveler type at-grade totals do not balance")
         if item["passages"]!=item["matches"]+item["unmatched"]+item["ambiguous"]:
             raise ValueError("Passage total mismatch")
     return out
