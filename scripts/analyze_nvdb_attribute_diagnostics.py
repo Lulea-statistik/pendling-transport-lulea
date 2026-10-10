@@ -29,6 +29,8 @@ def norm(text):
     import unicodedata
     return "".join(c for c in unicodedata.normalize("NFKD",str(text).lower()) if c.isalnum())
 def choose_fields(columns,topic):
+    if topic=="speed":
+        return ["Hogsta_tillatna_hastighet"] if "Hogsta_tillatna_hastighet" in columns else []
     hints=[norm(x) for x in FIELD_HINTS[topic]]
     result=[]
     for col in columns:
@@ -67,6 +69,8 @@ def analyze(dbfile, regions):
             if srs!=3006:raise ValueError("Unexpected CRS: "+str(srs))
             columns=[r[1] for r in con.execute("PRAGMA table_info("+quote(table)+")")]
             fields=choose_fields([c for c in columns if c!=geocol],topic)
+            if topic=="speed" and fields!=["Hogsta_tillatna_hastighet"]:
+                raise ValueError("Ordinary speed limit attribute absent: "+table)
             # Metadata includes all field names to allow checking the chosen attributes.
             selected=[geocol]+fields
             statement="SELECT "+",".join(quote(c) for c in selected)+" FROM "+quote(table)
@@ -88,6 +92,22 @@ def analyze(dbfile, regions):
                         key=bucket(val);cell=b["fields"][col][key]
                         cell["features"]+=1;cell["length_km"]+=length
             for b in by_code.values():
+                if topic=="adt":
+                    # Length-weighted road-section mean, not total motor-vehicle movements.
+                    # Values are not deduplicated and do not represent network-wide AADT.
+                    weighted={}
+                    for field in ("Adt_samtliga_fordon","Adt_tunga_fordon"):
+                        if field in b["fields"]:
+                            numerator=denominator=0.0
+                            for key,item in b["fields"][field].items():
+                                try: value=float(key)
+                                except (ValueError,TypeError):continue
+                                if value < 0:continue
+                                numerator+=value*item["length_km"]
+                                denominator+=item["length_km"]
+                            weighted[field]={"mean":round(numerator/denominator,1) if denominator else None,
+                                             "covered_km":round(denominator,3)}
+                    b["length_weighted_adt_diagnostic"]=weighted
                 b["clipped_length_km"]=round(b["clipped_length_km"],3)
                 b["fields"]={field:[{"value":value,"features":v["features"],"clipped_length_km":round(v["length_km"],3)}
                     for value,v in sorted(counts.items(),key=lambda x:(-x[1]["features"],x[0]))[:50]]
