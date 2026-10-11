@@ -1,0 +1,9 @@
+{
+  "workflow": "Analyze NVDB heavy truck traffic",
+  "run_id": 38137137007,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38137137007",
+  "attempt": 1,
+  "status": "success",
+  "commit": "3c7d8cef52910d058d0d17c05ed379cab8f8e7b2",
+  "updated_utc": "2026-10-11T11:53:22.787999+00:00"
+}
