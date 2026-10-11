@@ -1,0 +1,501 @@
+{
+  "source": "NVDB Lastkajen Norrbotten 10155, QA artifact run 38086258105",
+  "method": "Exact geometric overlap, EPSG:3006. Known means valid field and matched linework; unmatched not necessarily missing at source. ",
+  "municipalities": {
+    "2514": {
+      "name": "Kalix",
+      "variables": {
+        "width": {
+          "0": {
+            "class_km": 129.061,
+            "known_km": 112.987,
+            "no_attribute_km": 16.074000000000012
+          },
+          "1": {
+            "class_km": 5.531,
+            "known_km": 3.14,
+            "no_attribute_km": 2.3909999999999996
+          },
+          "3": {
+            "class_km": 26.749,
+            "known_km": 19.219,
+            "no_attribute_km": 7.529999999999998
+          },
+          "4": {
+            "class_km": 128.193,
+            "known_km": 90.04,
+            "no_attribute_km": 38.153000000000006
+          },
+          "5": {
+            "class_km": 293.05,
+            "known_km": 241.901,
+            "no_attribute_km": 51.149
+          },
+          "6": {
+            "class_km": 3.174,
+            "known_km": 2.676,
+            "no_attribute_km": 0.4979999999999998
+          },
+          "7": {
+            "class_km": 286.134,
+            "known_km": 89.836,
+            "no_attribute_km": 196.298
+          },
+          "8": {
+            "class_km": 486.897,
+            "known_km": 30.01,
+            "no_attribute_km": 456.887
+          },
+          "9": {
+            "class_km": 1410.758,
+            "known_km": 53.572,
+            "no_attribute_km": 1357.1860000000001
+          }
+        },
+        "lanes": {
+          "0": {
+            "class_km": 129.061,
+            "known_km": 108.813,
+            "no_attribute_km": 20.248000000000005
+          },
+          "1": {
+            "class_km": 5.531,
+            "known_km": 4.219,
+            "no_attribute_km": 1.3119999999999994
+          },
+          "3": {
+            "class_km": 26.749,
+            "known_km": 19.598,
+            "no_attribute_km": 7.151
+          },
+          "4": {
+            "class_km": 128.193,
+            "known_km": 89.798,
+            "no_attribute_km": 38.39500000000001
+          },
+          "5": {
+            "class_km": 293.05,
+            "known_km": 240.138,
+            "no_attribute_km": 52.912000000000006
+          },
+          "6": {
+            "class_km": 3.174,
+            "known_km": 0.04,
+            "no_attribute_km": 3.134
+          },
+          "7": {
+            "class_km": 286.134,
+            "known_km": 0,
+            "no_attribute_km": 286.134
+          },
+          "8": {
+            "class_km": 486.897,
+            "known_km": 0,
+            "no_attribute_km": 486.897
+          },
+          "9": {
+            "class_km": 1410.758,
+            "known_km": 0,
+            "no_attribute_km": 1410.758
+          }
+        }
+      }
+    },
+    "2560": {
+      "name": "Älvsbyn",
+      "variables": {
+        "width": {
+          "2": {
+            "class_km": 57.495,
+            "known_km": 56.236,
+            "no_attribute_km": 1.2590000000000003
+          },
+          "3": {
+            "class_km": 71.273,
+            "known_km": 64.783,
+            "no_attribute_km": 6.489999999999995
+          },
+          "4": {
+            "class_km": 10.134,
+            "known_km": 9.805,
+            "no_attribute_km": 0.3290000000000006
+          },
+          "5": {
+            "class_km": 262.923,
+            "known_km": 236.399,
+            "no_attribute_km": 26.524
+          },
+          "6": {
+            "class_km": 0.197,
+            "known_km": 0.099,
+            "no_attribute_km": 0.098
+          },
+          "7": {
+            "class_km": 290.075,
+            "known_km": 68.369,
+            "no_attribute_km": 221.706
+          },
+          "8": {
+            "class_km": 489.849,
+            "known_km": 34.838,
+            "no_attribute_km": 455.01099999999997
+          },
+          "9": {
+            "class_km": 1156.946,
+            "known_km": 44.1,
+            "no_attribute_km": 1112.846
+          }
+        },
+        "lanes": {
+          "2": {
+            "class_km": 57.495,
+            "known_km": 57.223,
+            "no_attribute_km": 0.27199999999999847
+          },
+          "3": {
+            "class_km": 71.273,
+            "known_km": 65.537,
+            "no_attribute_km": 5.73599999999999
+          },
+          "4": {
+            "class_km": 10.134,
+            "known_km": 9.98,
+            "no_attribute_km": 0.15399999999999991
+          },
+          "5": {
+            "class_km": 262.923,
+            "known_km": 235.826,
+            "no_attribute_km": 27.09700000000001
+          },
+          "6": {
+            "class_km": 0.197,
+            "known_km": 0,
+            "no_attribute_km": 0.197
+          },
+          "7": {
+            "class_km": 290.075,
+            "known_km": 0,
+            "no_attribute_km": 290.075
+          },
+          "8": {
+            "class_km": 489.849,
+            "known_km": 0,
+            "no_attribute_km": 489.849
+          },
+          "9": {
+            "class_km": 1156.946,
+            "known_km": 0,
+            "no_attribute_km": 1156.946
+          }
+        }
+      }
+    },
+    "2580": {
+      "name": "Luleå",
+      "variables": {
+        "width": {
+          "0": {
+            "class_km": 132.527,
+            "known_km": 122.361,
+            "no_attribute_km": 10.165999999999983
+          },
+          "1": {
+            "class_km": 20.751,
+            "known_km": 20.751,
+            "no_attribute_km": 0
+          },
+          "2": {
+            "class_km": 60.67,
+            "known_km": 56.005,
+            "no_attribute_km": 4.664999999999999
+          },
+          "3": {
+            "class_km": 59.487,
+            "known_km": 58.088,
+            "no_attribute_km": 1.399000000000001
+          },
+          "4": {
+            "class_km": 119.443,
+            "known_km": 115.521,
+            "no_attribute_km": 3.921999999999997
+          },
+          "5": {
+            "class_km": 411.861,
+            "known_km": 374.864,
+            "no_attribute_km": 36.997000000000014
+          },
+          "6": {
+            "class_km": 45.14,
+            "known_km": 38.102,
+            "no_attribute_km": 7.038000000000004
+          },
+          "7": {
+            "class_km": 548.118,
+            "known_km": 366.134,
+            "no_attribute_km": 181.98400000000004
+          },
+          "8": {
+            "class_km": 682.901,
+            "known_km": 128.632,
+            "no_attribute_km": 554.269
+          },
+          "9": {
+            "class_km": 1437.481,
+            "known_km": 73.841,
+            "no_attribute_km": 1363.64
+          }
+        },
+        "lanes": {
+          "0": {
+            "class_km": 132.527,
+            "known_km": 122.076,
+            "no_attribute_km": 10.450999999999993
+          },
+          "1": {
+            "class_km": 20.751,
+            "known_km": 20.259,
+            "no_attribute_km": 0.4920000000000009
+          },
+          "2": {
+            "class_km": 60.67,
+            "known_km": 55.177,
+            "no_attribute_km": 5.493000000000002
+          },
+          "3": {
+            "class_km": 59.487,
+            "known_km": 43.88,
+            "no_attribute_km": 15.607
+          },
+          "4": {
+            "class_km": 119.443,
+            "known_km": 93.28,
+            "no_attribute_km": 26.162999999999997
+          },
+          "5": {
+            "class_km": 411.861,
+            "known_km": 301.937,
+            "no_attribute_km": 109.92399999999998
+          },
+          "6": {
+            "class_km": 45.14,
+            "known_km": 0.274,
+            "no_attribute_km": 44.866
+          },
+          "7": {
+            "class_km": 548.118,
+            "known_km": 0,
+            "no_attribute_km": 548.118
+          },
+          "8": {
+            "class_km": 682.901,
+            "known_km": 0,
+            "no_attribute_km": 682.901
+          },
+          "9": {
+            "class_km": 1437.481,
+            "known_km": 0,
+            "no_attribute_km": 1437.481
+          }
+        }
+      }
+    },
+    "2581": {
+      "name": "Piteå",
+      "variables": {
+        "width": {
+          "0": {
+            "class_km": 108.914,
+            "known_km": 93.857,
+            "no_attribute_km": 15.057000000000002
+          },
+          "1": {
+            "class_km": 17.418,
+            "known_km": 17.037,
+            "no_attribute_km": 0.3810000000000002
+          },
+          "2": {
+            "class_km": 4.088,
+            "known_km": 4.088,
+            "no_attribute_km": 0
+          },
+          "3": {
+            "class_km": 125.544,
+            "known_km": 118.494,
+            "no_attribute_km": 7.049999999999997
+          },
+          "4": {
+            "class_km": 130.138,
+            "known_km": 112.05,
+            "no_attribute_km": 18.088000000000008
+          },
+          "5": {
+            "class_km": 470.436,
+            "known_km": 446.452,
+            "no_attribute_km": 23.98399999999998
+          },
+          "6": {
+            "class_km": 4.814,
+            "known_km": 4.47,
+            "no_attribute_km": 0.3440000000000003
+          },
+          "7": {
+            "class_km": 720.362,
+            "known_km": 279.933,
+            "no_attribute_km": 440.429
+          },
+          "8": {
+            "class_km": 879.933,
+            "known_km": 206.004,
+            "no_attribute_km": 673.929
+          },
+          "9": {
+            "class_km": 2302.758,
+            "known_km": 160.295,
+            "no_attribute_km": 2142.4629999999997
+          }
+        },
+        "lanes": {
+          "0": {
+            "class_km": 108.914,
+            "known_km": 92.062,
+            "no_attribute_km": 16.852000000000004
+          },
+          "1": {
+            "class_km": 17.418,
+            "known_km": 14.958,
+            "no_attribute_km": 2.459999999999999
+          },
+          "2": {
+            "class_km": 4.088,
+            "known_km": 4.088,
+            "no_attribute_km": 0
+          },
+          "3": {
+            "class_km": 125.544,
+            "known_km": 124.597,
+            "no_attribute_km": 0.9470000000000027
+          },
+          "4": {
+            "class_km": 130.138,
+            "known_km": 121.351,
+            "no_attribute_km": 8.787000000000006
+          },
+          "5": {
+            "class_km": 470.436,
+            "known_km": 403.764,
+            "no_attribute_km": 66.67199999999997
+          },
+          "6": {
+            "class_km": 4.814,
+            "known_km": 0.148,
+            "no_attribute_km": 4.666
+          },
+          "7": {
+            "class_km": 720.362,
+            "known_km": 0,
+            "no_attribute_km": 720.362
+          },
+          "8": {
+            "class_km": 879.933,
+            "known_km": 0,
+            "no_attribute_km": 879.933
+          },
+          "9": {
+            "class_km": 2302.758,
+            "known_km": 0,
+            "no_attribute_km": 2302.758
+          }
+        }
+      }
+    },
+    "2582": {
+      "name": "Boden",
+      "variables": {
+        "width": {
+          "2": {
+            "class_km": 104.716,
+            "known_km": 96.037,
+            "no_attribute_km": 8.678999999999988
+          },
+          "3": {
+            "class_km": 81.01,
+            "known_km": 74.2,
+            "no_attribute_km": 6.810000000000002
+          },
+          "4": {
+            "class_km": 71.735,
+            "known_km": 67.819,
+            "no_attribute_km": 3.915999999999997
+          },
+          "5": {
+            "class_km": 500.992,
+            "known_km": 449.704,
+            "no_attribute_km": 51.28800000000001
+          },
+          "6": {
+            "class_km": 28.323,
+            "known_km": 23.55,
+            "no_attribute_km": 4.773
+          },
+          "7": {
+            "class_km": 693.801,
+            "known_km": 167.253,
+            "no_attribute_km": 526.548
+          },
+          "8": {
+            "class_km": 1109.893,
+            "known_km": 39.318,
+            "no_attribute_km": 1070.575
+          },
+          "9": {
+            "class_km": 2439.409,
+            "known_km": 77.297,
+            "no_attribute_km": 2362.112
+          }
+        },
+        "lanes": {
+          "2": {
+            "class_km": 104.716,
+            "known_km": 96.946,
+            "no_attribute_km": 7.769999999999996
+          },
+          "3": {
+            "class_km": 81.01,
+            "known_km": 76.139,
+            "no_attribute_km": 4.871000000000009
+          },
+          "4": {
+            "class_km": 71.735,
+            "known_km": 65.872,
+            "no_attribute_km": 5.8629999999999995
+          },
+          "5": {
+            "class_km": 500.992,
+            "known_km": 443.384,
+            "no_attribute_km": 57.608000000000004
+          },
+          "6": {
+            "class_km": 28.323,
+            "known_km": 0,
+            "no_attribute_km": 28.323
+          },
+          "7": {
+            "class_km": 693.801,
+            "known_km": 0,
+            "no_attribute_km": 693.801
+          },
+          "8": {
+            "class_km": 1109.893,
+            "known_km": 0,
+            "no_attribute_km": 1109.893
+          },
+          "9": {
+            "class_km": 2439.409,
+            "known_km": 0,
+            "no_attribute_km": 2439.409
+          }
+        }
+      }
+    }
+  }
+}
