@@ -15,7 +15,7 @@ def main():
         v=[x for x in fields if needle in x["code"].lower()]
         if len(v)!=1:raise ValueError("Ambiguous dimensions: "+needle+" "+str([x["code"] for x in fields]))
         return v[0]
-    reg=get("region");vehicle=get("fordonsslag");year=get("år")
+    reg=get("region");vehicle=get("fordonsslag");year=get("tid")
     regions=[str(k) for k in reg["values"] if str(k) in M]
     if len(regions)!=5:raise ValueError("Municipality identifiers missing")
     types={}
