@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - scripts/analyze_nvdb_road_width_lanes.py
+      - scripts/publish_nvdb_road_width_by_class.py
       - .github/workflows/analyze_nvdb_road_width_lanes.yml
 permissions:
   contents: write
@@ -30,6 +31,11 @@ jobs:
           name: nvdb-road-width-lanes-qa
           path: nvdb_output/nvdb_road_width_lanes_qa.json
           retention-days: 7
+      - name: Validate and publish width distributions
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish_nvdb_road_width_by_class.py
       - name: Record run status
         if: always()
         env:
