@@ -1,0 +1,148 @@
+{
+  "status": "source_data",
+  "source": "SCB TK1001A FordonTrafik",
+  "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__TK__TK1001__TK1001A/FordonTrafik/",
+  "definition": "Lastbilar i trafik, registrerade på respektive kommun vid årsslut; alla drivmedel. Ej antal dieselbilar eller antal som tankar i kommunen.",
+  "rows": [
+    {
+      "kommun_code": "2514",
+      "kommun": "Kalix",
+      "year": "2024",
+      "kind": "light",
+      "count": 1530
+    },
+    {
+      "kommun_code": "2514",
+      "kommun": "Kalix",
+      "year": "2025",
+      "kind": "light",
+      "count": 1565
+    },
+    {
+      "kommun_code": "2514",
+      "kommun": "Kalix",
+      "year": "2024",
+      "kind": "heavy",
+      "count": 189
+    },
+    {
+      "kommun_code": "2514",
+      "kommun": "Kalix",
+      "year": "2025",
+      "kind": "heavy",
+      "count": 167
+    },
+    {
+      "kommun_code": "2560",
+      "kommun": "Älvsbyn",
+      "year": "2024",
+      "kind": "light",
+      "count": 882
+    },
+    {
+      "kommun_code": "2560",
+      "kommun": "Älvsbyn",
+      "year": "2025",
+      "kind": "light",
+      "count": 889
+    },
+    {
+      "kommun_code": "2560",
+      "kommun": "Älvsbyn",
+      "year": "2024",
+      "kind": "heavy",
+      "count": 173
+    },
+    {
+      "kommun_code": "2560",
+      "kommun": "Älvsbyn",
+      "year": "2025",
+      "kind": "heavy",
+      "count": 182
+    },
+    {
+      "kommun_code": "2580",
+      "kommun": "Luleå",
+      "year": "2024",
+      "kind": "light",
+      "count": 5344
+    },
+    {
+      "kommun_code": "2580",
+      "kommun": "Luleå",
+      "year": "2025",
+      "kind": "light",
+      "count": 5441
+    },
+    {
+      "kommun_code": "2580",
+      "kommun": "Luleå",
+      "year": "2024",
+      "kind": "heavy",
+      "count": 675
+    },
+    {
+      "kommun_code": "2580",
+      "kommun": "Luleå",
+      "year": "2025",
+      "kind": "heavy",
+      "count": 655
+    },
+    {
+      "kommun_code": "2581",
+      "kommun": "Piteå",
+      "year": "2024",
+      "kind": "light",
+      "count": 3103
+    },
+    {
+      "kommun_code": "2581",
+      "kommun": "Piteå",
+      "year": "2025",
+      "kind": "light",
+      "count": 3155
+    },
+    {
+      "kommun_code": "2581",
+      "kommun": "Piteå",
+      "year": "2024",
+      "kind": "heavy",
+      "count": 554
+    },
+    {
+      "kommun_code": "2581",
+      "kommun": "Piteå",
+      "year": "2025",
+      "kind": "heavy",
+      "count": 556
+    },
+    {
+      "kommun_code": "2582",
+      "kommun": "Boden",
+      "year": "2024",
+      "kind": "light",
+      "count": 2222
+    },
+    {
+      "kommun_code": "2582",
+      "kommun": "Boden",
+      "year": "2025",
+      "kind": "light",
+      "count": 2345
+    },
+    {
+      "kommun_code": "2582",
+      "kommun": "Boden",
+      "year": "2024",
+      "kind": "heavy",
+      "count": 364
+    },
+    {
+      "kommun_code": "2582",
+      "kommun": "Boden",
+      "year": "2025",
+      "kind": "heavy",
+      "count": 369
+    }
+  ]
+}
