@@ -1,9 +1,9 @@
 {
   "workflow": "Audit NVDB heavy traffic metadata",
-  "run_id": 38143143776,
-  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38143143776",
+  "run_id": 38143190689,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38143190689",
   "attempt": 1,
-  "status": "failure",
-  "commit": "8da9433e9136418df5100bed823b0a36f36e17dd",
-  "updated_utc": "2026-10-11T13:26:02.713175+00:00"
+  "status": "success",
+  "commit": "7ec208bf758fde1632c61c62a71d5343568a1767",
+  "updated_utc": "2026-10-11T13:27:34.727580+00:00"
 }
