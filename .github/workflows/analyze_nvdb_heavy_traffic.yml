@@ -1,0 +1,44 @@
+name: Analyze NVDB heavy truck traffic
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/analyze_nvdb_heavy_traffic.py
+      - .github/workflows/analyze_nvdb_heavy_traffic.yml
+permissions:
+  contents: write
+concurrency:
+  group: nvdb-heavy-traffic
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GIS dependencies
+        run: python3 -m pip install shapely pyproj requests
+      - name: Analyze separate heavy-vehicle AADT
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+        run: python3 scripts/analyze_nvdb_heavy_traffic.py
+      - name: Upload QA artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nvdb-heavy-traffic-qa
+          path: nvdb_output/heavy_traffic_qa.json
+          retention-days: 14
+      - name: Record run status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/nvdb-heavy-traffic-status.json
+          RUN_WORKFLOW_NAME: Analyze NVDB heavy truck traffic
+        run: python3 scripts/publish_nvdb_run_status.py
