@@ -13,6 +13,8 @@ jobs:
     timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
+      - name: Install schema-inspection dependencies
+        run: python3 -m pip install shapely pyproj
       - name: Inspect Trafik schema and values
         env:
           LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
