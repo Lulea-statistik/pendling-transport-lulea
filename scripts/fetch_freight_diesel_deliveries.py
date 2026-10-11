@@ -23,7 +23,7 @@ def select_codes(field,targets):
     return sorted(set(found))
 def main():
     meta=api()
-    region=variable(meta,"region");fuel=variable(meta,"bränsle");year=variable(meta,"år")
+    region=variable(meta,"region");fuel=variable(meta,"bransle");year=variable(meta,"tid")
     selected_regions=select_codes(region,COMMUNER)
     if len(selected_regions)!=5:raise ValueError("Expected five FA municipalities, got "+str(selected_regions))
     diesel=[str(code) for code,label in zip(fuel["values"],fuel["valueTexts"]) if "diesel" in str(label).lower()]
@@ -32,7 +32,8 @@ def main():
     if not years:raise ValueError("Missing 2024/2025")
     query={"query":[{"code":region["code"],"selection":{"filter":"item","values":selected_regions}},
                     {"code":fuel["code"],"selection":{"filter":"item","values":diesel}},
-                    {"code":year["code"],"selection":{"filter":"item","values":years}}],
+                    {"code":year["code"],"selection":{"filter":"item","values":years}},
+                    {"code":"ContentsCode","selection":{"filter":"item","values":next(v["values"] for v in meta["variables"] if v["code"]=="ContentsCode")}}],
             "response":{"format":"json"}}
     raw=api(query)
     columns=[x["code"] for x in raw["columns"]]
