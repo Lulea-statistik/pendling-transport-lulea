@@ -23,6 +23,7 @@
   <button class="tab" data-page="nvdb">NVDB & vägnät</button>
   <button class="tab" data-page="trafficenvironment">Vägmiljö & trafikflöden</button>
   <button class="tab" data-page="freight">Godstransporter & logistik</button>
+  <button class="tab" data-page="freightflows">Tung trafik & drivmedel</button>
   <button class="tab" data-page="transit">Kollektivtrafik</button>
   <button class="tab" data-page="migrationmodels">Inflyttningsmodeller</button>
 </nav>
@@ -398,9 +399,9 @@
       <p>Vi skiljer mellan <strong>registrerade lastbilar</strong> (fordonsbestånd), <strong>lastbilar på vägnätet</strong> (ÅDT tunga fordon), <strong>var lastbilar kan köra</strong> (bärighet och fordonsbegränsningar) och <strong>var gods kan hanteras</strong> (uppställning, lastzoner och terminaler). De måtten kan inte ersätta varandra.</p>
       <p class="source-note">Geografi: Luleå, Boden, Piteå, Älvsbyn och Kalix. Denna första version är en källinventering; inga siffror om tunga flöden, tillåtna rutter eller antalet lastbilsplatser presenteras innan respektive datakälla verifierats.</p>
     </section>
-    <section class="panel" id="freightDieselDeliveries" aria-live="polite"></section>
-    <section class="panel" id="freightFuelModel" aria-live="polite"></section>
-    <section class="panel" id="freightHeavyTrafficQA" aria-live="polite"></section>
+
+
+
     <section class="panel">
       <h2>Metodutveckling: trafikarbete och lokal drivmedelsmarknad</h2>
       <p>Vi använder SMHI/SMED:s principer för geografisk fördelning av trafikarbete som metodinspiration, <strong>inte</strong> luftföroreningshalter som proxy för lastbilars tankning. Statliga vägsträckor med separat tungtrafik-ÅDT ska användas först, och täckningsluckor på mindre vägar redovisas separat.</p>
@@ -417,6 +418,31 @@
       <h2>Redan tillgängligt i rapporten</h2>
       <p>Under <strong>Fordon i kommuner</strong> finns fordonsstatistik och under <strong>Vägmiljö & trafikflöden</strong> finns en preliminär analys av ÅDT för <em>samtliga</em> motorfordon på delar av det statliga vägnätet. Dessa ska inte misstas för en separat serie för tunga lastbilar.</p>
       <p>Drivmedelsstationer, biogas och laddning anpassad för tunga lastbilar hanteras i en särskild kommande källinventering, med kontroll av fordonsåtkomst och laddstandard.</p>
+    </section>
+  </section>
+
+  <section id="page-freightflows" class="page">
+    <section class="page-intro panel">
+      <div>
+        <h2>Tung trafik & drivmedel</h2>
+        <p>Faktisk trafikintensitet på dokumenterade vägsträckor, registrerade lastbilar och den lokala drivmedelsmarknaden – tre geografiskt olika mått.</p>
+      </div>
+      <a href="https://www.trafa.se/vagtrafik/korstrackor/" target="_blank" rel="noopener noreferrer">Källa: Trafikanalys körsträckor</a>
+    </section>
+    <section class="panel">
+      <h2>Tre perspektiv på lastbilarnas rörelser</h2>
+      <p><strong>Vägtrafiken</strong> visar vilka fordon som passerar ett vägavsnitt oavsett registreringskommun; <strong>fordonsbeståndet</strong> avser kommunens registrerade lastbilar och deras beräknade körsträckor; <strong>dieselleveranser</strong> beskriver leveranser till återförsäljare i kommunen, oavsett vem som faktiskt tankar.</p>
+      <p class="source-note">Detta är ännu inte en beräkning av transittrafikens tankning. Skillnader mellan de tre perspektiven kan bero på genomfartsfordon, direktleveranser, personbilar, bussar, arbetsmaskiner eller tankning utanför hemkommunen.</p>
+    </section>
+    <section class="panel" id="freightHeavyTrafficQA" aria-live="polite"></section>
+    <section class="panel" id="freightDieselDeliveries" aria-live="polite"></section>
+    <section class="panel" id="freightFuelModel" aria-live="polite"></section>
+    <section class="panel">
+      <h2>Kontroll av ÅDT: mätår, fordonsbegrepp och väglänkar</h2>
+      <p><strong>Redan kontrollerat:</strong> ÅDT för tunga och samtliga fordon finns för de dokumenterade trafikobjekten; exakt sammanfallande geometrier med samma värde avdubbelräknas och motstridiga överlapp identifieras. Trafikarbete gäller endast dessa länkar, inte hela kommunens vägnät.</p>
+      <p><strong>Fortfarande under kontroll:</strong> ÅDT-värdenas observations-/referensår, exakt viktgräns och fordonssammansättning bakom NVDB:s beteckning <code>Adt_tunga_fordon</code>, samt om parallella körbanor är separata och har riktningsspecifika ÅDT. Dessa frågor måste klaras ut innan värdena används som kommunens totala lastbilskilometer eller jämförs som om de avsåg samma år som SCB:s 2024–2025-volymer.</p>
+      <p class="source-note">Trafikarbete räknas som ÅDT tunga fordon × matchad länklängd × 365. Vägtrafikens ÅDT tunga fordon är inte automatiskt identiskt med SCB:s registrerade tunga lastbilar. Överlappande körbanor representerar inte nödvändigtvis en felaktig dubblett; underlaget behöver även granskas mot trafikföreskrifter och NVDB:s dataproduktdefinition.</p>
+      <p><a href="https://github.com/Lulea-statistik/pendling-transport-lulea/actions/workflows/audit_nvdb_heavy_traffic_metadata.yml" target="_blank" rel="noopener noreferrer">Följ metadata- och definitionskontrollen på GitHub</a> · <a href="METOD_GODSTRAFIK_DRIVMEDEL_SMHI.md" target="_blank" rel="noopener noreferrer">Läs hela metodunderlaget</a></p>
     </section>
   </section>
 
