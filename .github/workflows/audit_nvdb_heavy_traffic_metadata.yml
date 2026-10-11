@@ -1,0 +1,38 @@
+name: Audit NVDB heavy traffic metadata
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/audit_nvdb_heavy_traffic_schema.py
+      - .github/workflows/audit_nvdb_heavy_traffic_metadata.yml
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect Trafik schema and values
+        env:
+          LASTKAJEN_USERNAME: ${{ secrets.LASTKAJEN_USERNAME }}
+          LASTKAJEN_PASSWORD: ${{ secrets.LASTKAJEN_PASSWORD }}
+        run: python3 scripts/audit_nvdb_heavy_traffic_schema.py
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: nvdb-heavy-traffic-metadata
+          path: nvdb_output/heavy_traffic_schema_audit.json
+          retention-days: 14
+      - name: Record status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/nvdb-heavy-traffic-metadata-status.json
+          RUN_WORKFLOW_NAME: Audit NVDB heavy traffic metadata
+        run: python3 scripts/publish_nvdb_run_status.py
