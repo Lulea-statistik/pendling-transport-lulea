@@ -1,0 +1,77 @@
+{
+  "source": "NVDB Lastkajen package 10155",
+  "run_id": 38086258105,
+  "description": "Andel av funktionellt klassificerat bilvägnät vars linjegeometri har exakt sammanfallande vägbredd respektive körfältsantal. Okänd omfattning är inte noll.",
+  "municipalities": [
+    {
+      "code": "2580",
+      "name": "Luleå",
+      "total": 3518.38,
+      "width": 1354.3,
+      "lanes": 636.9,
+      "widthBands": {
+        "<4 m": 187.6,
+        "4–<6 m": 362,
+        "6–<8 m": 513.4,
+        "8–<10 m": 217.8,
+        "≥10 m": 73.4
+      }
+    },
+    {
+      "code": "2582",
+      "name": "Boden",
+      "total": 5029.88,
+      "width": 995.2,
+      "lanes": 682.3,
+      "widthBands": {
+        "<4 m": 218.3,
+        "4–<6 m": 288.8,
+        "6–<8 m": 385.1,
+        "8–<10 m": 98.7,
+        "≥10 m": 4.3
+      }
+    },
+    {
+      "code": "2581",
+      "name": "Piteå",
+      "total": 4764.405,
+      "width": 1442.7,
+      "lanes": 761,
+      "widthBands": {
+        "<4 m": 283.3,
+        "4–<6 m": 532.8,
+        "6–<8 m": 508.4,
+        "8–<10 m": 95.5,
+        "≥10 m": 22.6
+      }
+    },
+    {
+      "code": "2514",
+      "name": "Kalix",
+      "total": 2769.547,
+      "width": 643.4,
+      "lanes": 462.6,
+      "widthBands": {
+        "<4 m": 110.1,
+        "4–<6 m": 227.4,
+        "6–<8 m": 233.8,
+        "8–<10 m": 68,
+        "≥10 m": 4.1
+      }
+    },
+    {
+      "code": "2560",
+      "name": "Älvsbyn",
+      "total": 2338.891,
+      "width": 514.6,
+      "lanes": 368.6,
+      "widthBands": {
+        "<4 m": 89.1,
+        "4–<6 m": 132.7,
+        "6–<8 m": 167.6,
+        "8–<10 m": 112.9,
+        "≥10 m": 12.3
+      }
+    }
+  ]
+}
