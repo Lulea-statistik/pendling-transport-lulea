@@ -1,0 +1,72 @@
+{
+  "status": "source_data",
+  "source": "SCB EN0109 LevBrTypKom",
+  "source_url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__EN__EN0109__EN0109A/LevBrTypKom/",
+  "unit": "m3",
+  "scope": "Bränsleleveranser till återförsäljare per kommun, inte observerad tankning eller lastbilsspecifik förbrukning.",
+  "comparability": "2024–2025 separat tabell; ej direkt hopkopplad med 2018–2023.",
+  "fuel_code": "2",
+  "fuel_label": "diesel",
+  "rows": [
+    {
+      "kommun_code": "2514",
+      "kommun": "Kalix",
+      "year": "2024",
+      "diesel_m3": 11363.0
+    },
+    {
+      "kommun_code": "2514",
+      "kommun": "Kalix",
+      "year": "2025",
+      "diesel_m3": 11521.5
+    },
+    {
+      "kommun_code": "2560",
+      "kommun": "Älvsbyn",
+      "year": "2024",
+      "diesel_m3": 2312.1
+    },
+    {
+      "kommun_code": "2560",
+      "kommun": "Älvsbyn",
+      "year": "2025",
+      "diesel_m3": 2227.2
+    },
+    {
+      "kommun_code": "2580",
+      "kommun": "Luleå",
+      "year": "2024",
+      "diesel_m3": 42052.6
+    },
+    {
+      "kommun_code": "2580",
+      "kommun": "Luleå",
+      "year": "2025",
+      "diesel_m3": 42665.3
+    },
+    {
+      "kommun_code": "2581",
+      "kommun": "Piteå",
+      "year": "2024",
+      "diesel_m3": 26935.5
+    },
+    {
+      "kommun_code": "2581",
+      "kommun": "Piteå",
+      "year": "2025",
+      "diesel_m3": 26736.5
+    },
+    {
+      "kommun_code": "2582",
+      "kommun": "Boden",
+      "year": "2024",
+      "diesel_m3": 8475.2
+    },
+    {
+      "kommun_code": "2582",
+      "kommun": "Boden",
+      "year": "2025",
+      "diesel_m3": 9305.9
+    }
+  ]
+}
