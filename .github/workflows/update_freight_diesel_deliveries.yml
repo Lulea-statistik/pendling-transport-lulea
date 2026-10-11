@@ -1,0 +1,67 @@
+name: Update freight diesel deliveries
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '21 7 22 * *'
+  push:
+    paths:
+      - scripts/fetch_freight_diesel_deliveries.py
+      - .github/workflows/update_freight_diesel_deliveries.yml
+permissions:
+  contents: write
+concurrency:
+  group: freight-diesel-deliveries
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch SCB 2024-2025 reseller diesel deliveries
+        run: python3 scripts/fetch_freight_diesel_deliveries.py
+      - name: Upload result for inspection
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freight-diesel-deliveries
+          path: docs/data/freight-diesel-reseller-deliveries.json
+          retention-days: 14
+      - name: Publish data via latest remote commit
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import os,json,base64,urllib.request,urllib.error
+          path="docs/data/freight-diesel-reseller-deliveries.json"
+          url=f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/{path}"
+          headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"}
+          content=open(path,"rb").read()
+          for attempt in range(4):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=30) as r:sha=json.load(r)["sha"]
+              except urllib.error.HTTPError as e:
+                  if e.code!=404:raise
+                  sha=None
+              payload={"message":"Update SCB freight diesel deliveries for reseller locations","content":base64.b64encode(content).decode()}
+              if sha:payload["sha"]=sha
+              req=urllib.request.Request(url,headers={**headers,"Content-Type":"application/json"},data=json.dumps(payload).encode(),method="PUT")
+              try:
+                  with urllib.request.urlopen(req,timeout=30) as r:print("Data published",r.status)
+                  break
+              except urllib.error.HTTPError as e:
+                  if e.code not in (409,422) or attempt==3:raise
+          PY
+      - name: Record workflow status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/freight-diesel-status.json
+          RUN_WORKFLOW_NAME: Update freight diesel deliveries
+        run: python3 scripts/publish_nvdb_run_status.py
