@@ -3,7 +3,7 @@ const root=document.getElementById('freightFuelModel');if(!root)return;
 const E=(t,txt)=>{const x=document.createElement(t);if(txt!==undefined)x.textContent=txt;return x};
 const fmt=(x,n=0)=>Number(x).toLocaleString('sv-SE',{maximumFractionDigits:n,minimumFractionDigits:n});
 const km={"2024":{light:13030,heavy:40060},"2025":{light:14320,heavy:40790}};
-let year="2025",lightL=9,heavyL=30,lightDiesel=80,heavyDiesel=95,stock=null,delivery=null;
+let year="2025",lightL=9,heavyL=30,lightDiesel=80,heavyDiesel=95,stock=null,delivery=null,otherShare=null;
 function draw(){
 root.replaceChildren();root.append(E('h2','Teoretiskt dieselbehov hos registrerade lastbilar'));
 root.append(E('p','Modell för lastbilars årliga körsträcka och tänkt dieselförbrukning med rikets genomsnittliga körsträcka. Alla lastbilar antas inte gå på diesel: justera dieselandelarna. Leveranser till återförsäljare innefattar även andra dieselförbrukare.'));
@@ -19,6 +19,9 @@ for(const [caption,min,max,step,val,update,suffix] of [
  const group=E('label');group.append(E('div',caption));const number=E('input');number.type='number';number.min=min;number.max=max;number.step=step;number.value=val;number.style.width='100%';
  number.addEventListener('change',()=>{const n=Number(number.value);if(Number.isFinite(n)&&n>=min&&n<=max){update(n);draw()}else number.value=val});group.append(number,E('small',fmt(val,1)+suffix));controls.append(group)
 }root.append(controls);
+const deduction=E('label');deduction.style.cssText='display:block;max-width:440px;margin:12px 0';deduction.append(E('div','Antagen andel av återförsäljardiesel till andra än lastbilar (%) – frivilligt scenario'));
+const nontruck=E('input');nontruck.type='number';nontruck.min='0';nontruck.max='100';nontruck.step='1';nontruck.placeholder='Ingen verifierad andel – lämna tomt';nontruck.value=otherShare===null?'':otherShare;nontruck.style.width='100%';
+nontruck.addEventListener('change',()=>{const value=nontruck.value.trim();if(value==='')otherShare=null;else{const n=Number(value);if(!Number.isFinite(n)||n<0||n>100){nontruck.value=otherShare===null?'':otherShare;return}otherShare=n}draw()});deduction.append(nontruck);root.append(deduction);
 const rows=[];
 for(const code of ["2580","2581","2514","2582","2560"]){
  const l=stock.rows.find(r=>r.kommun_code===code&&r.year===year&&r.kind==='light');
@@ -30,9 +33,9 @@ for(const code of ["2580","2581","2514","2582","2560"]){
  rows.push({name:l.kommun,light:l.count,heavy:h.count,model:vl+vh,del:d.diesel_m3});
 }
 if(!rows.length){root.append(E('p','Det finns ännu inga komplett matchade kommunvärden.'));return}
-const table=E('table');table.style.cssText='width:100%;margin:16px 0;border-collapse:collapse';const head=E('thead'),hr=E('tr');['Kommun','Lätta','Tunga','Modell: lastbilsdiesel, m³','Leveranser till återförsäljare, m³','Leveranser / modell'].forEach(t=>hr.append(E('th',t)));head.append(hr);table.append(head);const body=E('tbody');
-for(const r of rows){const tr=E('tr');[r.name,fmt(r.light),fmt(r.heavy),fmt(r.model),fmt(r.del),r.model?fmt(r.del/r.model,2):'–'].forEach(v=>{const cell=E('td',v);cell.style.padding='7px 5px';tr.append(cell)});body.append(tr)}table.append(body);const holder=E('div');holder.style.overflowX='auto';holder.append(table);root.append(holder);
-const note=E('p','OBS: Kvoten jämför ALL återförsäljardiesel med bara SCENARIOBERÄKNAD lastbilsdiesel. Den är inte ett mått på nettotankning av besökande lastbilar eller transittrafik. Personbilar, bussar, entreprenadmaskiner och leveranser direkt till förbrukare saknas i nämnaren/jämförelsens täckning. Fordonen kan vara aktiva och tanka i andra kommuner eller utomlands. Riksgenomsnittliga körsträckor är inte kommunernas verkliga körning.');note.className='source-note';root.append(note);
+const table=E('table');table.style.cssText='width:100%;margin:16px 0;border-collapse:collapse';const head=E('thead'),hr=E('tr');['Kommun','Lätta','Tunga','Modell: lastbilsdiesel, m³','Leveranser till återförsäljare, m³','Justerade leveranser / modell (scenario)'].forEach(t=>hr.append(E('th',t)));head.append(hr);table.append(head);const body=E('tbody');
+for(const r of rows){const tr=E('tr');[r.name,fmt(r.light),fmt(r.heavy),fmt(r.model),fmt(r.del),otherShare!==null&&r.model?fmt(r.del*(1-otherShare/100)/r.model,2):'Ej beräknad'].forEach(v=>{const cell=E('td',v);cell.style.padding='7px 5px';tr.append(cell)});body.append(tr)}table.append(body);const holder=E('div');holder.style.overflowX='auto';holder.append(table);root.append(holder);
+const note=E('p','OBS: Modellen beräknar endast lätta och tunga lastbilars tänkta dieselbehov. Privatägda personbilar, företagsägda personbilar, bussar, entreprenad- och jordbruksmaskiner m.fl. ligger utanför modellen men deras diesel kan ingå i SCB:s leveranser till återförsäljare. Därför visas ingen jämförelsekvot förrän en andel för övriga dieselanvändare anges uttryckligen. Även en sådan korrigering är en hypotetisk känslighetsanalys, inte en mätning av lastbilarnas tankning. Privat/företagsägande identifieras inte i de befintliga aggregerade indata. Direktleveranser, biodrivmedel, transittrafik och tankning över kommun- eller landsgränser är ytterligare osäkerheter.');note.className='source-note';root.append(note);
 const links=E('p');const a=E('a','Trafikanalys – körsträckor');a.href='https://www.trafa.se/vagtrafik/korstrackor/';a.target='_blank';a.rel='noopener noreferrer';const b=E('a','SCB – fordon i trafik');b.href=stock.url;b.target='_blank';b.rel='noopener noreferrer';links.append(a,E('span',' · '),b);root.append(links)
 }
 Promise.all([fetch('data/freight-truck-stock.json').then(r=>{if(!r.ok)throw Error('stock unavailable');return r.json()}),fetch('data/freight-diesel-reseller-deliveries.json').then(r=>{if(!r.ok)throw Error('diesel unavailable');return r.json()})]).then(([s,d])=>{if(s.status!=='source_data'||d.status!=='source_data')throw Error('not validated');stock=s;delivery=d;draw()}).catch(()=>{});draw()
