@@ -1,0 +1,69 @@
+{
+  "status": "preliminary_QA_checked",
+  "source": "NVDB Lastkajen 10155; run 38137137007",
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38137137007",
+  "method": "Unique coincident line geometries per heavy and total AADT; removed conflicting overlaps; length-weighted heavy AADT and annual heavy vehicle-km = sum(ADT heavy x segment length km x 365)",
+  "limits": "Only covered traffic links. Not entire road network; no extrapolation. Road network benchmark is NVDB functional-class car-network length and may use a different geometry representation; percentage is approximate. Parallel carriageways counted separately; vehicle-km is a link exposure measure, not unique journeys, and year 365 is an annualized approximation. Historical measurement/reference years and classification definition require separate validation.",
+  "municipalities": [
+    {
+      "code": "2580",
+      "name": "Luleå",
+      "covered_km": 676.052,
+      "car_network_km": 3518.38,
+      "coverage_pct": 19.2,
+      "adt_heavy": 132.9,
+      "adt_total": 1675.7,
+      "heavy_share_pct": 7.9,
+      "heavy_vehicle_km_year": 32793684,
+      "conflicting_overlap_km": 0
+    },
+    {
+      "code": "2582",
+      "name": "Boden",
+      "covered_km": 725.341,
+      "car_network_km": 5029.88,
+      "coverage_pct": 14.4,
+      "adt_heavy": 33.2,
+      "adt_total": 554.9,
+      "heavy_share_pct": 6,
+      "heavy_vehicle_km_year": 8780622,
+      "conflicting_overlap_km": 0
+    },
+    {
+      "code": "2581",
+      "name": "Piteå",
+      "covered_km": 818.099,
+      "car_network_km": 4764.405,
+      "coverage_pct": 17.2,
+      "adt_heavy": 106.6,
+      "adt_total": 1049.4,
+      "heavy_share_pct": 10.2,
+      "heavy_vehicle_km_year": 31823450,
+      "conflicting_overlap_km": 0
+    },
+    {
+      "code": "2514",
+      "name": "Kalix",
+      "covered_km": 578.531,
+      "car_network_km": 2769.547,
+      "coverage_pct": 20.9,
+      "adt_heavy": 81.7,
+      "adt_total": 743.4,
+      "heavy_share_pct": 11,
+      "heavy_vehicle_km_year": 17250684,
+      "conflicting_overlap_km": 0
+    },
+    {
+      "code": "2560",
+      "name": "Älvsbyn",
+      "covered_km": 397.533,
+      "car_network_km": 2338.891,
+      "coverage_pct": 17,
+      "adt_heavy": 48.1,
+      "adt_total": 511.2,
+      "heavy_share_pct": 9.4,
+      "heavy_vehicle_km_year": 6986507,
+      "conflicting_overlap_km": 0
+    }
+  ]
+}
