@@ -37,9 +37,10 @@ def main():
             "response":{"format":"json"}}
     raw=api(query)
     columns=[x["code"] for x in raw["columns"]]
-    expected={region["code"],fuel["code"],year["code"]}
+    expected={region["code"],fuel["code"],year["code"],"ContentsCode"} | set(next(v["values"] for v in meta["variables"] if v["code"]=="ContentsCode"))
     extra=[c for c in columns if c not in expected and c.lower() not in ("contentscode","contents")]
     if extra:raise ValueError("Unexpected dimensions "+str(extra))
+    if len(raw["data"])!=5*len(years):raise ValueError("Unexpected response length, or multiple contents measures")
     index={c:i for i,c in enumerate(columns)}
     rows=[]
     for obj in raw["data"]:
