@@ -22,6 +22,7 @@
   <button class="tab" data-page="service">Färdtjänst</button>
   <button class="tab" data-page="nvdb">NVDB & vägnät</button>
   <button class="tab" data-page="trafficenvironment">Vägmiljö & trafikflöden</button>
+  <button class="tab" data-page="freight">Godstransporter & logistik</button>
   <button class="tab" data-page="transit">Kollektivtrafik</button>
   <button class="tab" data-page="migrationmodels">Inflyttningsmodeller</button>
 </nav>
@@ -384,6 +385,27 @@
 
 
 
+  <section id="page-freight" class="page">
+    <section class="page-intro panel">
+      <div>
+        <h2>Godstransporter & logistik</h2>
+        <p>Fordon, godstrafikens vägflöden, tunga fordons framkomlighet och logistikens platser i Luleå kommun och Luleå FA-region.</p>
+      </div>
+      <a href="https://nvdbpakarta.trafikverket.se/" target="_blank" rel="noopener noreferrer">Källa: Trafikverket NVDB</a>
+    </section>
+    <section class="panel">
+      <h2>Så ska godstransporterna analyseras</h2>
+      <p>Vi skiljer mellan <strong>registrerade lastbilar</strong> (fordonsbestånd), <strong>lastbilar på vägnätet</strong> (ÅDT tunga fordon), <strong>var lastbilar kan köra</strong> (bärighet och fordonsbegränsningar) och <strong>var gods kan hanteras</strong> (uppställning, lastzoner och terminaler). De måtten kan inte ersätta varandra.</p>
+      <p class="source-note">Geografi: Luleå, Boden, Piteå, Älvsbyn och Kalix. Denna första version är en källinventering; inga siffror om tunga flöden, tillåtna rutter eller antalet lastbilsplatser presenteras innan respektive datakälla verifierats.</p>
+    </section>
+    <section class="panel" id="freightCatalog" aria-live="polite"></section>
+    <section class="panel">
+      <h2>Redan tillgängligt i rapporten</h2>
+      <p>Under <strong>Fordon i kommuner</strong> finns fordonsstatistik och under <strong>Vägmiljö & trafikflöden</strong> finns en preliminär analys av ÅDT för <em>samtliga</em> motorfordon på delar av det statliga vägnätet. Dessa ska inte misstas för en separat serie för tunga lastbilar.</p>
+      <p>Drivmedelsstationer, biogas och laddning anpassad för tunga lastbilar hanteras i en särskild kommande källinventering, med kontroll av fordonsåtkomst och laddstandard.</p>
+    </section>
+  </section>
+
   <section id="page-trafficenvironment" class="page">
     <section class="page-intro panel">
       <div>
@@ -599,5 +621,6 @@
 <script src="nvdb-road-standard-coverage.js?v=1"></script>
 <script src="nvdb-road-standard-by-class.js?v=1"></script>
 <script src="nvdb-road-width-by-class.js?v=1"></script>
+<script src="freight-logistics.js?v=1"></script>
 </body>
 </html>
