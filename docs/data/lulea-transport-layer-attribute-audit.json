@@ -1,0 +1,2245 @@
+{
+  "source": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer",
+  "checked_utc": "2026-10-12T06:50:20.006728+00:00",
+  "status": "diagnostic_only",
+  "notes": "All samples limited to 2 public objects per layer. No private tokens; never treats general parking as legal heavy truck space.",
+  "layers": {
+    "vaghallare": {
+      "id": 35,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/35",
+      "metadata_ok": true,
+      "name": "Väghållare",
+      "type": "Feature Layer",
+      "parentLayer": null,
+      "geometryType": "esriGeometryPolyline",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "VAGHALLARE",
+          "alias": "VAGHALLARE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "GILTIG_FROM",
+          "alias": "GILTIG_FROM",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "GILTIG_TOM",
+          "alias": "GILTIG_TOM",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SHAPE",
+          "alias": "SHAPE",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "SHAPE.STLength()",
+          "alias": "SHAPE.STLength()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "SDE_ADAT",
+          "alias": "SDE_ADAT",
+          "type": "esriFieldTypeDate"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 28477,
+      "attribute_samples": [
+        {
+          "OBJECTID": 1,
+          "VAGHALLARE": "enskild",
+          "GILTIG_FROM": "2004-08-23Z",
+          "GILTIG_TOM": "9999-12-30Z",
+          "SHAPE.STLength()": 62.3038092057154,
+          "SDE_ADAT": 1791579603000
+        },
+        {
+          "OBJECTID": 2,
+          "VAGHALLARE": "enskild",
+          "GILTIG_FROM": "2004-08-23Z",
+          "GILTIG_TOM": "9999-12-30Z",
+          "SHAPE.STLength()": 59.659648106475245,
+          "SDE_ADAT": 1791579603000
+        }
+      ]
+    },
+    "farligt_gods_rekommenderad": {
+      "id": 38,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/38",
+      "metadata_ok": true,
+      "name": "Rekommenderad vägsträcka",
+      "type": "Feature Layer",
+      "parentLayer": {
+        "id": 37,
+        "name": "Farligt gods"
+      },
+      "geometryType": "esriGeometryPolyline",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "SHAPE",
+          "alias": "Shape",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "SHAPE.STLength()",
+          "alias": "Shape.STLength()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "REKOMMENDATION",
+          "alias": "REKOMMENDATION",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "GILTIG_FROM",
+          "alias": "GILTIG_FROM",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "GILTIG_TOM",
+          "alias": "GILTIG_TOM",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SDE_ADAT",
+          "alias": "SDE_ADAT",
+          "type": "esriFieldTypeDate"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 502,
+      "attribute_samples": [
+        {
+          "OBJECTID": 1,
+          "SHAPE.STLength()": 2962.8687967865503,
+          "REKOMMENDATION": "rekommenderad primär väg",
+          "GILTIG_FROM": "2007-11-14Z",
+          "GILTIG_TOM": "9999-12-30Z",
+          "SDE_ADAT": 1791579603000
+        },
+        {
+          "OBJECTID": 2,
+          "SHAPE.STLength()": 234.6570511317362,
+          "REKOMMENDATION": "rekommenderad primär väg",
+          "GILTIG_FROM": "2007-11-14Z",
+          "GILTIG_TOM": "9999-12-30Z",
+          "SDE_ADAT": 1791579603000
+        }
+      ]
+    },
+    "farligt_gods_forbud": {
+      "id": 39,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/39",
+      "metadata_ok": true,
+      "name": "Vägsträcka med förbud",
+      "type": "Feature Layer",
+      "parentLayer": {
+        "id": 37,
+        "name": "Farligt gods"
+      },
+      "geometryType": "esriGeometryPolyline",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "Shape",
+          "alias": "Shape",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Shape.STLength()",
+          "alias": "Shape.STLength()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "VALID_FROM",
+          "alias": "VALID_FROM",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "VALID_TO",
+          "alias": "VALID_TO",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "EXTENT_LEN",
+          "alias": "EXTENT_LEN",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "DIRECTION",
+          "alias": "DIRECTION",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Beteckning",
+          "alias": "Beteckning",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Far_inte_f",
+          "alias": "Far_inte_f",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Galler_gen",
+          "alias": "Galler_gen",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SDE_ADAT",
+          "alias": "SDE_ADAT",
+          "type": "esriFieldTypeDate"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 8,
+      "attribute_samples": [
+        {
+          "OBJECTID": 1,
+          "Shape.STLength()": 223.90130379509432,
+          "VALID_FROM": 20220315,
+          "VALID_TO": 99991231,
+          "EXTENT_LEN": 224.107,
+          "DIRECTION": "Med och mot",
+          "Beteckning": " ",
+          "Far_inte_f": "föras",
+          "Galler_gen": "falskt",
+          "SDE_ADAT": null
+        },
+        {
+          "OBJECTID": 2,
+          "Shape.STLength()": 933.7816596258727,
+          "VALID_FROM": 20220315,
+          "VALID_TO": 99991231,
+          "EXTENT_LEN": 934.642,
+          "DIRECTION": "Med och mot",
+          "Beteckning": " ",
+          "Far_inte_f": "föras",
+          "Galler_gen": "falskt",
+          "SDE_ADAT": null
+        }
+      ]
+    },
+    "parkering_uppstallning_54": {
+      "id": 54,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/54",
+      "metadata_ok": true,
+      "name": "Parkering och uppställningsplats",
+      "type": "Feature Layer",
+      "parentLayer": null,
+      "geometryType": "esriGeometryPoint",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Id",
+          "alias": "Id",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta_punkt.Area",
+          "alias": "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta_punkt.Area",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Shape_Leng",
+          "alias": "Shape_Leng",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "ORIG_FID",
+          "alias": "ORIG_FID",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "Shape",
+          "alias": "Shape",
+          "type": "esriFieldTypeGeometry"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 82,
+      "attribute_samples": [
+        {
+          "OBJECTID": 1,
+          "Id": 0,
+          "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta_punkt.Area": "19,7999999343152",
+          "Shape_Leng": 25.77674622,
+          "ORIG_FID": 0
+        },
+        {
+          "OBJECTID": 2,
+          "Id": 0,
+          "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta_punkt.Area": "10,8000000103288",
+          "Shape_Leng": 15.59999262,
+          "ORIG_FID": 1
+        }
+      ]
+    },
+    "parkering_uppstallning_56": {
+      "id": 56,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/56",
+      "metadata_ok": true,
+      "name": "Parkering och uppställningsplats",
+      "type": "Feature Layer",
+      "parentLayer": null,
+      "geometryType": "esriGeometryPolygon",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "Id",
+          "alias": "Id",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta.Area",
+          "alias": "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta.Area",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Shape_Leng",
+          "alias": "Shape_Leng",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape",
+          "alias": "Shape",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "Shape.STArea()",
+          "alias": "Shape.STArea()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape.STLength()",
+          "alias": "Shape.STLength()",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 82,
+      "attribute_samples": [
+        {
+          "OBJECTID": 1,
+          "Id": 0,
+          "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta.Area": "19,7999999343152",
+          "Shape_Leng": 25.77674622,
+          "Shape.STArea()": 20.496889,
+          "Shape.STLength()": 25.776746215864815
+        },
+        {
+          "OBJECTID": 2,
+          "Id": 0,
+          "sde_vag.GNGVAG.elsparkcyklar_uppstallningsyta.Area": "10,8000000103288",
+          "Shape_Leng": 15.59999262,
+          "Shape.STArea()": 10.80002924,
+          "Shape.STLength()": 15.599992617156712
+        }
+      ]
+    },
+    "parkering_5": {
+      "id": 5,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/5",
+      "metadata_ok": true,
+      "name": "Parkeringsplatser",
+      "type": "Feature Layer",
+      "parentLayer": {
+        "id": 0,
+        "name": "Parkering"
+      },
+      "geometryType": "esriGeometryPolygon",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "TYP",
+          "alias": "Parkeringstyp",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "TAXA",
+          "alias": "Taxa",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANTALPL",
+          "alias": "Antal platser",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "STADSDEL",
+          "alias": "Stadsdel",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "PAUTOMAT",
+          "alias": "Parkeringsautomat",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT6",
+          "alias": "Ägare",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT7",
+          "alias": "ATTRIBUT7",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT8",
+          "alias": "ATTRIBUT8",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT9",
+          "alias": "ATTRIBUT9",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT10",
+          "alias": "ATTRIBUT10",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKAPAD",
+          "alias": "Skapad datum",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "SKAPADAV",
+          "alias": "Skapad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANDRAD",
+          "alias": "Ändrad",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "ANDRADAV",
+          "alias": "Ändrad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKALA",
+          "alias": "Skala",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "FANGSTM",
+          "alias": "Fångstmetod",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "UNDERLAG",
+          "alias": "Underlag",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URSPKOORDPLAN",
+          "alias": "Koordinatsystem",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "GATUNAMN",
+          "alias": "Gatunamn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN",
+          "alias": "Alternativt Namn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN1",
+          "alias": "Alternativt Namn2",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URL",
+          "alias": "Länk till hemsida",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "KOMMENTAR",
+          "alias": "Kommentar",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ADRESS",
+          "alias": "Adress",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SHAPE",
+          "alias": "SHAPE",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "SHAPE.STArea()",
+          "alias": "SHAPE.STArea()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "SHAPE.STLength()",
+          "alias": "SHAPE.STLength()",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 1611,
+      "attribute_samples": [
+        {
+          "OBJECTID": 20,
+          "TYP": "P",
+          "TAXA": "18",
+          "ANTALPL": 1,
+          "STADSDEL": "INNERSTADEN",
+          "PAUTOMAT": "KA46",
+          "ATTRIBUT6": "Kommunal",
+          "ATTRIBUT7": null,
+          "ATTRIBUT8": null,
+          "ATTRIBUT9": null,
+          "ATTRIBUT10": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": null,
+          "ANDRADAV": "SIM006",
+          "SKALA": "300",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": null,
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "GATUNAMN": "Trekanten, Strand parkeringen",
+          "NAMN": "Trekanten",
+          "NAMN1": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null,
+          "SHAPE.STArea()": 12.84022215,
+          "SHAPE.STLength()": 15.138467182765165
+        },
+        {
+          "OBJECTID": 21,
+          "TYP": "P",
+          "TAXA": "18",
+          "ANTALPL": 1,
+          "STADSDEL": "INNERSTADEN",
+          "PAUTOMAT": "KA46",
+          "ATTRIBUT6": "Kommunal",
+          "ATTRIBUT7": null,
+          "ATTRIBUT8": null,
+          "ATTRIBUT9": null,
+          "ATTRIBUT10": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": null,
+          "ANDRADAV": "SIM006",
+          "SKALA": "300",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": null,
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "GATUNAMN": "Trekanten, Strand parkeringen",
+          "NAMN": "Trekanten",
+          "NAMN1": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null,
+          "SHAPE.STArea()": 12.51458084,
+          "SHAPE.STLength()": 15.011568903458969
+        }
+      ]
+    },
+    "parkering_6": {
+      "id": 6,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/6",
+      "metadata_ok": true,
+      "name": "Parkeringsplatser",
+      "type": "Feature Layer",
+      "parentLayer": {
+        "id": 0,
+        "name": "Parkering"
+      },
+      "geometryType": "esriGeometryPolygon",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "TYP",
+          "alias": "Parkeringstyp",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "TAXA",
+          "alias": "Taxa",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANTALPL",
+          "alias": "Antal platser",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "STADSDEL",
+          "alias": "Stadsdel",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "PAUTOMAT",
+          "alias": "Parkeringsautomat",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT6",
+          "alias": "Ägare",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT7",
+          "alias": "ATTRIBUT7",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT8",
+          "alias": "ATTRIBUT8",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT9",
+          "alias": "ATTRIBUT9",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT10",
+          "alias": "ATTRIBUT10",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKAPAD",
+          "alias": "Skapad datum",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "SKAPADAV",
+          "alias": "Skapad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANDRAD",
+          "alias": "Ändrad",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "ANDRADAV",
+          "alias": "Ändrad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKALA",
+          "alias": "Skala",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "FANGSTM",
+          "alias": "Fångstmetod",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "UNDERLAG",
+          "alias": "Underlag",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URSPKOORDPLAN",
+          "alias": "Koordinatsystem",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "GATUNAMN",
+          "alias": "Gatunamn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN",
+          "alias": "Alternativt Namn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN1",
+          "alias": "Alternativt Namn2",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URL",
+          "alias": "Länk till hemsida",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "KOMMENTAR",
+          "alias": "Kommentar",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ADRESS",
+          "alias": "Adress",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SHAPE",
+          "alias": "SHAPE",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "SHAPE.STArea()",
+          "alias": "SHAPE.STArea()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "SHAPE.STLength()",
+          "alias": "SHAPE.STLength()",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 1611,
+      "attribute_samples": [
+        {
+          "OBJECTID": 20,
+          "TYP": "P",
+          "TAXA": "18",
+          "ANTALPL": 1,
+          "STADSDEL": "INNERSTADEN",
+          "PAUTOMAT": "KA46",
+          "ATTRIBUT6": "Kommunal",
+          "ATTRIBUT7": null,
+          "ATTRIBUT8": null,
+          "ATTRIBUT9": null,
+          "ATTRIBUT10": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": null,
+          "ANDRADAV": "SIM006",
+          "SKALA": "300",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": null,
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "GATUNAMN": "Trekanten, Strand parkeringen",
+          "NAMN": "Trekanten",
+          "NAMN1": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null,
+          "SHAPE.STArea()": 12.84022215,
+          "SHAPE.STLength()": 15.138467182765165
+        },
+        {
+          "OBJECTID": 21,
+          "TYP": "P",
+          "TAXA": "18",
+          "ANTALPL": 1,
+          "STADSDEL": "INNERSTADEN",
+          "PAUTOMAT": "KA46",
+          "ATTRIBUT6": "Kommunal",
+          "ATTRIBUT7": null,
+          "ATTRIBUT8": null,
+          "ATTRIBUT9": null,
+          "ATTRIBUT10": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": null,
+          "ANDRADAV": "SIM006",
+          "SKALA": "300",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": null,
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "GATUNAMN": "Trekanten, Strand parkeringen",
+          "NAMN": "Trekanten",
+          "NAMN1": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null,
+          "SHAPE.STArea()": 12.51458084,
+          "SHAPE.STLength()": 15.011568903458969
+        }
+      ]
+    },
+    "parkering_7": {
+      "id": 7,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/7",
+      "metadata_ok": true,
+      "name": "Parkeringsplatser",
+      "type": "Feature Layer",
+      "parentLayer": {
+        "id": 0,
+        "name": "Parkering"
+      },
+      "geometryType": "esriGeometryPolygon",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "TYP",
+          "alias": "Parkeringstyp",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "TAXA",
+          "alias": "Taxa",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANTALPL",
+          "alias": "Antal platser",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "STADSDEL",
+          "alias": "Stadsdel",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "PAUTOMAT",
+          "alias": "Parkeringsautomat",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT6",
+          "alias": "Ägare",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT7",
+          "alias": "ATTRIBUT7",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT8",
+          "alias": "ATTRIBUT8",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT9",
+          "alias": "ATTRIBUT9",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT10",
+          "alias": "ATTRIBUT10",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKAPAD",
+          "alias": "Skapad datum",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "SKAPADAV",
+          "alias": "Skapad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANDRAD",
+          "alias": "Ändrad",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "ANDRADAV",
+          "alias": "Ändrad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKALA",
+          "alias": "Skala",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "FANGSTM",
+          "alias": "Fångstmetod",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "UNDERLAG",
+          "alias": "Underlag",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URSPKOORDPLAN",
+          "alias": "Koordinatsystem",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "GATUNAMN",
+          "alias": "Gatunamn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN",
+          "alias": "Alternativt Namn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN1",
+          "alias": "Alternativt Namn2",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URL",
+          "alias": "Länk till hemsida",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "KOMMENTAR",
+          "alias": "Kommentar",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ADRESS",
+          "alias": "Adress",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SHAPE",
+          "alias": "SHAPE",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "SHAPE.STArea()",
+          "alias": "SHAPE.STArea()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "SHAPE.STLength()",
+          "alias": "SHAPE.STLength()",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 5,
+      "attribute_samples": [
+        {
+          "OBJECTID": 142,
+          "TYP": "PH",
+          "TAXA": "15",
+          "ANTALPL": 167,
+          "STADSDEL": "INNERSTADEN",
+          "PAUTOMAT": " ",
+          "ATTRIBUT6": "Privat",
+          "ATTRIBUT7": null,
+          "ATTRIBUT8": null,
+          "ATTRIBUT9": null,
+          "ATTRIBUT10": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": null,
+          "ANDRADAV": "SIM006",
+          "SKALA": "300",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": null,
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "GATUNAMN": "Nygatan",
+          "NAMN": "Tjädern P-hus",
+          "NAMN1": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null,
+          "SHAPE.STArea()": 1250.05152129,
+          "SHAPE.STLength()": 148.1701209599957
+        },
+        {
+          "OBJECTID": 569,
+          "TYP": "PH",
+          "TAXA": "måndag-lördag \r\n12 kronor timmen, söndag avgiftsfritt",
+          "ANTALPL": 697,
+          "STADSDEL": "INNERSTADEN",
+          "PAUTOMAT": " ",
+          "ATTRIBUT6": "Kommunal",
+          "ATTRIBUT7": "Taxa: 12 kr/tim mån-lör, max 60 kr/dygn<br/>Antal platser: 697<br/>För rörelsehindrade: 12<br/> Ladd",
+          "ATTRIBUT8": null,
+          "ATTRIBUT9": null,
+          "ATTRIBUT10": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": null,
+          "ANDRADAV": "SIM006",
+          "SKALA": "300",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": null,
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "GATUNAMN": "Stationsgatan",
+          "NAMN": "Karpen P-hus",
+          "NAMN1": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null,
+          "SHAPE.STArea()": 3897.235875345,
+          "SHAPE.STLength()": 259.09351590023186
+        }
+      ]
+    },
+    "laddplats": {
+      "id": 2,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/2",
+      "metadata_ok": true,
+      "name": "Laddplats",
+      "type": "Feature Layer",
+      "parentLayer": {
+        "id": 0,
+        "name": "Parkering"
+      },
+      "geometryType": "esriGeometryPoint",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "TYP",
+          "alias": "Objekt typ",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANTALPL",
+          "alias": "Antal platser",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT3",
+          "alias": "ATTRIBUT3",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT4",
+          "alias": "ATTRIBUT4",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT5",
+          "alias": "ATTRIBUT5",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT6",
+          "alias": "ATTRIBUT6",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ATTRIBUT7",
+          "alias": "ATTRIBUT7",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKAPAD",
+          "alias": "Skapad datum\nSkapad datum",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "SKAPADAV",
+          "alias": "Skapad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANDRAD",
+          "alias": "Ändrad datum",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "ANDRADAV",
+          "alias": "Ändrad av",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKALA",
+          "alias": "Skala",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "FANGSTM",
+          "alias": "Fångstmetod",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "UNDERLAG",
+          "alias": "Underlag",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URSPKOORDPLAN",
+          "alias": "Koordinatsystem\n",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN",
+          "alias": "Namn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN1",
+          "alias": "Alternativ Namn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN2",
+          "alias": "Alternativ Namn2",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URL",
+          "alias": "Länk till hemsida",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "KOMMENTAR",
+          "alias": "Kommentar",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ADRESS",
+          "alias": "Adress",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SHAPE",
+          "alias": "SHAPE",
+          "type": "esriFieldTypeGeometry"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 6,
+      "attribute_samples": [
+        {
+          "OBJECTID": 44,
+          "TYP": "Laddplats",
+          "ANTALPL": null,
+          "ATTRIBUT3": null,
+          "ATTRIBUT4": null,
+          "ATTRIBUT5": null,
+          "ATTRIBUT6": null,
+          "ATTRIBUT7": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": 1693958400000,
+          "ANDRADAV": "SIM006",
+          "SKALA": "100",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": " ",
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "NAMN": " ",
+          "NAMN1": null,
+          "NAMN2": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null
+        },
+        {
+          "OBJECTID": 45,
+          "TYP": "Laddplats",
+          "ANTALPL": null,
+          "ATTRIBUT3": null,
+          "ATTRIBUT4": null,
+          "ATTRIBUT5": null,
+          "ATTRIBUT6": null,
+          "ATTRIBUT7": null,
+          "SKAPAD": 946684800000,
+          "SKAPADAV": "Tekniska förvaltningen",
+          "ANDRAD": 1693958400000,
+          "ANDRADAV": "SIM006",
+          "SKALA": "100",
+          "FANGSTM": "Skärmdigg-ortofoto-underlag",
+          "UNDERLAG": " ",
+          "URSPKOORDPLAN": "Sweref99 2145",
+          "NAMN": " ",
+          "NAMN1": null,
+          "NAMN2": null,
+          "URL": null,
+          "KOMMENTAR": null,
+          "ADRESS": null
+        }
+      ]
+    },
+    "parkeringsforbud": {
+      "id": 58,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/58",
+      "metadata_ok": true,
+      "name": "Parkeringsförbud",
+      "type": "Feature Layer",
+      "parentLayer": null,
+      "geometryType": "esriGeometryPolygon",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "detaljtyp",
+          "alias": "detaljtyp",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "adat",
+          "alias": "adat",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "lankod",
+          "alias": "lankod",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "kommunkod",
+          "alias": "kommunkod",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "kommunnamn",
+          "alias": "kommunnamn",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SDE_ADAT",
+          "alias": "SDE_ADAT",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "Shape_Leng",
+          "alias": "Shape_Leng",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape",
+          "alias": "Shape",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "Shape.STArea()",
+          "alias": "Shape.STArea()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape.STLength()",
+          "alias": "Shape.STLength()",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 1645,
+      "attribute_samples": [
+        {
+          "OBJECTID": 2,
+          "detaljtyp": "KOMMUN",
+          "adat": 1690761600000,
+          "lankod": "25",
+          "kommunkod": "2580",
+          "kommunnamn": "LULEÅ",
+          "SDE_ADAT": 1698537600000,
+          "Shape_Leng": 417593.155427,
+          "Shape.STArea()": 39737378.71204774,
+          "Shape.STLength()": 565058.2574428903
+        },
+        {
+          "OBJECTID": 3,
+          "detaljtyp": "KOMMUN",
+          "adat": 1690761600000,
+          "lankod": "25",
+          "kommunkod": "2580",
+          "kommunnamn": "LULEÅ",
+          "SDE_ADAT": 1698537600000,
+          "Shape_Leng": 417593.155427,
+          "Shape.STArea()": 18216004.06904146,
+          "Shape.STLength()": 453634.8293932824
+        }
+      ]
+    },
+    "korforbud": {
+      "id": 59,
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer/59",
+      "metadata_ok": true,
+      "name": "Körförbud",
+      "type": "Feature Layer",
+      "parentLayer": null,
+      "geometryType": "esriGeometryPolygon",
+      "capabilities": "Map,Query,Data",
+      "advancedQueryCapabilities": {
+        "useStandardizedQueries": true,
+        "supportsStatistics": true,
+        "supportsPercentileStatistics": true,
+        "supportsHavingClause": true,
+        "supportsOrderBy": true,
+        "supportsDistinct": true,
+        "supportsCountDistinct": true,
+        "supportsAdvancedQueryRelated": true,
+        "supportsQueryRelatedPagination": true,
+        "supportsPagination": true,
+        "supportsLod": false,
+        "supportsQueryWithLodSR": false,
+        "supportsTrueCurve": true,
+        "supportsQueryWithDatumTransformation": true,
+        "supportsReturningQueryExtent": true,
+        "supportsQueryWithDistance": true,
+        "supportsSqlExpression": true,
+        "supportsTimeRelation": true,
+        "supportsSqlFormat": false,
+        "supportsQueryAnalytic": true,
+        "supportsCurrentUserQueries": true
+      },
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "alias": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "name": "FID_Forbud",
+          "alias": "FID_Forbud",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "SHAPE_Leng",
+          "alias": "SHAPE_Leng",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "objektiden",
+          "alias": "objektiden",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "versiongil",
+          "alias": "versiongil",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "lagesosake",
+          "alias": "lagesosake",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "lagesosa_1",
+          "alias": "lagesosa_1",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "ursprungli",
+          "alias": "ursprungli",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "objektvers",
+          "alias": "objektvers",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "objekttypn",
+          "alias": "objekttypn",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "objekttyp",
+          "alias": "objekttyp",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "andamal",
+          "alias": "andamal",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "skjutfalts",
+          "alias": "skjutfalts",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "skjutfal_1",
+          "alias": "skjutfal_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SDE_ADAT",
+          "alias": "SDE_ADAT",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "TYP",
+          "alias": "TYP",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "STYP",
+          "alias": "STYP",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "ATGARD",
+          "alias": "ATGARD",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "BELAGGNING",
+          "alias": "BELAGGNING",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "SKAPAD",
+          "alias": "SKAPAD",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "SKAPADAV",
+          "alias": "SKAPADAV",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANDRAD",
+          "alias": "ANDRAD",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "ANDRADAV",
+          "alias": "ANDRADAV",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "SKALA",
+          "alias": "SKALA",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "FANGSTM",
+          "alias": "FANGSTM",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "UNDERLAG",
+          "alias": "UNDERLAG",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "VHT",
+          "alias": "VHT",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "OBJEKT",
+          "alias": "OBJEKT",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "TILLG_ANP",
+          "alias": "TILLG_ANP",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "TILLG_BESK",
+          "alias": "TILLG_BESK",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ADRESS",
+          "alias": "ADRESS",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "KOMMENTAR",
+          "alias": "KOMMENTAR",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "AGARE",
+          "alias": "AGARE",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "FORVALTARE",
+          "alias": "FORVALTARE",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "MEDELFELPL",
+          "alias": "MEDELFELPL",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "MATMETODPL",
+          "alias": "MATMETODPL",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "SKALAUNDER",
+          "alias": "SKALAUNDER",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "URSPRKOORD",
+          "alias": "URSPRKOORD",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "GLOBALID",
+          "alias": "GLOBALID",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "NAMN",
+          "alias": "NAMN",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "URL",
+          "alias": "URL",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Postort",
+          "alias": "Postort",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Lekplats_e",
+          "alias": "Lekplats_e",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_101",
+          "alias": "INV_101",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_102",
+          "alias": "INV_102",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_103",
+          "alias": "INV_103",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_104",
+          "alias": "INV_104",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_105",
+          "alias": "INV_105",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_106",
+          "alias": "INV_106",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_107",
+          "alias": "INV_107",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_108",
+          "alias": "INV_108",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_109",
+          "alias": "INV_109",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_110",
+          "alias": "INV_110",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_111",
+          "alias": "INV_111",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_112",
+          "alias": "INV_112",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_113",
+          "alias": "INV_113",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_114",
+          "alias": "INV_114",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_115",
+          "alias": "INV_115",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_116",
+          "alias": "INV_116",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_117",
+          "alias": "INV_117",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_118",
+          "alias": "INV_118",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_119",
+          "alias": "INV_119",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_120",
+          "alias": "INV_120",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_121",
+          "alias": "INV_121",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_122",
+          "alias": "INV_122",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_123",
+          "alias": "INV_123",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_124",
+          "alias": "INV_124",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_125",
+          "alias": "INV_125",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "INV_Kommen",
+          "alias": "INV_Kommen",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "INV_SW",
+          "alias": "INV_SW",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "INV_DATUM",
+          "alias": "INV_DATUM",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "LEK_INV_J_",
+          "alias": "LEK_INV_J_",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "Skötselan",
+          "alias": "Skötselan",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Ägare",
+          "alias": "Ägare",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Parktyp_da",
+          "alias": "Parktyp_da",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "Parktyp_fr",
+          "alias": "Parktyp_fr",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "Stadsdel_e",
+          "alias": "Stadsdel_e",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "FID_vagyto",
+          "alias": "FID_vagyto",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "SKAPAD_1",
+          "alias": "SKAPAD_1",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "ANDRAD_1",
+          "alias": "ANDRAD_1",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "name": "SKAPADAV_1",
+          "alias": "SKAPADAV_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "ANDRADAV_1",
+          "alias": "ANDRADAV_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "MEDELFEL_1",
+          "alias": "MEDELFEL_1",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "MATMETOD_1",
+          "alias": "MATMETOD_1",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "SKALAUND_1",
+          "alias": "SKALAUND_1",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "URSPRKOO_1",
+          "alias": "URSPRKOO_1",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "TYP_1",
+          "alias": "TYP_1",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "GLOBALID_1",
+          "alias": "GLOBALID_1",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "name": "Shape_STAr",
+          "alias": "Shape_STAr",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape_STLe",
+          "alias": "Shape_STLe",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "ORIG_FID",
+          "alias": "ORIG_FID",
+          "type": "esriFieldTypeInteger"
+        },
+        {
+          "name": "Shape_Le_1",
+          "alias": "Shape_Le_1",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape",
+          "alias": "Shape",
+          "type": "esriFieldTypeGeometry"
+        },
+        {
+          "name": "Shape.STArea()",
+          "alias": "Shape.STArea()",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "name": "Shape.STLength()",
+          "alias": "Shape.STLength()",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "subLayers": [],
+      "maxRecordCount": 2000,
+      "count": 1457,
+      "attribute_samples": [
+        {
+          "OBJECTID": 1797,
+          "FID_Forbud": 0,
+          "SHAPE_Leng": 255470.359644,
+          "objektiden": " ",
+          "versiongil": -2209161600000,
+          "lagesosake": 0.0,
+          "lagesosa_1": 0.0,
+          "ursprungli": " ",
+          "objektvers": 0,
+          "objekttypn": 0,
+          "objekttyp": " ",
+          "andamal": " ",
+          "skjutfalts": " ",
+          "skjutfal_1": " ",
+          "SDE_ADAT": -2209161600000,
+          "TYP": 0,
+          "STYP": 0,
+          "ATGARD": 0,
+          "BELAGGNING": 0,
+          "SKAPAD": -2209161600000,
+          "SKAPADAV": " ",
+          "ANDRAD": -2209161600000,
+          "ANDRADAV": " ",
+          "SKALA": " ",
+          "FANGSTM": 0,
+          "UNDERLAG": " ",
+          "VHT": 0,
+          "OBJEKT": 0,
+          "TILLG_ANP": 0,
+          "TILLG_BESK": " ",
+          "ADRESS": " ",
+          "KOMMENTAR": " ",
+          "AGARE": 0,
+          "FORVALTARE": 0,
+          "MEDELFELPL": 0.0,
+          "MATMETODPL": 0,
+          "SKALAUNDER": 0,
+          "URSPRKOORD": 0,
+          "GLOBALID": " ",
+          "NAMN": " ",
+          "URL": " ",
+          "Postort": " ",
+          "Lekplats_e": 0,
+          "INV_101": 0,
+          "INV_102": 0,
+          "INV_103": 0,
+          "INV_104": 0,
+          "INV_105": 0,
+          "INV_106": 0,
+          "INV_107": 0,
+          "INV_108": 0,
+          "INV_109": 0,
+          "INV_110": 0,
+          "INV_111": 0,
+          "INV_112": 0,
+          "INV_113": 0,
+          "INV_114": 0,
+          "INV_115": 0,
+          "INV_116": 0,
+          "INV_117": 0,
+          "INV_118": 0,
+          "INV_119": 0,
+          "INV_120": 0,
+          "INV_121": 0,
+          "INV_122": 0,
+          "INV_123": 0,
+          "INV_124": 0,
+          "INV_125": 0,
+          "INV_Kommen": " ",
+          "INV_SW": " ",
+          "INV_DATUM": -2209161600000,
+          "LEK_INV_J_": 0,
+          "Skötselan": " ",
+          "Ägare": " ",
+          "Parktyp_da": 0,
+          "Parktyp_fr": 0,
+          "Stadsdel_e": " ",
+          "FID_vagyto": -1,
+          "SKAPAD_1": -2209161600000,
+          "ANDRAD_1": -2209161600000,
+          "SKAPADAV_1": " ",
+          "ANDRADAV_1": " ",
+          "MEDELFEL_1": 0.0,
+          "MATMETOD_1": 0,
+          "SKALAUND_1": 0,
+          "URSPRKOO_1": 0,
+          "TYP_1": 0,
+          "GLOBALID_1": " ",
+          "Shape_STAr": 0.0,
+          "Shape_STLe": 0.0,
+          "ORIG_FID": 0,
+          "Shape_Le_1": 91.20383621,
+          "Shape.STArea()": 241.56711765,
+          "Shape.STLength()": 91.20383621307599
+        },
+        {
+          "OBJECTID": 1812,
+          "FID_Forbud": 0,
+          "SHAPE_Leng": 255470.359644,
+          "objektiden": " ",
+          "versiongil": -2209161600000,
+          "lagesosake": 0.0,
+          "lagesosa_1": 0.0,
+          "ursprungli": " ",
+          "objektvers": 0,
+          "objekttypn": 0,
+          "objekttyp": " ",
+          "andamal": " ",
+          "skjutfalts": " ",
+          "skjutfal_1": " ",
+          "SDE_ADAT": -2209161600000,
+          "TYP": 0,
+          "STYP": 0,
+          "ATGARD": 0,
+          "BELAGGNING": 0,
+          "SKAPAD": -2209161600000,
+          "SKAPADAV": " ",
+          "ANDRAD": -2209161600000,
+          "ANDRADAV": " ",
+          "SKALA": " ",
+          "FANGSTM": 0,
+          "UNDERLAG": " ",
+          "VHT": 0,
+          "OBJEKT": 0,
+          "TILLG_ANP": 0,
+          "TILLG_BESK": " ",
+          "ADRESS": " ",
+          "KOMMENTAR": " ",
+          "AGARE": 0,
+          "FORVALTARE": 0,
+          "MEDELFELPL": 0.0,
+          "MATMETODPL": 0,
+          "SKALAUNDER": 0,
+          "URSPRKOORD": 0,
+          "GLOBALID": " ",
+          "NAMN": " ",
+          "URL": " ",
+          "Postort": " ",
+          "Lekplats_e": 0,
+          "INV_101": 0,
+          "INV_102": 0,
+          "INV_103": 0,
+          "INV_104": 0,
+          "INV_105": 0,
+          "INV_106": 0,
+          "INV_107": 0,
+          "INV_108": 0,
+          "INV_109": 0,
+          "INV_110": 0,
+          "INV_111": 0,
+          "INV_112": 0,
+          "INV_113": 0,
+          "INV_114": 0,
+          "INV_115": 0,
+          "INV_116": 0,
+          "INV_117": 0,
+          "INV_118": 0,
+          "INV_119": 0,
+          "INV_120": 0,
+          "INV_121": 0,
+          "INV_122": 0,
+          "INV_123": 0,
+          "INV_124": 0,
+          "INV_125": 0,
+          "INV_Kommen": " ",
+          "INV_SW": " ",
+          "INV_DATUM": -2209161600000,
+          "LEK_INV_J_": 0,
+          "Skötselan": " ",
+          "Ägare": " ",
+          "Parktyp_da": 0,
+          "Parktyp_fr": 0,
+          "Stadsdel_e": " ",
+          "FID_vagyto": -1,
+          "SKAPAD_1": -2209161600000,
+          "ANDRAD_1": -2209161600000,
+          "SKAPADAV_1": " ",
+          "ANDRADAV_1": " ",
+          "MEDELFEL_1": 0.0,
+          "MATMETOD_1": 0,
+          "SKALAUND_1": 0,
+          "URSPRKOO_1": 0,
+          "TYP_1": 0,
+          "GLOBALID_1": " ",
+          "Shape_STAr": 0.0,
+          "Shape_STLe": 0.0,
+          "ORIG_FID": 0,
+          "Shape_Le_1": 65.14462173,
+          "Shape.STArea()": 173.5498757,
+          "Shape.STLength()": 65.14462173040005
+        }
+      ]
+    }
+  }
+}
