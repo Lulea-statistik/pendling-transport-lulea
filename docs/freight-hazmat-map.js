@@ -5,11 +5,13 @@ if(typeof L==='undefined'){message.textContent='Kartbiblioteket kunde inte ladda
 fetch('data/lulea-hazardous-goods-roads.geojson',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('GeoJSON unavailable');return r.json()}).then(data=>{
 if(data.type!=='FeatureCollection'||!Array.isArray(data.features)||data.features.length!==510)throw Error('Unexpected feature count');
 root.replaceChildren();
+const heading=document.createElement('h2');heading.textContent='Transportleder för farligt gods';root.append(heading);
 const intro=document.createElement('p');intro.textContent='Kommunens rekommenderade vägar för farligt gods. Lager med förbudsobjekt visas separat med särskild reservation eftersom föreskrifterna inte har granskats juridiskt.';root.append(intro);
 const legend=document.createElement('div');legend.style.cssText='display:flex;flex-wrap:wrap;gap:16px;margin:10px 0 14px';
 const categories=[['Primär rekommenderad väg','#b91c1c'],['Sekundär rekommenderad väg','#eab308'],['Förbudsobjekt – ej juridiskt verifierade','#475569']];
 for(const [label,color] of categories){const item=document.createElement('label');item.style.cssText='display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;min-height:30px;flex-wrap:nowrap';const check=document.createElement('input');check.type='checkbox';check.checked=true;check.dataset.category=label;check.style.cssText='width:16px;height:16px;accent-color:'+color+';margin:0;flex:none';const swatch=document.createElement('span');swatch.style.cssText='display:inline-block;width:22px;border-top:4px solid '+color;item.append(check,swatch,document.createTextNode(label));legend.append(item)}
 root.append(legend);
+const status=document.createElement('p');status.className='source-note';status.textContent='Kartdata: 429 primära, 73 sekundära rekommenderade vägobjekt och 8 preliminära förbudsobjekt. Klicka på linjerna för detaljer. Du kan zooma med musens rullhjul.';root.append(status);
 const mapDiv=document.createElement('div');mapDiv.style.cssText='height:480px;min-height:310px;width:100%;border-radius:10px;overflow:hidden';root.append(mapDiv);
 const map=L.map(mapDiv,{scrollWheelZoom:true,zoomControl:true}).setView([65.58,22.15],10);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap-bidragsgivare'}).addTo(map);
