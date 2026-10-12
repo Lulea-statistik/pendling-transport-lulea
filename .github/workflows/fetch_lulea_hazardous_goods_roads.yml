@@ -1,0 +1,64 @@
+name: Fetch Lulea hazardous goods roads
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/fetch_lulea_hazardous_goods_roads.py
+      - .github/workflows/fetch_lulea_hazardous_goods_roads.yml
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and validate geometries
+        run: python3 scripts/fetch_lulea_hazardous_goods_roads.py
+      - name: Upload QA artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lulea-hazardous-goods-geometry-qa
+          path: |
+            docs/data/lulea-hazardous-goods-roads.geojson
+            docs/data/lulea-hazardous-goods-roads-qa.json
+      - name: Publish verified files
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import os,json,base64,urllib.request,urllib.error
+          root=f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/"
+          headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"}
+          for path in ["docs/data/lulea-hazardous-goods-roads.geojson","docs/data/lulea-hazardous-goods-roads-qa.json"]:
+              raw=open(path,"rb").read()
+              if len(raw)>8000000:raise ValueError("Unexpectedly large public data export")
+              for attempt in range(5):
+                  try:
+                      with urllib.request.urlopen(urllib.request.Request(root+path,headers=headers),timeout=45) as response:sha=json.load(response)["sha"]
+                  except urllib.error.HTTPError as ex:
+                      if ex.code!=404:raise
+                      sha=None
+                  payload={"message":"Publish validated Lulea hazardous goods geometry "+path.split("/")[-1],"content":base64.b64encode(raw).decode()}
+                  if sha:payload["sha"]=sha
+                  request=urllib.request.Request(root+path,headers={**headers,"Content-Type":"application/json"},data=json.dumps(payload).encode(),method="PUT")
+                  try:
+                      with urllib.request.urlopen(request,timeout=90) as response:print(path,"published",response.status)
+                      break
+                  except urllib.error.HTTPError as ex:
+                      if ex.code not in (409,422) or attempt==4:raise
+          PY
+      - name: Record status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/lulea-hazardous-goods-status.json
+          RUN_WORKFLOW_NAME: Fetch Lulea hazardous goods roads
+        run: python3 scripts/publish_nvdb_run_status.py
