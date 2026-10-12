@@ -1,0 +1,30 @@
+{
+  "status": "geometry_verified_not_legally_verified",
+  "checked_utc": "2026-10-12T07:02:55.386713+00:00",
+  "source": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer",
+  "crs": "EPSG:4326",
+  "notes": "Public geometries with source classifications. Not a route planner; check current traffic regulations and temporal validity. No Storheden traffic measurements used.",
+  "layers": {
+    "recommended": {
+      "layer_id": 38,
+      "objects": 502,
+      "downloaded": 502,
+      "paths": 503,
+      "vertices": 10654,
+      "classes": {
+        "rekommenderad primär väg": 429,
+        "rekommenderad sekundär väg": 73
+      }
+    },
+    "restricted": {
+      "layer_id": 39,
+      "objects": 8,
+      "downloaded": 8,
+      "paths": 8,
+      "vertices": 159,
+      "classes": {
+        "Med och mot": 8
+      }
+    }
+  }
+}
