@@ -193,7 +193,6 @@ function setupMunicipalityExplorer(selectId,headingIds){
 setupPageNavigation();
 setupMunicipalityExplorer("vehicleMunicipality",["vehicleMunicipalityTitle","vehicleMunicipalityHeading"]);
 setupMunicipalityExplorer("injuryMunicipality",["injuryMunicipalityHeading"]);
-setupMunicipalityExplorer("serviceMunicipality",["serviceMunicipalityHeading"]);
 setupMunicipalityExplorer("nvdbMunicipality",["nvdbMunicipalityTitle","nvdbMunicipalityHeading"]);
 
 
@@ -326,13 +325,9 @@ async function loadTrafaData(){
     if(!r.ok)throw new Error("HTTP "+r.status);
     TRAFA=await r.json();
     fillDatasetSelect("vehicleDataset",VEHICLE_DATASETS);
-    fillDatasetSelect("serviceDataset",SERVICE_DATASETS);
     $("vehicleMunicipality").addEventListener("change",renderVehicleData);
     $("vehicleDataset").addEventListener("change",renderVehicleData);
-    $("serviceMunicipality").addEventListener("change",renderServiceData);
-    $("serviceDataset").addEventListener("change",renderServiceData);
     renderVehicleData();
-    renderServiceData();
   }catch(err){
     if($("vehicleDataStatus"))$("vehicleDataStatus").textContent="Kunde inte läsa Trafikanalys-data: "+err.message;
     if($("serviceDataStatus"))$("serviceDataStatus").textContent="Kunde inte läsa Trafikanalys-data: "+err.message;
