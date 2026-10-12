@@ -1,0 +1,61 @@
+name: Audit Lulea transport layer attributes
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/audit_lulea_transport_layers.py
+      - .github/workflows/audit_lulea_transport_layers.yml
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check ArcGIS query access and attribute definitions
+        run: python3 scripts/audit_lulea_transport_layers.py
+      - name: Archive diagnostic
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lulea-transport-layer-attribute-audit
+          path: nvdb_output/lulea_transport_layer_attribute_audit.json
+      - name: Publish diagnostic through GitHub contents API
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json,os,base64,urllib.request,urllib.error
+          name="docs/data/lulea-transport-layer-attribute-audit.json"
+          endpoint=f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/{name}"
+          raw=open("nvdb_output/lulea_transport_layer_attribute_audit.json","rb").read()
+          headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"}
+          for attempt in range(4):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(endpoint,headers=headers),timeout=30) as resp:sha=json.load(resp)["sha"]
+              except urllib.error.HTTPError as err:
+                  if err.code!=404:raise
+                  sha=None
+              payload={"message":"Publish ArcGIS transport layer fields and access audit","content":base64.b64encode(raw).decode()}
+              if sha:payload["sha"]=sha
+              req=urllib.request.Request(endpoint,headers={**headers,"Content-Type":"application/json"},data=json.dumps(payload).encode(),method="PUT")
+              try:
+                  with urllib.request.urlopen(req,timeout=30) as resp:print("published",resp.status)
+                  break
+              except urllib.error.HTTPError as err:
+                  if err.code not in (409,422) or attempt==3:raise
+          PY
+      - name: Record audit status
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/lulea-transport-attribute-audit-status.json
+          RUN_WORKFLOW_NAME: Audit Lulea transport layer attributes
+        run: python3 scripts/publish_nvdb_run_status.py
