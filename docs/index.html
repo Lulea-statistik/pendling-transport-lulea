@@ -413,6 +413,13 @@
       <p>Vi undersöker hur leveranser till drivmedelsåterförsäljare skiljer sig från fordonsbeståndets registreringskommun och från tung trafik på vägarna. Höga leveransvolymer kan bero på många andra dieselanvändare och bevisar varken transittrafik eller att lastbilar tankar lokalt.</p>
       <p class="source-note">SCB:s leveranser till återförsäljare 2024–2025 hålls isär från äldre leveranser efter förbrukarkategori 2018–2023 och SCB:s beräknade kommunala slutliga energianvändning. Fordonsbestånd och ÅDT kopplas till jämförelsen först när samma år, fordonsslag och geografiska avgränsningar är verifierade.</p>
     </section>
+    <section class="panel">
+      <h2>Kommunala kartlager: kontrollerade källor</h2>
+      <p>Luleå kommuns öppna ArcGIS-karta innehåller väghållare (28 477 objekt), rekommenderade leder för farligt gods (502 objekt) och vägsträckor med förbud för farligt gods (8 objekt). Antalet avser databasobjekt, <strong>inte</strong> sammanhängande vägar eller beslut. De kan vara relevanta för vidare geometri- och rättslig kontroll.</p>
+      <p><strong>Avgränsning:</strong> lager 54 och 56 med namnet ”Parkering och uppställningsplats” avser enligt attributnamnen <strong>elsparkcyklars uppställningsytor</strong>, inte lastbilsparkering, och utesluts. Lager 59 ”Körförbud” har oväntade attribut från lekplats-/parkdata och används inte som verifierad körförbudskälla. Allmänna parkeringsytor i lager 5–7 ger inte i sig rätt att parkera tunga lastbilar.</p>
+      <p class="source-note">Status: lagrens metadata och provposter verifierade med ArcGIS REST den 12 oktober 2026. Faktiska väggeometrier, ikraftträdande, upphävda restriktioner och överensstämmelse med trafikföreskrifter måste kontrolleras före kartpublicering. Storhedens lokala trafikmätningar ingår inte.</p>
+      <p><a href="https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer" target="_blank" rel="noopener noreferrer">Kommunens ArcGIS-tjänst</a> · <a href="https://github.com/Lulea-statistik/pendling-transport-lulea/blob/main/docs/data/lulea-transport-layer-attribute-audit.json" target="_blank" rel="noopener noreferrer">Attributinventering och antal objekt</a></p>
+    </section>
     <section class="panel" id="freightCatalog" aria-live="polite"></section>
     <section class="panel">
       <h2>Redan tillgängligt i rapporten</h2>
