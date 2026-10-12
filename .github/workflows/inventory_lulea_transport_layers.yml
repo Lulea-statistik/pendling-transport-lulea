@@ -1,0 +1,24 @@
+name: Inventory Lulea transport map layers
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/inventory_lulea_arcgis_transport.py
+      - .github/workflows/inventory_lulea_transport_layers.yml
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe public ArcGIS metadata
+        run: python3 scripts/inventory_lulea_arcgis_transport.py
+      - name: Upload catalog diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lulea-transport-layer-inventory
+          path: nvdb_output/lulea_transport_layer_inventory.json
+          retention-days: 14
