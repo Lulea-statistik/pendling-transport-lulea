@@ -6,7 +6,7 @@ on:
       - scripts/inventory_lulea_arcgis_transport.py
       - .github/workflows/inventory_lulea_transport_layers.yml
 permissions:
-  contents: read
+  contents: write
 jobs:
   inventory:
     runs-on: ubuntu-latest
@@ -22,3 +22,42 @@ jobs:
           name: lulea-transport-layer-inventory
           path: nvdb_output/lulea_transport_layer_inventory.json
           retention-days: 14
+      - name: Publish metadata inventory to repository
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import os,json,base64,urllib.request,urllib.error
+          source="nvdb_output/lulea_transport_layer_inventory.json"
+          path="docs/data/lulea-transport-layer-inventory.json"
+          url=f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/{path}"
+          headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"}
+          raw=open(source,"rb").read()
+          for attempt in range(4):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=30) as r:sha=json.load(r)["sha"]
+              except urllib.error.HTTPError as e:
+                  if e.code!=404:raise
+                  sha=None
+              payload={"message":"Publish Lulea ArcGIS transport catalog diagnostics","content":base64.b64encode(raw).decode()}
+              if sha:payload["sha"]=sha
+              req=urllib.request.Request(url,headers={**headers,"Content-Type":"application/json"},data=json.dumps(payload).encode(),method="PUT")
+              try:
+                  with urllib.request.urlopen(req,timeout=30) as r:print("Published",r.status)
+                  break
+              except urllib.error.HTTPError as e:
+                  if e.code not in (409,422) or attempt==3:raise
+          PY
+      - name: Record inventory run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_STATUS: ${{ job.status }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          GH_REPO: ${{ github.repository }}
+          RUN_POINTER_PATH: docs/data/lulea-transport-inventory-status.json
+          RUN_WORKFLOW_NAME: Inventory Lulea transport map layers
+        run: python3 scripts/publish_nvdb_run_status.py
