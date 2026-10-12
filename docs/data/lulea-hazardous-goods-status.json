@@ -1,0 +1,9 @@
+{
+  "workflow": "Fetch Lulea hazardous goods roads",
+  "run_id": 38215593303,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38215593303",
+  "attempt": 1,
+  "status": "success",
+  "commit": "d5f44c83e2ea943d5c189bad14cd2072545075ee",
+  "updated_utc": "2026-10-12T07:02:59.558587+00:00"
+}
