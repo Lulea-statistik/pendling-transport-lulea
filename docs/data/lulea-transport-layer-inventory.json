@@ -1,0 +1,350 @@
+{
+  "checked_at_utc": "2026-10-12T06:44:58.648254+00:00",
+  "status": "catalog_accessible",
+  "scope": "Public ArcGIS metadata inventory only, targeted at Farligt gods, Parkering, Vaghallare and transport. No object extraction.",
+  "portal": "https://kartportal.lulea.se/portal/apps/mapviewer/index.html",
+  "map_source": "https://kartor.lulea.se/kommunkarta/",
+  "confirmed_map_layer_names": [
+    "Farligt gods",
+    "Parkering",
+    "Väghållare"
+  ],
+  "checked": [
+    {
+      "folder": "",
+      "ok": true,
+      "error": null
+    },
+    {
+      "folder": "Belysning",
+      "ok": true,
+      "error": null
+    },
+    {
+      "folder": "ddpp",
+      "ok": true,
+      "error": null
+    },
+    {
+      "folder": "ext",
+      "ok": true,
+      "error": "{'code': 499, 'message': 'Token Required', 'details': []}"
+    },
+    {
+      "folder": "Hosted",
+      "ok": true,
+      "error": null
+    },
+    {
+      "folder": "Matning",
+      "ok": true,
+      "error": "{'code': 499, 'message': 'Token Required', 'details': []}"
+    },
+    {
+      "folder": "Trafikingenjör",
+      "ok": false,
+      "error": "'ascii' codec can't encode character '\\xf6' in position 38: ordinal not in range(128)"
+    },
+    {
+      "folder": "Utilities",
+      "ok": true,
+      "error": null
+    }
+  ],
+  "candidate_services": [
+    {
+      "name": "ddpp/ddpp_trafikmatningar",
+      "type": "FeatureServer",
+      "url": "https://kartportal.lulea.se/server/rest/services/ddpp/ddpp_trafikmatningar/FeatureServer",
+      "metadata_accessible": true,
+      "layers": [
+        {
+          "id": 0,
+          "name": "Mätpunkter"
+        },
+        {
+          "id": 1,
+          "name": "Mätpunkter (utifrån mängd)"
+        }
+      ]
+    },
+    {
+      "name": "ddpp/ddpp_trafikmatningar",
+      "type": "MapServer",
+      "url": "https://kartportal.lulea.se/server/rest/services/ddpp/ddpp_trafikmatningar/MapServer",
+      "metadata_accessible": true,
+      "layers": [
+        {
+          "id": 0,
+          "name": "Mätpunkter"
+        },
+        {
+          "id": 1,
+          "name": "Mätpunkter (utifrån mängd)"
+        }
+      ]
+    },
+    {
+      "name": "ddpp/ddpp_trafikprognos",
+      "type": "FeatureServer",
+      "url": "https://kartportal.lulea.se/server/rest/services/ddpp/ddpp_trafikprognos/FeatureServer",
+      "metadata_accessible": false,
+      "layers": []
+    },
+    {
+      "name": "ddpp/ddpp_trafikprognos",
+      "type": "MapServer",
+      "url": "https://kartportal.lulea.se/server/rest/services/ddpp/ddpp_trafikprognos/MapServer",
+      "metadata_accessible": false,
+      "layers": []
+    },
+    {
+      "name": "samhalle_och_gator",
+      "type": "MapServer",
+      "url": "https://kartportal.lulea.se/server/rest/services/samhalle_och_gator/MapServer",
+      "metadata_accessible": true,
+      "layers": [
+        {
+          "id": 0,
+          "name": "Parkering"
+        },
+        {
+          "id": 1,
+          "name": "Parkeringshus"
+        },
+        {
+          "id": 2,
+          "name": "Laddplats"
+        },
+        {
+          "id": 3,
+          "name": "Parkering rörelsehindrade"
+        },
+        {
+          "id": 4,
+          "name": "Parkeringsautomat"
+        },
+        {
+          "id": 5,
+          "name": "Parkeringsplatser"
+        },
+        {
+          "id": 6,
+          "name": "Parkeringsplatser"
+        },
+        {
+          "id": 7,
+          "name": "Parkeringsplatser"
+        },
+        {
+          "id": 8,
+          "name": "Parkeringstaxa, zoner"
+        },
+        {
+          "id": 9,
+          "name": "Trafikstörning kommunal väg"
+        },
+        {
+          "id": 10,
+          "name": "Trafikstörning statlig väg"
+        },
+        {
+          "id": 11,
+          "name": "Cykel"
+        },
+        {
+          "id": 12,
+          "name": "Cykelsymboler"
+        },
+        {
+          "id": 13,
+          "name": "Gång- och cykelräknare"
+        },
+        {
+          "id": 14,
+          "name": "Avståndsmarkering, km"
+        },
+        {
+          "id": 15,
+          "name": "Cykelöverfart"
+        },
+        {
+          "id": 16,
+          "name": "Cykelnät"
+        },
+        {
+          "id": 17,
+          "name": "Blandtrafik"
+        },
+        {
+          "id": 46,
+          "name": "Cykelnät"
+        },
+        {
+          "id": 47,
+          "name": "Blandtrafik"
+        },
+        {
+          "id": 48,
+          "name": "Cykelnät"
+        },
+        {
+          "id": 49,
+          "name": "Blandtrafik"
+        },
+        {
+          "id": 18,
+          "name": "Kollektivtrafik"
+        },
+        {
+          "id": 19,
+          "name": "Hamn (Skärgårdstrafiken)"
+        },
+        {
+          "id": 20,
+          "name": "Hållplats (LLT)"
+        },
+        {
+          "id": 21,
+          "name": "Hållplats (LLT)"
+        },
+        {
+          "id": 22,
+          "name": "Hållplats (Länstrafiken)"
+        },
+        {
+          "id": 23,
+          "name": "Hållplats (Länstrafiken)"
+        },
+        {
+          "id": 24,
+          "name": "Turbåtar"
+        },
+        {
+          "id": 25,
+          "name": "Busslinjer (LLT)"
+        },
+        {
+          "id": 26,
+          "name": "Stomlinjer"
+        },
+        {
+          "id": 27,
+          "name": "Lokallinjer"
+        },
+        {
+          "id": 28,
+          "name": "Direktlinjer"
+        },
+        {
+          "id": 29,
+          "name": "Nattbussar"
+        },
+        {
+          "id": 30,
+          "name": "Hockeybuss 501, 502, 503"
+        },
+        {
+          "id": 31,
+          "name": "Busslinjer (Länstrafiken)"
+        },
+        {
+          "id": 32,
+          "name": "Snöröjning"
+        },
+        {
+          "id": 33,
+          "name": "Snöröjning prioriterad gång- och cykelväg"
+        },
+        {
+          "id": 34,
+          "name": "Snöröjning kommunala gator"
+        },
+        {
+          "id": 35,
+          "name": "Väghållare"
+        },
+        {
+          "id": 60,
+          "name": "Hastighetsgrans"
+        },
+        {
+          "id": 36,
+          "name": "Isväg"
+        },
+        {
+          "id": 37,
+          "name": "Farligt gods"
+        },
+        {
+          "id": 38,
+          "name": "Rekommenderad vägsträcka"
+        },
+        {
+          "id": 39,
+          "name": "Vägsträcka med förbud"
+        },
+        {
+          "id": 40,
+          "name": "Detaljplan"
+        },
+        {
+          "id": 41,
+          "name": "Pågående detaljplan"
+        },
+        {
+          "id": 42,
+          "name": "Markanvisning"
+        },
+        {
+          "id": 43,
+          "name": "Kvarter"
+        },
+        {
+          "id": 44,
+          "name": "Fastigheter"
+        },
+        {
+          "id": 45,
+          "name": "Offentlig toalett"
+        },
+        {
+          "id": 50,
+          "name": "Affischering"
+        },
+        {
+          "id": 51,
+          "name": "Valaffischering"
+        },
+        {
+          "id": 52,
+          "name": "Upplåtelser"
+        },
+        {
+          "id": 53,
+          "name": "Vattenskyddsområde annan kommun"
+        },
+        {
+          "id": 54,
+          "name": "Parkering och uppställningsplats"
+        },
+        {
+          "id": 56,
+          "name": "Parkering och uppställningsplats"
+        },
+        {
+          "id": 57,
+          "name": "Lågahastighetszon"
+        },
+        {
+          "id": 58,
+          "name": "Parkeringsförbud"
+        },
+        {
+          "id": 59,
+          "name": "Körförbud"
+        }
+      ]
+    }
+  ]
+}
