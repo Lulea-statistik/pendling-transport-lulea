@@ -70,7 +70,7 @@ function render(){
   const opacity=selected.length===2&&!highlighted?".18":".79";
   svg.push('<path d="M '+sx.toFixed(1)+' '+sy.toFixed(1)+' Q '+mx.toFixed(1)+' '+my.toFixed(1)+' '+tx.toFixed(1)+' '+ty.toFixed(1)+'" fill="none" stroke="'+nodeColors(from)+'" stroke-width="'+thickness+'" opacity="'+opacity+'" stroke-linecap="round" marker-end="url(#commuteArrow)"><title>'+escapeHtml(from)+' → '+escapeHtml(to)+': '+format.format(count)+' personer ('+year+')</title></path>');
  };
- pairs.forEach(p=>{draw(p.a,p.b,p.ab,1);draw(p.b,p.a,p.ba,-1);});
+ pairs.forEach(p=>{draw(p.a,p.b,p.ab,1);draw(p.b,p.a,p.ba,1);});
  nodes.forEach(n=>{
   const active=selected.includes(n.name);
   svg.push('<g class="commuting-node" tabindex="0" role="button" data-name="'+escapeHtml(n.name)+'" aria-label="'+escapeHtml(n.name)+', '+format.format(n.day)+' sysselsatta arbetsplatser"><circle cx="'+n.x+'" cy="'+n.y+'" r="'+n.r+'" fill="'+nodeColors(n.name)+'" stroke="'+(active?"#172033":"#fff")+'" stroke-width="'+(active?5:3)+'"/><text x="'+n.x+'" y="'+(n.y+4)+'" text-anchor="middle" fill="#fff" font-size="'+(n.r>35?14:11)+'" font-weight="700">'+escapeHtml(n.name)+'</text><text x="'+n.x+'" y="'+(n.y+20)+'" text-anchor="middle" fill="#fff" font-size="11">'+format.format(n.day)+'</text><title>'+escapeHtml(n.name)+': '+format.format(n.day)+' sysselsatta med arbetsställe i kommunen, från bostadskommuner i datamaterialet</title></g>');
@@ -78,7 +78,7 @@ function render(){
  svg.push('</svg>');
  const root=$("commutingNetwork");root.innerHTML=svg.join("");
  root.querySelectorAll(".commuting-node").forEach(el=>{
-  const activate=()=>{const name=el.dataset.name;selected=selected[0]===name?[selected[1],name]:[selected[1],name];render();};
+  const activate=()=>{const name=el.dataset.name;selected=selected[1]===name?[selected[0],name]:[selected[1],name];render();};
   el.addEventListener("click",activate);
   el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();activate();}});
  });
