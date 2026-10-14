@@ -73,22 +73,27 @@ function layout(data){
  const max=Math.max(1,...[data.day,...data.partner.map(n=>n.day)].filter(x=>x!==null));
  const all=[center,...data.partner].map(n=>({...n,r:radius(n,max)}));
  center.r=all[0].r;
- const gap=18,step=Math.max(124,...all.map(n=>2*n.r+gap));
- const rows=Math.ceil((all.length-1)/2),H=Math.max(620,2*(Math.ceil(rows/2)+1)*step+130);
- all[0].x=W/2;all[0].y=H/2;
+ const gap=10,step=Math.max(100,...all.map(n=>2*n.r+gap));
+ const rows=Math.ceil((all.length-1)/2);
+ all[0].x=W/2;all[0].y=0;
  const xLeft=210,xRight=W-210;
  all.slice(1).forEach((n,i)=>{
    const row=Math.floor(i/2),side=i%2;
-   const offset=row===0?0:(Math.ceil(row/2)*step*(row%2===1?1:-1));
-   const y=H/2+offset;
+   // Strongest relations near Luleå, successively alternating above/below.
+   const distance=row===0?0:Math.ceil(row/2)*(row%2===1?1:-1);
    const override=positions.get(n.name);
-   n.x=override?override.x:side?xRight:xLeft;
-   n.y=override?override.y:y;
+   n.x=override?override.x:(side?xRight:xLeft);
+   n.y=override?override.y:distance*step;
  });
  const origin=positions.get("Luleå");
  if(origin){all[0].x=origin.x;all[0].y=origin.y;}
+ const top=Math.min(...all.map(n=>n.y-n.r)),bottom=Math.max(...all.map(n=>n.y+n.r));
+ // Tight bounds: no unused upper/lower rows. Roughly one third less tall than before.
+ const H=Math.max(360,bottom-top+48),shift=24-top;
+ all.forEach(n=>n.y+=shift);
  return {all,H,max};
 }
+
 function showInfo(name){
  const item=relations.find(r=>r.name===name),node=nodes.find(n=>n.name===name);
  if(!node)return;
@@ -111,7 +116,7 @@ function draw(data){
  const svg=svgEl("svg",{viewBox:"0 0 "+W+" "+H,class:"commuting-network-svg",role:"img","aria-label":"Pendlingsflöden till och från Luleå. Dra cirklar för att ändra layout."});
  svg.style.maxHeight="none";
  const defs=svgEl("defs");
- for(const [id,color] of [["in","#317db1"],["out","#e08448"]]){
+ for(const [id,color] of [["both","#587baf"]]){
    const marker=svgEl("marker",{id:"network-"+id,viewBox:"0 0 10 10",refX:9,refY:5,markerWidth:5,markerHeight:5,orient:"auto-start-reverse"});
    marker.append(svgEl("path",{d:"M0 0 L10 5 L0 10 Z",fill:color}));defs.append(marker);
  }
@@ -127,15 +132,12 @@ function draw(data){
    return "M "+a.x+" "+a.y+" Q "+((a.x+b.x)/2+px*k)+" "+((a.y+b.y)/2+py*k)+" "+b.x+" "+b.y;
  }
  for(const item of data.partner){
-   const peer=all.find(x=>x.name===item.name),group=svgEl("g",{class:"network-link","data-name":item.name,tabindex:0,role:"button","aria-label":"Visa pendlingsflöden för "+item.name});
+   const peer=all.find(x=>x.name===item.name),group=svgEl("g",{class:"network-link","data-name":item.name,tabindex:0,role:"button","aria-label":"Visa båda pendlingsriktningarna för "+item.name});
    const title=svgEl("title");title.textContent="Till Luleå från "+item.name+": "+number(item.inward)+"; från Luleå till "+item.name+": "+number(item.outward);group.append(title);
-   for(const [from,to,count,offset,color,marker] of [[peer,center,item.inward,1,"#317db1","in"],[center,peer,item.outward,-1,"#e08448","out"]]){
-     if(count===null||count<data.minimum||count<=0)continue;
-     const d=path(from,to,offset);
-     const line=svgEl("path",{d,fill:"none",stroke:color,"stroke-width":(1.7+8*Math.sqrt(count/maxFlow)).toFixed(2),"stroke-linecap":"round",opacity:".75","marker-end":"url(#network-"+marker+")",class:"network-visible-path"});
-     const hit=svgEl("path",{d,fill:"none",stroke:"transparent","stroke-width":32,class:"network-hit-path"});
-     group.append(line,hit);
-   }
+   const d=path(center,peer,0),both=(item.inward||0)+(item.outward||0);
+   const line=svgEl("path",{d,fill:"none",stroke:"#587baf","stroke-width":(2+9*Math.sqrt(both/(maxFlow*2))).toFixed(2),"stroke-linecap":"round",opacity:".8","marker-start":"url(#network-both)","marker-end":"url(#network-both)",class:"network-visible-path"});
+   const hit=svgEl("path",{d,fill:"none",stroke:"transparent","stroke-width":36,class:"network-hit-path"});
+   group.append(line,hit);
    group.addEventListener("click",()=>showInfo(item.name));
    group.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();showInfo(item.name);}});
    links.append(group);
@@ -174,11 +176,8 @@ function draw(data){
      links.querySelectorAll(".network-link").forEach(g=>{
        if(g.dataset.name!==node.name&&node.name!=="Luleå")return;
        const item=relations.find(r=>r.name===g.dataset.name),peer=nodes.find(n=>n.name===g.dataset.name),parts=g.querySelectorAll("path");
-       let j=0;
-       for(const [from,to,count,off] of [[peer,nodes[0],item.inward,1],[nodes[0],peer,item.outward,-1]]){
-         if(count===null||count<data.minimum||count<=0)continue;
-         const d=path(from,to,off);parts[j++].setAttribute("d",d);parts[j++].setAttribute("d",d);
-       }
+       const d=path(nodes[0],peer,0);
+       parts.forEach(p=>p.setAttribute("d",d));
      });
    });
    const finish=()=>{if(!drag)return;dragged=drag.moved;drag=null;};
@@ -188,7 +187,7 @@ function draw(data){
  activeSvg=svg;
  byId("commutingNetwork").replaceChildren(svg);
  showInfo(selected==="Luleå"||relations.some(r=>r.name===selected)?selected:(relations[0]?.name||"Luleå"));
- byId("networkStatus").textContent=data.year+" · "+data.sex+" · "+relations.length+" relationer med Luleå · blått till Luleå, orange från Luleå";
+ byId("networkStatus").textContent=data.year+" · "+data.sex+" · "+relations.length+" relationer med Luleå · dubbelriktade pilar; klicka för båda flödena";
 }
 function render(){if(!local.length)return;draw(calculate());}
 Promise.all([
