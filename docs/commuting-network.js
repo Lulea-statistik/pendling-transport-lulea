@@ -141,14 +141,18 @@ function showInfo(name){
  const item=relations.find(r=>r.name===name),node=nodes.find(n=>n.name===name);
  if(!node)return;
  selected=name;
- const inward=item?.inward??null,outward=item?.outward??null;
+ const minimum=Number(byId("networkMinimum").value);
+ const visible=relations.filter(r=>(r.inward!==null&&r.inward>=minimum)||(r.outward!==null&&r.outward>=minimum));
+ const isLulea=name==="Luleå";
+ const inward=isLulea?visible.reduce((total,r)=>total+(r.inward||0),0):item?.inward??null;
+ const outward=isLulea?visible.reduce((total,r)=>total+(r.outward||0),0):item?.outward??null;
  const title=node.name;
- const metric=node.isCounty?"Dagbefolkning i hela länet är inte tillgänglig i denna fil.":"Sysselsatta med arbetsställe i kommunen (inklusive personer som bor och arbetar där).";
+ const metric=isLulea?"Summan av flödena mellan Luleå och alla områden med synliga relationer. Varje riktat flöde räknas en gång.":node.isCounty?"Pendlingsrelationen mellan Luleå och kommunerna i det valda länet.":"Pendlingsrelationen mellan Luleå och den valda kommunen.";
  const area=node.isCounty?"Ej tillgänglig":number(node.day);
  byId("networkPair").innerHTML='<div class="network-detail-title">'+esc(title)+'</div><div class="network-detail-grid">'+
  '<div><span>Summerat flöde</span><strong>'+number(inward===null&&outward===null?null:(inward||0)+(outward||0))+'</strong></div>'+
- '<div><span>Till Luleå från '+esc(title)+'</span><strong>'+number(inward)+'</strong></div>'+
- '<div><span>Från Luleå till '+esc(title)+'</span><strong>'+number(outward)+'</strong></div>'+
+ '<div><span>'+(isLulea?'Till Luleå från visade områden':'Till Luleå från '+esc(title))+'</span><strong>'+number(inward)+'</strong></div>'+
+ '<div><span>'+(isLulea?'Från Luleå till visade områden':'Från Luleå till '+esc(title))+'</span><strong>'+number(outward)+'</strong></div>'+
  '<div><span>Netto till Luleå</span><strong>'+(inward===null||outward===null?"Saknas":fmt.format(inward-outward))+'</strong></div>'+
  '</div><p class="network-detail-note">'+esc(metric)+'</p>';
  for(const g of activeSvg.querySelectorAll(".commuting-node"))g.classList.toggle("network-selected",g.dataset.name===name);
@@ -198,7 +202,7 @@ function draw(data){
  }
  for(const node of all){
    const group=svgEl("g",{class:"commuting-node","data-name":node.name,tabindex:0,role:"button","aria-label":"Visa dagbefolkning och pendling för "+node.name});
-   const circle=svgEl("circle",{cx:node.x,cy:node.y,r:node.r,fill:COLORS[node.name]||(node.isCounty?"#7b8798":"#617086"),stroke:"#fff","stroke-width":3});
+   const circle=svgEl("circle",{cx:node.x,cy:node.y,r:node.r,fill:node.isCounty?"#dd6aa9":(COLORS[node.name]||"#617086"),stroke:"#fff","stroke-width":3});
    group.append(circle);
    const text=svgEl("text",{"text-anchor":"middle",fill:"#fff","font-weight":700,"pointer-events":"none"});
    const lines=labelLines(node.name);
