@@ -228,7 +228,7 @@ function draw(data){
      group.style.setProperty("--drag-glow",(0.18+0.62*intensity).toFixed(2));
      group.style.setProperty("--drag-scale",(1.03+0.09*intensity).toFixed(3));
      const rect=svg.getBoundingClientRect(),x=(e.clientX-rect.left)*W/rect.width+drag.offsetX,y=(e.clientY-rect.top)*H/rect.height+drag.offsetY;
-     positions.set(node.name,{x:Math.max(node.r+10,Math.min(W-node.r-10,x)),y:Math.max(node.r+10,Math.min(H-node.r-10,y))});
+     positions.set(node.name,{x:Math.max(node.r+10,Math.min(W-node.r-10,x)),y:Math.max(node.r+10,Math.min(H-node.r-10,y)),r:node.r});
      // Re-render all geometry against the new node position, preserving pointer stream on this SVG.
      const p=positions.get(node.name);node.x=p.x;node.y=p.y;
      circle.setAttribute("cx",p.x);circle.setAttribute("cy",p.y);
