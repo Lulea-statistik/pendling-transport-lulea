@@ -67,35 +67,51 @@ function radius(n,maximum){
  const scaled=n.day===null?32:27+29*Math.pow(Math.max(0,n.day)/Math.max(1,maximum),.35);
  return Math.max(minimum,Math.min(64,scaled));
 }
+function resolveOverlaps(all){
+ // Pairwise separation in 2D; includes centre and manually moved nodes.
+ // In a dense national selection, shrink radii as required rather than allow overlaps.
+ for(let pass=0;pass<90;pass++){
+   let collisions=0;
+   for(let i=0;i<all.length;i++)for(let j=i+1;j<all.length;j++){
+     const a=all[i],b=all[j],dx=b.x-a.x,dy=b.y-a.y;
+     const d=Math.hypot(dx,dy),needed=a.r+b.r+7;
+     if(d>=needed)continue;
+     collisions++;
+     const ux=d>0.01?dx/d:Math.cos((i*13+j)*2.4),uy=d>0.01?dy/d:Math.sin((i*13+j)*2.4);
+     const move=(needed-d)/2+0.2;
+     const wa=a.name==="Luleå"?.15:1,wb=b.name==="Luleå"?.15:1,weight=wa+wb;
+     a.x-=ux*move*2*wa/weight;a.y-=uy*move*2*wa/weight;
+     b.x+=ux*move*2*wb/weight;b.y+=uy*move*2*wb/weight;
+   }
+   for(const n of all){n.x=Math.max(n.r+7,Math.min(W-n.r-7,n.x));n.y=Math.max(n.r+7,Math.min(H-n.r-7,n.y));}
+   if(!collisions)break;
+ }
+}
 function layout(data){
  const max=Math.max(1,...[data.day,...data.partner.map(n=>n.day)].filter(x=>x!==null));
  const all=[{name:"Luleå",day:data.day,isCounty:false},...data.partner].map(n=>({...n,r:radius(n,max)}));
- const centerY=H/2;
- all[0].x=W/2;all[0].y=centerY;
+ const count=all.length-1;
+ // With 34 nodes in a fixed 1300x700 SVG, smaller nodes are required for a collision-free view.
+ const shrink=count>16?Math.max(.55,Math.sqrt(16/count)) :1;
+ all.forEach((n,i)=>{n.r=Math.max(i===0?42:20,n.r*shrink);});
+ all[0].x=W/2;all[0].y=H/2;
  const left=all.slice(1).filter((_,i)=>i%2===0),right=all.slice(1).filter((_,i)=>i%2===1);
- function arrange(items,isRight){
-   // Ordered alternating offsets: zero, up, down, farther up, farther down.
-   // Compress the spacing when many places are selected to stay within the fixed stage.
-   const levels=Math.ceil((items.length-1)/2);
-   const maxRadius=Math.max(30,...items.map(n=>n.r));
-   const spread=Math.min(items.length<=4?100:items.length<=7?82:68,
-     (H/2-maxRadius-24)/Math.max(1,levels));
+ for(const [items,isRight] of [[left,false],[right,true]]){
+   const levels=Math.ceil((items.length-1)/2),radius=Math.max(20,...items.map(n=>n.r));
+   const spread=Math.min(106,(H/2-radius-22)/Math.max(1,levels));
    items.forEach((n,i)=>{
-     const level=i===0?0:Math.ceil(i/2)*(i%2===1?-1:1);
-     const outward=Math.abs(level);
-     // Slight horizontal staggering gives a fan layout instead of two vertical columns.
-     const x=(isRight?W-195:195)+(isRight?-1:1)*Math.min(86,outward*23);
-     const y=centerY+level*spread;
-     const override=positions.get(n.name);
-     n.x=override?Math.max(n.r+6,Math.min(W-n.r-6,override.x)):x;
-     n.y=override?Math.max(n.r+6,Math.min(H-n.r-6,override.y)):y;
+     const level=i===0?0:Math.ceil(i/2)*(i%2===1?-1:1),out=Math.abs(level);
+     const x=(isRight?W-190:190)+(isRight?-1:1)*Math.min(115,out*28);
+     const y=H/2+level*spread;
+     const saved=positions.get(n.name);
+     n.x=saved?saved.x:x;n.y=saved?saved.y:y;
    });
  }
- arrange(left,false);arrange(right,true);
- const origin=positions.get("Luleå");
- if(origin){all[0].x=Math.max(all[0].r+6,Math.min(W-all[0].r-6,origin.x));all[0].y=Math.max(all[0].r+6,Math.min(H-all[0].r-6,origin.y));}
+ const centre=positions.get("Luleå");if(centre){all[0].x=centre.x;all[0].y=centre.y;}
+ resolveOverlaps(all);
  return {all,H,max};
 }
+
 function flashDetailPanel(){
  const panel=byId("networkPair");
  if(!panel)return;
@@ -113,7 +129,7 @@ function showInfo(name){
  const metric=node.isCounty?"Dagbefolkning i hela länet är inte tillgänglig i denna fil.":"Sysselsatta med arbetsställe i kommunen (inklusive personer som bor och arbetar där).";
  const area=node.isCounty?"Ej tillgänglig":number(node.day);
  byId("networkPair").innerHTML='<div class="network-detail-title">'+esc(title)+'</div><div class="network-detail-grid">'+
- '<div><span>Dagbefolkning</span><strong>'+area+'</strong></div>'+
+ '<div><span>Summerat flöde</span><strong>'+number(inward===null&&outward===null?null:(inward||0)+(outward||0))+'</strong></div>'+
  '<div><span>Till Luleå från '+esc(title)+'</span><strong>'+number(inward)+'</strong></div>'+
  '<div><span>Från Luleå till '+esc(title)+'</span><strong>'+number(outward)+'</strong></div>'+
  '<div><span>Netto till Luleå</span><strong>'+(inward===null||outward===null?"Saknas":fmt.format(inward-outward))+'</strong></div>'+
@@ -126,29 +142,38 @@ function draw(data){
  const {all,H,max}=layout(data);nodes=all;relations=data.partner;
  const svg=svgEl("svg",{viewBox:"0 0 "+W+" "+H,class:"commuting-network-svg",role:"img","aria-label":"Pendlingsflöden till och från Luleå. Dra cirklar för att ändra layout."});
  svg.style.maxHeight="none";
- const defs=svgEl("defs");
- for(const [id,color] of [["both","#587baf"]]){
-   const marker=svgEl("marker",{id:"network-"+id,viewBox:"0 0 10 10",refX:9,refY:5,markerWidth:5,markerHeight:5,orient:"auto-start-reverse"});
-   marker.append(svgEl("path",{d:"M0 0 L10 5 L0 10 Z",fill:color}));defs.append(marker);
- }
- svg.append(defs);
  const links=svgEl("g",{class:"network-links"});svg.append(links);
  const nodeLayer=svgEl("g");svg.append(nodeLayer);
  const center=all[0],maxFlow=Math.max(1,...data.partner.flatMap(x=>[x.inward||0,x.outward||0]));
- function path(from,to,offset){
-   const dx=to.x-from.x,dy=to.y-from.y,dist=Math.max(1,Math.hypot(dx,dy)),ux=dx/dist,uy=dy/dist,px=-uy,py=ux;
-   const a={x:from.x+ux*(from.r+5),y:from.y+uy*(from.r+5)};
-   const b={x:to.x-ux*(to.r+11),y:to.y-uy*(to.r+11)};
-   const k=offset*29;
-   return "M "+a.x+" "+a.y+" Q "+((a.x+b.x)/2+px*k)+" "+((a.y+b.y)/2+py*k)+" "+b.x+" "+b.y;
+ function segment(from,to){
+   const dx=to.x-from.x,dy=to.y-from.y,d=Math.max(.01,Math.hypot(dx,dy));
+   const ux=dx/d,uy=dy/d;
+   return {x1:from.x+ux*(from.r+5),y1:from.y+uy*(from.r+5),x2:to.x-ux*(to.r+5),y2:to.y-uy*(to.r+5)};
+ }
+ function diamond(p,size){
+   const mx=(p.x1+p.x2)/2,my=(p.y1+p.y2)/2,angle=Math.atan2(p.y2-p.y1,p.x2-p.x1);
+   const ux=Math.cos(angle),uy=Math.sin(angle),px=-uy,py=ux;
+   return [[mx+ux*size,my+uy*size],[mx+px*size*.72,my+py*size*.72],
+           [mx-ux*size,my-uy*size],[mx-px*size*.72,my-py*size*.72]].map(a=>a.join(",")).join(" ");
+ }
+ function updateLink(group,peer){
+   const p=segment(nodes[0],peer);
+   for(const el of group.querySelectorAll("line")){
+     for(const k of ["x1","y1","x2","y2"])el.setAttribute(k,p[k]);
+   }
+   const poly=group.querySelector("polygon");
+   if(poly)poly.setAttribute("points",diamond(p,Number(poly.dataset.size)));
  }
  for(const item of data.partner){
    const peer=all.find(x=>x.name===item.name),group=svgEl("g",{class:"network-link","data-name":item.name,tabindex:0,role:"button","aria-label":"Visa båda pendlingsriktningarna för "+item.name});
    const title=svgEl("title");title.textContent="Till Luleå från "+item.name+": "+number(item.inward)+"; från Luleå till "+item.name+": "+number(item.outward);group.append(title);
-   const d=path(center,peer,0),both=(item.inward||0)+(item.outward||0);
-   const line=svgEl("path",{d,fill:"none",stroke:"#587baf","stroke-width":(2+9*Math.sqrt(both/(maxFlow*2))).toFixed(2),"stroke-linecap":"round",opacity:".8","marker-start":"url(#network-both)","marker-end":"url(#network-both)",class:"network-visible-path"});
-   const hit=svgEl("path",{d,fill:"none",stroke:"transparent","stroke-width":36,class:"network-hit-path"});
-   group.append(line,hit);
+   const p=segment(center,peer),both=(item.inward||0)+(item.outward||0);
+   const width=(2+9*Math.sqrt(both/(maxFlow*2))).toFixed(2);
+   const line=svgEl("line",{...p,stroke:"#587baf","stroke-width":width,"stroke-linecap":"round",opacity:".8",class:"network-visible-path"});
+   const size=Math.max(8,Number(width)*1.35);
+   const rhombus=svgEl("polygon",{points:diamond(p,size),fill:"#587baf",opacity:".92",class:"network-mid-diamond","data-size":size});
+   const hit=svgEl("line",{...p,stroke:"transparent","stroke-width":34,class:"network-hit-path"});
+   group.append(line,rhombus,hit);
    group.addEventListener("click",()=>showInfo(item.name));
    group.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();showInfo(item.name);}});
    links.append(group);
@@ -193,9 +218,8 @@ function draw(data){
      const tspans=text.querySelectorAll("tspan");tspans.forEach((t,i)=>t.setAttribute("y",p.y+(i===tspans.length-1?(lines.length===1?15:23):-((lines.length-1)*15)/2-7+i*15)));
      links.querySelectorAll(".network-link").forEach(g=>{
        if(g.dataset.name!==node.name&&node.name!=="Luleå")return;
-       const item=relations.find(r=>r.name===g.dataset.name),peer=nodes.find(n=>n.name===g.dataset.name),parts=g.querySelectorAll("path");
-       const d=path(nodes[0],peer,0);
-       parts.forEach(p=>p.setAttribute("d",d));
+       const peer=nodes.find(n=>n.name===g.dataset.name);
+       updateLink(g,peer);
      });
    });
    const finish=()=>{if(!drag)return;dragged=drag.moved;drag=null;group.classList.remove("network-dragging");group.style.removeProperty("--drag-blur");group.style.removeProperty("--drag-glow");group.style.removeProperty("--drag-scale");};
