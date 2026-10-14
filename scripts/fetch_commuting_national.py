@@ -45,7 +45,7 @@ def query(metadata,sex,res,work,year,res_codes,work_codes):
       return next(h for h in headers if all(norm(p) in norm(h) for p in parts))
     c_sex=col("kon");c_res=col("bostad","kommun");c_work=col("arbets","kommun")
     years=[(h,int(m.group(1))) for h in headers if h not in (c_sex,c_res,c_work)
-       if (m:=re.search(r"(?:19|20)\d{2}",h))]
+       if (m:=re.search(r"((?:19|20)\d{2})",h))]
     if not years: raise ValueError("No year columns: "+repr(headers))
     for row in reader:
       rc=code_from_label(row[c_res]);wc=code_from_label(row[c_work])
