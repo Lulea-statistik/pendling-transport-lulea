@@ -70,23 +70,38 @@ function radius(n,maximum){
 function layout(data){
  const max=Math.max(1,...[data.day,...data.partner.map(n=>n.day)].filter(x=>x!==null));
  const all=[{name:"Luleå",day:data.day,isCounty:false},...data.partner].map(n=>({...n,r:radius(n,max)}));
- const total=all.length-1,perSide=Math.ceil(total/2);
- // Constant canvas dimensions for every year, selection, and county scope.
- const margin=45,maxRadius=Math.max(...all.map(n=>n.r));
- const spacing=Math.min(105,(H-2*(margin+maxRadius))/Math.max(1,perSide-1));
  const centerY=H/2;
  all[0].x=W/2;all[0].y=centerY;
- all.slice(1).forEach((n,i)=>{
-   const side=i%2;const rank=Math.floor(i/2);
-   const x=side?W-225:225;
-   const y=centerY+(rank-(perSide-1)/2)*spacing;
-   const override=positions.get(n.name);
-   n.x=override?Math.max(n.r+6,Math.min(W-n.r-6,override.x)):x;
-   n.y=override?Math.max(n.r+6,Math.min(H-n.r-6,override.y)):y;
- });
+ const left=all.slice(1).filter((_,i)=>i%2===0),right=all.slice(1).filter((_,i)=>i%2===1);
+ function arrange(items,isRight){
+   // Ordered alternating offsets: zero, up, down, farther up, farther down.
+   // Compress the spacing when many places are selected to stay within the fixed stage.
+   const levels=Math.ceil((items.length-1)/2);
+   const maxRadius=Math.max(30,...items.map(n=>n.r));
+   const spread=Math.min(items.length<=4?100:items.length<=7?82:68,
+     (H/2-maxRadius-24)/Math.max(1,levels));
+   items.forEach((n,i)=>{
+     const level=i===0?0:Math.ceil(i/2)*(i%2===1?-1:1);
+     const outward=Math.abs(level);
+     // Slight horizontal staggering gives a fan layout instead of two vertical columns.
+     const x=(isRight?W-195:195)+(isRight?-1:1)*Math.min(86,outward*23);
+     const y=centerY+level*spread;
+     const override=positions.get(n.name);
+     n.x=override?Math.max(n.r+6,Math.min(W-n.r-6,override.x)):x;
+     n.y=override?Math.max(n.r+6,Math.min(H-n.r-6,override.y)):y;
+   });
+ }
+ arrange(left,false);arrange(right,true);
  const origin=positions.get("Luleå");
  if(origin){all[0].x=Math.max(all[0].r+6,Math.min(W-all[0].r-6,origin.x));all[0].y=Math.max(all[0].r+6,Math.min(H-all[0].r-6,origin.y));}
  return {all,H,max};
+}
+function flashDetailPanel(){
+ const panel=byId("networkPair");
+ if(!panel)return;
+ panel.classList.remove("network-detail-flash");
+ void panel.offsetWidth;
+ panel.classList.add("network-detail-flash");
 }
 
 function showInfo(name){
@@ -105,6 +120,7 @@ function showInfo(name){
  '</div><p class="network-detail-note">'+esc(metric)+'</p>';
  for(const g of activeSvg.querySelectorAll(".commuting-node"))g.classList.toggle("network-selected",g.dataset.name===name);
  for(const g of activeSvg.querySelectorAll(".network-link"))g.classList.toggle("network-link-selected",g.dataset.name===name);
+ flashDetailPanel();
 }
 function draw(data){
  const {all,H,max}=layout(data);nodes=all;relations=data.partner;
