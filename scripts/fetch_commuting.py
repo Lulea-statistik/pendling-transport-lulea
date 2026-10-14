@@ -5,6 +5,10 @@ import csv
 import io
 import json
 import re
+import time
+import random
+from http.client import RemoteDisconnected, IncompleteRead
+from urllib.error import URLError
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
@@ -40,9 +44,23 @@ def norm(s: str) -> str:
     )
 
 
+def request_with_retry(req, timeout=120, attempts=6):
+    """Retry transient SCB transport/5xx/429 failures; never retry invalid queries."""
+    for attempt in range(attempts):
+        try:
+            return urlopen(req, timeout=timeout)
+        except (RemoteDisconnected, IncompleteRead, ConnectionResetError, TimeoutError, URLError, HTTPError) as exc:
+            retryable = not isinstance(exc, HTTPError) or exc.code in (429, 500, 502, 503, 504)
+            if not retryable or attempt == attempts - 1:
+                raise
+            delay = min(45, 2 ** attempt * 2) + random.random()
+            print(f"SCB tillfälligt fel ({type(exc).__name__}: {exc}), försök {attempt + 1}/{attempts}. Väntar {delay:.1f} s", flush=True)
+            time.sleep(delay)
+
+
 def get_json(url: str):
-    req = Request(url, headers={"User-Agent": "pendling-transport-lulea/1.0"})
-    with urlopen(req, timeout=60) as r:
+    req = Request(url, headers={"User-Agent": "pendling-transport-lulea/1.0", "Accept":"application/json"})
+    with request_with_retry(req, timeout=60) as r:
         return json.load(r)
 
 
@@ -58,7 +76,7 @@ def post_json(url: str, payload: dict) -> str:
         },
     )
     try:
-        with urlopen(req, timeout=120) as r:
+        with request_with_retry(req, timeout=120) as r:
             raw = r.read()
             charset = r.headers.get_content_charset()
             if charset:
