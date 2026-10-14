@@ -74,12 +74,13 @@ function layout(data){
  const all=[center,...data.partner].map(n=>({...n,r:radius(n,max)}));
  center.r=all[0].r;
  const gap=18,step=Math.max(124,...all.map(n=>2*n.r+gap));
- const rows=Math.ceil((all.length-1)/2),H=Math.max(500,150+rows*step);
+ const rows=Math.ceil((all.length-1)/2),H=Math.max(620,2*(Math.ceil(rows/2)+1)*step+130);
  all[0].x=W/2;all[0].y=H/2;
- const xLeft=225,xRight=W-225;
+ const xLeft=210,xRight=W-210;
  all.slice(1).forEach((n,i)=>{
    const row=Math.floor(i/2),side=i%2;
-   const y=90+row*step;
+   const offset=row===0?0:(Math.ceil(row/2)*step*(row%2===1?1:-1));
+   const y=H/2+offset;
    const override=positions.get(n.name);
    n.x=override?override.x:side?xRight:xLeft;
    n.y=override?override.y:y;
