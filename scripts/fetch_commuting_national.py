@@ -20,8 +20,13 @@ COUNTIES = {
  "23":"Jämtlands län","24":"Västerbottens län","25":"Norrbottens län",
 }
 def municipal_codes(variable):
-    return [(str(v),code_from_label(t)) for v,t in zip(variable["values"],variable["valueTexts"])
-            if re.fullmatch(r"\d{4}",code_from_label(t)) and code_from_label(t)[:2] in COUNTIES]
+    out = []
+    for v, label in zip(variable.get("values", []), variable.get("valueTexts", [])):
+        raw = str(v).strip()
+        code = raw if re.fullmatch(r"\d{4}", raw) else code_from_label(label)
+        if code and code[:2] in COUNTIES:
+            out.append((raw, code))
+    return out
 
 def query(metadata,sex,res,work,year,res_codes,work_codes):
     payload={"query":[
