@@ -64,7 +64,6 @@ def main():
     if len(nbr_res)!=14 or len(nbr_work)!=14 or len(rm)<290 or len(wm)<290:
       raise RuntimeError(f"Unexpected SCB geographic coverage: {len(rm)}, {len(wm)}, {len(nbr_res)}, {len(nbr_work)}")
     data=defaultdict(int)
-    seen={}
     for direction,rv,wv in [
       ("in",[v for v,_ in rm],nbr_work),
       ("out",nbr_res,[v for v,_ in wm])
