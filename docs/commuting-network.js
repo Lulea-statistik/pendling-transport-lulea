@@ -28,8 +28,8 @@ function setup(){
  byId("networkReset").addEventListener("click",()=>{positions.clear();selected="Boden";render();});
  render();
 }
-function calculate(){
- const year=byId("networkYear").value,sex=byId("networkSex").value,scope=byId("networkScope").value;
+function calculate(yearOverride=null,sexOverride=null){
+ const year=yearOverride||byId("networkYear").value,sex=sexOverride||byId("networkSex").value,scope=byId("networkScope").value;
  const minimum=Number(byId("networkMinimum").value),nation=scope==="national"&&national;
  const records=nation?national.flows.filter(r=>String(r.year)===year&&r.sex===sex).map(r=>({from:national.municipalities[r.from]||national.counties[r.from],to:national.municipalities[r.to]||national.counties[r.to],count:value(r.count)})):
  local.filter(r=>r.year===year&&r.sex===sex).map(r=>({from:r.residence,to:r.workplace,count:value(r.employed)}));
@@ -95,8 +95,12 @@ function resolveOverlaps(all){
  }
 }
 function layout(data){
- const max=Math.max(1,...[data.day,...data.partner.map(n=>n.day)].filter(x=>x!==null));
- const all=[{name:"Luleå",day:data.day,isCounty:false},...data.partner].map(n=>({...n,r:radius(n,max)}));
+ // Reference values and geometry are independent of the active year/sex/threshold.
+ const reference=calculate("2024","totalt");
+ const max=Math.max(1,...[reference.day,...reference.partner.map(n=>n.day)].filter(x=>x!==null));
+ const referenceDays=new Map(reference.partner.map(n=>[n.name,n.day]));
+ referenceDays.set("Luleå",reference.day);
+ const all=[{name:"Luleå",day:data.day,isCounty:false},...data.partner].map(n=>({...n,r:radius({...n,day:referenceDays.get(n.name)??null},max)}));
  const count=all.length-1;
  // With 34 nodes in a fixed 1300x700 SVG, smaller nodes are required for a collision-free view.
  const shrink=count>16?Math.max(.55,Math.sqrt(16/count)) :1;
@@ -117,10 +121,10 @@ function layout(data){
  const centre=positions.get("Luleå");if(centre){all[0].x=centre.x;all[0].y=centre.y;}
  if(!positions.size){
    resolveOverlaps(all);
-   all.forEach(n=>positions.set(n.name,{x:n.x,y:n.y}));
+   all.forEach(n=>positions.set(n.name,{x:n.x,y:n.y,r:n.r}));
  } else {
    // Preserve exact centres when year, sex or threshold changes.
-   for(const n of all){const p=positions.get(n.name);if(p){n.x=p.x;n.y=p.y;}}
+   for(const n of all){const p=positions.get(n.name);if(p){n.x=p.x;n.y=p.y;n.r=p.r??n.r;}}
  }
  return {all,H,max};
 }
