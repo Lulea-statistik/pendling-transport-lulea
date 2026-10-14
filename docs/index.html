@@ -126,7 +126,7 @@
   <section id="page-commuting-network" class="page">
     <section class="panel page-intro">
       <div><h2>Arbetspendling till och från Luleå</h2>
-        <p>Diagrammet visar bara relationer med Luleå. Kommunerna ordnas efter summan av pendlingen i båda riktningarna. Blå pilar går till Luleå, orange pilar från Luleå. Dra cirklarna för att justera placeringen.</p></div>
+        <p>Diagrammet visar bara relationer med Luleå. Kommunerna ordnas efter summan av pendlingen i båda riktningarna. Varje dubbelriktad pil visar den sammanlagda pendlingen mellan Luleå och den andra kommunen eller länet. Klicka för att se båda riktningarna. Dra cirklarna för att justera placeringen.</p></div>
       <a href="https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__AM__AM0210__AM0210F/ArRegPend2/" target="_blank" rel="noopener">Källa: SCB</a>
     </section>
     <section class="controls">
@@ -139,7 +139,7 @@
       <div class="network-toolbar"><span id="networkStatus">Laddar statistik…</span><button id="networkReset" type="button">Återställ cirklarnas placering</button></div>
       <div id="commutingNetwork" class="commuting-network">Laddar flödesdiagram…</div>
       <div class="network-pair" id="networkPair" aria-live="polite"></div>
-      <p class="source-note">Klicka på en cirkel eller pil för att visa dagbefolkning och de två pendlingsriktningarna i panelen. Dra cirklarna med mus eller pekskärm; pilarna följer med. Dagbefolkning avser sysselsatta med arbetsställe i kommunen. I riksläget visas län utanför Norrbotten som grupper; fullständig dagbefolkning för dessa län ingår inte i underlaget och redovisas därför inte. Pilarna avser sysselsatta personer, inte antal resor. Placeringarna är schematiska.</p>
+      <p class="source-note">Klicka på en cirkel eller pil för att visa dagbefolkning och de två pendlingsriktningarna i panelen. Dra cirklarna med mus eller pekskärm; de dubbelriktade pilarna följer med. Dagbefolkning avser sysselsatta med arbetsställe i kommunen. I riksläget visas län utanför Norrbotten som grupper; fullständig dagbefolkning för dessa län ingår inte i underlaget och redovisas därför inte. Pilarna avser sysselsatta personer, inte antal resor. Placeringarna är schematiska.</p>
     </section>
   </section>
 
@@ -629,7 +629,7 @@
 
 </main>
 <script src="app.js?v=9"></script>
-<script src="commuting-network.js?v=3"></script>
+<script src="commuting-network.js?v=4"></script>
 <script src="nvdb-compare.js?v=1"></script>
 <script src="traffic-environment.js?v=1"></script>
 <script src="nvdb-municipality-diagnostics.js?v=1"></script>
