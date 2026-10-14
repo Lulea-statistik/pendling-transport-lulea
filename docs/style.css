@@ -153,3 +153,8 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.95em;
 @media(prefers-reduced-motion:reduce){
  .network-detail-flash .network-detail-grid>div,.network-detail-flash .network-detail-title,.commuting-node.network-selected:not(.network-dragging) circle{animation:none}
 }
+
+/* Shared diamond for the two directions: a single draggable and clickable relation. */
+.network-mid-diamond{pointer-events:none}
+.network-link-selected .network-mid-diamond{opacity:1;filter:drop-shadow(0 2px 3px rgba(31,65,110,.25))}
+.network-link:not(.network-link-selected) .network-mid-diamond{opacity:.4}
