@@ -132,14 +132,14 @@
     <section class="controls">
       <label>År <select id="networkYear"></select></label>
       <label>Kön <select id="networkSex"></select></label>
-      <label>Kommunurval <select id="networkScope"><option value="focus">Fem fokuskommuner</option><option value="all">Alla 14 kommuner</option></select></label>
+      <label>Kommunurval <select id="networkScope"><option value="focus">Fem fokuskommuner</option><option value="all">Alla 14 kommuner</option><option value="national" disabled>Hela Sverige · övriga grupperade per län</option></select></label>
       <label>Visa flöden med minst <select id="networkMinimum"><option value="1">1 person</option><option value="50">50 personer</option><option value="100" selected>100 personer</option><option value="250">250 personer</option><option value="500">500 personer</option></select></label>
     </section>
     <section class="panel">
       <div class="network-toolbar"><span id="networkStatus">Laddar statistik…</span><button id="networkReset" type="button">Välj Boden och Luleå</button></div>
       <div id="commutingNetwork" class="commuting-network">Laddar flödesdiagram…</div>
       <div class="network-pair" id="networkPair" aria-live="polite"></div>
-      <p class="source-note">Klicka på två kommuner för att jämföra riktningarna. Pilarna avser sysselsatta personer, inte dagliga resor. Cirklarna avser <strong>inte hela dagbefolkningen</strong> när bostadskommuner utanför datamaterialet saknas. Flöden med noll eller under vald gräns döljs. Positionerna är schematiska och inte geografiska koordinater.</p>
+      <p class="source-note">Klicka på två kommuner för att jämföra riktningarna. Pilarna avser sysselsatta personer, inte dagliga resor. I riksläget är cirklarna för Norrbotten baserade på arbetande med arbetsställe där; cirklarna för övriga län visar endast pendlingsflöden till Norrbotten, inte länens totala dagbefolkning. Flöden med noll eller under vald gräns döljs. Positionerna är schematiska och inte geografiska koordinater.</p>
     </section>
   </section>
 
@@ -629,7 +629,7 @@
 
 </main>
 <script src="app.js?v=9"></script>
-<script src="commuting-network.js?v=1"></script>
+<script src="commuting-network.js?v=2"></script>
 <script src="nvdb-compare.js?v=1"></script>
 <script src="traffic-environment.js?v=1"></script>
 <script src="nvdb-municipality-diagnostics.js?v=1"></script>
