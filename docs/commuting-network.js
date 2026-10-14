@@ -7,6 +7,7 @@ const focus = ["Luleå","Boden","Piteå","Älvsbyn","Kalix"];
 const palette = {"Luleå":"#b42318","Boden":"#d99d13","Piteå":"#2563eb","Älvsbyn":"#0d9488","Kalix":"#8b5cf6"};
 const escapeHtml = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let data = [];
+let national = null;
 let selected = ["Boden","Luleå"];
 function csvParse(raw) {
  const lines = raw.replace(/^\uFEFF/,"").trim().split(/\r?\n/);
@@ -34,17 +35,29 @@ function setup() {
 function render(){
  const year=$("networkYear").value,sex=$("networkSex").value,scope=$("networkScope").value;
  const minimum=Number($("networkMinimum").value);
- const records=data.filter(x=>x.year===year&&x.sex===sex);
+ const nationalMode=scope==="national"&&national;
+ const records=nationalMode ? national.flows.filter(x=>String(x.year)===year&&x.sex===sex).map(x=>({
+   residence:national.municipalities[x.from]||national.counties[x.from]||x.from,
+   workplace:national.municipalities[x.to]||national.counties[x.to]||x.to,
+   employed:x.count
+ })) : data.filter(x=>x.year===year&&x.sex===sex);
  const names=[...new Set(records.flatMap(x=>[x.residence,x.workplace]))].filter(Boolean).sort((a,b)=>a.localeCompare(b,"sv"));
  const shown=scope==="focus"?focus.filter(n=>names.includes(n)):names;
  const map=new Map(records.map(x=>[x.residence+"|"+x.workplace,Number(x.employed)]));
  const workplaceTotals=new Map(shown.map(n=>[n,records.filter(x=>x.workplace===n).reduce((a,x)=>a+(Number(x.employed)||0),0)]));
+ if(nationalMode){
+   const old=data.filter(x=>x.year===year&&x.sex===sex);
+   shown.forEach(n=>{if(Object.values(national.counties).includes(n))return;
+     const self=old.find(x=>x.workplace===n&&x.residence===n);
+     workplaceTotals.set(n,(workplaceTotals.get(n)||0)+(self?Number(self.employed)||0:0));
+   });
+ }
  const maxDay=Math.max(1,...workplaceTotals.values());
- const W=1080,H=710,cx=540,cy=347,rx=425,ry=250;
+ const W=nationalMode?1400:1080,H=nationalMode?1050:710,cx=W/2,cy=H/2,rx=nationalMode?620:425,ry=nationalMode?430:250;
  const nodes=shown.map((name,i)=>{
   const angle=-Math.PI/2+2*Math.PI*i/shown.length;
   const day=workplaceTotals.get(name)||0;
-  return {name,day,x:cx+rx*Math.cos(angle),y:cy+ry*Math.sin(angle),r:Math.max(18,Math.sqrt(day/maxDay)*60)};
+  return {name,day,x:cx+rx*Math.cos(angle),y:cy+ry*Math.sin(angle),r:Math.max(nationalMode?15:18,Math.sqrt(day/maxDay)*(nationalMode?48:60))};
  });
  const nodeMap=new Map(nodes.map(n=>[n.name,n]));
  const pairs=[];
@@ -67,7 +80,7 @@ function render(){
   const mx=(sx+tx)/2+nx*offset,my=(sy+ty)/2+ny*offset;
   const thickness=(1.2+10*Math.sqrt(count/maxFlow)).toFixed(2);
   const highlighted=selected.includes(from)&&selected.includes(to);
-  const opacity=selected.length===2&&!highlighted?".18":".79";
+  const opacity=selected.length===2&&!highlighted?".13":nationalMode?".55":".79";
   svg.push('<path d="M '+sx.toFixed(1)+' '+sy.toFixed(1)+' Q '+mx.toFixed(1)+' '+my.toFixed(1)+' '+tx.toFixed(1)+' '+ty.toFixed(1)+'" fill="none" stroke="'+nodeColors(from)+'" stroke-width="'+thickness+'" opacity="'+opacity+'" stroke-linecap="round" marker-end="url(#commuteArrow)"><title>'+escapeHtml(from)+' → '+escapeHtml(to)+': '+format.format(count)+' personer ('+year+')</title></path>');
  };
  pairs.forEach(p=>{draw(p.a,p.b,p.ab,1);draw(p.b,p.a,p.ba,1);});
@@ -85,7 +98,7 @@ function render(){
  const [a,b]=selected;
  const ab=map.get(a+"|"+b),ba=map.get(b+"|"+a);
  $("networkPair").innerHTML='<strong>'+escapeHtml(a)+' → '+escapeHtml(b)+': '+(Number.isFinite(ab)?format.format(ab):"saknas")+'</strong><strong>'+escapeHtml(b)+' → '+escapeHtml(a)+': '+(Number.isFinite(ba)?format.format(ba):"saknas")+'</strong><span>Netto till '+escapeHtml(b)+': '+(Number.isFinite(ab)&&Number.isFinite(ba)?format.format(ab-ba):"saknas")+'</span>';
- $("networkStatus").textContent=year+' · '+sex+' · '+shown.length+' kommuner · '+pairs.length+' kommunpar med minst ett synligt flöde';
+ $("networkStatus").textContent=(nationalMode?"Sverige (länsgrupperat) · ":"")+year+' · '+sex+' · '+shown.length+' kommuner · '+pairs.length+' kommunpar med minst ett synligt flöde';
 }
-fetch("data/commuting.csv",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.text();}).then(t=>{data=csvParse(t);setup();}).catch(e=>{$("commutingNetwork").textContent="Kunde inte läsa pendlingsdata: "+e.message;});
+Promise.all([fetch("data/commuting.csv",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.text();}),fetch("data/commuting-national.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([t,n])=>{data=csvParse(t);national=n;const opt=$("networkScope").querySelector('option[value="national"]');if(opt)opt.disabled=!national;setup();}).catch(e=>{$("commutingNetwork").textContent="Kunde inte läsa pendlingsdata: "+e.message;});
 })();
