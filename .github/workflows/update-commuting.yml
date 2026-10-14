@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - "scripts/fetch_commuting.py"
+      - "scripts/fetch_commuting_national.py"
       - ".github/workflows/update-commuting.yml"
 
 permissions:
