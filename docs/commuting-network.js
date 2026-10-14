@@ -8,7 +8,7 @@ const esc=x=>String(x).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"
 const ns="http://www.w3.org/2000/svg";
 const svgEl=(tag,attrs={})=>{const el=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));return el;};
 let local=[],national=null,positions=new Map(),nodes=[],relations=[],selected="Boden",activeSvg=null,drag=null,dragged=false;
-const W=1300;
+const W=1300,H=700;
 function csvParse(raw){
  const lines=raw.replace(/^\uFEFF/,"").trim().split(/\r?\n/),head=lines.shift().split(",");
  return lines.map(line=>{const cells=[];let value="",quote=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'){if(quote&&line[i+1]==='"'){value+='"';i++;}else quote=!quote;}else if(ch===","&&!quote){cells.push(value);value="";}else value+=ch;}cells.push(value);return Object.fromEntries(head.map((h,i)=>[h,cells[i]||""]));});
@@ -62,35 +62,30 @@ function labelLines(name){
  return [name]; // fit long place names via responsive font size
 }
 function radius(n,maximum){
- const label=n.isCounty?n.name:(n.name||"");
- const split=labelLines(label),longest=Math.max(...split.map(s=>s.length));
- const labelMin=Math.max(39,longest*3.7+14);
- const scaled=n.day===null?44:36+50*Math.pow(Math.max(0,n.day)/Math.max(1,maximum),.36);
- return Math.max(labelMin,Math.min(90,scaled));
+ const longest=Math.max(...labelLines(n.name).map(x=>x.length));
+ const minimum=Math.max(24,Math.min(48,longest*2.65+9));
+ const scaled=n.day===null?32:27+29*Math.pow(Math.max(0,n.day)/Math.max(1,maximum),.35);
+ return Math.max(minimum,Math.min(64,scaled));
 }
 function layout(data){
- const center={name:"Luleå",day:data.day,isCounty:false};
  const max=Math.max(1,...[data.day,...data.partner.map(n=>n.day)].filter(x=>x!==null));
- const all=[center,...data.partner].map(n=>({...n,r:radius(n,max)}));
- center.r=all[0].r;
- const gap=10,step=Math.max(100,...all.map(n=>2*n.r+gap));
- const rows=Math.ceil((all.length-1)/2);
- all[0].x=W/2;all[0].y=0;
- const xLeft=210,xRight=W-210;
+ const all=[{name:"Luleå",day:data.day,isCounty:false},...data.partner].map(n=>({...n,r:radius(n,max)}));
+ const total=all.length-1,perSide=Math.ceil(total/2);
+ // Constant canvas dimensions for every year, selection, and county scope.
+ const margin=45,maxRadius=Math.max(...all.map(n=>n.r));
+ const spacing=Math.min(105,(H-2*(margin+maxRadius))/Math.max(1,perSide-1));
+ const centerY=H/2;
+ all[0].x=W/2;all[0].y=centerY;
  all.slice(1).forEach((n,i)=>{
-   const row=Math.floor(i/2),side=i%2;
-   // Strongest relations near Luleå, successively alternating above/below.
-   const distance=row===0?0:Math.ceil(row/2)*(row%2===1?1:-1);
+   const side=i%2;const rank=Math.floor(i/2);
+   const x=side?W-225:225;
+   const y=centerY+(rank-(perSide-1)/2)*spacing;
    const override=positions.get(n.name);
-   n.x=override?override.x:(side?xRight:xLeft);
-   n.y=override?override.y:distance*step;
+   n.x=override?Math.max(n.r+6,Math.min(W-n.r-6,override.x)):x;
+   n.y=override?Math.max(n.r+6,Math.min(H-n.r-6,override.y)):y;
  });
  const origin=positions.get("Luleå");
- if(origin){all[0].x=origin.x;all[0].y=origin.y;}
- const top=Math.min(...all.map(n=>n.y-n.r)),bottom=Math.max(...all.map(n=>n.y+n.r));
- // Tight bounds: no unused upper/lower rows. Roughly one third less tall than before.
- const H=Math.max(360,bottom-top+48),shift=24-top;
- all.forEach(n=>n.y+=shift);
+ if(origin){all[0].x=Math.max(all[0].r+6,Math.min(W-all[0].r-6,origin.x));all[0].y=Math.max(all[0].r+6,Math.min(H-all[0].r-6,origin.y));}
  return {all,H,max};
 }
 
@@ -159,13 +154,20 @@ function draw(data){
    group.addEventListener("pointerdown",e=>{
      if(e.button!==0)return;e.preventDefault();
      const rect=svg.getBoundingClientRect(),x=(e.clientX-rect.left)*W/rect.width,y=(e.clientY-rect.top)*H/rect.height;
-     drag={name:node.name,offsetX:node.x-x,offsetY:node.y-y,startX:e.clientX,startY:e.clientY,moved:false};
+     drag={name:node.name,offsetX:node.x-x,offsetY:node.y-y,startX:e.clientX,startY:e.clientY,moved:false,lastX:e.clientX,lastY:e.clientY,lastTime:e.timeStamp};
+     group.classList.add("network-dragging");
      group.setPointerCapture(e.pointerId);
    });
    group.addEventListener("pointermove",e=>{
      if(!drag||drag.name!==node.name)return;
      if(Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>4)drag.moved=true;
      if(!drag.moved)return;
+     const dt=Math.max(8,e.timeStamp-drag.lastTime),speed=Math.hypot(e.clientX-drag.lastX,e.clientY-drag.lastY)/dt;
+     drag.lastX=e.clientX;drag.lastY=e.clientY;drag.lastTime=e.timeStamp;
+     const intensity=Math.min(1,speed/2);
+     group.style.setProperty("--drag-blur",(9+23*intensity).toFixed(1)+"px");
+     group.style.setProperty("--drag-glow",(0.18+0.62*intensity).toFixed(2));
+     group.style.setProperty("--drag-scale",(1.03+0.09*intensity).toFixed(3));
      const rect=svg.getBoundingClientRect(),x=(e.clientX-rect.left)*W/rect.width+drag.offsetX,y=(e.clientY-rect.top)*H/rect.height+drag.offsetY;
      positions.set(node.name,{x:Math.max(node.r+10,Math.min(W-node.r-10,x)),y:Math.max(node.r+10,Math.min(H-node.r-10,y))});
      // Re-render all geometry against the new node position, preserving pointer stream on this SVG.
@@ -180,7 +182,7 @@ function draw(data){
        parts.forEach(p=>p.setAttribute("d",d));
      });
    });
-   const finish=()=>{if(!drag)return;dragged=drag.moved;drag=null;};
+   const finish=()=>{if(!drag)return;dragged=drag.moved;drag=null;group.classList.remove("network-dragging");group.style.removeProperty("--drag-blur");group.style.removeProperty("--drag-glow");group.style.removeProperty("--drag-scale");};
    group.addEventListener("pointerup",finish);group.addEventListener("pointercancel",finish);
    nodeLayer.append(group);
  }
