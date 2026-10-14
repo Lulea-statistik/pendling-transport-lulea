@@ -22,6 +22,8 @@ jobs:
           python-version: "3.12"
       - name: Fetch SCB commuting matrix
         run: python scripts/fetch_commuting.py
+      - name: Fetch nationwide Norrbotten commuting by county
+        run: python scripts/fetch_commuting_national.py
       - name: Commit changed data
         run: |
           git config user.name "github-actions[bot]"
