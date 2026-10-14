@@ -158,3 +158,11 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.95em;
 .network-mid-diamond{pointer-events:none}
 .network-link-selected .network-mid-diamond{opacity:1;filter:drop-shadow(0 2px 3px rgba(31,65,110,.25))}
 .network-link:not(.network-link-selected) .network-mid-diamond{opacity:.4}
+
+/* Centrally aligned information tiles with twice the previous numeric font size. */
+.network-detail-title{text-align:center}
+.network-detail-grid>div{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.network-detail-grid span{text-align:center}
+.network-detail-grid strong{font-size:42px;line-height:1.1;font-variant-numeric:tabular-nums}
+.network-detail-note{text-align:center}
+@media(max-width:650px){.network-detail-grid strong{font-size:36px}}
