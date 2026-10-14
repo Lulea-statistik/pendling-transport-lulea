@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Pendling i Norrbotten</title>
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
@@ -125,8 +125,8 @@
 
   <section id="page-commuting-network" class="page">
     <section class="panel page-intro">
-      <div><h2>Pendlingsflöden mellan Norrbottens kommuner</h2>
-        <p>Cirklarnas <strong>area</strong> motsvarar antal sysselsatta med arbetsställe i kommunen, räknat från bostadskommunerna i den tillgängliga Norrbottensmatrisen. Pilar visar bostadskommun → arbetsställekommun; linjebredden ökar med antal personer. Motsatta flöden ritas separat.</p></div>
+      <div><h2>Arbetspendling till och från Luleå</h2>
+        <p>Diagrammet visar bara relationer med Luleå. Kommunerna ordnas efter summan av pendlingen i båda riktningarna. Blå pilar går till Luleå, orange pilar från Luleå. Dra cirklarna för att justera placeringen.</p></div>
       <a href="https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__AM__AM0210__AM0210F/ArRegPend2/" target="_blank" rel="noopener">Källa: SCB</a>
     </section>
     <section class="controls">
@@ -136,10 +136,10 @@
       <label>Visa flöden med minst <select id="networkMinimum"><option value="1">1 person</option><option value="50">50 personer</option><option value="100" selected>100 personer</option><option value="250">250 personer</option><option value="500">500 personer</option></select></label>
     </section>
     <section class="panel">
-      <div class="network-toolbar"><span id="networkStatus">Laddar statistik…</span><button id="networkReset" type="button">Välj Boden och Luleå</button></div>
+      <div class="network-toolbar"><span id="networkStatus">Laddar statistik…</span><button id="networkReset" type="button">Återställ cirklarnas placering</button></div>
       <div id="commutingNetwork" class="commuting-network">Laddar flödesdiagram…</div>
       <div class="network-pair" id="networkPair" aria-live="polite"></div>
-      <p class="source-note">Klicka på två kommuner för att jämföra riktningarna. Pilarna avser sysselsatta personer, inte dagliga resor. I riksläget är cirklarna för Norrbotten baserade på arbetande med arbetsställe där; cirklarna för övriga län visar endast pendlingsflöden till Norrbotten, inte länens totala dagbefolkning. Flöden med noll eller under vald gräns döljs. Positionerna är schematiska och inte geografiska koordinater.</p>
+      <p class="source-note">Klicka på en cirkel eller pil för att visa dagbefolkning och de två pendlingsriktningarna i panelen. Dra cirklarna med mus eller pekskärm; pilarna följer med. Dagbefolkning avser sysselsatta med arbetsställe i kommunen. I riksläget visas län utanför Norrbotten som grupper; fullständig dagbefolkning för dessa län ingår inte i underlaget och redovisas därför inte. Pilarna avser sysselsatta personer, inte antal resor. Placeringarna är schematiska.</p>
     </section>
   </section>
 
@@ -629,7 +629,7 @@
 
 </main>
 <script src="app.js?v=9"></script>
-<script src="commuting-network.js?v=2"></script>
+<script src="commuting-network.js?v=3"></script>
 <script src="nvdb-compare.js?v=1"></script>
 <script src="traffic-environment.js?v=1"></script>
 <script src="nvdb-municipality-diagnostics.js?v=1"></script>
