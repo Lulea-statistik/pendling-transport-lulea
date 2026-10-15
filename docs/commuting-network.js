@@ -61,9 +61,14 @@ function calculate(yearOverride=null,sexOverride=null){
  });
  return {year,sex,nation,partner,day:totalAt.get("Luleå"),minimum};
 }
+function displayName(name){
+ // Preserve full county names as internal data keys.
+ if(!name.endsWith(" län"))return name;
+ return name.slice(0,-4).replace(/s$/,"");
+}
 function labelLines(name){
+ name=displayName(name);
  if(name.length<=12)return [name];
- if(name.endsWith(" län"))return [name.slice(0,-4),"län"];
  const mid=Math.floor(name.length/2),poss=[...name].map((c,i)=>i).filter(i=>i>3&&i<name.length-3&&/[ -]/.test(name[i]));
  if(poss.length){let i=poss.sort((a,b)=>Math.abs(a-mid)-Math.abs(b-mid))[0];return [name.slice(0,i),name.slice(i+1)];}
  return [name]; // fit long place names via responsive font size
@@ -112,7 +117,9 @@ function layout(data){
    const spread=Math.min(106,(H/2-radius-22)/Math.max(1,levels));
    items.forEach((n,i)=>{
      const level=i===0?0:Math.ceil(i/2)*(i%2===1?-1:1),out=Math.abs(level);
-     const x=(isRight?W-190:190)+(isRight?-1:1)*Math.min(115,out*28);
+     const x=data.nation
+        ? (isRight?W-300:300)+(isRight?1:-1)*Math.min(225,out*40)
+        : (isRight?W-190:190)+(isRight?-1:1)*Math.min(115,out*28);
      const y=H/2+level*spread;
      const saved=positions.get(n.name);
      n.x=saved?saved.x:x;n.y=saved?saved.y:y;
@@ -209,7 +216,7 @@ function draw(data){
    const font=Math.max(10,Math.min(16,(node.r*1.65)/Math.max(...lines.map(l=>l.length)) * 1.6));
    lines.forEach((line,i)=>{const t=svgEl("tspan",{x:node.x,y:node.y-((lines.length-1)*15)/2-7+i*15,"font-size":font});t.textContent=line;text.append(t);});
    const amount=svgEl("tspan",{x:node.x,y:node.y+((lines.length===1)?15:23),"font-size":12,"font-weight":500});
-   amount.textContent=node.isCounty?"Län":number(node.day);
+   amount.textContent=node.isCounty?"":number(node.day);
    text.append(amount);group.append(text);
    const tooltip=svgEl("title");tooltip.textContent=node.name+" – "+(node.isCounty?"regional pendlingsgrupp":"dagbefolkning: "+number(node.day))+". Klicka för detaljer; dra för att flytta.";group.append(tooltip);
    group.addEventListener("click",()=>{if(!dragged)showInfo(node.name);dragged=false;});
