@@ -11,6 +11,22 @@ BASE="https://opendata.samtrafiken.se/gtfs-rt-sweden"
 OPERATORS=("norrbotten","lulea","sl")
 FEEDS=("TripUpdatesSweden.pb","VehiclePositionsSweden.pb","ServiceAlertsSweden.pb")
 OUT=Path("data/diagnostics/gtfs_sweden3_realtime.json")
+def safe_structure(payload):
+    """Report structural labels only, never API response values."""
+    try:
+        data=json.loads(payload.decode("utf-8"))
+    except (ValueError,UnicodeError):
+        return {"json_type":"unparseable"}
+    if not isinstance(data,dict):
+        return {"json_type":type(data).__name__}
+    permitted={"error","message","code","status","detail","details","type","title",
+               "errors","requestId","timestamp","path","reason"}
+    keys=sorted(k for k in data if k in permitted)
+    types={k:type(data[k]).__name__ for k in keys}
+    return {"json_type":"object","recognized_keys":keys,
+            "recognized_value_types":types,
+            "has_other_keys":bool(set(data)-permitted)}
+
 def classify_error(payload):
     """Only allow fixed diagnostic labels; never persist arbitrary server text."""
     try:
@@ -43,6 +59,7 @@ def check(operator,feed):
         content_type=(exc.headers.get("Content-Type") or "").split(";")[0].lower()
         payload=exc.read(2048)
         return {"http_status":exc.code,"error_type":classify_error(payload),
+                "json_structure":safe_structure(payload),
                 "response_content_type":content_type if content_type in ("application/json","text/plain","text/html") else "other",
                 "retry_after_present":bool(exc.headers.get("Retry-After"))}
     except (URLError,TimeoutError) as exc:return {"error":type(exc).__name__}
@@ -50,7 +67,7 @@ def main():
     if not KEY:raise SystemExit("Missing GitHub secret GTFS_SWEDEN_3_REALTIME")
     result={"checked_utc":datetime.now(timezone.utc).isoformat(),"dataset":"GTFS Sweden 3 Realtime",
             "operators":{op:{feed:check(op,feed) for feed in FEEDS} for op in OPERATORS},
-            "note":"SL is a control operator. Only whitelisted error codes are stored; never any server messages, exact URLs or API tokens. All HTTP 406 responses may indicate product access, not operator coverage."}
+            "note":"No API responses or secret values are logged; error JSON property names and field types only. Endpoint matches official Trafiklab docs."}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps(result,ensure_ascii=False,indent=2))
