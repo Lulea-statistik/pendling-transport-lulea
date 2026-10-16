@@ -71,11 +71,17 @@ def main():
             report["fallback"]=None
         report["api_errors"]=error_messages(response)
         found=rows(response)
+        # Independently test whether the same object exists without the corridor filter.
+        if not errors:
+            global_response=request(key,False)
+            report["global_api_errors"]=error_messages(global_response)
+            report["global_records"]=len(rows(global_response))
+            report["global_sample_keys"]=sorted(set().union(*(x.keys() for x in rows(global_response)[:10]))) if rows(global_response) else []
         report["returned_records"]=len(found)
         report["sample_keys"]=sorted(set().union(*(x.keys() for x in found[:10]))) if found else []
         # No raw personal/secrets or full nationwide API response saved.
         report["sample_objects"]=found[:3]
-        report["status"]="api_error" if report["api_errors"] else ("unfiltered_only" if errors else "spatial_query_ok")
+        report["status"]="api_error" if report["api_errors"] or report.get("global_api_errors") else ("unfiltered_only" if errors else "spatial_query_ok")
     except (HTTPError,URLError,TimeoutError,ValueError) as exc:
         report["status"]="request_failed"
         report["error"]=str(exc)[:300]
