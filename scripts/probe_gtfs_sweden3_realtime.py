@@ -25,6 +25,7 @@ def safe_structure(payload):
     types={k:type(data[k]).__name__ for k in keys}
     return {"json_type":"object","recognized_keys":keys,
             "recognized_value_types":types,
+            "other_key_names":[k for k in sorted(data) if k not in permitted and k.isidentifier() and len(k)<=64][:20],
             "has_other_keys":bool(set(data)-permitted)}
 
 def classify_error(payload):
@@ -66,8 +67,8 @@ def check(operator,feed):
 def main():
     if not KEY:raise SystemExit("Missing GitHub secret GTFS_SWEDEN_3_REALTIME")
     result={"checked_utc":datetime.now(timezone.utc).isoformat(),"dataset":"GTFS Sweden 3 Realtime",
-            "operators":{op:{feed:check(op,feed) for feed in FEEDS} for op in OPERATORS},
-            "note":"No API responses or secret values are logged; error JSON property names and field types only. Endpoint matches official Trafiklab docs."}
+            "single_probe":{"operator":"sl","feed":"TripUpdatesSweden.pb","result":check("sl","TripUpdatesSweden.pb")},
+            "note":"One request only. Only JSON field names and types are logged, never response values or API keys."}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps(result,ensure_ascii=False,indent=2))
