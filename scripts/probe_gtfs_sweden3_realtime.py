@@ -28,6 +28,27 @@ def safe_structure(payload):
             "other_key_names":[k for k in sorted(data) if k not in permitted and k.isidentifier() and len(k)<=64][:20],
             "has_other_keys":bool(set(data)-permitted)}
 
+def classify_message(payload):
+    """Classify server error text without writing any of it to logs or artifacts."""
+    try:
+        obj=json.loads(payload.decode("utf-8"))
+    except (ValueError,UnicodeError):
+        return "unreadable_response"
+    message=obj.get("errorMessage","") if isinstance(obj,dict) else ""
+    if not isinstance(message,str):return "no_text_message"
+    msg=message.casefold()
+    if any(t in msg for t in ("invalid api key","invalid key","api key is invalid","ogiltig nyckel")):
+        return "invalid_api_key"
+    if any(t in msg for t in ("missing api key","key is missing","api key required","no api key")):
+        return "missing_api_key"
+    if any(t in msg for t in ("not authorized","unauthorized","access denied","not permitted","subscription","not subscribed","not allowed","permission","product access")):
+        return "product_access_denied"
+    if any(t in msg for t in ("unknown endpoint","not found","invalid url","unsupported path","invalid resource","invalid request","unknown operator")):
+        return "invalid_endpoint_or_resource"
+    if any(t in msg for t in ("rate limit","too many requests","quota exceeded")):
+        return "rate_limited"
+    return "unknown_error_message"
+
 def classify_error(payload):
     """Only allow fixed diagnostic labels; never persist arbitrary server text."""
     try:
@@ -60,6 +81,7 @@ def check(operator,feed):
         content_type=(exc.headers.get("Content-Type") or "").split(";")[0].lower()
         payload=exc.read(2048)
         return {"http_status":exc.code,"error_type":classify_error(payload),
+                "message_category":classify_message(payload),
                 "json_structure":safe_structure(payload),
                 "response_content_type":content_type if content_type in ("application/json","text/plain","text/html") else "other",
                 "retry_after_present":bool(exc.headers.get("Retry-After"))}
