@@ -1,0 +1,26 @@
+name: Test KoDa Norrbotten historical realtime
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/probe_koda_norrbotten.py
+      - .github/workflows/test-koda-norrbotten.yml
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      KOLLEKTIVTRAFIKENS_DATALABB_KODA: ${{ secrets.KOLLEKTIVTRAFIKENS_DATALABB_KODA }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check KoDa historical feeds
+        run: python3 scripts/probe_koda_norrbotten.py
+      - name: Upload diagnostic summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: koda-norrbotten-availability
+          path: data/diagnostics/koda_norrbotten_availability.json
+          if-no-files-found: warn
