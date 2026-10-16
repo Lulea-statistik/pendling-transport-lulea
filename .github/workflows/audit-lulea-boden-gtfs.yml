@@ -1,0 +1,26 @@
+name: Audit GTFS Lulea Boden lines
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/audit_lulea_boden_gtfs.py
+      - .github/workflows/audit-lulea-boden-gtfs.yml
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      TRAFIKLAB_API_KEY: ${{ secrets.TRAFIKLAB_API_KEY4 }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit scheduled routes 28 29 30
+        run: python3 scripts/audit_lulea_boden_gtfs.py
+      - name: Upload audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lulea-boden-gtfs-audit
+          path: data/diagnostics/lulea_boden_gtfs/
+          if-no-files-found: warn
