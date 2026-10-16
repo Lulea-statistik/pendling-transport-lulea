@@ -31,3 +31,5 @@ def main():
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=="__main__":main()
+
+# Initial GTFS Sweden 3 realtime verification.
