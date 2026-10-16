@@ -1,0 +1,25 @@
+name: Test GTFS Regional Realtime Norrbotten
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/probe_gtfs_regional_realtime.py
+permissions:
+  contents: read
+jobs:
+  availability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check regional realtime feed availability
+        env:
+          TRAFIKLAB_GTFS_REGIONAL_REALTIME: ${{ secrets.TRAFIKLAB_GTFS_REGIONAL_REALTIME }}
+        run: python3 scripts/probe_gtfs_regional_realtime.py
+      - name: Upload diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gtfs-regional-realtime-availability
+          path: data/diagnostics/gtfs_regional_realtime_availability.json
+          if-no-files-found: warn
