@@ -1,0 +1,23 @@
+name: Test väg 97 ÅDT
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/probe_road97_aadt.py
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect road 97 AADT
+        run: python3 scripts/probe_road97_aadt.py
+      - name: Upload diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: road97-aadt-diagnostic
+          path: data/diagnostics/road97_aadt/
+          if-no-files-found: warn
