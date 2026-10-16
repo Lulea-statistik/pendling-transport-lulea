@@ -1,0 +1,22 @@
+name: Test väg 97 TrafficFlow
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query TrafficFlow for road 97 corridor
+        env:
+          TRAFIKVERKET_API_KEY: ${{ secrets.TRAFIKVERKET_API_KEY }}
+        run: python3 scripts/probe_road97_trafficflow.py
+      - name: Upload diagnostic (including on error)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: road97-trafficflow-diagnostic
+          path: data/diagnostics/road97_trafficflow_probe.json
+          if-no-files-found: warn
