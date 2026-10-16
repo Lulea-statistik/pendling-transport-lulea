@@ -1,0 +1,25 @@
+name: Test GTFS Sweden 3 Realtime
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/probe_gtfs_sweden3_realtime.py
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      GTFS_SWEDEN_3_REALTIME: ${{ secrets.GTFS_SWEDEN_3_REALTIME }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test Sweden 3 realtime coverage
+        run: python3 scripts/probe_gtfs_sweden3_realtime.py
+      - name: Save audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gtfs-sweden3-realtime-audit
+          path: data/diagnostics/gtfs_sweden3_realtime.json
+          if-no-files-found: warn
