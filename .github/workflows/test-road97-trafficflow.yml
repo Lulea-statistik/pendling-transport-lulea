@@ -1,6 +1,9 @@
 name: Test väg 97 TrafficFlow
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - scripts/probe_road97_trafficflow.py
 permissions:
   contents: read
 jobs:
