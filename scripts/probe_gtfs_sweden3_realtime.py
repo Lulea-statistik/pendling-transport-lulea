@@ -41,7 +41,7 @@ def classify_message(payload):
         return "invalid_api_key"
     if any(t in msg for t in ("missing api key","key is missing","api key required","no api key")):
         return "missing_api_key"
-    if any(t in msg for t in ("not authorized","unauthorized","access denied","not permitted","subscription","not subscribed","not allowed","permission","product access")):
+    if any(t in msg for t in ("not authorized","unauthorized","access denied","does not have access","not permitted","subscription","not subscribed","not allowed","permission","product access")):
         return "product_access_denied"
     if any(t in msg for t in ("unknown endpoint","not found","invalid url","unsupported path","invalid resource","invalid request","unknown operator")):
         return "invalid_endpoint_or_resource"
