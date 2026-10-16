@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     env:
-      TRAFIKLAB_API_KEY: ${{ secrets.TRAFIKLAB_API_KEY4 }}
+      TRAFIKLAB_API_KEY: ${{ secrets.TRAFIKLAB_API_KEY }}
+      TRAFIKLAB_API_KEY2: ${{ secrets.TRAFIKLAB_API_KEY2 }}
+      TRAFIKLAB_API_KEY3: ${{ secrets.TRAFIKLAB_API_KEY3 }}
+      TRAFIKLAB_API_KEY4: ${{ secrets.TRAFIKLAB_API_KEY4 }}
     steps:
       - uses: actions/checkout@v4
       - name: Audit scheduled routes 28 29 30
