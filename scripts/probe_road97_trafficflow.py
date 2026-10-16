@@ -18,9 +18,10 @@ OUT = Path("data/diagnostics/road97_trafficflow_probe.json")
 # Approximate corridor envelope, for *candidate discovery only*.
 BBOX = {"south":65.54,"north":65.89,"west":21.55,"east":22.25}
 
-def request(key, filtering=True):
+def request(key, filtering=True, county=False):
     # The box uses latitude-longitude in Trafikinfo's WGS84 filter format.
-    within = ('<FILTER><WITHIN name="Geometry.WGS84" shape="box" '
+    within = ('<FILTER><EQ name="CountyNo" value="25" /></FILTER>' if county else
+              '<FILTER><WITHIN name="Geometry.WGS84" shape="box" '
               'value="65.54 21.55,65.89 22.25" /></FILTER>') if filtering else ""
     body = ('<REQUEST><LOGIN authenticationkey="'+escape(key, {'"':'&quot;'})+'"/>'
             '<QUERY objecttype="TrafficFlow" schemaversion="1.4" limit="500">'
@@ -78,10 +79,15 @@ def main():
             report["global_records"]=len(rows(global_response))
             report["global_sample_keys"]=sorted(set().union(*(x.keys() for x in rows(global_response)[:10]))) if rows(global_response) else []
         report["returned_records"]=len(found)
+        county_response=request(key,True,True)
+        report["county_api_errors"]=error_messages(county_response)
+        county_rows=rows(county_response)
+        report["county_25_records"]=len(county_rows)
+        report["county_sample_sites"]=[{"SiteId":x.get("SiteId"),"CountyNo":x.get("CountyNo"),"Geometry":x.get("Geometry")} for x in county_rows[:12]]
         report["sample_keys"]=sorted(set().union(*(x.keys() for x in found[:10]))) if found else []
         # No raw personal/secrets or full nationwide API response saved.
         report["sample_objects"]=found[:3]
-        report["status"]="api_error" if report["api_errors"] or report.get("global_api_errors") else ("unfiltered_only" if errors else "spatial_query_ok")
+        report["status"]="api_error" if report["api_errors"] or report.get("global_api_errors") or report.get("county_api_errors") else ("unfiltered_only" if errors else "spatial_query_ok")
     except (HTTPError,URLError,TimeoutError,ValueError) as exc:
         report["status"]="request_failed"
         report["error"]=str(exc)[:300]
