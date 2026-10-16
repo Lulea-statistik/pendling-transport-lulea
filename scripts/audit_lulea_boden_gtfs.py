@@ -34,13 +34,29 @@ def active(z,target):
     return services
 
 def main():
-    key=os.environ.get("TRAFIKLAB_API_KEY","").strip()
-    if not key:raise SystemExit("Missing TRAFIKLAB_API_KEY")
-    req=Request(URL+"?key="+key,headers={"User-Agent":"Lulea-statistik/GTFS-route-audit"})
-    try:
-        with urlopen(req,timeout=120) as r:data=r.read()
-    except HTTPError as exc:
-        raise SystemExit(f"GTFS archive HTTP {exc.code}; verify product access")
+    keys=[(name,os.environ.get(name,"").strip()) for name in
+          ("TRAFIKLAB_API_KEY","TRAFIKLAB_API_KEY2","TRAFIKLAB_API_KEY3","TRAFIKLAB_API_KEY4")]
+    keys=[(name,value) for name,value in keys if value]
+    if not keys:raise SystemExit("No configured Trafiklab API keys")
+    diagnostic={"checked_utc":datetime.now(timezone.utc).isoformat(),"dataset":"GTFS Regional Norrbotten",
+                "key_access_checks":[],"note":"No key values or response bodies stored."}
+    data=None
+    for name,key in keys:
+        req=Request(URL+"?key="+key,headers={"User-Agent":"Lulea-statistik/GTFS-route-audit"})
+        try:
+            with urlopen(req,timeout=120) as r:
+                data=r.read()
+                diagnostic["key_access_checks"].append({"secret_name":name,"http_status":r.status})
+            break
+        except HTTPError as exc:
+            diagnostic["key_access_checks"].append({"secret_name":name,"http_status":exc.code})
+    OUT.mkdir(parents=True,exist_ok=True)
+    if not data:
+        diagnostic["status"]="no_key_with_regional_access"
+        (OUT/"report.json").write_text(json.dumps(diagnostic,ensure_ascii=False,indent=2),encoding="utf-8")
+        print(json.dumps(diagnostic,ensure_ascii=False,indent=2))
+        raise SystemExit("GTFS Regional unavailable for configured keys; see audit artifact")
+    print("GTFS archive downloaded with an authorized secret.")
     z=zipfile.ZipFile(io.BytesIO(data))
     today=date.today()
     target=today+timedelta(days=(7-today.weekday())%7 or 7)
