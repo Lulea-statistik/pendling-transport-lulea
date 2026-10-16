@@ -29,6 +29,9 @@ def main():
             "layers_examined":[],"errors":[]}
     features=[]
     seen=set()
+    duplicate_by_layer=Counter()
+    geometry_keys=set()
+    segment_ids=set()
     for layer in layers:
         if layer.get("subLayerIds"):continue
         lid=layer["id"]
@@ -46,13 +49,24 @@ def main():
             for feat in arr:
                 a=feat.get("properties") or {}
                 key=(a.get("AVSN_ID"),a.get("AAR"),a.get("AADT_TOT"),a.get("AADT_L"))
-                if key in seen: continue
+                if key in seen:
+                    duplicate_by_layer[str(lid)]+=1
+                    continue
                 seen.add(key)
+                segment_ids.add(str(a.get('AVSN_ID')))
+                geometry_keys.add(json.dumps(feat.get('geometry'),sort_keys=True))
                 a["source_layer_id"]=lid
                 features.append(feat)
         except Exception as exc:
             report["errors"].append({"layer_id":lid,"reason":str(exc)[:300]})
     report["candidate_segments"]=len(features)
+    report["duplicates_removed_by_layer"]=dict(duplicate_by_layer)
+    report["unique_segment_ids"]=len(segment_ids)
+    report["unique_geometries"]=len(geometry_keys)
+    report["missing_geometry"]=sum(not f.get("geometry") for f in features)
+    report["missing_fields"]={field:sum(f.get("properties",{}).get(field) is None for f in features) for field in ("AVSN_ID","AADT_TOT","AADT_L","AAR","M_METOD")}
+    segment_counts=Counter(str(f.get("properties",{}).get("AVSN_ID")) for f in features)
+    report["segments_with_multiple_records"]=sum(n>1 for n in segment_counts.values())
     report["measurement_years"]=dict(Counter(str(f.get("properties",{}).get("AAR")) for f in features))
     report["result_warning"]="Results are geographic road-97 candidates only, not validated Lulea/Boden municipal clipping. Layer duplication and distinct same-value segments need review."
     (OUT/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2))
