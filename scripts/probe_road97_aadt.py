@@ -60,3 +60,5 @@ def main():
     print(json.dumps(report,ensure_ascii=False,indent=2))
     if not report["layers_examined"]: raise RuntimeError("No suitable AADT layers found; review report")
 if __name__=="__main__":main()
+
+# Initial diagnostic run.
