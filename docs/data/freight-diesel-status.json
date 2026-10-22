@@ -1,9 +1,9 @@
 {
   "workflow": "Update freight diesel deliveries",
-  "run_id": 38132816289,
-  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/38132816289",
+  "run_id": 39783290657,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/39783290657",
   "attempt": 1,
   "status": "success",
-  "commit": "804c06ed2079575823de16c563d5abd1d9617900",
-  "updated_utc": "2026-10-11T10:41:07.768153+00:00"
+  "commit": "5d2c42a7b31e1d4b3afb5740b5d40077136e197f",
+  "updated_utc": "2026-10-22T13:01:59.343599+00:00"
 }
