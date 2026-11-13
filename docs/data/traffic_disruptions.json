@@ -1,8 +1,8 @@
 {
   "source": "https://lanstrafikennorrbotten.se/trafikinformation",
-  "updated": "2026-11-12T13:58:26+00:00",
-  "active_count": 2,
-  "history_count": 4,
+  "updated": "2026-11-13T13:25:50+00:00",
+  "active_count": 5,
+  "history_count": 8,
   "items": [
     {
       "id": "36edbbfbd66bab34",
@@ -11,17 +11,47 @@
       "body": "Vädervarning: Sydligaste Norrbottenskusten samt Västerbottenskusten Under torsdagen 12/11 och fredagen 13/11 ymnigt snöfall som kan ge trafikproblem, samtidigt också ganska blåsigt. Vi ber dig som resenär att ha överseende för ev förseningar i busstrafiken och planera väl för din resa. Välj om möjligt en tidigare avgång. Håll dig informerad via Länstrafikens kanaler om trafikläget och ev inställda turer samt SMHI:s hemsida för uppdateringar kring vädervarningar.",
       "lines": [],
       "first_seen": "2026-11-12T13:58:26+00:00",
-      "last_seen": "2026-11-12T13:58:26+00:00",
+      "last_seen": "2026-11-13T13:25:50+00:00",
       "active": true
     },
     {
-      "id": "606ac1ce7149874d",
+      "id": "6e225601e47f8bc4",
       "status": "Aktuella",
-      "title": "All busstrafik med Norrlandskusten linje 20 och 100 samt delar av linje 26 ställs in",
-      "body": "All busstrafik med Norrlandskusten (linje 20 och 100) samt delar av linje 26 ställs in från i dag, torsdag den 12 november klockan 14.00, till som tidigast fredag den 13 november preliminärt klockan 14.00. Beslutet fattas med anledning av den röda vädervarningen, som främst berör Västerbotten men även de södra delarna av Norrbotten. Trafiken ställs in av säkerhetsskäl och kan återupptas först när väder- och vägförhållandena medger det. Inställningen gäller busslinje 20 och 100. Samtliga avgångar mellan Haparanda och Umeå är inställda under den angivna perioden, vissa avgångar kan dock komma att utföras på delar av sträckan, detta framgår på Länstrafikens hemsida. Även linje 26 är delvis inställd och planeras endast att trafikera sträckan mellan Arjeplog och Jörn, när trafiken upptas för hela sträckan igen kommuniceras detta på Länstrafikens hemsida. Den röda vädervarningen kan även komma att påverka Länstrafikens övriga trafik. Vissa turer kan komma att utföras på delar av sina ordinarie sträckor. Aktuell information om detta finns på Länstrafiken i Norrbottens hemsida, som hålls löpande uppdaterad. Tiden för trafikstart kan komma att ändras beroende på väderutvecklingen och aktuellt väglag.",
+      "title": "Linje 26 delvis inställd",
+      "body": "Linje 26 kan inte angöra Skellefteå med anledning av kraftigt snöfall och är delvis inställd fredag 13/11. Under fredagen trafikerar linje 26 sträckan Arjeplog–Jörn–Arjeplog.",
       "lines": [],
-      "first_seen": "2026-11-12T13:58:26+00:00",
-      "last_seen": "2026-11-12T13:58:26+00:00",
+      "first_seen": "2026-11-13T13:25:50+00:00",
+      "last_seen": "2026-11-13T13:25:50+00:00",
+      "active": true
+    },
+    {
+      "id": "c3179d880b3851e0",
+      "status": "Aktuella",
+      "title": "Linje 20 och 100: Alla avgångar inställda fredag 13/11",
+      "body": "Samtliga avgångar på linje 20 och 100 mellan Haparanda och Umeå är inställda fredag 13/11. Busstrafiken ställs in av säkerhetsskäl med anledning av det kraftiga snöfallet, som främst berör Västerbotten men även de södra delarna av Norrbotten. Tiden för trafikstart kan komma att ändras beroende på väderutvecklingen och aktuellt väglag. Följ uppdateringar för trafikinformation på Länstrafikens hemsida.",
+      "lines": [],
+      "first_seen": "2026-11-13T13:25:50+00:00",
+      "last_seen": "2026-11-13T13:25:50+00:00",
+      "active": true
+    },
+    {
+      "id": "d6ee2ef67516ccdb",
+      "status": "Aktuella",
+      "title": "Extrainsatt buss Luleå–Råneå–Haparanda fredag 13/11",
+      "body": "Extrainsatt buss avgår från Luleå via Råneå och Kalix till Haparanda. Då digital skylt saknas finns tillfällig skyltning på bussen \"L11/20 Haparanda\". Hålltider extrainsatt buss fredag 13/11: 15.20 avgång Luleå busstation 16.00 avgång Råneå busstation 16.50 avgång Kalix busstation 17.50 ankomst Haparanda/Tornio Resecentrum",
+      "lines": [],
+      "first_seen": "2026-11-13T13:25:50+00:00",
+      "last_seen": "2026-11-13T13:25:50+00:00",
+      "active": true
+    },
+    {
+      "id": "597195e1bb69692e",
+      "status": "Aktuella",
+      "title": "Linje 11 Luleå–Kalix kör förbi Råneå busstation vid behov",
+      "body": "Linje 11 Luleå–Kalix kör förbi Råneå busstation vid behov, vänligen meddela förare på plats. Gäller avgång 16.35 från Luleå busstation.",
+      "lines": [],
+      "first_seen": "2026-11-13T13:25:50+00:00",
+      "last_seen": "2026-11-13T13:25:50+00:00",
       "active": true
     },
     {
@@ -42,6 +72,16 @@
       "lines": [],
       "first_seen": "2026-10-27T10:58:25+00:00",
       "last_seen": "2026-10-28T11:38:01+00:00",
+      "active": false
+    },
+    {
+      "id": "606ac1ce7149874d",
+      "status": "Aktuella",
+      "title": "All busstrafik med Norrlandskusten linje 20 och 100 samt delar av linje 26 ställs in",
+      "body": "All busstrafik med Norrlandskusten (linje 20 och 100) samt delar av linje 26 ställs in från i dag, torsdag den 12 november klockan 14.00, till som tidigast fredag den 13 november preliminärt klockan 14.00. Beslutet fattas med anledning av den röda vädervarningen, som främst berör Västerbotten men även de södra delarna av Norrbotten. Trafiken ställs in av säkerhetsskäl och kan återupptas först när väder- och vägförhållandena medger det. Inställningen gäller busslinje 20 och 100. Samtliga avgångar mellan Haparanda och Umeå är inställda under den angivna perioden, vissa avgångar kan dock komma att utföras på delar av sträckan, detta framgår på Länstrafikens hemsida. Även linje 26 är delvis inställd och planeras endast att trafikera sträckan mellan Arjeplog och Jörn, när trafiken upptas för hela sträckan igen kommuniceras detta på Länstrafikens hemsida. Den röda vädervarningen kan även komma att påverka Länstrafikens övriga trafik. Vissa turer kan komma att utföras på delar av sina ordinarie sträckor. Aktuell information om detta finns på Länstrafiken i Norrbottens hemsida, som hålls löpande uppdaterad. Tiden för trafikstart kan komma att ändras beroende på väderutvecklingen och aktuellt väglag.",
+      "lines": [],
+      "first_seen": "2026-11-12T13:58:26+00:00",
+      "last_seen": "2026-11-12T13:58:26+00:00",
       "active": false
     }
   ]
