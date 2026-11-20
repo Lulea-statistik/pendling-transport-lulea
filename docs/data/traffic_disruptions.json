@@ -1,19 +1,9 @@
 {
   "source": "https://lanstrafikennorrbotten.se/trafikinformation",
-  "updated": "2026-11-19T14:40:39+00:00",
-  "active_count": 1,
+  "updated": "2026-11-20T14:21:07+00:00",
+  "active_count": 0,
   "history_count": 9,
   "items": [
-    {
-      "id": "dd8dbf685ba0449b",
-      "status": "Aktuella",
-      "title": "Vädervarning: Risk för ishalka",
-      "body": "Natt mot torsdag och torsdag morgon 19/11 övergår snöfall i regn som kan frysa till på vägarna och ge ishalka. Risk för trafikproblem. Vi ber dig som resenär att ha överseende för ev förseningar i busstrafiken och planera väl för din resa. Välj om möjligt en tidigare avgång. Håll dig informerad via Länstrafikens kanaler om trafikläget och ev inställda turer samt SMHI:s hemsida för uppdateringar kring vädervarningar.",
-      "lines": [],
-      "first_seen": "2026-11-19T14:40:39+00:00",
-      "last_seen": "2026-11-19T14:40:39+00:00",
-      "active": true
-    },
     {
       "id": "a6fbfaf501289975",
       "status": "Aktuella",
@@ -92,6 +82,16 @@
       "lines": [],
       "first_seen": "2026-11-13T13:25:50+00:00",
       "last_seen": "2026-11-13T13:25:50+00:00",
+      "active": false
+    },
+    {
+      "id": "dd8dbf685ba0449b",
+      "status": "Aktuella",
+      "title": "Vädervarning: Risk för ishalka",
+      "body": "Natt mot torsdag och torsdag morgon 19/11 övergår snöfall i regn som kan frysa till på vägarna och ge ishalka. Risk för trafikproblem. Vi ber dig som resenär att ha överseende för ev förseningar i busstrafiken och planera väl för din resa. Välj om möjligt en tidigare avgång. Håll dig informerad via Länstrafikens kanaler om trafikläget och ev inställda turer samt SMHI:s hemsida för uppdateringar kring vädervarningar.",
+      "lines": [],
+      "first_seen": "2026-11-19T14:40:39+00:00",
+      "last_seen": "2026-11-19T14:40:39+00:00",
       "active": false
     }
   ]
