@@ -1,9 +1,9 @@
 {
   "workflow": "Update freight registered trucks",
-  "run_id": 39960390849,
-  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/39960390849",
+  "run_id": 45255760928,
+  "run_url": "https://github.com/Lulea-statistik/pendling-transport-lulea/actions/runs/45255760928",
   "attempt": 1,
   "status": "success",
-  "commit": "111c1396e6e32094e79d63b60a810874b83747ad",
-  "updated_utc": "2026-10-23T13:20:44.943751+00:00"
+  "commit": "19c106c5ddfe6c11b4ae851c6408b06a99aaca3f",
+  "updated_utc": "2026-11-23T20:06:02.349937+00:00"
 }
